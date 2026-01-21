@@ -50,14 +50,14 @@ Track the implementation status of all modules in this repository.
 - [x] 10_hash_tables/
 
 ### 03 - Algorithms
-- [ ] README.md
-- [ ] 01_searching/
-- [ ] 02_sorting/
-- [ ] 03_recursion/
-- [ ] 04_dynamic_programming/
-- [ ] 05_greedy_algorithms/
-- [ ] 06_divide_and_conquer/
-- [ ] 07_graph_algorithms/
+- [x] README.md
+- [x] 01_searching/
+- [x] 02_sorting/
+- [x] 03_recursion/
+- [x] 04_dynamic_programming/
+- [x] 05_greedy_algorithms/
+- [x] 06_divide_and_conquer/
+- [x] 07_graph_algorithms/
 
 ---
 
@@ -199,19 +199,28 @@ Track the implementation status of all modules in this repository.
 | Phase | Status | Progress |
 |-------|--------|----------|
 | Root Files | 🟢 Complete | 3/3 |
-| Phase 1: Foundation | 🟢 Complete | 32/32 |
+| Phase 1: Foundation | 🟢 Complete | 40/40 |
 | Phase 2: Paradigms | 🔴 Not Started | 0/29 |
 | Phase 3: Professional | 🔴 Not Started | 0/27 |
 | Phase 4: Advanced | 🔴 Not Started | 0/23 |
 | Phase 5: Practice | 🔴 Not Started | 0/12 |
 
-**Total Progress:** 35/126 items (28%)
+**Total Progress:** 43/131 items (33%)
 
 ---
 
 ## Recent Updates
 
 ### 2026-01-21
+- ✅ Completed Module 03: Algorithms (7 topics, 29 files)
+  - Searching: linear search, binary search, variations
+  - Sorting: bubble, selection, insertion, merge, quick sort
+  - Recursion: base cases, recursive thinking, call stack
+  - Dynamic Programming: memoization, tabulation, classic problems
+  - Greedy Algorithms: activity selection, Huffman, fractional knapsack
+  - Divide and Conquer: merge sort, quick sort, closest pair
+  - Graph Algorithms: BFS, DFS, Dijkstra, topological sort
+  - Each topic includes: README.md, examples.py, exercises.py, quiz.md
 - ✅ Completed Module 02: Data Structures (10 topics, 41 files)
   - Built-in: lists, strings, dicts, sets, tuples
   - Abstract: stacks/queues, linked lists, trees, graphs, hash tables
