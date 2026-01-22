@@ -31,14 +31,34 @@ class Report:
 
 # --- Your Refactoring Below ---
 
-# TODO: Define Report class (Data only)
+class Report:
+    def __init__(self, title, content):
+        self.title = title
+        self.content = content
 
-# TODO: Define ReportPrinter class
+    def generate(self):
+        return f"{self.title}\n{self.content}"
 
-# TODO: Define ReportSaver class
+class ReportPrinter:
+    def print_report(self, report):
+        print(f"Printing: {report.title}...")
+        print(report.content)
 
-# TODO: Test your refactored code
+class ReportSaver:
+    def save(self, report, filename):
+        print(f"Saving to {filename}...")
+        # (Imagine file writing logic here)
+
+# Tests
 print("\n--- Exercise 1 Output ---")
+
+report = Report("Weekly", "All systems operational.")
+printer = ReportPrinter()
+saver = ReportSaver()
+
+print(report.generate())
+printer.print_report(report)
+saver.save(report, "weekly.txt")
 
 
 # -----------------------------------------------------------------------------
@@ -61,9 +81,38 @@ class DiscountCalculator:
 
 # --- Your Refactoring Below ---
 
-# TODO: Create an abstract DiscountStrategy class
+from abc import ABC, abstractmethod
 
-# TODO: Create concrete strategies: RegularDiscount, MemberDiscount, VipDiscount
 
-# TODO: Test your new structure
+class DiscountStrategy(ABC):
+    @abstractmethod
+    def apply(self, price):
+        pass
+
+class RegularDiscount(DiscountStrategy):
+    def apply(self, price):
+        return price
+
+
+class MemberDiscount(DiscountStrategy):
+    def apply(self, price):
+        return price * 0.90
+
+
+class VipDiscount(DiscountStrategy):
+    def apply(self, price):
+        return price * 0.85
+
+
+class DiscountCalculator:
+    def calculate(self, strategy, price):
+        return strategy.apply(price)
+
+# Tests
 print("\n--- Exercise 2 Output ---")
+
+calc = DiscountCalculator()
+price = 100
+print(calc.calculate(RegularDiscount(), price))
+print(calc.calculate(MemberDiscount(), price))
+print(calc.calculate(VipDiscount(), price))

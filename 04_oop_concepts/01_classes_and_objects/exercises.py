@@ -14,11 +14,21 @@ Practice creating classes and objects!
 # 4. Create two instances of `Book` and print their descriptions.
 
 class Book:
-    # TODO: Implement this class
-    pass
+    def __init__(self, title, author, pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
 
-# TODO: Create instances and test your class here
+    def description(self):
+        return f"{self.title} by {self.author}, {self.pages} pages"
+
+# Tests
 print("\n--- Exercise 1 Output ---")
+
+book1 = Book("1984", "George Orwell", 328)
+book2 = Book("Dune", "Frank Herbert", 412)
+print(book1.description())
+print(book2.description())
 
 
 # -----------------------------------------------------------------------------
@@ -33,8 +43,34 @@ print("\n--- Exercise 1 Output ---")
 # 6. Test your class by creating an account, depositing money, withdrawing, and checking balance.
 
 class BankAccount:
-    # TODO: Implement this class
-    pass
+    def __init__(self, balance=0):
+        self.balance = balance
 
-# TODO: Create instances and test your class here
+    def deposit(self, amount):
+        if amount <= 0:
+            print("Deposit must be positive.")
+            return
+        self.balance += amount
+
+    def withdraw(self, amount):
+        if amount <= 0:
+            print("Withdrawal must be positive.")
+            return
+        if amount > self.balance:
+            print("Insufficient funds!")
+            return
+        self.balance -= amount
+
+    def check_balance(self):
+        print(f"Current balance: {self.balance}")
+
+# Tests
 print("\n--- Exercise 2 Output ---")
+
+account = BankAccount(100)
+account.check_balance()
+account.deposit(50)
+account.check_balance()
+account.withdraw(30)
+account.check_balance()
+account.withdraw(1000)

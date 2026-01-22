@@ -13,19 +13,22 @@ Practice polymorphism and magic methods!
 # 4. Create a list containing instances of both classes and loop through it, calling `play_media`.
 
 class AudioFile:
-    # TODO: Implement this class
-    pass
+    def play(self):
+        print("Playing audio...")
 
 class VideoFile:
-    # TODO: Implement this class
-    pass
+    def play(self):
+        print("Playing video...")
 
 def play_media(media):
-    # TODO: Implement this function
-    pass
+    media.play()
 
-# TODO: Test your code
+# Tests
 print("\n--- Exercise 1 Output ---")
+
+playlist = [AudioFile(), VideoFile(), AudioFile()]
+for item in playlist:
+    play_media(item)
 
 
 # -----------------------------------------------------------------------------
@@ -41,8 +44,26 @@ print("\n--- Exercise 1 Output ---")
 # 4. Test it by adding two accounts together.
 
 class BankAccount:
-    # TODO: Implement this class
-    pass
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
 
-# TODO: Test your code
+    def __str__(self):
+        return f"Account(owner={self.owner}, balance={self.balance})"
+
+    def __add__(self, other):
+        if not isinstance(other, BankAccount):
+            return NotImplemented
+        owner = f"{self.owner} & {other.owner}"
+        balance = self.balance + other.balance
+        return BankAccount(owner, balance)
+
+# Tests
 print("\n--- Exercise 2 Output ---")
+
+acc1 = BankAccount("Alice", 100)
+acc2 = BankAccount("Bob", 250)
+merged = acc1 + acc2
+print(acc1)
+print(acc2)
+print(merged)

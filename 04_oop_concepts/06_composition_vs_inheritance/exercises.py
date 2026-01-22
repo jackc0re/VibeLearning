@@ -15,19 +15,27 @@ Practice Composition!
 # 4. Assemble a computer and start it.
 
 class CPU:
-    # TODO: Implement this class
-    pass
+    def process(self):
+        print("CPU processing instructions...")
 
 class RAM:
-    # TODO: Implement this class
-    pass
+    def load(self):
+        print("RAM loading data...")
 
 class Computer:
-    # TODO: Implement this class
-    pass
+    def __init__(self, cpu, ram):
+        self.cpu = cpu
+        self.ram = ram
 
-# TODO: Test your code
+    def start(self):
+        self.ram.load()
+        self.cpu.process()
+
+# Tests
 print("\n--- Exercise 1 Output ---")
+
+computer = Computer(CPU(), RAM())
+computer.start()
 
 
 # -----------------------------------------------------------------------------
@@ -40,16 +48,26 @@ print("\n--- Exercise 1 Output ---")
 # 5. Create two cars with different engines and drive them.
 
 class ElectricEngine:
-    # TODO: Implement this class
-    pass
+    def start(self):
+        print("Silent start.")
 
 class V8Engine:
-    # TODO: Implement this class
-    pass
+    def start(self):
+        print("Vroom vroom.")
 
 class Car:
-    # TODO: Implement this class
-    pass
+    def __init__(self, engine):
+        self.engine = engine
 
-# TODO: Test your code
+    def drive(self):
+        self.engine.start()
+        print("Car is driving...")
+
+# Tests
 print("\n--- Exercise 2 Output ---")
+
+eco_car = Car(ElectricEngine())
+muscle_car = Car(V8Engine())
+
+eco_car.drive()
+muscle_car.drive()

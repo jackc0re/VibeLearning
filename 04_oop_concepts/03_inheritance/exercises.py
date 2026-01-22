@@ -17,19 +17,31 @@ Practice inheritance!
 # 4. Test both classes.
 
 class Shape:
-    # TODO: Implement this class
-    pass
+    def area(self):
+        return 0
 
 class Rectangle(Shape):
-    # TODO: Implement this class
-    pass
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
 
 class Circle(Shape):
-    # TODO: Implement this class
-    pass
+    def __init__(self, radius):
+        self.radius = radius
 
-# TODO: Test your classes
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+# Tests
 print("\n--- Exercise 1 Output ---")
+
+rect = Rectangle(5, 10)
+circle = Circle(3)
+print(f"Rectangle area: {rect.area()}")
+print(f"Circle area: {circle.area()}")
 
 
 # -----------------------------------------------------------------------------
@@ -45,16 +57,32 @@ print("\n--- Exercise 1 Output ---")
 # 4. Simulate a battle between a Warrior and a Mage.
 
 class Character:
-    # TODO: Implement this class
-    pass
+    def __init__(self, name, health):
+        self.name = name
+        self.health = health
+
+    def attack(self, target):
+        print(f"{self.name} attacks {target.name}!")
+
+    def take_damage(self, amount):
+        self.health -= amount
+        print(f"{self.name} now has {self.health} health.")
 
 class Warrior(Character):
-    # TODO: Implement this class
-    pass
+    def attack(self, target):
+        print(f"{self.name} swings a sword at {target.name}!")
+        target.take_damage(10)
 
 class Mage(Character):
-    # TODO: Implement this class
-    pass
+    def attack(self, target):
+        print(f"{self.name} casts a fireball at {target.name}!")
+        target.take_damage(20)
 
-# TODO: Test your battle
+# Tests
 print("\n--- Exercise 2 Output ---")
+
+warrior = Warrior("Thorin", 100)
+mage = Mage("Gandalf", 80)
+
+warrior.attack(mage)
+mage.attack(warrior)
