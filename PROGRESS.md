@@ -74,14 +74,14 @@ Track the implementation status of all modules in this repository.
 - [x] 07_solid_principles/
 
 ### 05 - Functional Programming
-- [ ] README.md
-- [ ] 01_pure_functions/
-- [ ] 02_immutability/
-- [ ] 03_higher_order_functions/
-- [ ] 04_lambda_expressions/
-- [ ] 05_map_filter_reduce/
-- [ ] 06_closures/
-- [ ] 07_decorators/
+- [x] README.md
+- [x] 01_pure_functions/
+- [x] 02_immutability/
+- [x] 03_higher_order_functions/
+- [x] 04_lambda_expressions/
+- [x] 05_map_filter_reduce/
+- [x] 06_closures/
+- [x] 07_decorators/
 
 ### 06 - Software Design
 - [ ] README.md
