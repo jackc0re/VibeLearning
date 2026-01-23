@@ -104,12 +104,12 @@ Track the implementation status of all modules in this repository.
 ## Phase 3: Professional Skills
 
 ### 08 - Error Handling
-- [ ] README.md
-- [ ] 01_exceptions/
-- [ ] 02_try_except_finally/
-- [ ] 03_custom_exceptions/
-- [ ] 04_defensive_programming/
-- [ ] 05_logging/
+- [x] README.md
+- [x] 01_exceptions/
+- [x] 02_try_except_finally/
+- [x] 03_custom_exceptions/
+- [x] 04_defensive_programming/
+- [x] 05_logging/
 
 ### 09 - Testing
 - [ ] README.md
