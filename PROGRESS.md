@@ -94,10 +94,10 @@ Track the implementation status of all modules in this repository.
 - [x] 07_refactoring/
 
 ### 07 - Design Patterns
-- [ ] README.md
-- [ ] 01_creational/
-- [ ] 02_structural/
-- [ ] 03_behavioral/
+- [x] README.md
+- [x] 01_creational/
+- [x] 02_structural/
+- [x] 03_behavioral/
 
 ---
 
