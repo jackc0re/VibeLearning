@@ -165,11 +165,11 @@ Track the implementation status of all modules in this repository.
 - [x] 04_common_bugs/
 
 ### 15 - Version Control
-- [ ] README.md
-- [ ] 01_git_basics/
-- [ ] 02_branching/
-- [ ] 03_merging/
-- [ ] 04_collaboration/
+- [x] README.md
+- [x] 01_git_basics/
+- [x] 02_branching/
+- [x] 03_merging/
+- [x] 04_collaboration/
 
 ---
 
@@ -203,10 +203,10 @@ Track the implementation status of all modules in this repository.
 | Phase 1: Core Foundation | 🟢 Complete | 30/30 |
 | Phase 2: Paradigms & Principles | 🟢 In Progress | 28/28 |
 | Phase 3: Professional Skills | 🟢 In Progress | 25/25 |
-| Phase 4: Advanced Concepts | 🟢 In Progress | 17/22 |
+| Phase 4: Advanced Concepts | 🟢 Complete | 22/22 |
 | Phase 5: Practice Materials | 🔴 Not Started | 0/12 |
 
-**Total Progress:** 80/120 items (67%)
+**Total Progress:** 85/120 items (71%)
 
 
 ---
@@ -269,7 +269,16 @@ Track the implementation status of all modules in this repository.
   - Each topic includes: README.md, examples.py, exercises.py, quiz.md
 
 - ✅ Completed Module 12: Concurrency (5 topics, 21 files)
-  - Threads basics, synchronization, async/await, race conditions, deadlocks
-  - Each topic includes: README.md, examples.py, exercises.py, quiz.md
+   - Threads basics, synchronization, async/await, race conditions, deadlocks
+   - Each topic includes: README.md, examples.py, exercises.py, quiz.md
+
+### 2026-01-24
+- ✅ Completed Module 15: Version Control (4 topics, 17 files)
+   - Git basics: init, add, commit, status, log, diff
+   - Branching: create, switch, rename, delete branches
+   - Merging: fast-forward, three-way, conflicts, cherry-pick
+   - Collaboration: remotes, clone, push, pull, PRs, forking
+   - Each topic includes: README.md, examples.sh, exercises.md, quiz.md
+
 
 
