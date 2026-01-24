@@ -120,12 +120,12 @@ Track the implementation status of all modules in this repository.
 - [x] 05_integration_testing/
 
 ### 10 - File & I/O
-- [ ] README.md
-- [ ] 01_reading_files/
-- [ ] 02_writing_files/
-- [ ] 03_working_with_json/
-- [ ] 04_working_with_csv/
-- [ ] 05_binary_files/
+- [x] README.md
+- [x] 01_reading_files/
+- [x] 02_writing_files/
+- [x] 03_working_with_json/
+- [x] 04_working_with_csv/
+- [x] 05_binary_files/
 
 ### 11 - Memory & Performance
 - [ ] README.md
@@ -250,5 +250,10 @@ Track the implementation status of all modules in this repository.
 ### 2026-01-24
 - ✅ Completed Module 09: Testing (5 topics)
   - Added content for: why testing, unit testing, TDD, mocking, integration testing
+  - Each topic includes: README.md, examples.py, exercises.py, quiz.md
+
+### 2026-01-24
+- ✅ Completed Module 10: File & I/O (5 topics)
+  - Reading files, writing files, JSON, CSV, binary files
   - Each topic includes: README.md, examples.py, exercises.py, quiz.md
 
