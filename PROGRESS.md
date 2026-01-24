@@ -150,19 +150,19 @@ Track the implementation status of all modules in this repository.
 
 
 ### 13 - Modules & Packages
-- [ ] README.md
-- [ ] 01_imports/
-- [ ] 02_creating_modules/
-- [ ] 03_packages/
-- [ ] 04_virtual_environments/
-- [ ] 05_dependency_management/
+- [x] README.md
+- [x] 01_imports/
+- [x] 02_creating_modules/
+- [x] 03_packages/
+- [x] 04_virtual_environments/
+- [x] 05_dependency_management/
 
 ### 14 - Debugging
-- [ ] README.md
-- [ ] 01_print_debugging/
-- [ ] 02_using_debuggers/
-- [ ] 03_reading_tracebacks/
-- [ ] 04_common_bugs/
+- [x] README.md
+- [x] 01_print_debugging/
+- [x] 02_using_debuggers/
+- [x] 03_reading_tracebacks/
+- [x] 04_common_bugs/
 
 ### 15 - Version Control
 - [ ] README.md
@@ -203,10 +203,10 @@ Track the implementation status of all modules in this repository.
 | Phase 1: Core Foundation | 🟢 Complete | 30/30 |
 | Phase 2: Paradigms & Principles | 🟢 In Progress | 28/28 |
 | Phase 3: Professional Skills | 🟢 In Progress | 25/25 |
-| Phase 4: Advanced Concepts | 🟢 In Progress | 6/22 |
+| Phase 4: Advanced Concepts | 🟢 In Progress | 17/22 |
 | Phase 5: Practice Materials | 🔴 Not Started | 0/12 |
 
-**Total Progress:** 69/120 items (58%)
+**Total Progress:** 80/120 items (67%)
 
 
 ---
@@ -260,6 +260,14 @@ Track the implementation status of all modules in this repository.
   - Each topic includes: README.md, examples.py, exercises.py, quiz.md
 
 ### 2026-01-24
+- ✅ Completed Module 14: Debugging (4 topics, 17 files)
+  - Print debugging, using debuggers (pdb), reading tracebacks, common bugs
+  - Each topic includes: README.md, examples.py, exercises.py, quiz.md
+
+- ✅ Completed Module 13: Modules & Packages (5 topics, 21 files)
+  - Imports, creating modules, packages, virtual environments, dependency management
+  - Each topic includes: README.md, examples.py, exercises.py, quiz.md
+
 - ✅ Completed Module 12: Concurrency (5 topics, 21 files)
   - Threads basics, synchronization, async/await, race conditions, deadlocks
   - Each topic includes: README.md, examples.py, exercises.py, quiz.md
