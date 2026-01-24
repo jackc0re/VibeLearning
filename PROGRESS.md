@@ -141,12 +141,13 @@ Track the implementation status of all modules in this repository.
 ## Phase 4: Advanced Concepts
 
 ### 12 - Concurrency
-- [ ] README.md
-- [ ] 01_threads_basics/
-- [ ] 02_synchronization/
-- [ ] 03_async_programming/
-- [ ] 04_race_conditions/
-- [ ] 05_deadlocks/
+- [x] README.md
+- [x] 01_threads_basics/
+- [x] 02_synchronization/
+- [x] 03_async_programming/
+- [x] 04_race_conditions/
+- [x] 05_deadlocks/
+
 
 ### 13 - Modules & Packages
 - [ ] README.md
@@ -202,10 +203,11 @@ Track the implementation status of all modules in this repository.
 | Phase 1: Core Foundation | 🟢 Complete | 30/30 |
 | Phase 2: Paradigms & Principles | 🟢 In Progress | 28/28 |
 | Phase 3: Professional Skills | 🟢 In Progress | 25/25 |
-| Phase 4: Advanced Concepts | 🔴 Not Started | 0/22 |
+| Phase 4: Advanced Concepts | 🟢 In Progress | 6/22 |
 | Phase 5: Practice Materials | 🔴 Not Started | 0/12 |
 
-**Total Progress:** 63/120 items (52%)
+**Total Progress:** 69/120 items (58%)
+
 
 ---
 
@@ -256,4 +258,10 @@ Track the implementation status of all modules in this repository.
 - ✅ Completed Module 10: File & I/O (5 topics)
   - Reading files, writing files, JSON, CSV, binary files
   - Each topic includes: README.md, examples.py, exercises.py, quiz.md
+
+### 2026-01-24
+- ✅ Completed Module 12: Concurrency (5 topics, 21 files)
+  - Threads basics, synchronization, async/await, race conditions, deadlocks
+  - Each topic includes: README.md, examples.py, exercises.py, quiz.md
+
 
