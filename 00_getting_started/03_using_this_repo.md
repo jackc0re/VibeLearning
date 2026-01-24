@@ -20,7 +20,7 @@ VibeLearning/
 │
 ├── exercises/          # Practice problems
 ├── projects/           # Complete projects to build
-└── resources/          # Cheatsheets, glossary, etc.
+└── Resources/          # Cheatsheets, glossary, etc.
 ```
 
 ---

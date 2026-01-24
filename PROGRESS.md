@@ -189,9 +189,16 @@ Track the implementation status of all modules in this repository.
 - [x] 04_data_analyzer/
 
 ### Resources
-- [ ] glossary.md
-- [ ] cheatsheets/
-- [ ] further_reading.md
+- [x] README.md
+- [x] glossary.md
+- [x] cheatsheets/
+  - [x] python_basics.md
+  - [x] data_structures.md
+  - [x] oop_cheatsheet.md
+  - [x] functional.md
+  - [x] file_io.md
+  - [x] algorithms.md
+- [x] further_reading.md
 
 ---
 
@@ -204,9 +211,9 @@ Track the implementation status of all modules in this repository.
 | Phase 2: Paradigms & Principles | 🟢 Complete | 28/28 |
 | Phase 3: Professional Skills | 🟢 Complete | 25/25 |
 | Phase 4: Advanced Concepts | 🟢 Complete | 22/22 |
-| Phase 5: Practice Materials | 🟢 Complete | 12/12 |
+| Phase 5: Practice Materials | 🟢 Complete | 15/15 |
 
-**Total Progress:** 120/120 items (100%) 🎉
+**Total Progress:** 126/126 items (100%) 🎉
 
 
 ---
@@ -282,10 +289,19 @@ Track the implementation status of all modules in this repository.
 
 ### 2026-01-24
 - ✅ Completed Exercises module (Practice Materials - Phase 5)
-  - Beginner exercises (8 files): variables, control flow, loops, functions, lists, strings, dictionaries, sets/tuples
-  - Intermediate exercises: OOP, functional programming, algorithms, data structures, error handling, file I/O, design patterns, testing
-  - Advanced exercises: system design, optimization, concurrency, real-world applications, testing, algorithms, data processing, security
-  - Each level includes comprehensive practice problems with solutions
+   - Beginner exercises (8 files): variables, control flow, loops, functions, lists, strings, dictionaries, sets/tuples
+   - Intermediate exercises: OOP, functional programming, algorithms, data structures, error handling, file I/O, design patterns, testing
+   - Advanced exercises: system design, optimization, concurrency, real-world applications, testing, algorithms, data processing, security
+   - Each level includes comprehensive practice problems with solutions
+
+### 2026-01-24
+- ✅ Completed Resources section (Practice Materials - Phase 5)
+   - Created comprehensive Resources/ directory with navigation README
+   - Built glossary.md with 50+ programming terms (A-Z)
+   - Compiled further_reading.md with curated resources by module
+   - Created 6 themed cheatsheets: python_basics, data_structures, oop, functional, file_io, algorithms
+   - Each resource designed for quick reference and continued learning
+
 
 
 
