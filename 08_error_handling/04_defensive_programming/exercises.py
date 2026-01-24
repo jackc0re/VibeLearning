@@ -17,8 +17,9 @@ def exercise_1_validate_score(score):
     Raise ValueError if score is not between 0 and 100 inclusive.
     Return score when valid.
     """
-    # YOUR CODE HERE
-    pass
+    if not (0 <= score <= 100):
+        raise ValueError("score must be between 0 and 100")
+    return score
 
 
 # =============================================================================
@@ -33,8 +34,11 @@ def exercise_2_apply_discount(price, percent):
     - percent must be between 0 and 100
     Return the discounted price.
     """
-    # YOUR CODE HERE
-    pass
+    if price < 0:
+        raise ValueError("price must be >= 0")
+    if not (0 <= percent <= 100):
+        raise ValueError("percent must be between 0 and 100")
+    return price * (1 - (percent / 100))
 
 
 # =============================================================================
@@ -47,8 +51,8 @@ def exercise_3_average(values):
     Use an assertion to ensure values is not empty.
     Return the average.
     """
-    # YOUR CODE HERE
-    pass
+    assert values, "values must not be empty"
+    return sum(values) / len(values)
 
 
 # =============================================================================
@@ -65,64 +69,64 @@ def run_tests():
     print("\nExercise 1: Validate Score")
     try:
         result = exercise_1_validate_score(88)
-        status = "✓" if result == 88 else "✗"
+        status = "PASS" if result == 88 else "FAIL"
         if result != 88:
             all_passed = False
         print(f"  {status} valid score -> {result}")
     except Exception as exc:
         all_passed = False
-        print(f"  ✗ raised unexpectedly: {exc}")
+        print(f"  FAIL raised unexpectedly: {exc}")
 
     try:
         exercise_1_validate_score(120)
         all_passed = False
-        print("  ✗ did not raise for invalid score")
+        print("  FAIL did not raise for invalid score")
     except ValueError:
-        print("  ✓ raises for invalid score")
+        print("  PASS raises for invalid score")
 
     # Exercise 2
     print("\nExercise 2: Apply Discount")
     try:
         result = exercise_2_apply_discount(100, 10)
-        status = "✓" if result == 90 else "✗"
+        status = "PASS" if result == 90 else "FAIL"
         if result != 90:
             all_passed = False
         print(f"  {status} discounted price -> {result}")
     except Exception as exc:
         all_passed = False
-        print(f"  ✗ raised unexpectedly: {exc}")
+        print(f"  FAIL raised unexpectedly: {exc}")
 
     try:
         exercise_2_apply_discount(-5, 10)
         all_passed = False
-        print("  ✗ did not raise for negative price")
+        print("  FAIL did not raise for negative price")
     except ValueError:
-        print("  ✓ raises for negative price")
+        print("  PASS raises for negative price")
 
     # Exercise 3
     print("\nExercise 3: Average")
     try:
         result = exercise_3_average([2, 4])
-        status = "✓" if result == 3 else "✗"
+        status = "PASS" if result == 3 else "FAIL"
         if result != 3:
             all_passed = False
         print(f"  {status} average -> {result}")
     except Exception as exc:
         all_passed = False
-        print(f"  ✗ raised unexpectedly: {exc}")
+        print(f"  FAIL raised unexpectedly: {exc}")
 
     try:
         exercise_3_average([])
         all_passed = False
-        print("  ✗ did not assert for empty list")
+        print("  FAIL did not assert for empty list")
     except AssertionError:
-        print("  ✓ asserts for empty list")
+        print("  PASS asserts for empty list")
 
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print("All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("Some tests failed. Keep practicing!")
     print("=" * 50)
 
 

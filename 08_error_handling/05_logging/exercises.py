@@ -19,8 +19,11 @@ def exercise_1_configure_logger():
     Configure basic logging to INFO level with format:
     "LEVEL | message". Return the logger named "exercise".
     """
-    # YOUR CODE HERE
-    pass
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(levelname)s | %(message)s",
+    )
+    return logging.getLogger("exercise")
 
 
 # =============================================================================
@@ -33,8 +36,11 @@ def exercise_2_log_levels(logger):
     Using the provided logger, log one message at each level:
     DEBUG, INFO, WARNING, ERROR, CRITICAL.
     """
-    # YOUR CODE HERE
-    pass
+    logger.debug("debug message")
+    logger.info("info message")
+    logger.warning("warning message")
+    logger.error("error message")
+    logger.critical("critical message")
 
 
 # =============================================================================
@@ -47,8 +53,11 @@ def exercise_3_log_exception(logger):
     Trigger a ValueError and log it with logger.exception().
     Return True if the exception was handled.
     """
-    # YOUR CODE HERE
-    pass
+    try:
+        int("not-a-number")
+    except ValueError:
+        logger.exception("conversion failed")
+        return True
 
 
 # =============================================================================
@@ -65,41 +74,41 @@ def run_tests():
     print("\nExercise 1: Configure Logger")
     try:
         logger = exercise_1_configure_logger()
-        status = "✓" if isinstance(logger, logging.Logger) else "✗"
+        status = "PASS" if isinstance(logger, logging.Logger) else "FAIL"
         if not isinstance(logger, logging.Logger):
             all_passed = False
         print(f"  {status} logger instance -> {logger}")
     except Exception as exc:
         all_passed = False
-        print(f"  ✗ raised unexpectedly: {exc}")
+        print(f"  FAIL raised unexpectedly: {exc}")
         logger = logging.getLogger("exercise")
 
     # Exercise 2
     print("\nExercise 2: Log Levels")
     try:
         exercise_2_log_levels(logger)
-        print("  ✓ logged all levels")
+        print("  PASS logged all levels")
     except Exception as exc:
         all_passed = False
-        print(f"  ✗ raised unexpectedly: {exc}")
+        print(f"  FAIL raised unexpectedly: {exc}")
 
     # Exercise 3
     print("\nExercise 3: Log Exception")
     try:
         result = exercise_3_log_exception(logger)
-        status = "✓" if result is True else "✗"
+        status = "PASS" if result is True else "FAIL"
         if result is not True:
             all_passed = False
         print(f"  {status} exception handled -> {result}")
     except Exception as exc:
         all_passed = False
-        print(f"  ✗ raised unexpectedly: {exc}")
+        print(f"  FAIL raised unexpectedly: {exc}")
 
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print("All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("Some tests failed. Keep practicing!")
     print("=" * 50)
 
 
