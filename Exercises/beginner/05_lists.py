@@ -44,16 +44,20 @@ Given a list, extract:
 numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # Your code below:
-first_three =  # First 3 elements
-last_three =  # Last 3 elements
-every_second =  # Every second element
-reversed_list =  # Reversed list
+first_three = None  # First 3 elements
+last_three = None  # Last 3 elements
+every_second = None  # Every second element
+reversed_list = None  # Reversed list
 
 print(f"Original: {numbers}")
-print(f"First three: {first_three}")
-print(f"Last three: {last_three}")
-print(f"Every second: {every_second}")
-print(f"Reversed: {reversed_list}")
+if first_three is not None:
+    print(f"First three: {first_three}")
+if last_three is not None:
+    print(f"Last three: {last_three}")
+if every_second is not None:
+    print(f"Every second: {every_second}")
+if reversed_list is not None:
+    print(f"Reversed: {reversed_list}")
 
 
 # =============================================================================
@@ -69,9 +73,10 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 target = 7
 
 # Your code below:
-index =  # Find index of target
+index = None  # Find index of target
 print(f"List: {numbers}")
-print(f"Index of {target}: {index}")
+if index is not None:
+    print(f"Index of {target}: {index}")
 
 
 # =============================================================================
@@ -85,9 +90,10 @@ Remove duplicates from a list while preserving order.
 numbers = [1, 2, 2, 3, 4, 4, 4, 5, 1, 6, 7, 7]
 
 # Your code below:
-unique_numbers =  # Remove duplicates, preserve order
+unique_numbers = None  # Remove duplicates, preserve order
 print(f"Original: {numbers}")
-print(f"Unique: {unique_numbers}")
+if unique_numbers is not None:
+    print(f"Unique: {unique_numbers}")
 
 
 # =============================================================================
@@ -103,9 +109,10 @@ numbers = [1, 2, 3, 4, 5]
 n = 2
 
 # Your code below:
-rotated =  # Rotate list by n positions
+rotated = None  # Rotate list by n positions
 print(f"Original: {numbers}")
-print(f"Rotated by {n}: {rotated}")
+if rotated is not None:
+    print(f"Rotated by {n}: {rotated}")
 
 
 # =============================================================================
@@ -120,10 +127,11 @@ list1 = [1, 3, 5, 7, 9]
 list2 = [2, 4, 6, 8, 10]
 
 # Your code below:
-merged =  # Merge two sorted lists
+merged = None  # Merge two sorted lists
 print(f"List 1: {list1}")
 print(f"List 2: {list2}")
-print(f"Merged: {merged}")
+if merged is not None:
+    print(f"Merged: {merged}")
 
 
 # =============================================================================
@@ -138,10 +146,11 @@ list1 = [1, 2, 3, 4, 5]
 list2 = [4, 5, 6, 7, 8]
 
 # Your code below:
-common =  # Find common elements
+common = None  # Find common elements
 print(f"List 1: {list1}")
 print(f"List 2: {list2}")
-print(f"Common: {common}")
+if common is not None:
+    print(f"Common: {common}")
 
 
 # =============================================================================
@@ -155,9 +164,10 @@ Flatten a nested list into a single-level list.
 nested = [[1, 2], [3, 4], [5, 6, 7], [8, 9, 10]]
 
 # Your code below:
-flat =  # Flatten the nested list
+flat = None  # Flatten the nested list
 print(f"Nested: {nested}")
-print(f"Flattened: {flat}")
+if flat is not None:
+    print(f"Flattened: {flat}")
 
 
 # =============================================================================
@@ -171,12 +181,14 @@ Partition a list into even and odd numbers.
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # Your code below:
-evens =  # Even numbers
-odds =  # Odd numbers
+evens = None  # Even numbers
+odds = None  # Odd numbers
 
 print(f"Original: {numbers}")
-print(f"Evens: {evens}")
-print(f"Odds: {odds}")
+if evens is not None:
+    print(f"Evens: {evens}")
+if odds is not None:
+    print(f"Odds: {odds}")
 
 
 # =============================================================================
@@ -190,9 +202,10 @@ Find the second largest element in a list.
 numbers = [1, 5, 2, 8, 3, 9, 4, 7, 6]
 
 # Your code below:
-second_largest =  # Find second largest element
+second_largest = None  # Find second largest element
 print(f"List: {numbers}")
-print(f"Second largest: {second_largest}")
+if second_largest is not None:
+    print(f"Second largest: {second_largest}")
 
 
 # =============================================================================

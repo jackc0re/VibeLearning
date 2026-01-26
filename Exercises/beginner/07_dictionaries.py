@@ -64,14 +64,14 @@ Create a new dictionary from a list, where:
 """
 
 # Your code below:
-squares =  # Dictionary comprehension
+squares = {}  # Dictionary comprehension
 print(f"Squares: {squares}")
 
 
 # =============================================================================
 # EXERCISE 7.4: Merge Dictionaries
 # =============================================================================
-print("\n--- Exercise 7.4: Merge Dictionaries ---"""
+print("\n--- Exercise 7.4: Merge Dictionaries ---")
 """
 Merge two dictionaries.
 """
@@ -80,7 +80,7 @@ dict1 = {"a": 1, "b": 2, "c": 3}
 dict2 = {"c": 4, "d": 5, "e": 6}
 
 # Your code below:
-merged =  # Merge dictionaries
+merged = None  # Merge dictionaries
 print(f"Dict 1: {dict1}")
 print(f"Dict 2: {dict2}")
 print(f"Merged: {merged}")
@@ -89,7 +89,7 @@ print(f"Merged: {merged}")
 # =============================================================================
 # EXERCISE 7.5: Count Words
 # =============================================================================
-print("\n--- Exercise 7.5: Count Words ---"""
+print("\n--- Exercise 7.5: Count Words ---")
 """
 Count the frequency of each word in a sentence.
 """
@@ -97,7 +97,7 @@ Count the frequency of each word in a sentence.
 text = "the quick brown fox jumps over the lazy dog the fox"
 
 # Your code below:
-word_counts =  # Dictionary of word counts
+word_counts = {}  # Dictionary of word counts
 
 print(f"Text: {text}")
 print("Word counts:")
@@ -108,7 +108,7 @@ for word, count in sorted(word_counts.items()):
 # =============================================================================
 # EXERCISE 7.6: Find Keys by Value
 # =============================================================================
-print("\n--- Exercise 7.6: Find Keys by Value ---"""
+print("\n--- Exercise 7.6: Find Keys by Value ---")
 """
 Find all keys that have a specific value.
 """
@@ -117,7 +117,7 @@ scores = {"Alice": 95, "Bob": 87, "Charlie": 95, "David": 82, "Eve": 95}
 target_score = 95
 
 # Your code below:
-top_scorers =  # Keys with target value
+top_scorers = None  # Keys with target value
 
 print(f"Scores: {scores}")
 print(f"Students with score {target_score}: {top_scorers}")
@@ -126,7 +126,7 @@ print(f"Students with score {target_score}: {top_scorers}")
 # =============================================================================
 # EXERCISE 7.7: Sort Dictionary by Value
 # =============================================================================
-print("\n--- Exercise 7.7: Sort by Value ---"""
+print("\n--- Exercise 7.7: Sort by Value ---")
 """
 Sort a dictionary by its values.
 """
@@ -134,7 +134,7 @@ Sort a dictionary by its values.
 scores = {"Alice": 95, "Bob": 87, "Charlie": 95, "David": 82}
 
 # Your code below:
-sorted_by_value =  # Dictionary sorted by values
+sorted_by_value = None  # Dictionary sorted by values
 
 print(f"Original: {scores}")
 print(f"Sorted by value: {sorted_by_value}")
@@ -143,7 +143,7 @@ print(f"Sorted by value: {sorted_by_value}")
 # =============================================================================
 # EXERCISE 7.8: Nested Dictionary Access
 # =============================================================================
-print("\n--- Exercise 7.8: Nested Dictionary ---"""
+print("\n--- Exercise 7.8: Nested Dictionary ---")
 """
 Access nested dictionary values safely.
 """
@@ -151,17 +151,14 @@ Access nested dictionary values safely.
 data = {
     "user": {
         "name": "Alice",
-        "contact": {
-            "email": "alice@example.com",
-            "phone": "123-456-7890"
-        }
+        "contact": {"email": "alice@example.com", "phone": "123-456-7890"},
     }
 }
 
 # Your code below:
-email =  # Get email safely
-phone =  # Get phone safely
-address =  # Get address safely (may not exist)
+email = None  # Get email safely
+phone = None  # Get phone safely
+address = None  # Get address safely (may not exist)
 
 print(f"Email: {email}")
 print(f"Phone: {phone}")
@@ -171,7 +168,7 @@ print(f"Address: {address}")
 # =============================================================================
 # EXERCISE 7.9: Invert Dictionary
 # =============================================================================
-print("\n--- Exercise 7.9: Invert Dictionary ---"""
+print("\n--- Exercise 7.9: Invert Dictionary ---")
 """
 Invert a dictionary (swap keys and values).
 If values are duplicates, store keys in a list.
@@ -180,7 +177,7 @@ If values are duplicates, store keys in a list.
 original = {"a": 1, "b": 2, "c": 3, "d": 2}
 
 # Your code below:
-inverted =  # Inverted dictionary
+inverted = None  # Inverted dictionary
 print(f"Original: {original}")
 print(f"Inverted: {inverted}")
 
@@ -188,7 +185,7 @@ print(f"Inverted: {inverted}")
 # =============================================================================
 # EXERCISE 7.10: Deep Copy
 # =============================================================================
-print("\n--- Exercise 7.10: Deep Copy ---"""
+print("\n--- Exercise 7.10: Deep Copy ---")
 """
 Create a deep copy of a nested dictionary and modify it.
 Verify the original is unchanged.
@@ -198,7 +195,8 @@ original = {"nested": {"value": 42}}
 
 # Your code below:
 import copy
-deep_copied =  # Deep copy
+
+deep_copied = None  # Deep copy
 # Modify the copy
 # Verify original is unchanged
 
@@ -241,7 +239,7 @@ for key, value in person.items():
 
 # SOLUTION 7.3
 print("\n--- Solution 7.3 ---")
-squares = {i: i ** 2 for i in range(1, 11)}
+squares = {i: i**2 for i in range(1, 11)}
 print(f"Squares: {squares}")
 
 # SOLUTION 7.4
@@ -286,10 +284,7 @@ print("\n--- Solution 7.8 ---")
 data = {
     "user": {
         "name": "Alice",
-        "contact": {
-            "email": "alice@example.com",
-            "phone": "123-456-7890"
-        }
+        "contact": {"email": "alice@example.com", "phone": "123-456-7890"},
     }
 }
 email = data.get("user", {}).get("contact", {}).get("email", "Not found")
@@ -314,6 +309,7 @@ print(f"Inverted: {inverted}")
 # SOLUTION 7.10
 print("\n--- Solution 7.10 ---")
 import copy
+
 original = {"nested": {"value": 42}}
 deep_copied = copy.deepcopy(original)
 deep_copied["nested"]["value"] = 99

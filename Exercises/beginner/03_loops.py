@@ -21,8 +21,9 @@ Example: n=3 -> 1² + 2² + 3² = 1 + 4 + 9 = 14
 n = 10
 
 # Your code below:
-sum_of_squares =  # Calculate sum of squares from 1 to n
-print(f"Sum of squares from 1 to {n}: {sum_of_squares}")
+sum_of_squares = None  # Calculate sum of squares from 1 to n
+if sum_of_squares is not None:
+    print(f"Sum of squares from 1 to {n}: {sum_of_squares}")
 
 
 # =============================================================================
@@ -37,8 +38,9 @@ Example: n=12 -> [1, 2, 3, 4, 6, 12]
 number = 24
 
 # Your code below:
-factors =  # List of all factors
-print(f"Factors of {number}: {factors}")
+factors = None  # List of all factors
+if factors is not None:
+    print(f"Factors of {number}: {factors}")
 
 
 # =============================================================================
@@ -54,8 +56,9 @@ Example: n=8 -> [0, 1, 1, 2, 3, 5, 8, 13]
 n = 10
 
 # Your code below:
-fibonacci =  # Generate first n Fibonacci numbers
-print(f"First {n} Fibonacci numbers: {fibonacci}")
+fibonacci = None  # Generate first n Fibonacci numbers
+if fibonacci is not None:
+    print(f"First {n} Fibonacci numbers: {fibonacci}")
 
 
 # =============================================================================
@@ -69,9 +72,10 @@ Reverse a string using a loop (not [::-1] or reversed()).
 text = "Hello, World!"
 
 # Your code below:
-reversed_text =  # Reverse the string using a loop
+reversed_text = None  # Reverse the string using a loop
 print(f"Original: {text}")
-print(f"Reversed: {reversed_text}")
+if reversed_text is not None:
+    print(f"Reversed: {reversed_text}")
 
 
 # =============================================================================
@@ -86,7 +90,7 @@ Ignore spaces and case.
 text = "Hello World"
 
 # Your code below:
-char_counts =  # Dictionary of character counts
+char_counts = {}  # Dictionary of character counts
 print(f"Character counts in '{text}':")
 for char, count in sorted(char_counts.items()):
     print(f"  '{char}': {count}")
@@ -112,7 +116,7 @@ print("   " + "----" * n)
 for i in range(1, n + 1):
     print(f"{i} |", end="")
     for j in range(1, n + 1):
-        print(f"{i*j:4}", end="")
+        print(f"{i * j:4}", end="")
     print()
 
 
@@ -129,7 +133,7 @@ Use a loop and break when found.
 numbers = [1, 2, 3, 4, 2, 5, 6, 3]
 
 # Your code below:
-first_duplicate =  # Find first duplicate
+first_duplicate = None  # Find first duplicate
 print(f"List: {numbers}")
 print(f"First duplicate: {first_duplicate}")
 
@@ -146,9 +150,10 @@ Use list comprehension.
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # Your code below:
-evens =  # Filter even numbers using list comprehension
+evens = None  # Filter even numbers using list comprehension
 print(f"Original: {numbers}")
-print(f"Evens: {evens}")
+if evens is not None:
+    print(f"Evens: {evens}")
 
 
 # =============================================================================
@@ -167,11 +172,12 @@ guesses = [50, 25, 35, 40, 42]
 max_attempts = 5
 
 # Your code below:
-result =  # "won" or "lost"
-attempts =  # Number of attempts made
+result = None  # "won" or "lost"
+attempts = None  # Number of attempts made
 print(f"Target: {target}")
 print(f"Guesses: {guesses}")
-print(f"Result: {result} after {attempts} attempts")
+if result is not None and attempts is not None:
+    print(f"Result: {result} after {attempts} attempts")
 
 
 # =============================================================================
@@ -186,8 +192,9 @@ start = 10
 end = 30
 
 # Your code below:
-primes =  # List of prime numbers in range
-print(f"Primes between {start} and {end}: {primes}")
+primes = None  # List of prime numbers in range
+if primes is not None:
+    print(f"Primes between {start} and {end}: {primes}")
 
 
 # =============================================================================
@@ -203,7 +210,7 @@ print("\n--- Solution 3.1 ---")
 n = 10
 sum_of_squares = 0
 for i in range(1, n + 1):
-    sum_of_squares += i ** 2
+    sum_of_squares += i**2
 print(f"Sum of squares from 1 to {n}: {sum_of_squares}")
 
 # SOLUTION 3.2
@@ -225,7 +232,7 @@ for i in range(n):
     elif i == 1:
         fibonacci.append(1)
     else:
-        fibonacci.append(fibonacci[i-1] + fibonacci[i-2])
+        fibonacci.append(fibonacci[i - 1] + fibonacci[i - 2])
 print(f"First {n} Fibonacci numbers: {fibonacci}")
 
 # SOLUTION 3.4
@@ -259,7 +266,7 @@ print("   " + "----" * n)
 for i in range(1, n + 1):
     print(f"{i} |", end="")
     for j in range(1, n + 1):
-        print(f"{i*j:4}", end="")
+        print(f"{i * j:4}", end="")
     print()
 
 # SOLUTION 3.7
@@ -310,7 +317,7 @@ primes = []
 for num in range(start, end + 1):
     if num > 1:
         is_prime = True
-        for divisor in range(2, int(num ** 0.5) + 1):
+        for divisor in range(2, int(num**0.5) + 1):
             if num % divisor == 0:
                 is_prime = False
                 break

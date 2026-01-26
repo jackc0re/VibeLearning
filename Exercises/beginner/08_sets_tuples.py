@@ -24,11 +24,11 @@ Given a tuple:
 point = (3, 4, 5)
 
 # Your code below:
-first =  # First element
-last =  # Last element
-length =  # Length
-count_4 =  # Count occurrences of 4
-index_5 =  # Index of 5
+first = None  # First element
+last = None  # Last element
+length = None  # Length
+count_4 = None  # Count occurrences of 4
+index_5 = None  # Index of 5
 
 print(f"Tuple: {point}")
 print(f"First: {first}")
@@ -41,7 +41,7 @@ print(f"Index of 5: {index_5}")
 # =============================================================================
 # EXERCISE 8.2: Tuple Unpacking
 # =============================================================================
-print("\n--- Exercise 8.2: Tuple Unpacking ---"""
+print("\n--- Exercise 8.2: Tuple Unpacking ---")
 """
 Unpack a tuple into variables.
 """
@@ -49,15 +49,16 @@ Unpack a tuple into variables.
 person = ("Alice", 25, "NYC", "Engineer")
 
 # Your code below:
-# Unpack into name, age, city, job
+name, age, city, job = None, None, None, None  # Unpack into name, age, city, job
 
-print(f"Name: {name}, Age: {age}, City: {city}, Job: {job}")
+if name is not None:
+    print(f"Name: {name}, Age: {age}, City: {city}, Job: {job}")
 
 
 # =============================================================================
 # EXERCISE 8.3: Tuple Immutability
 # =============================================================================
-print("\n--- Exercise 8.3: Tuple Immutability ---"""
+print("\n--- Exercise 8.3: Tuple Immutability ---")
 """
 Demonstrate tuple immutability.
 Try to modify a tuple and explain why it fails/works.
@@ -73,7 +74,7 @@ point = (1, 2, 3)
 # =============================================================================
 # EXERCISE 8.4: Named Tuple
 # =============================================================================
-print("\n--- Exercise 8.4: Named Tuple ---"""
+print("\n--- Exercise 8.4: Named Tuple ---")
 """
 Use collections.namedtuple for better readability.
 """
@@ -81,16 +82,17 @@ Use collections.namedtuple for better readability.
 from collections import namedtuple
 
 # Your code below:
-Point =  # Define a named tuple
-p =  # Create an instance
+Point = None  # Define a named tuple
+p = None  # Create an instance
 
-print(f"Point: ({p.x}, {p.y})")
+if p is not None:
+    print(f"Point: ({p.x}, {p.y})")
 
 
 # =============================================================================
 # EXERCISE 8.5: Set Basics
 # =============================================================================
-print("\n--- Exercise 8.5: Set Basics ---"""
+print("\n--- Exercise 8.5: Set Basics ---")
 """
 Given two sets:
 1. Union (all elements from both)
@@ -103,10 +105,10 @@ set_a = {1, 2, 3, 4, 5}
 set_b = {4, 5, 6, 7, 8}
 
 # Your code below:
-union =  # Union
-intersection =  # Intersection
-difference =  # Difference (A - B)
-symmetric_diff =  # Symmetric difference
+union = None  # Union
+intersection = None  # Intersection
+difference = None  # Difference (A - B)
+symmetric_diff = None  # Symmetric difference
 
 print(f"Set A: {set_a}")
 print(f"Set B: {set_b}")
@@ -119,7 +121,7 @@ print(f"Symmetric difference: {symmetric_diff}")
 # =============================================================================
 # EXERCISE 8.6: Set Operations
 # =============================================================================
-print("\n--- Exercise 8.6: Set Operations ---"""
+print("\n--- Exercise 8.6: Set Operations ---")
 """
 Perform set membership and modification operations.
 """
@@ -138,7 +140,7 @@ print(f"Modified set: {numbers}")
 # =============================================================================
 # EXERCISE 8.7: Set from List
 # =============================================================================
-print("\n--- Exercise 8.7: Remove Duplicates ---"""
+print("\n--- Exercise 8.7: Remove Duplicates ---")
 """
 Remove duplicates from a list using a set.
 Preserve order (optional challenge).
@@ -147,8 +149,8 @@ Preserve order (optional challenge).
 numbers = [1, 2, 2, 3, 4, 4, 4, 5, 1, 6, 7, 7]
 
 # Your code below:
-unique =  # Remove duplicates using set
-unique_ordered =  # Remove duplicates and preserve order
+unique = None  # Remove duplicates using set
+unique_ordered = None  # Remove duplicates and preserve order
 
 print(f"Original: {numbers}")
 print(f"Unique (unordered): {unique}")
@@ -158,7 +160,7 @@ print(f"Unique (ordered): {unique_ordered}")
 # =============================================================================
 # EXERCISE 8.8: Find Unique Elements
 # =============================================================================
-print("\n--- Exercise 8.8: Find Unique Elements ---"""
+print("\n--- Exercise 8.8: Find Unique Elements ---")
 """
 Find elements that appear in exactly one of two lists.
 """
@@ -167,23 +169,24 @@ list1 = [1, 2, 3, 4, 5]
 list2 = [4, 5, 6, 7, 8]
 
 # Your code below:
-unique =  # Elements in exactly one list
+unique = None  # Elements in exactly one list
 
 print(f"List 1: {list1}")
 print(f"List 2: {list2}")
-print(f"Unique to one list: {unique}")
+if unique is not None:
+    print(f"Unique to one list: {unique}")
 
 
 # =============================================================================
 # EXERCISE 8.9: Frozen Set
 # =============================================================================
-print("\n--- Exercise 8.9: Frozen Set ---"""
+print("\n--- Exercise 8.9: Frozen Set ---")
 """
 Use frozenset (immutable set) for hashable collections.
 """
 
 # Your code below:
-fs =  # Create a frozenset
+fs = None  # Create a frozenset
 # Try to modify it
 # Explain result
 
@@ -191,15 +194,16 @@ fs =  # Create a frozenset
 # =============================================================================
 # EXERCISE 8.10: Set Comprehension
 # =============================================================================
-print("\n--- Exercise 8.10: Set Comprehension ---"""
+print("\n--- Exercise 8.10: Set Comprehension ---")
 """
 Create a set using comprehension:
 - Squares of even numbers from 1-20
 """
 
 # Your code below:
-even_squares =  # Set comprehension
-print(f"Even squares: {even_squares}")
+even_squares = None  # Set comprehension
+if even_squares is not None:
+    print(f"Even squares: {even_squares}")
 
 
 # =============================================================================
@@ -243,6 +247,7 @@ except TypeError as e:
 # SOLUTION 8.4
 print("\n--- Solution 8.4 ---")
 from collections import namedtuple
+
 Point = namedtuple("Point", ["x", "y"])
 p = Point(3, 4)
 print(f"Point: ({p.x}, {p.y})")
@@ -304,7 +309,7 @@ except AttributeError as e:
 
 # SOLUTION 8.10
 print("\n--- Solution 8.10 ---")
-even_squares = {i ** 2 for i in range(1, 21) if i % 2 == 0}
+even_squares = {i**2 for i in range(1, 21) if i % 2 == 0}
 print(f"Even squares: {even_squares}")
 
 print("\n" + "=" * 50)

@@ -28,16 +28,20 @@ num_float = 3.14
 bool_str = "True"
 
 # Your code below:
-str_to_int =  # Convert num_str to integer
-int_to_float =  # Convert num_int to float
-float_to_str =  # Convert num_float to string
-str_to_bool =  # Convert bool_str to boolean
+str_to_int = None  # Convert num_str to integer
+int_to_float = None  # Convert num_int to float
+float_to_str = None  # Convert num_float to string
+str_to_bool = None  # Convert bool_str to boolean (hint: compare string to "True")
 
-# Test your conversions
-print(f"String '{num_str}' to integer: {str_to_int}")
-print(f"Integer {num_int} to float: {int_to_float}")
-print(f"Float {num_float} to string: '{float_to_str}'")
-print(f"String '{bool_str}' to boolean: {str_to_bool}")
+# Test your conversions (replace None with your answers)
+if str_to_int is not None:
+    print(f"String '{num_str}' to integer: {str_to_int}")
+if int_to_float is not None:
+    print(f"Integer {num_int} to float: {int_to_float}")
+if float_to_str is not None:
+    print(f"Float {num_float} to string: '{float_to_str}'")
+if str_to_bool is not None:
+    print(f"String '{bool_str}' to boolean: {str_to_bool}")
 
 
 # =============================================================================
@@ -59,8 +63,9 @@ age = 25
 city = "New York"
 
 # Your code below:
-greeting =  # Create formatted string
-print(greeting)
+greeting = None  # Create formatted string
+if greeting is not None:
+    print(greeting)
 
 
 # =============================================================================
@@ -79,15 +84,17 @@ price = 99.99
 discount_percent = 15  # 15%
 
 # Your code below:
-discount_amount =  # Calculate discount
-final_price =  # Calculate final price
-rounded_price =  # Round to 2 decimals
-currency_format =  # Format as $X.XX
+discount_amount = None  # Calculate discount
+final_price = None  # Calculate final price
+rounded_price = None  # Round to 2 decimals
+currency_format = None  # Format as $X.XX
 
 print(f"Original price: ${price}")
 print(f"Discount: {discount_percent}%")
-print(f"Discount amount: ${discount_amount:.2f}")
-print(f"Final price: {currency_format}")
+if discount_amount is not None:
+    print(f"Discount amount: ${discount_amount:.2f}")
+if currency_format is not None:
+    print(f"Final price: {currency_format}")
 
 
 # =============================================================================
@@ -105,16 +112,20 @@ Given a full name in the format "First Last":
 full_name = "John Doe"
 
 # Your code below:
-first_name =  # Extract first name
-last_name =  # Extract last name
-initials =  # Create initials
-reversed_name =  # Reverse the name
+first_name = None  # Extract first name
+last_name = None  # Extract last name
+initials = None  # Create initials
+reversed_name = None  # Reverse the name
 
 print(f"Full name: {full_name}")
-print(f"First name: {first_name}")
-print(f"Last name: {last_name}")
-print(f"Initials: {initials}")
-print(f"Reversed: {reversed_name}")
+if first_name is not None:
+    print(f"First name: {first_name}")
+if last_name is not None:
+    print(f"Last name: {last_name}")
+if initials is not None:
+    print(f"Initials: {initials}")
+if reversed_name is not None:
+    print(f"Reversed: {reversed_name}")
 
 
 # =============================================================================
@@ -129,6 +140,7 @@ Create a function that checks the type of a value and returns:
 - "boolean" for booleans
 - "unknown" for anything else
 """
+
 
 def get_type(value):
     """Return a string describing the type of value."""
@@ -209,6 +221,7 @@ print(f"Reversed: {reversed_name}")
 # SOLUTION 1.5
 print("\n--- Solution 1.5 ---")
 
+
 def get_type(value):
     if isinstance(value, int) and not isinstance(value, bool):
         return "integer"
@@ -220,6 +233,7 @@ def get_type(value):
         return "boolean"
     else:
         return "unknown"
+
 
 test_values = [42, 3.14, "hello", True, [1, 2, 3], {"key": "value"}]
 for val in test_values:

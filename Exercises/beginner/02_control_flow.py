@@ -27,7 +27,7 @@ Handle edge cases: scores outside 0-100 range.
 score = 85
 
 # Your code below:
-grade =  # Determine the grade
+grade = None  # Determine the grade
 if grade:
     print(f"Score: {score} -> Grade: {grade}")
 else:
@@ -49,8 +49,9 @@ Classify a person into age categories:
 age = 42
 
 # Your code below:
-category =  # Determine the category
-print(f"Age: {age} -> Category: {category}")
+category = None  # Determine the category
+if category is not None:
+    print(f"Age: {age} -> Category: {category}")
 
 
 # =============================================================================
@@ -65,8 +66,9 @@ Determine if a year is a leap year:
 year = 2024
 
 # Your code below:
-is_leap =  # True if leap year, False otherwise
-print(f"Year: {year} -> Leap year: {is_leap}")
+is_leap = None  # True if leap year, False otherwise
+if is_leap is not None:
+    print(f"Year: {year} -> Leap year: {is_leap}")
 
 
 # =============================================================================
@@ -87,13 +89,14 @@ Also classify the type:
 side1, side2, side3 = 3, 4, 5
 
 # Your code below:
-is_valid =  # True if valid triangle
-triangle_type =  # "equilateral", "isosceles", "scalene", or "invalid"
+is_valid = None  # True if valid triangle
+triangle_type = None  # "equilateral", "isosceles", "scalene", or "invalid"
 
 print(f"Sides: {side1}, {side2}, {side3}")
-print(f"Valid triangle: {is_valid}")
-if is_valid:
-    print(f"Type: {triangle_type}")
+if is_valid is not None:
+    print(f"Valid triangle: {is_valid}")
+    if is_valid:
+        print(f"Type: {triangle_type}")
 
 
 # =============================================================================
@@ -113,8 +116,9 @@ username = "user123"
 password = "secret"
 
 # Your code below:
-login_result =  # "success" or error message
-print(f"Login attempt: {login_result}")
+login_result = None  # "success" or error message
+if login_result is not None:
+    print(f"Login attempt: {login_result}")
 
 
 # =============================================================================
@@ -133,8 +137,9 @@ temp = 100
 direction = "C"  # C = Celsius to Fahrenheit, F = Fahrenheit to Celsius
 
 # Your code below:
-converted_temp =  # Convert the temperature
-print(f"{temp}° {direction} -> {converted_temp:.2f}°")
+converted_temp = None  # Convert the temperature
+if converted_temp is not None:
+    print(f"{temp}° {direction} -> {converted_temp:.2f}°")
 
 
 # =============================================================================
@@ -151,14 +156,17 @@ Check multiple properties of a number:
 number = 17
 
 # Your code below:
-sign =  # "positive", "negative", or "zero"
-parity =  # "even" or "odd"
-prime_status =  # "prime" or "composite" (for numbers > 1)
+sign = None  # "positive", "negative", or "zero"
+parity = None  # "even" or "odd"
+prime_status = None  # "prime" or "composite" (for numbers > 1)
 
 print(f"Number: {number}")
-print(f"Sign: {sign}")
-print(f"Parity: {parity}")
-print(f"Prime status: {prime_status}")
+if sign is not None:
+    print(f"Sign: {sign}")
+if parity is not None:
+    print(f"Parity: {parity}")
+if prime_status is not None:
+    print(f"Prime status: {prime_status}")
 
 
 # =============================================================================
@@ -219,10 +227,14 @@ print(f"Year: {year} -> Leap year: {is_leap}")
 print("\n--- Solution 2.4 ---")
 side1, side2, side3 = 3, 4, 5
 
-is_valid = (side1 > 0 and side2 > 0 and side3 > 0 and
-            side1 + side2 > side3 and
-            side1 + side3 > side2 and
-            side2 + side3 > side1)
+is_valid = (
+    side1 > 0
+    and side2 > 0
+    and side3 > 0
+    and side1 + side2 > side3
+    and side1 + side3 > side2
+    and side2 + side3 > side1
+)
 
 if is_valid:
     if side1 == side2 == side3:
@@ -261,9 +273,9 @@ temp = 100
 direction = "C"
 
 if direction.upper() == "C":
-    converted_temp = (temp * 9/5) + 32
+    converted_temp = (temp * 9 / 5) + 32
 elif direction.upper() == "F":
-    converted_temp = (temp - 32) * 5/9
+    converted_temp = (temp - 32) * 5 / 9
 else:
     converted_temp = None
     print("Invalid direction")
@@ -286,7 +298,7 @@ parity = "even" if number % 2 == 0 else "odd"
 
 if number > 1:
     is_prime = True
-    for i in range(2, int(number ** 0.5) + 1):
+    for i in range(2, int(number**0.5) + 1):
         if number % i == 0:
             is_prime = False
             break
