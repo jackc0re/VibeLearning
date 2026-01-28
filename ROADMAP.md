@@ -235,6 +235,21 @@ Each module includes:
 - Merging and conflict resolution
 - Collaborative workflows
 
+### 16 - Essential Libraries
+| ⏱️ Time | 📋 Prerequisites | 🎯 Level |
+|---------|------------------|----------|
+| 8-10 hours | Modules 01-10 | ⭐⭐⭐ |
+
+**What you'll learn:**
+- Collections module (Counter, defaultdict, namedtuple, deque)
+- Datetime manipulation and timezones
+- Itertools for efficient iteration
+- Functools (partial, lru_cache, reduce)
+- Pathlib for filesystem operations
+- Regular expressions for pattern matching
+- Advanced JSON and CSV handling
+- Hashing and secure random generation
+
 ---
 
 ## 🎯 Stage 7: Practice & Projects (Ongoing)
@@ -264,9 +279,10 @@ Build complete applications:
 | 4 | Weeks 8-10 | Design Principles, Patterns |
 | 5 | Weeks 11-14 | Professional Skills |
 | 6 | Weeks 15-18 | Advanced Concepts |
-| 7 | Ongoing | Practice & Projects |
+| 7 | Weeks 19-20 | Essential Libraries |
+| 8 | Ongoing | Practice & Projects |
 
-**Total estimated time:** ~18-20 weeks at 10-15 hours/week
+**Total estimated time:** ~20-22 weeks at 10-15 hours/week
 
 ---
 

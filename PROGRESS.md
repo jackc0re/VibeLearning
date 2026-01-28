@@ -171,6 +171,17 @@ Track the implementation status of all modules in this repository.
 - [x] 03_merging/
 - [x] 04_collaboration/
 
+### 16 - Essential Libraries
+- [x] README.md
+- [x] 01_collections_module/
+- [x] 02_datetime/
+- [x] 03_itertools/
+- [x] 04_functools/
+- [x] 05_pathlib/
+- [x] 06_regular_expressions/
+- [x] 07_json_csv_deep_dive/
+- [x] 08_hashlib_secrets/
+
 ---
 
 ## Phase 5: Practice Materials

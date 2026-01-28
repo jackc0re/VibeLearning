@@ -26,6 +26,7 @@ Welcome to VibeLearning — an exhaustive, beginner-friendly repository designed
 | **13 - Modules & Packages** | Imports, virtual environments |
 | **14 - Debugging** | Debuggers, tracebacks, common bugs |
 | **15 - Version Control** | Git fundamentals |
+| **16 - Essential Libraries** | Collections, datetime, itertools, pathlib, regex, JSON/CSV, hashing |
 
 Plus: **Exercises**, **Projects**, and **Resources**!
 
