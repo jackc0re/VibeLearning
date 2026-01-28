@@ -379,7 +379,7 @@ call_counter = 0
 
 def count_calls():
     """Count how many times this function is called."""
-    nonlocal call_counter
+    global call_counter
     call_counter += 1
 
 
