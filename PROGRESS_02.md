@@ -463,7 +463,12 @@ Answer these questions to verify understanding:
   - [x] 03_parsing_responses (README, examples, exercises, quiz)
   - [x] 04_building_simple_api (README, examples, exercises, quiz)
   - [x] 05_api_best_practices (README, examples, exercises, quiz)
-- [ ] Module 19: Data Processing
+- [x] Module 19: Data Processing & Databases
+  - [x] 01_sqlite_basics (README, examples, exercises, quiz)
+  - [x] 02_sql_fundamentals (README, examples, exercises, quiz)
+  - [x] 03_data_cleaning (README, examples, exercises, quiz)
+  - [x] 04_data_transformation (README, examples, exercises, quiz)
+  - [x] 05_generating_reports (README, examples, exercises, quiz)
 - [ ] Module 20: Web Basics
 
 ### Phase 2: New Projects
