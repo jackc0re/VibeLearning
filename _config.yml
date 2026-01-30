@@ -1,0 +1,77 @@
+# GitHub Pages Configuration for VibeLearning
+title: VibeLearning
+description: A comprehensive Python learning resource
+url: https://jackc0re.github.io
+baseurl: /VibeLearning
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: jekyll-theme-primer
+
+# Disable strict liquid errors
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false
+
+# Kramdown settings (markdown processor)
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  # Allow raw HTML in markdown
+  html_to_native: false
+
+# Include directories that start with numbers
+include:
+  - "00_getting_started"
+  - "01_foundations"
+  - "02_data_structures"
+  - "03_algorithms"
+  - "04_oop_concepts"
+  - "05_functional_programming"
+  - "06_software_design"
+  - "07_design_patterns"
+  - "08_error_handling"
+  - "09_testing"
+  - "10_file_io"
+  - "11_memory_performance"
+  - "12_concurrency"
+  - "13_modules_packages"
+  - "14_debugging"
+  - "15_version_control"
+  - "16_essential_libraries"
+  - "17_cs_fundamentals"
+  - "18_working_with_apis"
+  - "19_data_processing"
+  - "20_web_basics"
+  - "Exercises"
+  - "Projects"
+  - "Resources"
+
+# Exclude files that might cause issues
+exclude:
+  - "*.py"
+  - "*.sh"
+  - "AGENTS.md"
+  - "PROGRESS.md"
+  - "PROGRESS_02.md"
+  - "ROADMAP.md"
+  - ".gitignore"
+  - ".claude/"
+  - ".git/"
+
+# Plugins (GitHub Pages supported only)
+plugins:
+  - jekyll-relative-links
+  - jekyll-readme-index
+  - jekyll-default-layout
+
+# Default layout for markdown files
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default

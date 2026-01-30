@@ -1,0 +1,122 @@
+site_name: VibeLearning
+site_description: A comprehensive Python learning resource
+site_url: https://jackc0re.github.io/VibeLearning/
+repo_url: https://github.com/jackc0re/VibeLearning
+repo_name: jackc0re/VibeLearning
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+  - awesome-pages
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - tables
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: README.md
+  - Getting Started:
+    - 00_getting_started/README.md
+    - Python Setup: 00_getting_started/01_python_setup.md
+    - Running Code: 00_getting_started/02_running_code.md
+    - Using This Repo: 00_getting_started/03_using_this_repo.md
+  - Foundations:
+    - 01_foundations/README.md
+    - Variables & Types: 01_foundations/01_variables_and_types/README.md
+    - Operators: 01_foundations/02_operators/README.md
+    - Control Flow: 01_foundations/03_control_flow/README.md
+    - Loops: 01_foundations/04_loops/README.md
+    - Functions: 01_foundations/05_functions_basics/README.md
+    - Input/Output: 01_foundations/06_input_output/README.md
+  - Data Structures:
+    - 02_data_structures/README.md
+    - Lists & Arrays: 02_data_structures/01_lists_arrays/README.md
+    - Strings: 02_data_structures/02_strings/README.md
+    - Dictionaries: 02_data_structures/03_dictionaries_maps/README.md
+    - Sets: 02_data_structures/04_sets/README.md
+    - Tuples: 02_data_structures/05_tuples/README.md
+    - Stacks & Queues: 02_data_structures/06_stacks_queues/README.md
+    - Linked Lists: 02_data_structures/07_linked_lists/README.md
+    - Trees: 02_data_structures/08_trees/README.md
+    - Graphs: 02_data_structures/09_graphs/README.md
+    - Hash Tables: 02_data_structures/10_hash_tables/README.md
+  - Algorithms:
+    - 03_algorithms/README.md
+  - OOP Concepts:
+    - 04_oop_concepts/README.md
+  - Functional Programming:
+    - 05_functional_programming/README.md
+  - Software Design:
+    - 06_software_design/README.md
+  - Design Patterns:
+    - 07_design_patterns/README.md
+  - Error Handling:
+    - 08_error_handling/README.md
+  - Testing:
+    - 09_testing/README.md
+  - File I/O:
+    - 10_file_io/README.md
+  - Memory & Performance:
+    - 11_memory_performance/README.md
+  - Concurrency:
+    - 12_concurrency/README.md
+  - Modules & Packages:
+    - 13_modules_packages/README.md
+  - Debugging:
+    - 14_debugging/README.md
+  - Version Control:
+    - 15_version_control/README.md
+  - Essential Libraries:
+    - 16_essential_libraries/README.md
+  - CS Fundamentals:
+    - 17_cs_fundamentals/README.md
+  - Working with APIs:
+    - 18_working_with_apis/README.md
+  - Data Processing:
+    - 19_data_processing/README.md
+  - Web Basics:
+    - 20_web_basics/README.md
+  - Resources:
+    - Resources/glossary.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jackc0re/VibeLearning
