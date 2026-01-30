@@ -457,7 +457,12 @@ Answer these questions to verify understanding:
   - [x] 03_boolean_logic (README, examples, exercises, quiz)
   - [x] 04_memory_architecture (README, examples, exercises, quiz)
   - [x] 05_how_python_works (README, examples, exercises, quiz)
-- [ ] Module 18: Working with APIs
+- [x] Module 18: Working with APIs
+  - [x] 01_http_fundamentals (README, examples, exercises, quiz)
+  - [x] 02_making_requests (README, examples, exercises, quiz)
+  - [x] 03_parsing_responses (README, examples, exercises, quiz)
+  - [x] 04_building_simple_api (README, examples, exercises, quiz)
+  - [x] 05_api_best_practices (README, examples, exercises, quiz)
 - [ ] Module 19: Data Processing
 - [ ] Module 20: Web Basics
 
