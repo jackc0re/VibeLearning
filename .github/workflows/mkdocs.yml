@@ -54,6 +54,7 @@ jobs:
           site_name: VibeLearning
           site_description: A comprehensive Python learning resource
           site_url: https://jackc0re.github.io/VibeLearning/
+          docs_dir: .
           theme:
             name: material
             palette:
