@@ -5,7 +5,10 @@ repo_url: https://github.com/jackc0re/VibeLearning
 repo_name: jackc0re/VibeLearning
 
 # Use root directory as docs directory
-docs_dir: .
+# NOTE: For local testing, this needs to be a subdirectory
+# The production build uses docs_dir: . with a different approach
+docs_dir: docs
+site_dir: site
 
 # Exclude files that shouldn't be in the site
 exclude_docs: |
@@ -23,10 +26,12 @@ exclude_docs: |
 theme:
   name: material
   
-  # Custom Fonts - Inter for text, Fira Code for code
+  # Custom directory for template overrides
+  custom_dir: overrides
+  
+  # Custom Fonts - Inter for text (code font set in extra.css)
   font:
     text: Inter
-    code: Fira Code
   
   # Color Palette - Catppuccin Mocha
   palette:
@@ -47,15 +52,23 @@ theme:
   
   # Enhanced features
   features:
+    # Top navigation tabs (grouped by category)
     - navigation.tabs
-    - navigation.tabs.sticky
+    # Remove navigation.tabs.sticky to let tabs scroll away
+    # Sidebar features for better visibility
     - navigation.sections
     - navigation.expand
+    - navigation.indexes  # Section index pages clickable
+    - navigation.prune    # Only show current section expanded
+    # Utility features
     - navigation.top
     - navigation.footer
+    - navigation.path     # Breadcrumb navigation
+    # Search features
     - search.suggest
     - search.highlight
     - search.share
+    # Content features
     - content.code.copy
     - content.code.annotate
     - content.tooltips
@@ -90,29 +103,32 @@ markdown_extensions:
       alternate_style: true
   - attr_list
   - md_in_html
-  - pymdownx.emoji:
-      emoji_index: material.extensions.emoji.twemoji
-      emoji_generator: material.extensions.emoji.to_svg
+  # - pymdownx.emoji:
+  #     emoji_index: material.extensions.emoji.twemoji
+  #     emoji_generator: material.extensions.emoji.to_svg
   - pymdownx.tasklist:
       custom_checkbox: true
 
 nav:
   - Home: README.md
+  
   - Getting Started:
-    - 00_getting_started/README.md
+    - Overview: 00_getting_started/README.md
     - Python Setup: 00_getting_started/01_python_setup.md
     - Running Code: 00_getting_started/02_running_code.md
     - Using This Repo: 00_getting_started/03_using_this_repo.md
+  
   - Foundations:
-    - 01_foundations/README.md
+    - Overview: 01_foundations/README.md
     - Variables & Types: 01_foundations/01_variables_and_types/README.md
     - Operators: 01_foundations/02_operators/README.md
     - Control Flow: 01_foundations/03_control_flow/README.md
     - Loops: 01_foundations/04_loops/README.md
     - Functions: 01_foundations/05_functions_basics/README.md
     - Input/Output: 01_foundations/06_input_output/README.md
+  
   - Data Structures:
-    - 02_data_structures/README.md
+    - Overview: 02_data_structures/README.md
     - Lists & Arrays: 02_data_structures/01_lists_arrays/README.md
     - Strings: 02_data_structures/02_strings/README.md
     - Dictionaries: 02_data_structures/03_dictionaries_maps/README.md
@@ -123,44 +139,58 @@ nav:
     - Trees: 02_data_structures/08_trees/README.md
     - Graphs: 02_data_structures/09_graphs/README.md
     - Hash Tables: 02_data_structures/10_hash_tables/README.md
+  
   - Algorithms:
-    - 03_algorithms/README.md
+    - Overview: 03_algorithms/README.md
+    - Searching: 03_algorithms/01_searching/README.md
+    - Sorting: 03_algorithms/02_sorting/README.md
+    - Recursion: 03_algorithms/03_recursion/README.md
+    - Dynamic Programming: 03_algorithms/04_dynamic_programming/README.md
+    - Greedy Algorithms: 03_algorithms/05_greedy_algorithms/README.md
+    - Divide & Conquer: 03_algorithms/06_divide_and_conquer/README.md
+    - Graph Algorithms: 03_algorithms/07_graph_algorithms/README.md
+  
   - OOP Concepts:
-    - 04_oop_concepts/README.md
+    - Overview: 04_oop_concepts/README.md
+    - Classes & Objects: 04_oop_concepts/01_classes_and_objects/README.md
+    - Encapsulation: 04_oop_concepts/02_encapsulation/README.md
+    - Inheritance: 04_oop_concepts/03_inheritance/README.md
+    - Polymorphism: 04_oop_concepts/04_polymorphism/README.md
+    - Abstraction: 04_oop_concepts/05_abstraction/README.md
+    - Composition vs Inheritance: 04_oop_concepts/06_composition_vs_inheritance/README.md
+    - SOLID Principles: 04_oop_concepts/07_solid_principles/README.md
+  
   - Functional Programming:
-    - 05_functional_programming/README.md
-  - Software Design:
-    - 06_software_design/README.md
-  - Design Patterns:
-    - 07_design_patterns/README.md
-  - Error Handling:
-    - 08_error_handling/README.md
-  - Testing:
-    - 09_testing/README.md
-  - File I/O:
-    - 10_file_io/README.md
-  - Memory & Performance:
-    - 11_memory_performance/README.md
-  - Concurrency:
-    - 12_concurrency/README.md
-  - Modules & Packages:
-    - 13_modules_packages/README.md
-  - Debugging:
-    - 14_debugging/README.md
-  - Version Control:
-    - 15_version_control/README.md
-  - Essential Libraries:
-    - 16_essential_libraries/README.md
-  - CS Fundamentals:
-    - 17_cs_fundamentals/README.md
-  - Working with APIs:
-    - 18_working_with_apis/README.md
-  - Data Processing:
-    - 19_data_processing/README.md
-  - Web Basics:
-    - 20_web_basics/README.md
+    - Overview: 05_functional_programming/README.md
+    - Pure Functions: 05_functional_programming/01_pure_functions/README.md
+    - Immutability: 05_functional_programming/02_immutability/README.md
+    - Higher-Order Functions: 05_functional_programming/03_higher_order_functions/README.md
+    - Lambda Expressions: 05_functional_programming/04_lambda_expressions/README.md
+    - Map, Filter, Reduce: 05_functional_programming/05_map_filter_reduce/README.md
+    - Closures: 05_functional_programming/06_closures/README.md
+    - Decorators: 05_functional_programming/07_decorators/README.md
+  
+  - Advanced Topics:
+    - Software Design: 06_software_design/README.md
+    - Design Patterns: 07_design_patterns/README.md
+    - Error Handling: 08_error_handling/README.md
+    - Testing: 09_testing/README.md
+    - File I/O: 10_file_io/README.md
+    - Memory & Performance: 11_memory_performance/README.md
+    - Concurrency: 12_concurrency/README.md
+    - Modules & Packages: 13_modules_packages/README.md
+    - Debugging: 14_debugging/README.md
+    - Version Control: 15_version_control/README.md
+  
+  - Practical Skills:
+    - Essential Libraries: 16_essential_libraries/README.md
+    - CS Fundamentals: 17_cs_fundamentals/README.md
+    - Working with APIs: 18_working_with_apis/README.md
+    - Data Processing: 19_data_processing/README.md
+    - Web Basics: 20_web_basics/README.md
+  
   - Resources:
-    - Resources/glossary.md
+    - Glossary: Resources/glossary.md
 
 extra:
   social:

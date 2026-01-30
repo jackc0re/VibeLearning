@@ -1,4 +1,30 @@
+# IDE/Editor
 .opencode
 opencode
 openspec
-*__pycache__
+.vscode/
+.idea/
+
+# Python
+*__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# MkDocs Build Output
+site/
+docs/           # Local dev docs directory (copied from root)
+vibelearning-site/
+
+# Backup files
+*.bak
+*.swp
+*.swo
+*~
+mkdocs.yml.local

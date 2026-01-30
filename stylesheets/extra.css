@@ -34,10 +34,11 @@
    Rosewater: #f5e0dc  - Soft foreground
    ============================================ */
 
-:root {
+/* Use html selector for higher specificity to override MkDocs inline styles */
+html {
   /* Font families */
   --md-text-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --md-code-font: "Fira Code", "JetBrains Mono", "Roboto Mono", monospace;
+  --md-code-font: "JetBrains Mono", "Fira Code", "Roboto Mono", monospace;
   
   /* Catppuccin Mocha - Light mode (Latte-inspired for consistency) */
   --md-primary-fg-color: #8839ef;
@@ -216,9 +217,9 @@
    CODE BLOCKS - Mocha Style
    ============================================ */
 
-/* Inline code */
+/* Inline code - use !important to override MkDocs inline style */
 .md-typeset code {
-  font-family: var(--md-code-font);
+  font-family: "JetBrains Mono", "Fira Code", "Roboto Mono", monospace !important;
   font-size: 0.85em;
   font-feature-settings: "liga" 1, "calt" 1;
   background-color: var(--md-accent-fg-color--transparent);
@@ -246,7 +247,7 @@
 .md-typeset pre > code {
   border: none;
   background: transparent;
-  font-size: 0.8em;
+  font-size: 0.9em;
   line-height: 1.6;
   padding: 1.2em;
   display: block;
@@ -368,12 +369,12 @@
    ============================================ */
 
 .md-typeset table {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
   font-size: 0.9em;
-  border-collapse: separate;
-  border-spacing: 0;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
 }
 
 [data-md-color-scheme="slate"] .md-typeset table {
@@ -434,9 +435,52 @@
   color: #cba6f7;
 }
 
+/* Mobile menu button - IMPROVED VISIBILITY */
+.md-header__button {
+  color: #cdd6f4 !important;
+  opacity: 1 !important;
+  padding: 0.5em !important;
+  margin: 0 0.2em !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+.md-header__button:hover {
+  color: #cba6f7 !important;
+  background-color: rgba(203, 166, 247, 0.15) !important;
+}
+
+.md-header__button:focus {
+  outline: 2px solid #cba6f7 !important;
+  outline-offset: 2px !important;
+}
+
+/* Ensure menu icon is visible */
+.md-header__button svg {
+  fill: currentColor !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* Move palette/settings icon to the far right */
+.md-header__inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.md-header__button[for="__palette"] {
+  order: 100 !important;
+  margin-left: auto !important;
+}
+
+.md-header__source {
+  order: 99 !important;
+}
+
 /* Navigation sidebar */
 .md-nav {
-  font-size: 0.9em;
+  font-size: 0.85rem;
   background-color: transparent;
 }
 
@@ -446,7 +490,11 @@
   border-radius: 6px;
   transition: all 0.15s ease;
   margin: 0.1em 0;
-  color: #a6adc8;
+  color: #bac2de;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link {
+  color: #bac2de;
 }
 
 .md-nav__link:hover {
@@ -457,7 +505,8 @@
 .md-nav__link--active {
   font-weight: 600;
   color: #cba6f7;
-  background-color: rgba(203, 166, 247, 0.1);
+  background-color: rgba(203, 166, 247, 0.14);
+  box-shadow: inset 3px 0 0 rgba(203, 166, 247, 0.9);
 }
 
 /* Section headers in nav */
@@ -470,36 +519,64 @@
   letter-spacing: 0.05em;
 }
 
-/* Top tabs */
+/* Top tabs - IMPROVED VISIBILITY */
 .md-tabs {
-  background-color: #11111b;
-  border-bottom: 1px solid #313244;
+  background-color: #1e1e2e;
+  border-bottom: 1px solid #585b70;
 }
 
 .md-tabs__link {
   font-weight: 500;
-  opacity: 0.85;
+  opacity: 1;
   transition: all 0.2s ease;
-  color: #a6adc8;
+  color: #bac2de;
+  padding: 0.5em 0.8em;
+}
+
+/* Tabs can be dimmed by theme defaults; force readable contrast */
+[data-md-color-scheme="slate"] .md-tabs__link {
+  color: #bac2de !important;
+  opacity: 1 !important;
 }
 
 .md-tabs__link:hover {
-  opacity: 1;
-  color: #b4befe;
+  color: #cdd6f4;
+  background-color: rgba(180, 190, 254, 0.1);
+  border-radius: 6px;
 }
 
+.md-tabs__link:focus-visible {
+  outline: 2px solid rgba(203, 166, 247, 0.8);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Active tab - high specificity for dark mode */
+[data-md-color-scheme="slate"] .md-tabs__link--active,
 .md-tabs__link--active {
-  font-weight: 600;
-  opacity: 1;
-  color: #cba6f7;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+  color: #f5c2e7 !important;
+  background-color: rgba(203, 166, 247, 0.25) !important;
+  border-radius: 6px !important;
+  border: 2px solid #cba6f7 !important;
+  box-shadow: 0 0 10px rgba(203, 166, 247, 0.3) !important;
 }
 
-/* Back-to-top button */
-.md-top {
-  background: linear-gradient(135deg, #cba6f7 0%, #89b4fa 100%);
-  color: #1e1e2e;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+/* Back-to-top button - icon only, hide text */
+.md-top, .md-typeset .md-top, button.md-top {
+  background: linear-gradient(135deg, #cba6f7 0%, #89b4fa 100%) !important;
+  color: #1e1e2e !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  width: 48px !important;
+  height: 48px !important;
+  font-size: 0 !important;
+  overflow: hidden !important;
+}
+
+.md-top::before {
+  font-size: 24px !important;
 }
 
 .md-top:hover {
@@ -517,16 +594,24 @@
   background-color: #313244;
   border: 1px solid #45475a;
   color: #cdd6f4;
+  padding-left: 2.5em !important;
+  padding-right: 1em !important;
 }
 
 .md-search__input::placeholder {
-  color: #6c7086;
+  color: #a6adc8;
 }
 
 .md-search__input:hover,
 .md-search__input:focus {
   background-color: #45475a;
   border-color: #585b70;
+}
+
+/* Lighten the search icon */
+.md-search__icon {
+  color: #cdd6f4 !important;
+  opacity: 0.9 !important;
 }
 
 /* Search results */
@@ -671,7 +756,13 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-size: 0.85em;
+  font-size: 0.8rem;
+}
+
+/* TOC links - right sidebar */
+.md-nav--secondary .md-nav__link {
+  font-size: 0.8rem;
+  margin: 0.25em 0;
 }
 
 /* ============================================
@@ -770,4 +861,125 @@
   .md-typeset code {
     background-color: #e6e9ef;
   }
+}
+
+/* ============================================================================
+   LAYOUT FIXES - Width and Positioning Adjustments
+   ============================================================================ */
+
+/* Fix 1: Search bar width */
+.md-search {
+  max-width: 280px !important;
+  flex-grow: 0 !important;
+  width: auto !important;
+}
+
+.md-search__form {
+  min-width: 200px !important;
+  width: auto !important;
+}
+
+.md-search__input {
+  width: 100% !important;
+  min-width: 180px !important;
+  padding: 0.4em 1em 0.4em 2.5em !important;
+  font-size: 0.9rem !important;
+}
+
+/* Fix 2: Back-to-top button positioning and sizing */
+.md-top {
+  right: 2rem !important;
+  bottom: 2rem !important;
+  position: fixed !important;
+  z-index: 10 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Fix 3: Left sidebar width */
+.md-sidebar--primary {
+  width: 240px !important;
+}
+
+@media screen and (min-width: 769px) {
+  .md-sidebar--primary {
+    width: 240px !important;
+  }
+}
+
+/* Fix 4: Right sidebar (TOC) width */
+.md-sidebar--secondary {
+  width: 220px !important;
+}
+
+@media screen and (min-width: 1220px) {
+  .md-sidebar--secondary {
+    width: 220px !important;
+  }
+}
+
+/* Adjust sidebar font sizes to be smaller */
+.md-sidebar--primary .md-nav {
+  font-size: 0.8rem !important;
+}
+
+.md-sidebar--secondary .md-nav {
+  font-size: 0.75rem !important;
+}
+
+.md-sidebar--secondary .md-nav__title {
+  font-size: 0.75rem !important;
+}
+
+/* ============================================================================
+   STRONGER OVERRIDES - Higher Specificity Selectors
+   ============================================================================ */
+
+/* Search - target with body prefix for higher specificity */
+body .md-header .md-search {
+  max-width: 280px !important;
+  flex-grow: 0 !important;
+  width: auto !important;
+}
+
+body .md-header .md-search__form {
+  min-width: 200px !important;
+  width: auto !important;
+}
+
+body .md-header .md-search__input {
+  min-width: 180px !important;
+  padding: 0.4em 1em 0.4em 2.5em !important;
+  font-size: 0.9rem !important;
+}
+
+/* Back to top - target specifically within content */
+.md-content__inner .md-top,
+.md-typeset .md-top,
+.md-sidebar__scrollwrap ~ .md-top {
+  right: 2rem !important;
+  bottom: 2rem !important;
+  position: fixed !important;
+}
+
+/* Sidebar widths - use max-width as well */
+body .md-sidebar--primary,
+.md-sidebar--primary {
+  width: 240px !important;
+  max-width: 240px !important;
+  flex: 0 0 240px !important;
+}
+
+body .md-sidebar--secondary,
+.md-sidebar--secondary {
+  width: 220px !important;
+  max-width: 220px !important;
+  flex: 0 0 220px !important;
+}
+
+/* Target sidebar scrollwrap to prevent overflow */
+.md-sidebar--primary .md-sidebar__scrollwrap,
+.md-sidebar--secondary .md-sidebar__scrollwrap {
+  width: 100% !important;
 }
