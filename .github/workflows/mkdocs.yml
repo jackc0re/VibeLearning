@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,20 +32,16 @@ jobs:
       
       - name: Build site
         run: |
-          # Create a temporary build directory structure
           mkdir -p build/docs
           
-          # Copy all markdown files and directories to build/docs
           for dir in 00_* 01_* 02_* 03_* 04_* 05_* 06_* 07_* 08_* 09_* 10_* 11_* 12_* 13_* 14_* 15_* 16_* 17_* 18_* 19_* 20_* Exercises Projects Resources; do
             if [ -d "$dir" ]; then
               cp -r "$dir" build/docs/
             fi
           done
           
-          # Copy root markdown files
           cp *.md build/docs/ 2>/dev/null || true
           
-          # Create mkdocs config in build directory (sibling to docs)
           cat > build/mkdocs.yml << 'EOF'
           site_name: VibeLearning
           site_description: A comprehensive Python learning resource
@@ -77,15 +73,22 @@ jobs:
                 permalink: true
           EOF
           
-          # Build from build directory
           cd build
           mkdocs build
-          
-          # Move site to root
-          mv site ../site
+          mv site ../_site
       
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          path: ./_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
