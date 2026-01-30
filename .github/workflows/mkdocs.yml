@@ -51,26 +51,40 @@ jobs:
           theme:
             name: material
             palette:
+              # Light mode
               - scheme: default
                 primary: indigo
                 accent: indigo
+                toggle:
+                  icon: material/brightness-7
+                  name: Switch to dark mode
+              # Dark mode  
               - scheme: slate
                 primary: indigo
                 accent: indigo
+                toggle:
+                  icon: material/brightness-4
+                  name: Switch to light mode
             features:
               - navigation.sections
               - navigation.expand
               - search.suggest
+              - search.highlight
               - content.code.copy
+              - content.code.annotate
+              - content.action.edit
           plugins:
             - search
           markdown_extensions:
             - pymdownx.highlight:
                 anchor_linenums: true
             - pymdownx.superfences
+            - pymdownx.inlinehilite
             - tables
             - toc:
                 permalink: true
+            - admonition
+            - pymdownx.details
           EOF
           
           cd build
