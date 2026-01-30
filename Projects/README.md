@@ -22,6 +22,7 @@ Apply what you've learned by building complete, working applications. These proj
 | [02_todo_app](02_todo_app/) | ⭐⭐ | 4-6 hours | Modules 00-04, 10 |
 | [03_file_organizer](03_file_organizer/) | ⭐⭐ | 4-6 hours | Modules 00-02, 10, 13 |
 | [04_data_analyzer](04_data_analyzer/) | ⭐⭐⭐ | 6-8 hours | Modules 00-03, 10 |
+| [05_quiz_game](05_quiz_game/) | ⭐⭐ | 4-6 hours | Modules 00-04, 10 |
 
 ---
 
@@ -99,6 +100,26 @@ Apply what you've learned by building complete, working applications. These proj
 
 ---
 
+### 5. Quiz Game (`05_quiz_game/`)
+
+**What you'll build:** An interactive multiple-choice quiz game with categories, difficulty levels, and a leaderboard.
+
+**Features:**
+- Question bank loaded from JSON
+- Multiple categories and difficulty levels
+- Timer per question with time bonuses
+- Score tracking and leaderboards
+- Multiple game modes
+
+**What you'll learn:**
+- Object-oriented programming
+- JSON file handling
+- Timer functionality
+- Data persistence
+- Game state management
+
+---
+
 ## Project Workflow
 
 For each project, follow this approach:
@@ -143,10 +164,12 @@ Pick your project based on your current skill level:
 # Beginner: Start with Calculator
 cd 01_calculator
 
-# Intermediate: Try Todo App or File Organizer
+# Intermediate: Try Todo App, File Organizer, or Quiz Game
 cd 02_todo_app
 # or
 cd 03_file_organizer
+# or
+cd 05_quiz_game
 
 # Advanced: Tackle Data Analyzer
 cd 04_data_analyzer

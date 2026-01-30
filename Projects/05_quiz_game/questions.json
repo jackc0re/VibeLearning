@@ -1,0 +1,388 @@
+{
+  "questions": [
+    {
+      "question": "What is the capital of France?",
+      "options": ["London", "Berlin", "Paris", "Madrid"],
+      "correct_answer": 2,
+      "category": "Geography",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "options": ["Venus", "Mars", "Jupiter", "Saturn"],
+      "correct_answer": 1,
+      "category": "Science",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "Who painted the Mona Lisa?",
+      "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
+      "correct_answer": 2,
+      "category": "Arts",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "What is the largest ocean on Earth?",
+      "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+      "correct_answer": 3,
+      "category": "Geography",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "In which year did World War II end?",
+      "options": ["1943", "1944", "1945", "1946"],
+      "correct_answer": 2,
+      "category": "History",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "What is the chemical symbol for gold?",
+      "options": ["Go", "Gd", "Au", "Ag"],
+      "correct_answer": 2,
+      "category": "Science",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "Which is the longest river in the world?",
+      "options": ["Amazon River", "Nile River", "Yangtze River", "Mississippi River"],
+      "correct_answer": 1,
+      "category": "Geography",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "Who wrote 'Romeo and Juliet'?",
+      "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
+      "correct_answer": 1,
+      "category": "Arts",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "What is the smallest prime number?",
+      "options": ["0", "1", "2", "3"],
+      "correct_answer": 2,
+      "category": "Mathematics",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "Which element has the atomic number 1?",
+      "options": ["Helium", "Oxygen", "Hydrogen", "Carbon"],
+      "correct_answer": 2,
+      "category": "Science",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "What is the capital of Japan?",
+      "options": ["Seoul", "Beijing", "Tokyo", "Bangkok"],
+      "correct_answer": 2,
+      "category": "Geography",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "Who was the first President of the United States?",
+      "options": ["Thomas Jefferson", "John Adams", "George Washington", "Benjamin Franklin"],
+      "correct_answer": 2,
+      "category": "History",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "What is the square root of 144?",
+      "options": ["10", "11", "12", "14"],
+      "correct_answer": 2,
+      "category": "Mathematics",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "Which gas do plants absorb from the atmosphere?",
+      "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+      "correct_answer": 2,
+      "category": "Science",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "In which continent is Egypt located?",
+      "options": ["Asia", "Africa", "Europe", "Middle East"],
+      "correct_answer": 1,
+      "category": "Geography",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "What is the hardest natural substance on Earth?",
+      "options": ["Gold", "Iron", "Diamond", "Platinum"],
+      "correct_answer": 2,
+      "category": "Science",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "Who discovered penicillin?",
+      "options": ["Marie Curie", "Louis Pasteur", "Alexander Fleming", "Joseph Lister"],
+      "correct_answer": 2,
+      "category": "Science",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "What is the largest organ in the human body?",
+      "options": ["Heart", "Brain", "Liver", "Skin"],
+      "correct_answer": 3,
+      "category": "Science",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "Which country has the most natural lakes?",
+      "options": ["United States", "Canada", "Russia", "Brazil"],
+      "correct_answer": 1,
+      "category": "Geography",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "What does 'HTTP' stand for?",
+      "options": ["HyperText Transfer Protocol", "HighText Transfer Path", "HyperText Transmission Process", "HostText Transfer Protocol"],
+      "correct_answer": 0,
+      "category": "Technology",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "Which programming language was created by Guido van Rossum?",
+      "options": ["Java", "C++", "Python", "Ruby"],
+      "correct_answer": 2,
+      "category": "Technology",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "What year was the first iPhone released?",
+      "options": ["2005", "2006", "2007", "2008"],
+      "correct_answer": 2,
+      "category": "Technology",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "What is the value of Pi (π) to two decimal places?",
+      "options": ["3.12", "3.14", "3.16", "3.18"],
+      "correct_answer": 1,
+      "category": "Mathematics",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "What is 15% of 200?",
+      "options": ["25", "30", "35", "40"],
+      "correct_answer": 1,
+      "category": "Mathematics",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "If x + 5 = 12, what is x?",
+      "options": ["5", "6", "7", "8"],
+      "correct_answer": 2,
+      "category": "Mathematics",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "What is the next number in the sequence: 2, 4, 8, 16, ...?",
+      "options": ["24", "30", "32", "36"],
+      "correct_answer": 2,
+      "category": "Mathematics",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "Which ancient wonder of the world still stands today?",
+      "options": ["Colossus of Rhodes", "Great Pyramid of Giza", "Hanging Gardens", "Lighthouse of Alexandria"],
+      "correct_answer": 1,
+      "category": "History",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "Who was the first woman to win a Nobel Prize?",
+      "options": ["Dorothy Hodgkin", "Marie Curie", "Rosalind Franklin", "Irene Joliot-Curie"],
+      "correct_answer": 1,
+      "category": "History",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "In which year did the Berlin Wall fall?",
+      "options": ["1987", "1988", "1989", "1990"],
+      "correct_answer": 2,
+      "category": "History",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "Which empire was ruled by Genghis Khan?",
+      "options": ["Roman Empire", "Ottoman Empire", "Mongol Empire", "Persian Empire"],
+      "correct_answer": 2,
+      "category": "History",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "What is the main function of the CPU in a computer?",
+      "options": ["Store data", "Process data", "Display graphics", "Connect to internet"],
+      "correct_answer": 1,
+      "category": "Technology",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "What does 'RAM' stand for?",
+      "options": ["Random Access Memory", "Read And Modify", "Rapid Action Module", "Remote Access Memory"],
+      "correct_answer": 0,
+      "category": "Technology",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "Who composed the 'Four Seasons'?",
+      "options": ["Johann Sebastian Bach", "Wolfgang Amadeus Mozart", "Antonio Vivaldi", "Ludwig van Beethoven"],
+      "correct_answer": 2,
+      "category": "Arts",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "Which art movement is Pablo Picasso associated with?",
+      "options": ["Impressionism", "Cubism", "Surrealism", "Renaissance"],
+      "correct_answer": 1,
+      "category": "Arts",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "What is the longest-running Broadway show?",
+      "options": ["The Lion King", "The Phantom of the Opera", "Chicago", "Cats"],
+      "correct_answer": 1,
+      "category": "Arts",
+      "difficulty": "Hard",
+      "points": 20
+    },
+    {
+      "question": "What is the capital of Australia?",
+      "options": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+      "correct_answer": 2,
+      "category": "Geography",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "Which desert is the largest in the world?",
+      "options": ["Sahara Desert", "Arabian Desert", "Gobi Desert", "Antarctic Desert"],
+      "correct_answer": 3,
+      "category": "Geography",
+      "difficulty": "Hard",
+      "points": 20
+    },
+    {
+      "question": "How many time zones does Russia have?",
+      "options": ["5", "9", "11", "15"],
+      "correct_answer": 2,
+      "category": "Geography",
+      "difficulty": "Hard",
+      "points": 20
+    },
+    {
+      "question": "What is the speed of light in vacuum (approximate)?",
+      "options": ["300,000 km/s", "150,000 km/s", "400,000 km/s", "250,000 km/s"],
+      "correct_answer": 0,
+      "category": "Science",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "What is the powerhouse of the cell?",
+      "options": ["Nucleus", "Mitochondria", "Ribosome", "Chloroplast"],
+      "correct_answer": 1,
+      "category": "Science",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "How many bones are in the adult human body?",
+      "options": ["206", "208", "210", "212"],
+      "correct_answer": 0,
+      "category": "Science",
+      "difficulty": "Hard",
+      "points": 20
+    },
+    {
+      "question": "What is the derivative of x²?",
+      "options": ["x", "2x", "x²", "2"],
+      "correct_answer": 1,
+      "category": "Mathematics",
+      "difficulty": "Hard",
+      "points": 20
+    },
+    {
+      "question": "What is the sum of angles in a triangle?",
+      "options": ["90°", "180°", "270°", "360°"],
+      "correct_answer": 1,
+      "category": "Mathematics",
+      "difficulty": "Easy",
+      "points": 10
+    },
+    {
+      "question": "Who wrote 'The Great Gatsby'?",
+      "options": ["Ernest Hemingway", "F. Scott Fitzgerald", "John Steinbeck", "William Faulkner"],
+      "correct_answer": 1,
+      "category": "Arts",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "What is the binary representation of decimal 5?",
+      "options": ["100", "101", "110", "111"],
+      "correct_answer": 1,
+      "category": "Technology",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "In which year did the Titanic sink?",
+      "options": ["1910", "1912", "1914", "1916"],
+      "correct_answer": 1,
+      "category": "History",
+      "difficulty": "Medium",
+      "points": 15
+    },
+    {
+      "question": "What is the smallest country in the world by area?",
+      "options": ["Monaco", "San Marino", "Vatican City", "Liechtenstein"],
+      "correct_answer": 2,
+      "category": "Geography",
+      "difficulty": "Hard",
+      "points": 20
+    },
+    {
+      "question": "What does 'API' stand for in programming?",
+      "options": ["Application Programming Interface", "Advanced Program Integration", "Automated Process Instruction", "Application Process Interface"],
+      "correct_answer": 0,
+      "category": "Technology",
+      "difficulty": "Medium",
+      "points": 15
+    }
+  ]
+}

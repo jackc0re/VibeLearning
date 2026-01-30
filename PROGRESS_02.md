@@ -477,7 +477,7 @@ Answer these questions to verify understanding:
   - [x] 05_forms_handling (README, examples, exercises, quiz)
 
 ### Phase 2: New Projects
-- [ ] Project 05: Quiz Game
+- [x] Project 05: Quiz Game
 - [ ] Project 06: Personal Journal
 - [ ] Project 07: Password Manager
 - [ ] Project 08: URL Shortener
