@@ -1,0 +1,574 @@
+/* ============================================================================
+   VibeLearning Custom Styles
+   Enhanced typography, colors, and readability for better learning experience
+   ============================================================================ */
+
+/* ============================================
+   TYPOGRAPHY - Improved Readability
+   ============================================ */
+
+:root {
+  /* Font families */
+  --md-text-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --md-code-font: "Fira Code", "Roboto Mono", "Consolas", monospace;
+  
+  /* Custom indigo palette */
+  --md-primary-fg-color: #4f46e5;
+  --md-primary-fg-color--light: #818cf8;
+  --md-primary-fg-color--dark: #3730a3;
+  --md-accent-fg-color: #6366f1;
+  --md-accent-fg-color--transparent: rgba(99, 102, 241, 0.1);
+  
+  /* Text colors */
+  --md-typeset-color: #1e293b;
+  --md-typeset-a-color: #4f46e5;
+  
+  /* Improved spacing and sizing */
+  --md-typeset-line-height: 1.75;
+  --md-typeset-font-size: 0.95rem;
+  --md-typeset-body-font-size: 0.95rem;
+}
+
+/* Dark mode color adjustments */
+[data-md-color-scheme="slate"] {
+  --md-typeset-color: #e2e8f0;
+  --md-typeset-a-color: #818cf8;
+  --md-default-bg-color: #0f172a;
+  --md-default-bg-color--light: #1e293b;
+  --md-default-bg-color--lighter: #334155;
+  --md-default-bg-color--lightest: #475569;
+}
+
+/* ============================================
+   HEADINGS - Better Visual Hierarchy
+   ============================================ */
+
+.md-typeset h1 {
+  font-weight: 700;
+  font-size: 2.4em;
+  letter-spacing: -0.025em;
+  color: var(--md-primary-fg-color);
+  margin-bottom: 0.8em;
+  margin-top: 0;
+  border-bottom: 2px solid var(--md-accent-fg-color--transparent);
+  padding-bottom: 0.3em;
+  line-height: 1.2;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  font-size: 1.6em;
+  letter-spacing: -0.015em;
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+  color: var(--md-typeset-color);
+  line-height: 1.3;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  font-size: 1.3em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: var(--md-typeset-color);
+  line-height: 1.3;
+}
+
+.md-typeset h4 {
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-top: 1.3em;
+  margin-bottom: 0.5em;
+  color: var(--md-typeset-color);
+}
+
+.md-typeset h5,
+.md-typeset h6 {
+  font-weight: 600;
+  font-size: 1em;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* ============================================
+   BODY TEXT - Enhanced Readability
+   ============================================ */
+
+.md-typeset {
+  font-feature-settings: "kern", "liga";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.md-typeset p {
+  margin-bottom: 1.1em;
+  text-align: left;
+}
+
+/* Better list styling */
+.md-typeset ul,
+.md-typeset ol {
+  margin-bottom: 1.2em;
+}
+
+.md-typeset li {
+  margin-bottom: 0.5em;
+  line-height: 1.7;
+}
+
+.md-typeset li > ul,
+.md-typeset li > ol {
+  margin-top: 0.5em;
+}
+
+/* Better link styling */
+.md-typeset a {
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.md-typeset a:hover {
+  border-bottom-color: var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color);
+}
+
+/* ============================================
+   CODE BLOCKS - Professional Styling
+   ============================================ */
+
+/* Inline code */
+.md-typeset code {
+  font-family: var(--md-code-font);
+  font-size: 0.85em;
+  font-feature-settings: "liga" 1, "calt" 1;
+  background-color: var(--md-accent-fg-color--transparent);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  color: #4f46e5;
+}
+
+[data-md-color-scheme="slate"] .md-typeset code {
+  color: #a5b4fc;
+  background-color: rgba(99, 102, 241, 0.15);
+}
+
+/* Code blocks */
+.md-typeset pre {
+  border-radius: 8px;
+  border: 1px solid var(--md-default-bg-color--lighter);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.md-typeset pre > code {
+  border: none;
+  background: transparent;
+  font-size: 0.8em;
+  line-height: 1.6;
+  padding: 1em;
+  display: block;
+}
+
+/* Code block language label */
+.md-typeset .highlight .filename {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  font-weight: 500;
+  font-size: 0.75em;
+  padding: 0.5em 1em;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: -1px;
+  font-family: var(--md-text-font);
+}
+
+/* Line numbers in code blocks */
+.md-typeset .highlight [data-linenos]::before {
+  color: var(--md-default-fg-color--lighter);
+  background-color: var(--md-default-bg-color--light);
+  padding-right: 1em;
+}
+
+/* Code highlighting tweaks */
+.md-typeset .highlight .hll {
+  background-color: rgba(99, 102, 241, 0.15);
+  display: block;
+}
+
+/* ============================================
+   ADMONITIONS - Beautiful Callouts
+   ============================================ */
+
+.md-typeset .admonition {
+  border-radius: 8px;
+  border-left-width: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: 1.5em 0;
+}
+
+.md-typeset .admonition-title {
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+  padding: 0.6em 1em;
+}
+
+.md-typeset .admonition-title::before {
+  margin-right: 0.5em;
+}
+
+/* Specific admonition colors */
+.md-typeset .admonition.tip {
+  border-left-color: #10b981;
+}
+
+.md-typeset .admonition.tip > .admonition-title {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.md-typeset .admonition.note {
+  border-left-color: #3b82f6;
+}
+
+.md-typeset .admonition.note > .admonition-title {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+}
+
+.md-typeset .admonition.info {
+  border-left-color: #06b6d4;
+}
+
+.md-typeset .admonition.info > .admonition-title {
+  background-color: rgba(6, 182, 212, 0.1);
+  color: #0891b2;
+}
+
+.md-typeset .admonition.warning {
+  border-left-color: #f59e0b;
+}
+
+.md-typeset .admonition.warning > .admonition-title {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+}
+
+.md-typeset .admonition.danger {
+  border-left-color: #ef4444;
+}
+
+.md-typeset .admonition.danger > .admonition-title {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   TABLES - Professional Data Display
+   ============================================ */
+
+.md-typeset table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 0.9em;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.md-typeset table thead {
+  background-color: var(--md-primary-fg-color);
+}
+
+.md-typeset table th {
+  color: white;
+  font-weight: 600;
+  padding: 0.8em 1em;
+  text-align: left;
+}
+
+.md-typeset table td {
+  padding: 0.7em 1em;
+  border-bottom: 1px solid var(--md-default-bg-color--lighter);
+}
+
+.md-typeset table tr:last-child td {
+  border-bottom: none;
+}
+
+.md-typeset table tbody tr:hover td {
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+.md-typeset table tbody tr:nth-child(even) {
+  background-color: var(--md-default-bg-color--lightest);
+}
+
+/* ============================================
+   NAVIGATION - Improved Sidebar & Header
+   ============================================ */
+
+/* Header styling */
+.md-header {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.md-header__title {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+/* Navigation sidebar */
+.md-nav {
+  font-size: 0.9em;
+}
+
+.md-nav__link {
+  font-weight: 400;
+  padding: 0.4em 0.8em;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  margin: 0.1em 0;
+}
+
+.md-nav__link:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+  color: var(--md-accent-fg-color);
+}
+
+.md-nav__link--active {
+  font-weight: 600;
+  color: var(--md-accent-fg-color);
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+/* Section headers in nav */
+.md-nav__item--section > .md-nav__link {
+  font-weight: 600;
+  color: var(--md-typeset-color);
+  margin-top: 0.8em;
+  font-size: 0.95em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Top tabs */
+.md-tabs {
+  background-color: var(--md-primary-fg-color--dark);
+}
+
+.md-tabs__link {
+  font-weight: 500;
+  opacity: 0.85;
+  transition: all 0.2s ease;
+}
+
+.md-tabs__link:hover {
+  opacity: 1;
+}
+
+.md-tabs__link--active {
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* Back-to-top button */
+.md-top {
+  background-color: var(--md-accent-fg-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.md-top:hover {
+  background-color: var(--md-accent-fg-color);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   SEARCH - Enhanced Styling
+   ============================================ */
+
+.md-search__input {
+  border-radius: 6px;
+  font-size: 0.9em;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.md-search__input:hover,
+.md-search__input:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Search results */
+.md-search-result__meta {
+  font-weight: 500;
+  color: var(--md-accent-fg-color);
+}
+
+.md-search-result__article {
+  padding: 0.8em 1em;
+  border-radius: 4px;
+}
+
+.md-search-result__article:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+/* ============================================
+   SPECIAL ELEMENTS
+   ============================================ */
+
+/* Blockquotes - styled nicely */
+.md-typeset blockquote {
+  border-left: 4px solid var(--md-accent-fg-color);
+  background: linear-gradient(90deg, var(--md-accent-fg-color--transparent) 0%, transparent 100%);
+  padding: 1em 1.2em;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  margin: 1.5em 0;
+}
+
+.md-typeset blockquote p {
+  margin: 0;
+  color: var(--md-typeset-color);
+}
+
+.md-typeset blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Horizontal rule */
+.md-typeset hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--md-default-bg-color--lighter) 20%, var(--md-default-bg-color--lighter) 80%, transparent 100%);
+  margin: 2.5em 0;
+}
+
+/* Task lists */
+.md-typeset .task-list-item {
+  list-style-type: none;
+}
+
+.md-typeset .task-list-control {
+  margin-right: 0.5em;
+}
+
+.md-typeset .task-list-control input[type="checkbox"] {
+  accent-color: var(--md-primary-fg-color);
+}
+
+/* Emoji sizing */
+.md-typeset .emojione,
+.md-typeset .twemoji {
+  height: 1.2em;
+  vertical-align: middle;
+}
+
+/* ============================================
+   HOME PAGE HERO - Gradient Title
+   ============================================ */
+
+.md-content__inner > h1:first-child {
+  text-align: center;
+  font-size: 2.8em;
+  margin-bottom: 0.5em;
+  background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-accent-fg-color) 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Hero subtitle styling */
+.md-content__inner > h1:first-child + p {
+  text-align: center;
+  font-size: 1.2em;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 2em;
+}
+
+/* ============================================
+   CONTENT FOOTER - Navigation
+   ============================================ */
+
+.md-footer__inner {
+  padding: 0.5em 0;
+}
+
+.md-footer__link {
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.md-footer__link:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+.md-footer__title {
+  font-weight: 500;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media screen and (max-width: 768px) {
+  .md-typeset {
+    font-size: 0.9rem;
+  }
+  
+  .md-typeset h1 {
+    font-size: 1.9em;
+  }
+  
+  .md-typeset h2 {
+    font-size: 1.4em;
+  }
+  
+  .md-typeset h3 {
+    font-size: 1.2em;
+  }
+  
+  .md-content__inner > h1:first-child {
+    font-size: 2.2em;
+  }
+  
+  .md-nav {
+    font-size: 0.95em;
+  }
+  
+  .md-search__input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Print styles */
+@media print {
+  .md-typeset {
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+  
+  .md-typeset h1 {
+    font-size: 24pt;
+  }
+  
+  .md-typeset h2 {
+    font-size: 18pt;
+  }
+  
+  .md-typeset code {
+    background-color: #f1f5f9;
+  }
+}

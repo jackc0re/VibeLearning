@@ -22,27 +22,48 @@ exclude_docs: |
 
 theme:
   name: material
+  
+  # Custom Fonts - Inter for text, Fira Code for code
+  font:
+    text: Inter
+    code: Fira Code
+  
+  # Color Palette - Modern indigo/slate
   palette:
+    # Light mode
     - scheme: default
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
+    # Dark mode
     - scheme: slate
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  
+  # Enhanced features
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
+    - navigation.top
+    - navigation.footer
     - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
     - content.code.annotate
+    - content.tooltips
+    - content.tabs.link
+
+# Custom CSS for better typography and design
+extra_css:
+  - stylesheets/extra.css
 
 plugins:
   - search
@@ -54,16 +75,26 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - tables
   - toc:
       permalink: true
+      title: On this page
   - admonition
   - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true
   - attr_list
   - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 nav:
   - Home: README.md

@@ -28,7 +28,7 @@ jobs:
       
       - name: Install MkDocs
         run: |
-          pip install mkdocs mkdocs-material pymdown-extensions
+          pip install mkdocs mkdocs-material pymdown-extensions mkdocs-minify-plugin
       
       - name: Build site
         run: |
@@ -42,14 +42,351 @@ jobs:
           
           cp *.md build/docs/ 2>/dev/null || true
           
+          mkdir -p build/docs/stylesheets
+          
+          cat > build/docs/stylesheets/extra.css << 'CSSEOF'
+          /* VibeLearning Custom Styles */
+          
+          /* ============================================
+             TYPOGRAPHY - Improved Readability
+             ============================================ */
+          
+          :root {
+            /* Font families */
+            --md-text-font: "Inter";
+            --md-code-font: "Fira Code";
+            
+            /* Custom colors */
+            --md-primary-fg-color: #4f46e5;
+            --md-primary-fg-color--light: #818cf8;
+            --md-primary-fg-color--dark: #3730a3;
+            --md-accent-fg-color: #6366f1;
+            --md-accent-fg-color--transparent: rgba(99, 102, 241, 0.1);
+            
+            /* Improved text colors */
+            --md-typeset-color: #1e293b;
+            --md-typeset-a-color: #4f46e5;
+            
+            /* Better line height for readability */
+            --md-typeset-line-height: 1.7;
+            --md-typeset-font-size: 0.95rem;
+          }
+          
+          /* Dark mode adjustments */
+          [data-md-color-scheme="slate"] {
+            --md-typeset-color: #e2e8f0;
+            --md-typeset-a-color: #818cf8;
+            --md-default-bg-color: #0f172a;
+            --md-default-bg-color--light: #1e293b;
+            --md-default-bg-color--lighter: #334155;
+            --md-default-bg-color--lightest: #475569;
+          }
+          
+          /* ============================================
+             HEADINGS - Better Hierarchy
+             ============================================ */
+          
+          .md-typeset h1 {
+            font-weight: 700;
+            font-size: 2.2em;
+            letter-spacing: -0.025em;
+            color: var(--md-primary-fg-color);
+            margin-bottom: 0.8em;
+            border-bottom: 2px solid var(--md-accent-fg-color--transparent);
+            padding-bottom: 0.3em;
+          }
+          
+          .md-typeset h2 {
+            font-weight: 600;
+            font-size: 1.6em;
+            letter-spacing: -0.015em;
+            margin-top: 1.5em;
+            margin-bottom: 0.6em;
+            color: var(--md-typeset-color);
+          }
+          
+          .md-typeset h3 {
+            font-weight: 600;
+            font-size: 1.25em;
+            margin-top: 1.3em;
+            margin-bottom: 0.5em;
+            color: var(--md-typeset-color);
+          }
+          
+          .md-typeset h4 {
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-top: 1.2em;
+            margin-bottom: 0.5em;
+          }
+          
+          /* ============================================
+             BODY TEXT - Improved Readability
+             ============================================ */
+          
+          .md-typeset {
+            font-feature-settings: "kern", "liga";
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+          }
+          
+          .md-typeset p {
+            margin-bottom: 1em;
+            text-align: left;
+            hyphens: auto;
+          }
+          
+          /* Better list styling */
+          .md-typeset ul,
+          .md-typeset ol {
+            margin-bottom: 1em;
+          }
+          
+          .md-typeset li {
+            margin-bottom: 0.4em;
+          }
+          
+          /* Better link styling */
+          .md-typeset a {
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease, color 0.2s ease;
+          }
+          
+          .md-typeset a:hover {
+            border-bottom-color: var(--md-accent-fg-color);
+          }
+          
+          /* ============================================
+             CODE BLOCKS - Enhanced Styling
+             ============================================ */
+          
+          .md-typeset code {
+            font-family: "Fira Code", "Roboto Mono", monospace;
+            font-size: 0.85em;
+            font-feature-settings: "liga" 1;
+            background-color: var(--md-accent-fg-color--transparent);
+            border-radius: 4px;
+            padding: 0.15em 0.4em;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+          }
+          
+          .md-typeset pre {
+            border-radius: 8px;
+            border: 1px solid var(--md-default-bg-color--lighter);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          }
+          
+          .md-typeset pre > code {
+            border: none;
+            background: transparent;
+            font-size: 0.8em;
+            line-height: 1.6;
+          }
+          
+          /* Code block language label */
+          .md-typeset .highlight .filename {
+            background-color: var(--md-primary-fg-color);
+            color: white;
+            font-weight: 500;
+            font-size: 0.75em;
+            padding: 0.4em 0.8em;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: -1px;
+          }
+          
+          /* ============================================
+             ADMONITIONS - Nicer Callouts
+             ============================================ */
+          
+          .md-typeset .admonition {
+            border-radius: 8px;
+            border-left-width: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+          }
+          
+          .md-typeset .admonition-title {
+            font-weight: 600;
+            border-radius: 8px 8px 0 0;
+          }
+          
+          /* Custom admonition colors */
+          .md-typeset .admonition.tip {
+            border-left-color: #10b981;
+          }
+          
+          .md-typeset .admonition.note {
+            border-left-color: #3b82f6;
+          }
+          
+          .md-typeset .admonition.warning {
+            border-left-color: #f59e0b;
+          }
+          
+          .md-typeset .admonition.danger {
+            border-left-color: #ef4444;
+          }
+          
+          /* ============================================
+             TABLES - Better Styling
+             ============================================ */
+          
+          .md-typeset table {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            font-size: 0.9em;
+          }
+          
+          .md-typeset table th {
+            background-color: var(--md-primary-fg-color);
+            color: white;
+            font-weight: 600;
+            padding: 0.8em 1em;
+          }
+          
+          .md-typeset table td {
+            padding: 0.7em 1em;
+            border-bottom: 1px solid var(--md-default-bg-color--light);
+          }
+          
+          .md-typeset table tr:last-child td {
+            border-bottom: none;
+          }
+          
+          .md-typeset table tr:hover td {
+            background-color: var(--md-accent-fg-color--transparent);
+          }
+          
+          /* ============================================
+             NAVIGATION - Improved Sidebar
+             ============================================ */
+          
+          .md-nav__link {
+            font-weight: 400;
+            padding: 0.4em 0.8em;
+            border-radius: 4px;
+            transition: background-color 0.15s ease;
+          }
+          
+          .md-nav__link:hover {
+            background-color: var(--md-accent-fg-color--transparent);
+          }
+          
+          .md-nav__link--active {
+            font-weight: 600;
+            color: var(--md-accent-fg-color);
+            background-color: var(--md-accent-fg-color--transparent);
+          }
+          
+          /* Section headers in nav */
+          .md-nav__item--section > .md-nav__link {
+            font-weight: 600;
+            color: var(--md-typeset-color);
+            margin-top: 0.5em;
+          }
+          
+          /* ============================================
+             HEADER & TABS
+             ============================================ */
+          
+          .md-header {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          }
+          
+          .md-tabs {
+            background-color: var(--md-primary-fg-color--dark);
+          }
+          
+          .md-tabs__link {
+            font-weight: 500;
+            opacity: 0.9;
+          }
+          
+          .md-tabs__link--active {
+            font-weight: 600;
+            opacity: 1;
+          }
+          
+          /* ============================================
+             SEARCH - Better Styling
+             ============================================ */
+          
+          .md-search__input {
+            border-radius: 6px;
+            font-size: 0.9em;
+          }
+          
+          /* ============================================
+             HOME PAGE HERO - Custom Styling
+             ============================================ */
+          
+          .md-content__inner h1:first-of-type {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-accent-fg-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          
+          /* Better blockquotes */
+          .md-typeset blockquote {
+            border-left: 4px solid var(--md-accent-fg-color);
+            background-color: var(--md-accent-fg-color--transparent);
+            padding: 1em 1.2em;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+          }
+          
+          .md-typeset blockquote p {
+            margin: 0;
+          }
+          
+          /* Horizontal rule */
+          .md-typeset hr {
+            border: none;
+            border-top: 2px solid var(--md-default-bg-color--lighter);
+            margin: 2em 0;
+          }
+          
+          /* ============================================
+             RESPONSIVE ADJUSTMENTS
+             ============================================ */
+          
+          @media screen and (max-width: 768px) {
+            .md-typeset h1 {
+              font-size: 1.8em;
+            }
+            
+            .md-typeset h2 {
+              font-size: 1.4em;
+            }
+            
+            .md-typeset {
+              font-size: 0.9rem;
+            }
+          }
+          CSSEOF
+          
           cat > build/mkdocs.yml << 'EOF'
           site_name: VibeLearning
           site_description: A comprehensive Python learning resource
           site_url: https://jackc0re.github.io/VibeLearning/
           docs_dir: docs
           site_dir: site
+          
           theme:
             name: material
+            
+            # Custom Fonts - Inter for text, Fira Code for code
+            font:
+              text: Inter
+              code: Fira Code
+            
+            # Color Palette - Modern indigo/slate
             palette:
               # Light mode
               - scheme: default
@@ -65,6 +402,8 @@ jobs:
                 toggle:
                   icon: material/brightness-4
                   name: Switch to light mode
+            
+            # Enhanced features
             features:
               # Top navigation tabs for main sections
               - navigation.tabs
@@ -73,23 +412,58 @@ jobs:
               - navigation.sections
               # Auto-collapse other sections when one opens
               - navigation.collapse
+              # Search enhancements
               - search.suggest
               - search.highlight
+              - search.share
+              # Code block features
               - content.code.copy
               - content.code.annotate
               - content.action.edit
+              # Content features
+              - content.tooltips
+              - content.tabs.link
+              # Navigation
+              - navigation.top
+              - navigation.footer
+              
+          # Custom CSS
+          extra_css:
+            - stylesheets/extra.css
+          
           plugins:
             - search
+            - minify:
+                minify_html: true
+          
           markdown_extensions:
             - pymdownx.highlight:
                 anchor_linenums: true
-            - pymdownx.superfences
+                line_spans: __span
+                pygments_lang_class: true
+            - pymdownx.superfences:
+                custom_fences:
+                  - name: mermaid
+                    class: mermaid
+                    format: !!python/name:pymdownx.superfences.fence_code_format
             - pymdownx.inlinehilite
+            - pymdownx.snippets
             - tables
             - toc:
                 permalink: true
+                title: On this page
             - admonition
             - pymdownx.details
+            - pymdownx.tabbed:
+                alternate_style: true
+            - attr_list
+            - md_in_html
+            - pymdownx.emoji:
+                emoji_index: !!python/name:material.extensions.emoji.twemoji
+                emoji_generator: !!python/name:material.extensions.emoji.to_svg
+            - pymdownx.tasklist:
+                custom_checkbox: true
+          
           nav:
             - Home: README.md
             - Getting Started:
