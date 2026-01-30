@@ -469,7 +469,12 @@ Answer these questions to verify understanding:
   - [x] 03_data_cleaning (README, examples, exercises, quiz)
   - [x] 04_data_transformation (README, examples, exercises, quiz)
   - [x] 05_generating_reports (README, examples, exercises, quiz)
-- [ ] Module 20: Web Basics
+- [x] Module 20: Web Basics
+  - [x] 01_html_css_overview (README, examples, exercises, quiz)
+  - [x] 02_http_server (README, examples, exercises, quiz)
+  - [x] 03_simple_routing (README, examples, exercises, quiz)
+  - [x] 04_templating (README, examples, exercises, quiz)
+  - [x] 05_forms_handling (README, examples, exercises, quiz)
 
 ### Phase 2: New Projects
 - [ ] Project 05: Quiz Game
