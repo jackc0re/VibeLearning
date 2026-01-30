@@ -4,6 +4,22 @@ site_url: https://jackc0re.github.io/VibeLearning/
 repo_url: https://github.com/jackc0re/VibeLearning
 repo_name: jackc0re/VibeLearning
 
+# Use root directory as docs directory
+docs_dir: .
+
+# Exclude files that shouldn't be in the site
+exclude_docs: |
+  *.py
+  *.sh
+  *.yml
+  .github/
+  .git/
+  .claude/
+  AGENTS.md
+  PROGRESS*.md
+  ROADMAP.md
+  .gitignore
+
 theme:
   name: material
   palette:
@@ -30,7 +46,6 @@ theme:
 
 plugins:
   - search
-  - awesome-pages
 
 markdown_extensions:
   - pymdownx.highlight:
