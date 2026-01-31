@@ -1,0 +1,257 @@
+#!/bin/bash
+# Deploy VibeLearning to GitHub Pages
+# Usage: ./deploy.sh
+
+set -e
+
+# Colors for output
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+echo -e "${BLUE}========================================${NC}"
+echo -e "${BLUE}  VibeLearning - Deploy to GitHub Pages${NC}"
+echo -e "${BLUE}========================================${NC}"
+echo ""
+
+# Check if we're in a git repository
+if ! git rev-parse --git-dir > /dev/null 2>&1; then
+    echo -e "${RED}Error: Not a git repository${NC}"
+    exit 1
+fi
+
+# Check if gh-pages branch exists
+echo -e "${BLUE}Checking GitHub Pages setup...${NC}"
+if ! git show-ref --verify --quiet refs/heads/gh-pages; then
+    echo -e "${YELLOW}Creating gh-pages branch...${NC}"
+    git checkout --orphan gh-pages
+    git rm -rf .
+    echo "# GitHub Pages" > README.md
+    git add README.md
+    git commit -m "Initial gh-pages commit"
+    git checkout main || git checkout master || git checkout -
+    echo -e "${GREEN}✓ gh-pages branch created${NC}"
+else
+    echo -e "${GREEN}✓ gh-pages branch exists${NC}"
+fi
+
+# Restore the original mkdocs.yml for deployment (docs_dir: .)
+echo -e "${BLUE}Preparing for deployment...${NC}"
+
+# Backup current mkdocs.yml
+cp mkdocs.yml mkdocs.yml.local
+
+# Create deployment version
+cat > mkdocs.yml << 'EOF'
+site_name: VibeLearning
+site_description: A comprehensive Python learning resource
+site_url: https://jackc0re.github.io/VibeLearning/
+repo_url: https://github.com/jackc0re/VibeLearning
+repo_name: jackc0re/VibeLearning
+
+# Use root directory as docs directory (for GitHub Pages)
+docs_dir: .
+site_dir: site
+
+# Exclude files that shouldn't be in the site
+exclude_docs: |
+  *.py
+  *.sh
+  *.yml
+  .github/
+  .git/
+  .claude/
+  AGENTS.md
+  PROGRESS*.md
+  ROADMAP.md
+  .gitignore
+
+theme:
+  name: material
+  
+  # Custom directory for template overrides
+  custom_dir: overrides
+  
+  # Custom Fonts - Inter for text (code font set in extra.css)
+  font:
+    text: Inter
+  
+  # Color Palette - Catppuccin Mocha
+  palette:
+    # Dark mode (default - Catppuccin Mocha)
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    # Light mode (Catppuccin Latte)
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  
+  # Enhanced features
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tooltips
+    - content.tabs.link
+
+# Custom CSS for better typography and design
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: pymdownx.superfences.fence_code_format
+  - tables
+  - toc:
+      permalink: true
+      title: On this page
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  # - pymdownx.emoji:
+  #     emoji_index: material.extensions.emoji.twemoji
+  #     emoji_generator: material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Home: README.md
+  - Getting Started:
+    - 00_getting_started/README.md
+    - Python Setup: 00_getting_started/01_python_setup.md
+    - Running Code: 00_getting_started/02_running_code.md
+    - Using This Repo: 00_getting_started/03_using_this_repo.md
+  - Foundations:
+    - 01_foundations/README.md
+    - Variables & Types: 01_foundations/01_variables_and_types/README.md
+    - Operators: 01_foundations/02_operators/README.md
+    - Control Flow: 01_foundations/03_control_flow/README.md
+    - Loops: 01_foundations/04_loops/README.md
+    - Functions: 01_foundations/05_functions_basics/README.md
+    - Input/Output: 01_foundations/06_input_output/README.md
+  - Data Structures:
+    - 02_data_structures/README.md
+    - Lists & Arrays: 02_data_structures/01_lists_arrays/README.md
+    - Strings: 02_data_structures/02_strings/README.md
+    - Dictionaries: 02_data_structures/03_dictionaries_maps/README.md
+    - Sets: 02_data_structures/04_sets/README.md
+    - Tuples: 02_data_structures/05_tuples/README.md
+    - Stacks & Queues: 02_data_structures/06_stacks_queues/README.md
+    - Linked Lists: 02_data_structures/07_linked_lists/README.md
+    - Trees: 02_data_structures/08_trees/README.md
+    - Graphs: 02_data_structures/09_graphs/README.md
+    - Hash Tables: 02_data_structures/10_hash_tables/README.md
+  - Algorithms:
+    - 03_algorithms/README.md
+  - OOP Concepts:
+    - 04_oop_concepts/README.md
+  - Functional Programming:
+    - 05_functional_programming/README.md
+  - Software Design:
+    - 06_software_design/README.md
+  - Design Patterns:
+    - 07_design_patterns/README.md
+  - Error Handling:
+    - 08_error_handling/README.md
+  - Testing:
+    - 09_testing/README.md
+  - File I/O:
+    - 10_file_io/README.md
+  - Memory & Performance:
+    - 11_memory_performance/README.md
+  - Concurrency:
+    - 12_concurrency/README.md
+  - Modules & Packages:
+    - 13_modules_packages/README.md
+  - Debugging:
+    - 14_debugging/README.md
+  - Version Control:
+    - 15_version_control/README.md
+  - Essential Libraries:
+    - 16_essential_libraries/README.md
+  - CS Fundamentals:
+    - 17_cs_fundamentals/README.md
+  - Working with APIs:
+    - 18_working_with_apis/README.md
+  - Data Processing:
+    - 19_data_processing/README.md
+  - Web Basics:
+    - 20_web_basics/README.md
+  - Resources:
+    - Resources/glossary.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jackc0re/VibeLearning
+EOF
+
+echo -e "${GREEN}✓ Deployment configuration ready${NC}"
+
+# Check if virtual environment exists
+if [ ! -d "venv" ]; then
+    echo -e "${YELLOW}Virtual environment not found. Creating one...${NC}"
+    python3 -m venv venv
+fi
+
+# Activate virtual environment
+source venv/bin/activate
+
+# Check if dependencies are installed
+if ! pip show mkdocs-material &>/dev/null; then
+    echo -e "${YELLOW}Installing dependencies...${NC}"
+    pip install -r requirements.txt
+fi
+
+echo ""
+echo -e "${BLUE}Building site for deployment...${NC}"
+mkdocs build
+
+echo ""
+echo -e "${BLUE}Deploying to GitHub Pages...${NC}"
+mkdocs gh-deploy --force
+
+echo ""
+echo -e "${GREEN}========================================${NC}"
+echo -e "${GREEN}  ✓ Deployment complete!${NC}"
+echo -e "${GREEN}========================================${NC}"
+echo ""
+echo -e "${BLUE}Your site is live at:${NC}"
+echo -e "  ${GREEN}https://jackc0re.github.io/VibeLearning/${NC}"
+echo ""
+
+# Restore local configuration
+mv mkdocs.yml.local mkdocs.yml
+echo -e "${YELLOW}Local configuration restored${NC}"

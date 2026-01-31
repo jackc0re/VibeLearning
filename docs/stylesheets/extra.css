@@ -1,0 +1,497 @@
+/* 
+ * VibeLearning - Custom Styles
+ * Enhanced navigation and visual design
+ */
+
+/* ============================================
+   NAVIGATION IMPROVEMENTS
+   ============================================ */
+
+/* Better sidebar section grouping */
+.md-nav--primary .md-nav__list {
+  padding-left: 0;
+}
+
+/* Group sections with subtle visual separation */
+.md-nav--primary .md-nav__item--nested {
+  margin-bottom: 0.25rem;
+  border-left: 2px solid var(--md-default-fg-color--lightest);
+  padding-left: 0.5rem;
+}
+
+/* Current/active section more prominent */
+.md-nav--primary .md-nav__item--active {
+  border-left-color: var(--md-accent-fg-color);
+}
+
+/* Improve visibility of nested items */
+.md-nav--secondary .md-nav__list {
+  border-left: 2px solid var(--md-default-fg-color--lightest);
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Better tab bar styling - more compact */
+.md-tabs {
+  background-color: var(--md-primary-fg-color);
+}
+
+.md-tabs__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+.md-tabs__item {
+  margin: 0;
+  padding: 0;
+}
+
+.md-tabs__link {
+  padding: 0.6rem 0.9rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  opacity: 1;
+  background-color: var(--md-primary-fg-color--light);
+}
+
+/* Scrollbar styling for sidebar */
+.md-sidebar__scrollwrap {
+  scrollbar-width: thin;
+  scrollbar-color: var(--md-default-fg-color--lightest) transparent;
+}
+
+.md-sidebar__scrollwrap::-webkit-scrollbar {
+  width: 4px;
+}
+
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+  background-color: var(--md-default-fg-color--lightest);
+  border-radius: 2px;
+}
+
+/* Section headers in sidebar more distinct */
+.md-nav__title {
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--md-default-fg-color--light);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* ============================================
+   CATPPUCCIN MOCHA COLOR PALETTE
+   ============================================ */
+
+:root {
+  /* Catppuccin Mocha Colors */
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+}
+
+/* Dark mode (default) - Catppuccin Mocha */
+[data-md-color-scheme="slate"] {
+  --md-default-fg-color: var(--ctp-text);
+  --md-default-fg-color--light: var(--ctp-subtext0);
+  --md-default-fg-color--lighter: var(--ctp-overlay1);
+  --md-default-fg-color--lightest: var(--ctp-surface1);
+  --md-default-bg-color: var(--ctp-base);
+  --md-default-bg-color--light: var(--ctp-mantle);
+  --md-default-bg-color--lighter: var(--ctp-crust);
+  
+  --md-primary-fg-color: var(--ctp-mantle);
+  --md-primary-fg-color--light: var(--ctp-surface0);
+  --md-primary-fg-color--dark: var(--ctp-crust);
+  --md-primary-bg-color: var(--ctp-text);
+  --md-primary-bg-color--light: var(--ctp-subtext1);
+  
+  --md-accent-fg-color: var(--ctp-mauve);
+  --md-accent-fg-color--transparent: rgba(203, 166, 247, 0.1);
+  --md-accent-bg-color: var(--ctp-base);
+  --md-accent-bg-color--light: var(--ctp-surface0);
+  
+  --md-typeset-color: var(--ctp-text);
+  --md-typeset-a-color: var(--ctp-blue);
+  
+  --md-code-fg-color: var(--ctp-text);
+  --md-code-bg-color: var(--ctp-mantle);
+  
+  --md-code-hl-color: var(--ctp-surface1);
+  --md-code-hl-number-color: var(--ctp-peach);
+  --md-code-hl-special-color: var(--ctp-pink);
+  --md-code-hl-function-color: var(--ctp-blue);
+  --md-code-hl-constant-color: var(--ctp-peach);
+  --md-code-hl-keyword-color: var(--ctp-mauve);
+  --md-code-hl-string-color: var(--ctp-green);
+  --md-code-hl-name-color: var(--ctp-blue);
+  --md-code-hl-operator-color: var(--ctp-sky);
+  --md-code-hl-punctuation-color: var(--ctp-overlay1);
+  --md-code-hl-comment-color: var(--ctp-overlay0);
+  --md-code-hl-generic-color: var(--ctp-text);
+  --md-code-hl-variable-color: var(--ctp-text);
+  
+  --md-typeset-mark-color: var(--ctp-yellow);
+  --md-typeset-del-color: var(--ctp-red);
+  --md-typeset-ins-color: var(--ctp-green);
+  
+  --md-admonition-fg-color: var(--ctp-text);
+  --md-admonition-bg-color: var(--ctp-mantle);
+  
+  --md-footer-fg-color: var(--ctp-subtext0);
+  --md-footer-fg-color--light: var(--ctp-overlay1);
+  --md-footer-fg-color--lighter: var(--ctp-surface1);
+  --md-footer-bg-color: var(--ctp-mantle);
+  --md-footer-bg-color--dark: var(--ctp-crust);
+  
+  --md-shadow-z1: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
+  --md-shadow-z2: 0 0.4rem 1rem rgba(0, 0, 0, 0.4);
+  --md-shadow-z3: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.5);
+}
+
+/* Light mode - Catppuccin Latte */
+[data-md-color-scheme="default"] {
+  --ctp-text: #4c4f69;
+  --ctp-subtext1: #5c5f77;
+  --ctp-subtext0: #6c6f85;
+  --ctp-overlay2: #7c7f93;
+  --ctp-overlay1: #8c8fa1;
+  --ctp-overlay0: #9ca0b0;
+  --ctp-surface2: #acb0be;
+  --ctp-surface1: #bcc0cc;
+  --ctp-surface0: #ccd0da;
+  --ctp-base: #eff1f5;
+  --ctp-mantle: #e6e9ef;
+  --ctp-crust: #dce0e8;
+  --ctp-mauve: #8839ef;
+  --ctp-blue: #1e66f5;
+  --ctp-green: #40a02b;
+  --ctp-peach: #fe640b;
+  --ctp-pink: #ea76cb;
+  --ctp-red: #d20f39;
+  --ctp-yellow: #df8e1d;
+  --ctp-sky: #04a5e5;
+  
+  --md-default-fg-color: var(--ctp-text);
+  --md-default-fg-color--light: var(--ctp-subtext0);
+  --md-default-fg-color--lighter: var(--ctp-overlay1);
+  --md-default-fg-color--lightest: var(--ctp-surface1);
+  --md-default-bg-color: var(--ctp-base);
+  --md-default-bg-color--light: var(--ctp-mantle);
+  --md-default-bg-color--lighter: var(--ctp-crust);
+  
+  --md-primary-fg-color: var(--ctp-mantle);
+  --md-primary-fg-color--light: var(--ctp-surface0);
+  --md-primary-fg-color--dark: var(--ctp-crust);
+  --md-primary-bg-color: var(--ctp-text);
+  --md-primary-bg-color--light: var(--ctp-subtext1);
+  
+  --md-accent-fg-color: var(--ctp-mauve);
+  --md-accent-fg-color--transparent: rgba(136, 57, 239, 0.1);
+  --md-accent-bg-color: var(--ctp-base);
+  --md-accent-bg-color--light: var(--ctp-surface0);
+  
+  --md-typeset-color: var(--ctp-text);
+  --md-typeset-a-color: var(--ctp-blue);
+  
+  --md-code-fg-color: var(--ctp-text);
+  --md-code-bg-color: var(--ctp-mantle);
+  
+  --md-code-hl-keyword-color: var(--ctp-mauve);
+  --md-code-hl-string-color: var(--ctp-green);
+  --md-code-hl-function-color: var(--ctp-blue);
+  --md-code-hl-number-color: var(--ctp-peach);
+  
+  --md-admonition-fg-color: var(--ctp-text);
+  --md-admonition-bg-color: var(--ctp-mantle);
+  
+  --md-footer-fg-color: var(--ctp-subtext0);
+  --md-footer-fg-color--light: var(--ctp-overlay1);
+  --md-footer-fg-color--lighter: var(--ctp-surface1);
+  --md-footer-bg-color: var(--ctp-mantle);
+  --md-footer-bg-color--dark: var(--ctp-crust);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+/* Use Inter font from Google Fonts */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Better heading hierarchy */
+.md-typeset h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  color: var(--ctp-text);
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  margin-top: 2rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--ctp-surface1);
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.md-typeset h4 {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ctp-subtext1);
+}
+
+/* Improved paragraph readability */
+.md-typeset p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Better list styling */
+.md-typeset ul li,
+.md-typeset ol li {
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+}
+
+/* Code font - JetBrains Mono for better readability */
+.md-typeset code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, monospace;
+  font-size: 0.85em;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  background-color: var(--ctp-mantle);
+}
+
+.md-typeset pre > code {
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+/* ============================================
+   ADMONITIONS & CALLOUTS
+   ============================================ */
+
+.md-typeset .admonition {
+  border-radius: 8px;
+  border-left-width: 4px;
+  box-shadow: var(--md-shadow-z1);
+}
+
+.md-typeset .admonition-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+}
+
+/* Custom admonition colors */
+.md-typeset .admonition.note {
+  border-left-color: var(--ctp-blue);
+  background-color: rgba(137, 180, 250, 0.1);
+}
+
+.md-typeset .admonition.tip {
+  border-left-color: var(--ctp-green);
+  background-color: rgba(166, 227, 161, 0.1);
+}
+
+.md-typeset .admonition.warning {
+  border-left-color: var(--ctp-peach);
+  background-color: rgba(250, 179, 135, 0.1);
+}
+
+.md-typeset .admonition.danger {
+  border-left-color: var(--ctp-red);
+  background-color: rgba(243, 139, 168, 0.1);
+}
+
+.md-typeset .admonition.info {
+  border-left-color: var(--ctp-sky);
+  background-color: rgba(137, 220, 235, 0.1);
+}
+
+/* ============================================
+   LINKS & INTERACTIONS
+   ============================================ */
+
+.md-typeset a {
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.md-typeset a:hover {
+  border-bottom-color: var(--md-accent-fg-color);
+}
+
+/* Buttons */
+.md-typeset .md-button {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+
+.md-typeset .md-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--md-shadow-z2);
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+
+.md-typeset table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--md-shadow-z1);
+}
+
+.md-typeset table th {
+  background-color: var(--ctp-surface0);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.md-typeset table tr:nth-child(even) {
+  background-color: var(--ctp-surface0);
+}
+
+.md-typeset table td {
+  border-top: 1px solid var(--ctp-surface1);
+}
+
+/* ============================================
+   SEARCH
+   ============================================ */
+
+.md-search__form {
+  border-radius: 6px;
+  background-color: var(--ctp-surface0);
+}
+
+.md-search__input {
+  font-size: 0.9rem;
+}
+
+.md-search-result__meta {
+  color: var(--ctp-overlay1);
+}
+
+.md-search-result__article {
+  padding: 0.8rem 1rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.md-footer {
+  font-size: 0.8rem;
+}
+
+.md-footer-meta {
+  background-color: var(--ctp-crust);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media screen and (max-width: 76.1875em) {
+  .md-tabs__link {
+    font-size: 0.65rem;
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+@media screen and (max-width: 59.9375em) {
+  .md-nav--primary .md-nav__title {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  .md-nav--primary .md-nav__item {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile improvements */
+@media screen and (max-width: 30em) {
+  .md-typeset h1 {
+    font-size: 1.6rem;
+  }
+  
+  .md-typeset h2 {
+    font-size: 1.3rem;
+  }
+  
+  .md-typeset pre > code {
+    font-size: 0.75rem;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .md-tabs,
+  .md-sidebar,
+  .md-footer,
+  .md-search {
+    display: none;
+  }
+  
+  .md-content {
+    margin-left: 0;
+  }
+}

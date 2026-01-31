@@ -1,0 +1,18 @@
+# MkDocs Material Theme and Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core documentation tools
+mkdocs>=1.5.0
+mkdocs-material>=9.5.0
+
+# Markdown extensions (already used in your mkdocs.yml)
+pymdown-extensions>=10.0
+
+# Optional: For better code highlighting
+pygments>=2.16.0
+
+# Material emoji extension (for compatibility)
+mkdocs-material[imaging]>=9.5.0
+
+# Optional: For development/live reload
+mkdocs-live-edit-plugin>=0.1.0
