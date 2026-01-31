@@ -32,32 +32,9 @@ jobs:
       
       - name: Build site
         run: |
-          mkdir -p build/docs
-          
-          # Copy all content directories to build/docs/
-          for dir in 00_* 01_* 02_* 03_* 04_* 05_* 06_* 07_* 08_* 09_* 10_* 11_* 12_* 13_* 14_* 15_* 16_* 17_* 18_* 19_* 20_* Exercises Projects Resources; do
-            if [ -d "$dir" ]; then
-              cp -r "$dir" build/docs/
-            fi
-          done
-          
-          # Copy root markdown files
-          cp *.md build/docs/ 2>/dev/null || true
-          
-          # Copy stylesheets directory
-          mkdir -p build/docs/stylesheets
-          cp stylesheets/*.css build/docs/stylesheets/ 2>/dev/null || true
-          
-          # Copy overrides directory for custom templates
-          cp -r overrides build/overrides/ 2>/dev/null || true
-          
-          # Copy the root mkdocs.yml to use as the build config
-          cp mkdocs.yml build/mkdocs.yml
-          
-          # Build from the build directory using the copied config
-          cd build
+          # Build directly from repo root - mkdocs.yml handles docs_dir: docs
           mkdocs build
-          mv site ../_site
+          mv site _site
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
