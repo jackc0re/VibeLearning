@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Journey into Web Development - My Awesome Blog</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0 0 1rem 0;
+            font-size: 1.8rem;
+        }
+
+        header a {
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+
+        nav {
+            background: #444;
+            padding: 0.8rem;
+            border-radius: 4px;
+        }
+
+        nav a {
+            color: #ddd;
+            margin-right: 1.5rem;
+            text-decoration: none;
+            padding: 0.3rem 0.5rem;
+            border-radius: 3px;
+            transition: background 0.2s;
+        }
+
+        nav a:hover {
+            background: #555;
+            color: white;
+        }
+
+        nav a.active {
+            background: #4ecdc4;
+            color: white;
+        }
+
+        main {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            min-height: 400px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #333;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            border-bottom: 3px solid #4ecdc4;
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        blockquote {
+            border-left: 4px solid #4ecdc4;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #666;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #ddd;
+            margin: 2rem 0;
+        }
+
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background: #4ecdc4;
+            color: white;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .meta span {
+            margin-right: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            color: #666;
+            margin-top: 3rem;
+            padding: 2rem;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            header, main {
+                padding: 1rem;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 0.3rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">My Awesome Blog</a></h1>
+        <nav>
+            <a href="about.html">About</a> | <a href="index.html">Welcome to My Blog</a> | <a href="blog/first-post.html">Getting Started with Python</a> | <a href="blog/second-post.html">My Journey into Web Development</a>
+        </nav>
+    </header>
+
+    <main>
+        
+<h1>My Journey into Web Development</h1>
+
+<p>Today I want to share my personal journey into web development - how I got started, the challenges I faced, and what I've learned along the way.</p>
+
+<h2>Where It All Began</h2>
+
+<p>My journey started with a simple question: <strong>"How do websites work?"</strong></p>
+
+<p>I remember opening my browser's developer tools for the first time and seeing HTML, CSS, and JavaScript. It was like discovering a secret language that the whole world used.</p>
+
+<h2>The Learning Curve</h2>
+
+<h3>HTML: The Structure</h3>
+
+<p>I started with HTML - the skeleton of the web. Learning to structure content with tags like <code><div></code>, <code><p></code>, and <code><h1></code>.</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My First Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<h3>CSS: The Styling</h3>
+
+<p>Then came CSS - making things look good. I learned about:</p>
+
+<ul>
+  <li><strong>Colors and fonts</strong> - Making content readable</li>
+  <li><strong>Layouts</strong> - Flexbox and Grid</li>
+  <li><strong>Responsive design</strong> - Making sites work on mobile</li>
+</ul>
+
+<pre><code>.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5rem;
+}</code></pre>
+
+<h3>JavaScript: The Interactivity</h3>
+
+<p>This was the biggest challenge! JavaScript brought everything to life:</p>
+
+<ul>
+  <li><strong>DOM manipulation</strong> - Changing content dynamically</li>
+  <li><strong>Event handling</strong> - Responding to user actions</li>
+  <li><strong>API calls</strong> - Fetching data from servers</li>
+</ul>
+
+<pre><code>document.querySelector(&#x27;button&#x27;).addEventListener(&#x27;click&#x27;, function() {
+    alert(&#x27;Hello!&#x27;);
+});</code></pre>
+
+<h2>Challenges I Faced</h2>
+
+<h3>1. Information Overload</h3>
+
+<p>There's so much to learn! Libraries, frameworks, tools - it was overwhelming.</p>
+
+<p><strong>Solution:</strong> I focused on fundamentals first, then slowly explored tools.</p>
+
+<h3>2. Imposter Syndrome</h3>
+
+<p>"Am I good enough?" I constantly questioned my skills.</p>
+
+<p><strong>Solution:</strong> Building projects helped me see real progress.</p>
+
+<h3>3. Debugging Frustrations</h3>
+
+<p>Spending hours on a single bug that ended up being a typo!</p>
+
+<p><strong>Solution:</strong> Practice and patience - and learning good debugging habits.</p>
+
+<h2>Key Lessons Learned</h2>
+
+<h3>Start Small</h3>
+
+<p>Don't try to build Facebook on day one. Start with simple projects:</p>
+
+<ul>
+  <li>A personal website</li>
+  <li>A todo app</li>
+  <li>A calculator</li>
+  <li>A weather app</li>
+</ul>
+
+<h3>Build Consistently</h3>
+
+<p>Code every day, even if it's just 30 minutes. Consistency beats intensity.</p>
+
+<h3>Ask for Help</h3>
+
+<p>The developer community is amazing. Don't be afraid to ask questions on:</p>
+<ul>
+  <li>Stack Overflow</li>
+  <li>Reddit (/r/learnprogramming)</li>
+  <li>Discord communities</li>
+  <li>Twitter hashtags (#100DaysOfCode)</li>
+</ul>
+
+<h3>Read Other People's Code</h3>
+
+<p>You'll learn more from reading good code than writing bad code.</p>
+
+<h2>Tools I Use Today</h2>
+
+<h3>Code Editors</h3>
+<ul>
+  <li><strong>VS Code</strong> - My daily driver</li>
+  <li><strong>Sublime Text</strong> - For quick edits</li>
+</ul>
+
+<h3>Browsers</h3>
+<ul>
+  <li><strong>Chrome DevTools</strong> - Inspecting and debugging</li>
+  <li><strong>Firefox Developer Tools</strong> - Alternative for testing</li>
+</ul>
+
+<h3>Learning Resources</h3>
+<ul>
+  <li><strong>MDN Web Docs</strong> - Best documentation</li>
+  <li><strong>freeCodeCamp</strong> - Hands-on learning</li>
+  <li><strong>YouTube</strong> - Video tutorials</li>
+</ul>
+
+<h2>What's Next?</h2>
+
+<p>My journey continues! I'm now exploring:</p>
+
+<ul>
+  <li><strong>Backend Development</strong> - Python, Node.js</li>
+  <li><strong>Databases</strong> - SQL, MongoDB</li>
+  <li><strong>DevOps</strong> - Deployment and CI/CD</li>
+  <li><strong>WebAssembly</strong> - The future of web performance</li>
+</ul>
+
+<h2>Advice for Beginners</h2>
+
+<p>If you're just starting out, here's my advice:</p>
+
+<ol>
+  <li><strong>Don't compare yourself to others</strong> - Everyone learns at their own pace</li>
+  <li><strong>Build what excites you</strong> - Passion fuels learning</li>
+  <li><strong>Don't get stuck in tutorial hell</strong> - Build your own projects</li>
+  <li><strong>Share your progress</strong> - It keeps you accountable</li>
+  <li><strong>Celebrate small wins</strong> - Every bug fixed is progress!</li>
+</ol>
+
+<h2>Conclusion</h2>
+
+<p>Web development is an incredible journey. It's challenging, frustrating, and rewarding all at the same time.</p>
+
+<p>Remember: Every expert was once a beginner. Keep coding, keep learning, and enjoy the process!</p>
+
+
+<p><em>Happy coding!</em></p>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Awesome Blog. Built with Python Static Site Generator.</p>
+    </footer>
+</body>
+</html>

@@ -482,8 +482,8 @@ Answer these questions to verify understanding:
 - [x] Project 07: Password Manager
 - [x] Project 08: URL Shortener
 - [ ] Project 09: Chat Server
-- [ ] Project 10: Static Site Generator
-- [ ] Project 11: Tic-Tac-Toe AI
+- [x] Project 10: Static Site Generator
+- [x] Project 11: Tic-Tac-Toe AI
 
 ### Phase 3: Interactive Tools
 - [ ] Progress Tracker

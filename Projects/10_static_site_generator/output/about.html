@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - My Awesome Blog</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0 0 1rem 0;
+            font-size: 1.8rem;
+        }
+
+        header a {
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+
+        nav {
+            background: #444;
+            padding: 0.8rem;
+            border-radius: 4px;
+        }
+
+        nav a {
+            color: #ddd;
+            margin-right: 1.5rem;
+            text-decoration: none;
+            padding: 0.3rem 0.5rem;
+            border-radius: 3px;
+            transition: background 0.2s;
+        }
+
+        nav a:hover {
+            background: #555;
+            color: white;
+        }
+
+        nav a.active {
+            background: #4ecdc4;
+            color: white;
+        }
+
+        main {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            min-height: 400px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #333;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            border-bottom: 3px solid #4ecdc4;
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        blockquote {
+            border-left: 4px solid #4ecdc4;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #666;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #ddd;
+            margin: 2rem 0;
+        }
+
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background: #4ecdc4;
+            color: white;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .meta span {
+            margin-right: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            color: #666;
+            margin-top: 3rem;
+            padding: 2rem;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            header, main {
+                padding: 1rem;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 0.3rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">My Awesome Blog</a></h1>
+        <nav>
+            <a href="about.html">About</a> | <a href="index.html">Welcome to My Blog</a> | <a href="blog/first-post.html">Getting Started with Python</a> | <a href="blog/second-post.html">My Journey into Web Development</a>
+        </nav>
+    </header>
+
+    <main>
+        
+<h1>About This Site</h1>
+
+<p>Welcome to the about page! Here you can learn more about this Static Site Generator project.</p>
+
+<h2>What is a Static Site Generator?</h2>
+
+<p>A <strong>Static Site Generator (SSG)</strong> is a tool that takes content (usually Markdown) and templates (HTML) and generates a complete website of static HTML files.</p>
+
+<h3>Why Use a Static Site?</h3>
+
+<p>Static sites have many advantages:</p>
+
+<ul>
+  <li><strong>Performance</strong> - No server-side processing, just serve HTML</li>
+  <li><strong>Security</strong> - No database, no server vulnerabilities</li>
+  <li><strong>Cost</strong> - Host anywhere for free (GitHub Pages, Netlify, Vercel)</li>
+  <li><strong>Simplicity</strong> - Easy to deploy and maintain</li>
+  <li><strong>Version Control</strong> - Content is just text files</li>
+</ul>
+
+<h2>How This SSG Works</h2>
+
+<p>This Static Site Generator is built with Python and includes:</p>
+
+<h3>Features</h3>
+
+<ol>
+  <li><strong>Markdown Parsing</strong> - Convert Markdown to HTML with regex</li>
+</ol>
+<ul>
+  <li>Headers (h1-h6)</li>
+  <li>Bold, italic, and emphasis</li>
+  <li>Links and images</li>
+  <li>Lists (ordered and unordered)</li>
+  <li>Code blocks with syntax highlighting</li>
+  <li>Tables and blockquotes</li>
+</ul>
+
+<ol>
+  <li><strong>Template System</strong> - Reusable HTML layouts</li>
+</ol>
+<ul>
+  <li>Base template for all pages</li>
+  <li>Variable substitution</li>
+  <li>Navigation menu</li>
+  <li>HTML escaping for security</li>
+</ul>
+
+<ol>
+  <li><strong>Content Management</strong> - Organize your content</li>
+</ol>
+<ul>
+  <li>Load Markdown files</li>
+  <li>Extract frontmatter (metadata)</li>
+  <li>Generate navigation</li>
+  <li>Handle drafts</li>
+</ul>
+
+<ol>
+  <li><strong>Asset Handling</strong> - Include static resources</li>
+</ol>
+<ul>
+  <li>Copy CSS, JS, and images</li>
+  <li>Preserve directory structure</li>
+  <li>Handle missing assets gracefully</li>
+</ul>
+
+<h2>Project Structure</h2>
+
+<pre><code>site/
+├── config.json       # Site configuration
+├── content/          # Markdown files
+│   ├── index.md
+│   ├── about.md
+│   └── blog/
+├── templates/        # HTML templates
+│   └── base.html
+└── static/           # CSS, JS, images
+    └── style.css</code></pre>
+
+<h2>Technology Stack</h2>
+
+<p>This project uses only the Python standard library:</p>
+
+<ul>
+  <li><code>re</code> - Regular expressions for Markdown parsing</li>
+  <li><code>string.Template</code> - HTML template substitution</li>
+  <li><code>pathlib</code> - Cross-platform file paths</li>
+  <li><code>json</code> - Site configuration</li>
+  <li><code>html.escape</code> - HTML escaping for security</li>
+  <li><code>shutil</code> - File and directory operations</li>
+</ul>
+
+<h2>Future Enhancements</h2>
+
+<p>Planned features for this SSG:</p>
+
+<ul>
+  <li>Syntax highlighting for code blocks</li>
+  <li>RSS feed generation</li>
+  <li>Sitemap.xml for SEO</li>
+  <li>Tags and categories</li>
+  <li>Search functionality</li>
+  <li>Pagination</li>
+  <li>Multiple template themes</li>
+  <li>Watch mode for auto-rebuild</li>
+</ul>
+
+<h2>License</h2>
+
+<p>This project is part of the VibeLearning educational repository.</p>
+
+
+<p><em>Happy building!</em></p>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Awesome Blog. Built with Python Static Site Generator.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "site_name": "My Awesome Blog",
+  "site_url": "https://myawesomeblog.com",
+  "author": "Your Name",
+  "description": "A blog built with Python static site generator"
+}
