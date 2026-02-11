@@ -478,9 +478,9 @@ Answer these questions to verify understanding:
 
 ### Phase 2: New Projects
 - [x] Project 05: Quiz Game
-- [ ] Project 06: Personal Journal
-- [ ] Project 07: Password Manager
-- [ ] Project 08: URL Shortener
+- [x] Project 06: Personal Journal
+- [x] Project 07: Password Manager
+- [x] Project 08: URL Shortener
 - [ ] Project 09: Chat Server
 - [ ] Project 10: Static Site Generator
 - [ ] Project 11: Tic-Tac-Toe AI

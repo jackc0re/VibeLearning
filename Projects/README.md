@@ -23,6 +23,7 @@ Apply what you've learned by building complete, working applications. These proj
 | [03_file_organizer](03_file_organizer/) | ⭐⭐ | 4-6 hours | Modules 00-02, 10, 13 |
 | [04_data_analyzer](04_data_analyzer/) | ⭐⭐⭐ | 6-8 hours | Modules 00-03, 10 |
 | [05_quiz_game](05_quiz_game/) | ⭐⭐ | 4-6 hours | Modules 00-04, 10 |
+| [07_password_manager](07_password_manager/) | ⭐⭐⭐ | 6-8 hours | Modules 01-04, 08, 10, 16 |
 
 ---
 
@@ -117,6 +118,29 @@ Apply what you've learned by building complete, working applications. These proj
 - Timer functionality
 - Data persistence
 - Game state management
+
+---
+
+### 7. Password Manager (`07_password_manager/`)
+
+**What you'll build:** A secure command-line password manager with master password authentication and encrypted storage.
+
+**Features:**
+- Master password system with PBKDF2 key derivation
+- Secure password generator using secrets module
+- Encrypted vault storage (XOR cipher for educational purposes)
+- CRUD operations: Add, List, View, Search, Edit, Delete passwords
+- Password strength checker
+- Lock/unlock vault functionality
+
+**What you'll learn:**
+- Cryptography concepts: hashing, key derivation, encryption
+- Secure random generation (secrets module)
+- File encryption and storage
+- Password strength evaluation
+- CLI application design with menus
+
+**⚠️ Security Note:** This is an educational project using XOR cipher. Not for storing real sensitive passwords. For real-world use, use Bitwarden, KeePassXC, or 1Password.
 
 ---
 
