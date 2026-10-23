@@ -123,4 +123,11 @@ Advantages:
 
 ---
 
-[Back: Module 14 README](../README.md) | [Next: Using Debuggers](../02_using_debuggers/)
+[Back: Module 14 README](../README.md) | [Next: Using Debuggers](../02_using_debuggers/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

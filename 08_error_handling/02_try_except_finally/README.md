@@ -67,3 +67,10 @@ Prefer catching **specific** errors you expect.
 ---
 
 [Next: Custom Exceptions →](../03_custom_exceptions/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

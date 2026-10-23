@@ -436,4 +436,4 @@ Timsort is:
 
 - Practice with [`exercises.py`](exercises.py)
 - Test your knowledge with [`quiz.md`](quiz.md)
-- Move on to [03_recursion](../03_recursion/)
+- Move on to [03_recursion](../03_recursion/README.md)

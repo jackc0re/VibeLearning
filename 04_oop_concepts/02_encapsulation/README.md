@@ -77,3 +77,10 @@ p.age = -5  # Triggers the validation in the setter!
 ---
 
 [Next: Inheritance](../03_inheritance/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

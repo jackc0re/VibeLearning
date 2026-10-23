@@ -60,3 +60,10 @@ Unless there is a clear "Is-A" relationship, composition is usually safer and mo
 ---
 
 [Next: SOLID Principles](../07_solid_principles/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

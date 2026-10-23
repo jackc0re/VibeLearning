@@ -15,7 +15,8 @@ def format_user_summary_before(user):
     if user is None:
         return "<missing user>"
 
-    name = user.get("name", "<unknown>").strip().title()
+    # `or` (not a dict default) so an explicit {"name": None} is handled too
+    name = (user.get("name") or "<unknown>").strip().title()
     age = user.get("age")
     if age is None:
         age_part = "age: ?"

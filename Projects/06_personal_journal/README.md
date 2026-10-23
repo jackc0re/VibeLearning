@@ -424,10 +424,10 @@ Most Used Tags:
 
 | Topic | Location |
 |-------|----------|
-| datetime basics | [01_foundations/06_datetime](../../01_foundations/06_datetime/) |
-| JSON file I/O | [10_file_io/03_working_with_json](../../10_file_io/03_working_with_json/) |
-| Classes | [04_oop_concepts/01_classes](../../04_oop_concepts/01_classes/) |
-| String methods | [01_foundations/03_strings](../../01_foundations/03_strings/) |
+| datetime basics | [01_foundations/06_datetime](../../16_essential_libraries/02_datetime/README.md) |
+| JSON file I/O | [10_file_io/03_working_with_json](../../10_file_io/03_working_with_json/README.md) |
+| Classes | [04_oop_concepts/01_classes](../../04_oop_concepts/01_classes_and_objects/README.md) |
+| String methods | [01_foundations/03_strings](../../02_data_structures/02_strings/README.md) |
 
 ---
 

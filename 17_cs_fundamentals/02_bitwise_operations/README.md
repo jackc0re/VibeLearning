@@ -302,3 +302,10 @@ python exercises.py
 
 **Previous:** [Number Systems ←](../01_number_systems/README.md)  
 **Next:** [Boolean Logic →](../03_boolean_logic/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

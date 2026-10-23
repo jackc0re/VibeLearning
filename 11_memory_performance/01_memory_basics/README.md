@@ -33,7 +33,7 @@ print(id(a) == id(b))  # True (same object)
 ## ✅ Views with `memoryview`
 
 If you slice bytes, you often create a **copy**.
-With [`memoryview()`](11_memory_performance/01_memory_basics/README.md:1), you can create a **view** into the same underlying buffer.
+With `memoryview()`, you can create a **view** into the same underlying buffer.
 
 ---
 
@@ -47,3 +47,9 @@ With [`memoryview()`](11_memory_performance/01_memory_basics/README.md:1), you c
 
 [Back: Module 11 README](../README.md)
 
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

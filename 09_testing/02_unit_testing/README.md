@@ -49,3 +49,9 @@ Most unit tests follow a simple pattern:
 
 [Next: Test-Driven Development →](../03_test_driven_development/README.md)
 
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

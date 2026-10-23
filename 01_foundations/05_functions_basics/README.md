@@ -349,3 +349,10 @@ def func():
 ## Next Steps
 
 Practice with [examples.py](examples.py), then try [exercises.py](exercises.py)!
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

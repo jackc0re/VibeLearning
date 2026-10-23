@@ -8,7 +8,7 @@ print("=" * 60)
 print("DATETIME MODULE - Examples")
 print("=" * 60)
 
-from datetime import datetime, date, time, timedelta
+from datetime import datetime, date, time, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 # =============================================================================
@@ -113,7 +113,22 @@ print(f"\nISO format '{iso_date}' -> {parsed_iso}")
 print("\n--- Timezone Handling ---\n")
 
 # Create timezone-aware datetime
-utc_now = datetime.now(ZoneInfo("UTC"))
+def load_zone(name: str):
+    """Resolve a timezone, falling back when `tzdata` is unavailable.
+
+    On Windows the IANA database is not shipped with Python, so ZoneInfo only
+    works if the `tzdata` package is installed. This keeps the example
+    dependency-free everywhere.
+    """
+    try:
+        return ZoneInfo(name)
+    except Exception:
+        print(f"  (tzdata missing - install it with `pip install tzdata` for {name})")
+        return timezone.utc if name in ("UTC", "Etc/UTC") else None
+
+
+utc_zone = load_zone("UTC")
+utc_now = datetime.now(utc_zone)
 print(f"UTC now: {utc_now}")
 
 # Different timezones
@@ -128,7 +143,10 @@ timezones = [
 
 print("\nCurrent time in different cities:")
 for tz_name in timezones:
-    tz_time = utc_now.astimezone(ZoneInfo(tz_name))
+    zone = load_zone(tz_name)
+    if zone is None:
+        continue
+    tz_time = utc_now.astimezone(zone)
     print(f"  {tz_name:25}: {tz_time.strftime('%Y-%m-%d %H:%M %Z')}")
 
 # =============================================================================
@@ -182,10 +200,13 @@ def schedule_meeting(utc_time, attendees_timezones):
     print(f"\nMeeting scheduled for (UTC): {utc_time}")
     print("Local times:")
     for tz_name in attendees_timezones:
-        local_time = utc_time.astimezone(ZoneInfo(tz_name))
+        zone = load_zone(tz_name)
+        if zone is None:
+            continue
+        local_time = utc_time.astimezone(zone)
         print(f"  {tz_name:20}: {local_time.strftime('%Y-%m-%d %H:%M %Z')}")
 
-meeting_utc = datetime(2025, 6, 15, 14, 0, 0, tzinfo=ZoneInfo("UTC"))
+meeting_utc = datetime(2025, 6, 15, 14, 0, 0, tzinfo=load_zone("UTC"))
 attendees = ["America/New_York", "Europe/London", "Asia/Tokyo"]
 schedule_meeting(meeting_utc, attendees)
 

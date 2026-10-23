@@ -8,11 +8,11 @@ Curated external resources to deepen your understanding beyond this course. Each
 
 - [Essential Python Resources](#essential-python-resources)
 - [By Module](#by-module)
-  - [00-03: Foundation](#00---03-foundation)
-  - [04-07: Paradigms & Design](#04---07-paradigms--design)
-  - [08-11: Professional Skills](#08---11-professional-skills)
-  - [12-15: Advanced Concepts](#12---15-advanced-concepts)
-- [Community & Help](#community--help)
+  - [00-03: Foundation](#00-03-foundation)
+  - [04-07: Paradigms & Design](#04-07-paradigms-design)
+  - [08-11: Professional Skills](#08-11-professional-skills)
+  - [12-15: Advanced Concepts](#12-15-advanced-concepts)
+- [Community & Help](#community-help)
 - [Practice Platforms](#practice-platforms)
 
 ---

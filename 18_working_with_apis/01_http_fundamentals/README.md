@@ -190,4 +190,11 @@ SERVER_ERRORS = {500, 502, 503, 504}
 
 Now that you understand HTTP basics, let's make some real requests!
 
-→ Continue to [02: Making Requests](../02_making_requests/)
+→ Continue to [02: Making Requests](../02_making_requests/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

@@ -423,4 +423,4 @@ for length in range(2, n + 1):
 
 - Practice with [`exercises.py`](exercises.py)
 - Test your knowledge with [`quiz.md`](quiz.md)
-- Move on to [05_greedy_algorithms](../05_greedy_algorithms/)
+- Move on to [05_greedy_algorithms](../05_greedy_algorithms/README.md)

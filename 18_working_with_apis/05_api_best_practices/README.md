@@ -318,3 +318,10 @@ You've completed the Working with APIs module! You now know how to:
 - Build a project that uses a real API
 - Try the `requests` library (it's much nicer!)
 - Learn about async APIs with `aiohttp`
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

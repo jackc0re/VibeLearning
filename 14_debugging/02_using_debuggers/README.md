@@ -140,4 +140,11 @@ Or run with: `python -m pdb -c continue script.py`
 
 ---
 
-[Back: Print Debugging](../01_print_debugging/) | [Next: Reading Tracebacks](../03_reading_tracebacks/)
+[Back: Print Debugging](../01_print_debugging/README.md) | [Next: Reading Tracebacks](../03_reading_tracebacks/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

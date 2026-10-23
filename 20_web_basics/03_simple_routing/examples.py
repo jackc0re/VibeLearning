@@ -24,6 +24,9 @@ class MockHandler:
         self.response = {'status': code}
     
     def set_body(self, body):
+        # A handler may set a body without sending a status line first.
+        if self.response is None:
+            self.response = {'status': 200}
         self.response['body'] = body
 
 def basic_route(handler):

@@ -43,3 +43,9 @@ For CSV, Python recommends `newline=''` when opening the file (covered in the CS
 
 [Back: Module 10 README](../README.md)
 
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

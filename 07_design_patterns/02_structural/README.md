@@ -62,3 +62,10 @@ gateway.pay(9.99)
 ---
 
 [Next: Behavioral Patterns →](../03_behavioral/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

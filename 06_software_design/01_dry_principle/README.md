@@ -66,3 +66,10 @@ student_price = lambda p: apply_discount(p, 20)
 ---
 
 [Next: KISS Principle](../02_kiss_principle/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

@@ -57,3 +57,10 @@ def logger(func):
 ---
 
 [Back to Closures](../06_closures/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

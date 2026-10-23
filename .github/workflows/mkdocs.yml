@@ -1,53 +1,102 @@
-name: Deploy MkDocs to GitHub Pages
+name: Build & Deploy Docs
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
+# Allow one deployment at a time, but never cancel an in-flight deploy.
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  build:
+  # ---------------------------------------------------------------------------
+  # Validation: runs on every pull request and on main.
+  # A warning is treated as an error, so a broken link fails the build.
+  # ---------------------------------------------------------------------------
+  validate:
+    name: Validate docs (strict)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
-      
-      - name: Install MkDocs
-        run: |
-          pip install mkdocs mkdocs-material pymdown-extensions mkdocs-minify-plugin
-      
-      - name: Build site
-        run: |
-          # Build directly from repo root - mkdocs.yml handles docs_dir: docs
-          mkdocs build
-          mv site _site
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./_site
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
 
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Sync docs from repo root
+        run: python tools/sync_docs.py
+
+      - name: Build site in strict mode
+        run: mkdocs build --strict
+
+  # ---------------------------------------------------------------------------
+  # Deploy: only on pushes to main (and manual runs).
+  # ---------------------------------------------------------------------------
   deploy:
-    needs: build
+    name: Deploy to GitHub Pages
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: validate
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Sync docs from repo root
+        run: python tools/sync_docs.py
+
+      - name: Build site
+        run: mkdocs build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # ---------------------------------------------------------------------------
+  # Learning content: the examples.py files are the product - run them all.
+  # ---------------------------------------------------------------------------
+  examples:
+    name: Run lesson examples
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run every examples.py with a per-file timeout
+        run: python tools/run_examples.py

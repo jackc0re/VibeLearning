@@ -43,3 +43,9 @@ with open("big.bin", "rb") as f:
 
 [Back: Module 10 README](../README.md)
 
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

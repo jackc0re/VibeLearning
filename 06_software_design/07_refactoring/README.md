@@ -42,3 +42,10 @@ Refactoring is safest when you have a **safety net**:
 ---
 
 [Back: Code Smells](../06_code_smells/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

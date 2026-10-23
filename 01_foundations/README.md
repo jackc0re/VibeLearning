@@ -8,12 +8,12 @@ The building blocks of every program. Master these, and you'll have a solid base
 
 | Topic | Description |
 |-------|-------------|
-| [01_variables_and_types](01_variables_and_types/) | Storing and naming data |
-| [02_operators](02_operators/) | Math, comparison, and logic |
-| [03_control_flow](03_control_flow/) | Making decisions with if/else |
-| [04_loops](04_loops/) | Repeating actions |
-| [05_functions_basics](05_functions_basics/) | Creating reusable code blocks |
-| [06_input_output](06_input_output/) | Getting and displaying data |
+| [01_variables_and_types](01_variables_and_types/README.md) | Storing and naming data |
+| [02_operators](02_operators/README.md) | Math, comparison, and logic |
+| [03_control_flow](03_control_flow/README.md) | Making decisions with if/else |
+| [04_loops](04_loops/README.md) | Repeating actions |
+| [05_functions_basics](05_functions_basics/README.md) | Creating reusable code blocks |
+| [06_input_output](06_input_output/README.md) | Getting and displaying data |
 
 ---
 
@@ -104,4 +104,4 @@ print(f"Nice to meet you, {name}!")
 
 ## Start Learning!
 
-Begin with **[01_variables_and_types](01_variables_and_types/)** — the most fundamental concept.
+Begin with **[01_variables_and_types](01_variables_and_types/README.md)** — the most fundamental concept.

@@ -711,8 +711,8 @@ See [challenges.md](challenges.md) for detailed instructions.
 |-------|----------|
 | File I/O | [10_file_io](../../10_file_io/README.md) |
 | HTML/Templates | [20_web_basics](../../20_web_basics/README.md) |
-| JSON | [10_file_io/03_working_with_json](../../10_file_io/03_working_with_json/) |
-| Regular Expressions | [01_foundations/07_strings](../../01_foundations/07_strings/) |
+| JSON | [10_file_io/03_working_with_json](../../10_file_io/03_working_with_json/README.md) |
+| Regular Expressions | [01_foundations/07_strings](../../02_data_structures/02_strings/README.md) |
 
 ---
 

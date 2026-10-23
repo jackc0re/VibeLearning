@@ -395,4 +395,11 @@ div {
 
 Now that you understand HTML and CSS basics, let's see how to serve these pages with Python!
 
-→ Continue to [02: HTTP Server](../02_http_server/)
+→ Continue to [02: HTTP Server](../02_http_server/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

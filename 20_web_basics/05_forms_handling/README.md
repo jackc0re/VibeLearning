@@ -425,3 +425,10 @@ Congratulations! You've completed Module 20: Web Basics. You now know how to:
 - Learn about cookies and sessions
 - Explore Flask or Django for production applications
 - Study web security in depth
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

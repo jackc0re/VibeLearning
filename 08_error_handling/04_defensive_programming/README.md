@@ -47,3 +47,10 @@ Use assertions for **programmer errors**, not user input.
 ---
 
 [Next: Logging →](../05_logging/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

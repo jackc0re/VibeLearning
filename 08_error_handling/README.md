@@ -12,11 +12,11 @@ Error handling is the skill of writing programs that **fail safely**, communicat
 
 | # | Topic | Description | Key Concepts |
 |---|-------|-------------|--------------|
-| 01 | [Exceptions](01_exceptions/) | What exceptions are and why they exist | raise, built-in errors, stack trace |
-| 02 | [Try/Except/Finally](02_try_except_finally/) | Catching, handling, and cleaning up | try, except, else, finally |
-| 03 | [Custom Exceptions](03_custom_exceptions/) | Defining your own error types | subclasses, hierarchy, messages |
-| 04 | [Defensive Programming](04_defensive_programming/) | Preventing errors before they happen | validation, guards, assertions |
-| 05 | [Logging](05_logging/) | Recording errors and context | logging levels, handlers, tracebacks |
+| 01 | [Exceptions](01_exceptions/README.md) | What exceptions are and why they exist | raise, built-in errors, stack trace |
+| 02 | [Try/Except/Finally](02_try_except_finally/README.md) | Catching, handling, and cleaning up | try, except, else, finally |
+| 03 | [Custom Exceptions](03_custom_exceptions/README.md) | Defining your own error types | subclasses, hierarchy, messages |
+| 04 | [Defensive Programming](04_defensive_programming/README.md) | Preventing errors before they happen | validation, guards, assertions |
+| 05 | [Logging](05_logging/README.md) | Recording errors and context | logging levels, handlers, tracebacks |
 
 ---
 
@@ -66,4 +66,4 @@ By the end of this module, you should be able to:
 
 ---
 
-**Ready to start? Begin with [01_exceptions](01_exceptions/)!**
+**Ready to start? Begin with [01_exceptions](01_exceptions/README.md)!**

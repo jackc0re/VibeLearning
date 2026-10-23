@@ -303,4 +303,11 @@ git stash pop
 
 ---
 
-[Back: Module 15 README](../README.md) | [Previous: Git Basics](../01_git_basics/) | [Next: Merging](../03_merging/)
+[Back: Module 15 README](../README.md) | [Previous: Git Basics](../01_git_basics/README.md) | [Next: Merging](../03_merging/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

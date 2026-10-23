@@ -117,4 +117,11 @@ Be careful with module-level code that has side effects!
 
 ---
 
-[Back: Imports](../01_imports/) | [Next: Packages](../03_packages/)
+[Back: Imports](../01_imports/README.md) | [Next: Packages](../03_packages/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

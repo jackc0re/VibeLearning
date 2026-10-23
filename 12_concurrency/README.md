@@ -18,11 +18,11 @@ In Python, concurrency usually shows up in three practical forms:
 
 | # | Topic | Description | Key Concepts |
 |---|-------|-------------|--------------|
-| 01 | [Threads Basics](01_threads_basics/) | Starting and joining threads | `Thread`, `join()`, thread pools |
-| 02 | [Synchronization](02_synchronization/) | Coordinating shared state safely | `Lock`, `Event`, `Semaphore`, `Queue` |
-| 03 | [Async Programming](03_async_programming/) | Cooperative concurrency with `asyncio` | `async`/`await`, tasks, `gather()` |
-| 04 | [Race Conditions](04_race_conditions/) | Understanding data races and fixes | atomicity, locks, message passing |
-| 05 | [Deadlocks](05_deadlocks/) | Avoiding "stuck forever" situations | lock ordering, timeouts, design |
+| 01 | [Threads Basics](01_threads_basics/README.md) | Starting and joining threads | `Thread`, `join()`, thread pools |
+| 02 | [Synchronization](02_synchronization/README.md) | Coordinating shared state safely | `Lock`, `Event`, `Semaphore`, `Queue` |
+| 03 | [Async Programming](03_async_programming/README.md) | Cooperative concurrency with `asyncio` | `async`/`await`, tasks, `gather()` |
+| 04 | [Race Conditions](04_race_conditions/README.md) | Understanding data races and fixes | atomicity, locks, message passing |
+| 05 | [Deadlocks](05_deadlocks/README.md) | Avoiding "stuck forever" situations | lock ordering, timeouts, design |
 
 ---
 
@@ -72,4 +72,4 @@ By the end of this module, you should be able to:
 
 ---
 
-**Start here:** [01_threads_basics](01_threads_basics/)
+**Start here:** [01_threads_basics](01_threads_basics/README.md)

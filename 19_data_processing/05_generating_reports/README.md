@@ -267,3 +267,10 @@ def generate_daily_report():
 - Run `examples.py` to see report generation in action
 - Practice with `exercises.py`
 - Try creating your own reports from real data!
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

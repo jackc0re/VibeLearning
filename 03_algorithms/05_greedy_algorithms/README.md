@@ -413,4 +413,4 @@ def greedy_template():
 
 - Practice with [`exercises.py`](exercises.py)
 - Test your knowledge with [`quiz.md`](quiz.md)
-- Move on to [06_divide_and_conquer](../06_divide_and_conquer/)
+- Move on to [06_divide_and_conquer](../06_divide_and_conquer/README.md)

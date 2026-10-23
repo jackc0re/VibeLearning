@@ -442,4 +442,4 @@ If yes to all three, the recursion works!
 
 - Practice with [`exercises.py`](exercises.py)
 - Test your knowledge with [`quiz.md`](quiz.md)
-- Move on to [04_dynamic_programming](../04_dynamic_programming/)
+- Move on to [04_dynamic_programming](../04_dynamic_programming/README.md)

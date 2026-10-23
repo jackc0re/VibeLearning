@@ -71,3 +71,10 @@ updated = {**original, "age": 31}
 ---
 
 [Next: Higher-Order Functions](../03_higher_order_functions/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

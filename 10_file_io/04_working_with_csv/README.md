@@ -1,7 +1,7 @@
 # 📊 Working with CSV
 
 CSV (Comma-Separated Values) is a simple format for **tabular data**.
-Python's built-in [`csv`](10_file_io/04_working_with_csv/README.md:1) module handles quoting and parsing correctly.
+Python's built-in `csv` module handles quoting and parsing correctly.
 
 ---
 
@@ -48,3 +48,9 @@ On Windows, not using `newline=""` can lead to extra blank lines in CSV output.
 
 [Back: Module 10 README](../README.md)
 
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

@@ -271,3 +271,10 @@ WHERE category = (SELECT category FROM products WHERE name = 'Laptop');
 - Run `examples.py` to see SQL queries in action
 - Practice with `exercises.py`
 - Learn data cleaning techniques next!
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

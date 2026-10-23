@@ -8,16 +8,16 @@ Learn how to organize and store data efficiently. From Python's built-in collect
 
 | Topic | Description |
 |-------|-------------|
-| [01_lists_arrays](01_lists_arrays/) | Ordered, mutable collections |
-| [02_strings](02_strings/) | Text manipulation deep-dive |
-| [03_dictionaries_maps](03_dictionaries_maps/) | Key-value data storage |
-| [04_sets](04_sets/) | Unique, unordered collections |
-| [05_tuples](05_tuples/) | Immutable sequences |
-| [06_stacks_queues](06_stacks_queues/) | LIFO and FIFO structures |
-| [07_linked_lists](07_linked_lists/) | Node-based linear structures |
-| [08_trees](08_trees/) | Hierarchical data organization |
-| [09_graphs](09_graphs/) | Network-like connections |
-| [10_hash_tables](10_hash_tables/) | Fast key lookups explained |
+| [01_lists_arrays](01_lists_arrays/README.md) | Ordered, mutable collections |
+| [02_strings](02_strings/README.md) | Text manipulation deep-dive |
+| [03_dictionaries_maps](03_dictionaries_maps/README.md) | Key-value data storage |
+| [04_sets](04_sets/README.md) | Unique, unordered collections |
+| [05_tuples](05_tuples/README.md) | Immutable sequences |
+| [06_stacks_queues](06_stacks_queues/README.md) | LIFO and FIFO structures |
+| [07_linked_lists](07_linked_lists/README.md) | Node-based linear structures |
+| [08_trees](08_trees/README.md) | Hierarchical data organization |
+| [09_graphs](09_graphs/README.md) | Network-like connections |
+| [10_hash_tables](10_hash_tables/README.md) | Fast key lookups explained |
 
 ---
 
@@ -98,4 +98,4 @@ print(a | b)               # Union: {1, 2, 3}
 
 ## Start Learning!
 
-Begin with **[01_lists_arrays](01_lists_arrays/)** — the most versatile built-in structure.
+Begin with **[01_lists_arrays](01_lists_arrays/README.md)** — the most versatile built-in structure.

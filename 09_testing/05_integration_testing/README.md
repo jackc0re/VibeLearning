@@ -33,3 +33,9 @@ Unlike unit tests, integration tests may involve real IO, but should still:
 - Keep them focused on boundaries.
 - Still prefer lots of fast unit tests, plus fewer integration tests.
 
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

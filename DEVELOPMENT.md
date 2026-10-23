@@ -1,191 +1,204 @@
 # Local Development Guide
 
-This guide explains how to set up and run the VibeLearning documentation site locally before pushing to GitHub.
+How to preview the VibeLearning website on your machine, edit content safely, and
+understand what CI does when you push.
+
+---
+
+## The one important rule
+
+> **Edit files at the repository root. Never edit anything inside `docs/`.**
+
+`docs/` is a **generated mirror**. MkDocs builds the site from it, but its content is
+produced from the repo root by `tools/sync_docs.py`. Anything you change in `docs/` is
+overwritten on the next sync. `docs/` is also git-ignored, so it never reaches GitHub.
+
+```
+repo root                      docs/ (generated, ignored)
+├── README.md          ───────►  README.md
+├── 00_getting_started/ ──────►  00_getting_started/
+├── ...
+├── Resources/          ──────►  Resources/
+├── Projects/           ──────►  Projects/
+├── Exercises/          ──────►  Exercises/
+├── stylesheets/        ──────►  stylesheets/
+└── overrides/                   (read from root directly)
+```
+
+---
 
 ## Prerequisites
 
-- Python 3.8 or higher
-- pip (Python package manager)
+- **Python 3.8+** (3.12 is what CI uses)
+- `pip`
+
+No other tooling is required — the sync script uses the standard library only.
+
+---
 
 ## Quick Start
 
-The easiest way to get started is using the provided helper scripts:
+### 1. Create a virtual environment
 
-### 1. Start Local Server (Development Mode)
+**Windows (PowerShell or cmd):**
 
-```bash
-./serve.sh
+```bat
+python -m venv venv
+venv\Scripts\activate
 ```
 
-This will:
-- Create a virtual environment (if not exists)
-- Install all dependencies
-- Set up the docs directory
-- Start the local server at `http://127.0.0.1:8000/VibeLearning/`
-
-The server supports **live reload** - changes to markdown files will automatically refresh the browser.
-
-### 2. Build Static Site
-
-```bash
-./build.sh
-```
-
-This will:
-- Build the static site to `./site/` directory
-- Report any build errors
-- Show you how to view the built site
-
-### 3. Deploy to GitHub Pages
-
-```bash
-./deploy.sh
-```
-
-This will:
-- Build the site with production configuration
-- Deploy to the `gh-pages` branch
-- Restore local development configuration after deployment
-
-### 4. Clean Build Artifacts
-
-```bash
-./clean.sh
-```
-
-This removes:
-- `site/` - Built static files
-- `docs/` - Temporary docs directory for local testing
-- Python cache files
-- Backup files
-
-## Manual Setup (Advanced)
-
-If you prefer to set up manually:
-
-### Step 1: Create Virtual Environment
+**macOS / Linux:**
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-### Step 2: Install Dependencies
+### 2. Install the documentation dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 3: Set Up Docs Directory
+Versions are pinned, so this matches exactly what CI installs.
 
-For local testing, MkDocs requires a `docs/` subdirectory:
-
-```bash
-mkdir -p docs
-cp README.md docs/
-cp -r [0-9]* docs/
-cp -r Resources docs/
-cp -r stylesheets docs/
-```
-
-### Step 4: Run Local Server
+### 3. Sync the content into `docs/`
 
 ```bash
-mkdocs serve --dev-addr=127.0.0.1:8000
+python tools/sync_docs.py
 ```
 
-Visit: `http://127.0.0.1:8000/VibeLearning/`
+Useful options:
 
-## Project Structure for Local Development
-
-```
-VibeLearning/
-├── venv/                   # Virtual environment (auto-created)
-├── docs/                   # Docs directory for local testing (auto-created)
-│   ├── README.md
-│   ├── 01_foundations/
-│   ├── 02_data_structures/
-│   └── ...
-├── site/                   # Built static site (auto-created)
-├── stylesheets/
-│   └── extra.css          # Custom styles
-├── mkdocs.yml             # Local dev config (uses docs/)
-├── requirements.txt       # Python dependencies
-├── serve.sh              # Start dev server
-├── build.sh              # Build static site
-├── deploy.sh             # Deploy to GitHub Pages
-└── clean.sh              # Clean build artifacts
+```bash
+python tools/sync_docs.py --dry-run   # show what would change, touch nothing
 ```
 
-## Configuration Differences
+The script is idempotent: running it twice in a row does nothing the second time.
 
-### Local Development (`mkdocs.yml`)
+### 4. Start the live-reload server
 
-```yaml
-docs_dir: docs      # Use subdirectory
-site_dir: site
+```bash
+python -m mkdocs serve
 ```
 
-### GitHub Pages Deployment
+Open <http://127.0.0.1:8000/VibeLearning/>. The browser refreshes automatically when
+you save a file — but remember to re-run the sync after editing root files:
 
-For GitHub Pages, the configuration uses `docs_dir: .` (root directory) because the site is built directly from the repository root.
+```bash
+python tools/sync_docs.py     # then the browser refreshes
+```
 
-The `deploy.sh` script automatically switches configurations during deployment.
+> **Tip:** if port 8000 is busy, add `--dev-addr=127.0.0.1:8001`.
+
+### 5. Build the static site (optional)
+
+```bash
+python tools/sync_docs.py
+python -m mkdocs build            # output goes to site/
+python -m mkdocs build --strict   # same, but fails on any warning
+```
+
+---
+
+## Everyday workflow
+
+| Task | Command |
+|------|---------|
+| Edit a lesson | change `01_foundations/.../README.md` **at the root** |
+| Preview | `python tools/sync_docs.py && python -m mkdocs serve` |
+| Check for broken links | `python tools/sync_docs.py && python -m mkdocs build --strict` |
+| Start from scratch | delete `docs/` and `site/`, then sync again |
+
+`--strict` is the important one: it turns every build warning into an error, which is
+exactly what CI runs. If it passes locally, CI passes too.
+
+---
+
+## Deployment
+
+**Deployment happens only through CI.** There is no deploy script to run and no
+`gh-pages` branch to manage.
+
+1. Open a pull request → the **validate** job builds with `--strict`; a broken link
+   fails the PR.
+2. Merge to `main` → the **deploy** job builds and publishes to GitHub Pages.
+
+Live site: <https://jackc0re.github.io/VibeLearning/>
+
+You do not need to be able to deploy locally, and you should not try to — the CI
+environment is the same one that produces the live site.
+
+---
+
+## CI jobs
+
+The workflow lives in `.github/workflows/mkdocs.yml`:
+
+| Job | Trigger | What it does |
+|-----|---------|--------------|
+| `validate` | every PR and push to `main` | installs pinned deps → syncs → `mkdocs build --strict` |
+| `deploy` | pushes to `main` only | installs pinned deps → syncs → builds → publishes to Pages |
+
+Both jobs build from the repo root, so `docs/` is always regenerated during CI. A
+fresh clone works with no setup.
+
+---
 
 ## Troubleshooting
 
-### Port Already in Use
+### `docs_dir` or "not found" errors
 
-If port 8000 is busy, use a different port:
+You probably deleted or edited something inside `docs/`. Regenerate it:
 
 ```bash
-./serve.sh 8080
+python tools/sync_docs.py
 ```
 
-### Emoji Extension Error
+### Port 8000 already in use
 
-The emoji extension is currently disabled due to compatibility issues with Python 3.14. This doesn't affect the site's functionality.
+```bash
+python -m mkdocs serve --dev-addr=127.0.0.1:8001
+```
 
-### Font Not Loading
+### Build warnings about links
 
-If JetBrains Mono doesn't load properly:
-1. Check your internet connection
-2. Clear browser cache
-3. Check browser console for CSS errors
+Those are real and `--strict` will reject them. Fix the link in the **root** file:
 
-### Build Warnings
+- Link to a folder: `01_foundations/01_variables_and_types/README.md` (**not** `01_variables_and_types/`)
+- Link to a page: `Resources/glossary.md`
+- Link to a source file: `01_foundations/01_variables_and_types/examples.py`
 
-You may see warnings about:
-- Excluded files (.py, .sh) being linked
-- Relative links not being recognized
-- Navigation items not included
+### Fonts look wrong
 
-These are expected and don't affect the site's functionality.
+`overrides/main.html` loads JetBrains Mono from Google Fonts. Check your internet
+connection and the browser console. Text uses Inter (via the Material theme config).
 
-## Testing Checklist
+### Changes not showing up
 
-Before pushing to GitHub, verify:
+You edited a root file but did not sync:
 
-- [ ] Site builds without errors (`./build.sh`)
-- [ ] Local server runs (`./serve.sh`)
-- [ ] Custom CSS loads correctly
-- [ ] JetBrains Mono font appears in code blocks
-- [ ] Layout looks correct (no broken sizing/rounding)
-- [ ] Navigation works properly
-- [ ] Dark/light mode toggle works
-- [ ] Search functionality works
+```bash
+python tools/sync_docs.py
+```
 
-## Git Workflow
+---
 
-1. Make changes to content
-2. Test locally with `./serve.sh`
-3. Build and verify with `./build.sh`
-4. Commit changes: `git add . && git commit -m "Your message"`
-5. Push to GitHub: `git push origin main`
-6. Deploy to Pages: `./deploy.sh` (if not using GitHub Actions)
+## Checklist before opening a pull request
+
+- [ ] `python tools/sync_docs.py` runs clean
+- [ ] `python -m mkdocs build --strict` exits 0 (no warnings)
+- [ ] `docs/` and `site/` are **not** in `git status` (they are ignored)
+- [ ] Only root files are staged
+- [ ] `python tools/sync_docs.py` twice gives "0 copied, 0 updated" the second time
+
+---
 
 ## Notes
 
-- The `docs/` directory is for local testing only - it's in `.gitignore`
-- The `site/` directory is also in `.gitignore`
-- Always use the helper scripts to ensure consistent setup
+- `docs/` — generated mirror of the content; git-ignored, safe to delete
+- `site/` — build output; git-ignored, safe to delete
+- `overrides/` — Jinja template overrides, read from the repo root
+- `stylesheets/extra.css` — the Catppuccin Mocha/Latte theme
+- Python examples (`examples.py`, `exercises.py`) are published to the site as
+  downloadable files so the links in lesson pages work

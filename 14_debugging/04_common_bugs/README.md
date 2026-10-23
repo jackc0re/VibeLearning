@@ -200,4 +200,11 @@ for i in range(3):
 
 ---
 
-[Back: Reading Tracebacks](../03_reading_tracebacks/) | [Back to Module 14](../README.md)
+[Back: Reading Tracebacks](../03_reading_tracebacks/README.md) | [Back to Module 14](../README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

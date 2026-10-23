@@ -35,7 +35,7 @@ Focus on foundational concepts:
 - **Functions** — Parameters, return values, scope
 - **Data Structures** — Lists, strings, dictionaries, sets
 
-`→ [Beginner Exercises](beginner/)`
+`→ [Beginner Exercises](beginner/README.md)`
 
 ### Intermediate Exercises
 
@@ -47,7 +47,7 @@ Combine multiple concepts:
 - **Data Structures** — Stacks, queues, trees, graphs
 - **Error Handling** — Exceptions, custom errors
 
-`→ [Intermediate Exercises](intermediate/)`
+`→ [Intermediate Exercises](intermediate/README.md)`
 
 ### Advanced Exercises
 
@@ -59,7 +59,7 @@ Complex, multi-step problems:
 - **Real-world Applications** — File I/O, APIs, databases
 - **Testing & Debugging** — TDD, mocking, debugging strategies
 
-`→ [Advanced Exercises](advanced/)`
+`→ [Advanced Exercises](advanced/README.md)`
 
 ---
 

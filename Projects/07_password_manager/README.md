@@ -544,7 +544,7 @@ For production use, consider:
 
 | Topic | Location |
 |-------|----------|
-| hashlib | [11_memory_performance/02_hash_functions](../../11_memory_performance/02_hash_functions/) |
+| hashlib | [11_memory_performance/02_hash_functions](../../16_essential_libraries/08_hashlib_secrets/README.md) |
 | File I/O | [10_file_io](../../10_file_io/README.md) |
 | Classes | [04_oop_concepts](../../04_oop_concepts/README.md) |
 | Error Handling | [08_error_handling](../../08_error_handling/README.md) |

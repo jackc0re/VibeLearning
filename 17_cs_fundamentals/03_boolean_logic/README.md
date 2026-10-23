@@ -395,3 +395,10 @@ python exercises.py
 
 **Previous:** [Bitwise Operations ←](../02_bitwise_operations/README.md)  
 **Next:** [Memory Architecture →](../04_memory_architecture/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

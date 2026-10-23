@@ -151,4 +151,11 @@ Lock files record exact versions of all dependencies (including transitive):
 
 ---
 
-[Back: Virtual Environments](../04_virtual_environments/) | [Back to Module 13](../README.md)
+[Back: Virtual Environments](../04_virtual_environments/README.md) | [Back to Module 13](../README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.
