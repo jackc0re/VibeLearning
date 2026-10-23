@@ -19,12 +19,12 @@ This module teaches the practical side of performance:
 
 | # | Topic | Description | Key Concepts |
 |---|-------|-------------|--------------|
-| 01 | [Memory Basics](01_memory_basics/) | How Python represents objects | `id()`, mutability, GC, `memoryview` |
-| 02 | [References vs Values](02_references_vs_values/) | Aliasing and copying | shallow vs deep copy, `copy` module |
-| 03 | [Time Complexity](03_time_complexity/) | Reason about runtime growth | linear vs quadratic, sets vs lists |
-| 04 | [Space Complexity](04_space_complexity/) | Reason about memory usage | in-place, recursion stack, generators |
-| 05 | [Big-O Notation](05_big_o_notation/) | Analyze algorithms consistently | common Big-O classes, tradeoffs |
-| 06 | [Optimization Techniques](06_optimization_techniques/) | Make code faster safely | profiling, caching, built-ins |
+| 01 | [Memory Basics](01_memory_basics/README.md) | How Python represents objects | `id()`, mutability, GC, `memoryview` |
+| 02 | [References vs Values](02_references_vs_values/README.md) | Aliasing and copying | shallow vs deep copy, `copy` module |
+| 03 | [Time Complexity](03_time_complexity/README.md) | Reason about runtime growth | linear vs quadratic, sets vs lists |
+| 04 | [Space Complexity](04_space_complexity/README.md) | Reason about memory usage | in-place, recursion stack, generators |
+| 05 | [Big-O Notation](05_big_o_notation/README.md) | Analyze algorithms consistently | common Big-O classes, tradeoffs |
+| 06 | [Optimization Techniques](06_optimization_techniques/README.md) | Make code faster safely | profiling, caching, built-ins |
 
 ---
 
@@ -79,5 +79,5 @@ By the end of this module, you should be able to:
 
 ---
 
-**Start here:** [01_memory_basics](01_memory_basics/)
+**Start here:** [01_memory_basics](01_memory_basics/README.md)
 

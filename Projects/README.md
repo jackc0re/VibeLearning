@@ -18,12 +18,12 @@ Apply what you've learned by building complete, working applications. These proj
 
 | Project | Level | Time | Prerequisites |
 |---------|-------|------|---------------|
-| [01_calculator](01_calculator/) | ⭐ | 2-3 hours | Modules 00-01 |
-| [02_todo_app](02_todo_app/) | ⭐⭐ | 4-6 hours | Modules 00-04, 10 |
-| [03_file_organizer](03_file_organizer/) | ⭐⭐ | 4-6 hours | Modules 00-02, 10, 13 |
-| [04_data_analyzer](04_data_analyzer/) | ⭐⭐⭐ | 6-8 hours | Modules 00-03, 10 |
-| [05_quiz_game](05_quiz_game/) | ⭐⭐ | 4-6 hours | Modules 00-04, 10 |
-| [07_password_manager](07_password_manager/) | ⭐⭐⭐ | 6-8 hours | Modules 01-04, 08, 10, 16 |
+| [01_calculator](01_calculator/README.md) | ⭐ | 2-3 hours | Modules 00-01 |
+| [02_todo_app](02_todo_app/README.md) | ⭐⭐ | 4-6 hours | Modules 00-04, 10 |
+| [03_file_organizer](03_file_organizer/README.md) | ⭐⭐ | 4-6 hours | Modules 00-02, 10, 13 |
+| [04_data_analyzer](04_data_analyzer/README.md) | ⭐⭐⭐ | 6-8 hours | Modules 00-03, 10 |
+| [05_quiz_game](05_quiz_game/README.md) | ⭐⭐ | 4-6 hours | Modules 00-04, 10 |
+| [07_password_manager](07_password_manager/README.md) | ⭐⭐⭐ | 6-8 hours | Modules 01-04, 08, 10, 16 |
 
 ---
 

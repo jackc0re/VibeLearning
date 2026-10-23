@@ -48,4 +48,4 @@ These modules are:
 
 ## 🔗 Next Steps
 
-Start with [01_collections_module](01_collections_module/) to learn about specialized container datatypes!
+Start with [01_collections_module](01_collections_module/README.md) to learn about specialized container datatypes!

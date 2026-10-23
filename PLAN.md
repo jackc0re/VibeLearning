@@ -102,16 +102,16 @@ Before changing anything, make sure we can always roll back and can prove what "
 
 **Why:** CI is currently "green but meaningless" — it doesn't validate anything (build is non-strict, ~260 warnings, nothing runs the Python examples). This phase makes green actually mean correct.
 
-- [ ] 1. Pin versions in `requirements.txt` (exact `==` pins for `mkdocs`, `mkdocs-material`, `pymdown-extensions`, `pygments`; drop `mkdocs-live-edit-plugin` if unused in mkdocs.yml — check first). Remove the extra `[imaging]` extra only if no `attr_list`-imaged SVG icons are used; keep it if social icons need it.
+- [x] 1. Pin versions in `requirements.txt` (exact `==` pins for `mkdocs`, `mkdocs-material`, `pymdown-extensions`, `pygments`; drop `mkdocs-live-edit-plugin` if unused in mkdocs.yml — check first). Remove the extra `[imaging]` extra only if no `attr_list`-imaged SVG icons are used; keep it if social icons need it.
       Files: `requirements.txt`
       Done when: `pip install -r requirements.txt` on a clean venv installs a reproducible set; versions match what CI uses.
-- [ ] 2. Rework `.github/workflows/mkdocs.yml`:
+- [x] 2. Rework `.github/workflows/mkdocs.yml`:
       - install from `requirements.txt` (delete the ad-hoc `pip install mkdocs mkdocs-material ...` list — it currently drifts from requirements.txt and installs `mkdocs-minify-plugin` which mkdocs.yml never uses);
       - keep the deploy job on `push: main` as-is;
       - add a **separate validation job** that runs on pull requests (and optionally on main): checkout → `pip install -r requirements.txt` → `python tools/sync_docs.py` → `mkdocs build --strict` → fail on any warning.
       Files: `.github/workflows/mkdocs.yml`, `requirements.txt`
       Done when: opening a PR with a deliberate broken link makes the validation job fail; the deploy workflow still goes green on main.
-- [ ] 3. Remove the dead scripts and document the new flow:
+- [x] 3. Remove the dead scripts and document the new flow:
       - delete `deploy.sh` (its inline `docs_dir: .` config is rejected by MkDocs 1.6 — that path is dead, and DEVELOPMENT.md still documents it as the deploy method, which would mislead the user);
       - replace `build.sh`/`clean.sh`/`serve.sh` with either nothing (Windows users run `python tools/sync_docs.py && python -m mkdocs serve` directly) or thin wrappers — see Open Question 1;
       - rewrite `DEVELOPMENT.md` to the new flow: venv setup on Windows, `python tools/sync_docs.py`, `python -m mkdocs serve`, push to main → CI deploys.

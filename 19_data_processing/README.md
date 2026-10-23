@@ -24,7 +24,7 @@ Data is the lifeblood of modern applications. This module teaches you practical 
 
 ## Topics
 
-### [01_sqlite_basics](01_sqlite_basics/) - SQLite Basics
+### [01_sqlite_basics](01_sqlite_basics/README.md) - SQLite Basics
 Learn to create databases, tables, and perform CRUD operations.
 
 **Key Concepts:**
@@ -37,7 +37,7 @@ Learn to create databases, tables, and perform CRUD operations.
 
 ---
 
-### [02_sql_fundamentals](02_sql_fundamentals/) - SQL Fundamentals
+### [02_sql_fundamentals](02_sql_fundamentals/README.md) - SQL Fundamentals
 Master SQL for querying and analyzing data.
 
 **Key Concepts:**
@@ -52,7 +52,7 @@ Master SQL for querying and analyzing data.
 
 ---
 
-### [03_data_cleaning](03_data_cleaning/) - Data Cleaning
+### [03_data_cleaning](03_data_cleaning/README.md) - Data Cleaning
 Handle messy, incomplete, and inconsistent data.
 
 **Key Concepts:**
@@ -67,7 +67,7 @@ Handle messy, incomplete, and inconsistent data.
 
 ---
 
-### [04_data_transformation](04_data_transformation/) - Data Transformation
+### [04_data_transformation](04_data_transformation/README.md) - Data Transformation
 Transform raw data into useful formats for analysis.
 
 **Key Concepts:**
@@ -82,7 +82,7 @@ Transform raw data into useful formats for analysis.
 
 ---
 
-### [05_generating_reports](05_generating_reports/) - Generating Reports
+### [05_generating_reports](05_generating_reports/README.md) - Generating Reports
 Create meaningful reports and summaries from your data.
 
 **Key Concepts:**

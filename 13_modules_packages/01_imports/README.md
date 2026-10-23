@@ -94,4 +94,4 @@ from myproject.models import User
 
 ---
 
-[Back: Module 13 README](../README.md) | [Next: Creating Modules](../02_creating_modules/)
+[Back: Module 13 README](../README.md) | [Next: Creating Modules](../02_creating_modules/README.md)

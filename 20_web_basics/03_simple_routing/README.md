@@ -367,4 +367,4 @@ def users(handler): ...
 
 Now that you can route URLs, let's learn how to generate dynamic HTML with templates!
 
-→ Continue to [04: Templating](../04_templating/)
+→ Continue to [04: Templating](../04_templating/README.md)

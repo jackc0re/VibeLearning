@@ -23,7 +23,7 @@ Comprehensive dictionary of programming terms you'll encounter throughout this c
 
 ---
 
-### 📝 Cheatsheets ([cheatsheets/](cheatsheets/))
+### 📝 Cheatsheets ([cheatsheets/](cheatsheets/README.md))
 Quick reference guides for syntax, patterns, and common operations. Print them out and keep them handy!
 
 | Cheatsheet | Topics Covered | When to Use |

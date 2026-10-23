@@ -18,10 +18,10 @@ This module covers:
 
 | # | Topic | Description | Key Concepts |
 |---|-------|-------------|--------------|
-| 01 | [Print Debugging](01_print_debugging/) | Strategic print statements | `print()`, f-strings, logging |
-| 02 | [Using Debuggers](02_using_debuggers/) | Interactive debugging with pdb | `breakpoint()`, stepping, inspection |
-| 03 | [Reading Tracebacks](03_reading_tracebacks/) | Understanding error messages | stack traces, exception chains |
-| 04 | [Common Bugs](04_common_bugs/) | Frequent mistakes and fixes | off-by-one, mutation, scope issues |
+| 01 | [Print Debugging](01_print_debugging/README.md) | Strategic print statements | `print()`, f-strings, logging |
+| 02 | [Using Debuggers](02_using_debuggers/README.md) | Interactive debugging with pdb | `breakpoint()`, stepping, inspection |
+| 03 | [Reading Tracebacks](03_reading_tracebacks/README.md) | Understanding error messages | stack traces, exception chains |
+| 04 | [Common Bugs](04_common_bugs/README.md) | Frequent mistakes and fixes | off-by-one, mutation, scope issues |
 
 ---
 
@@ -89,4 +89,4 @@ By the end of this module, you should be able to:
 
 ---
 
-**Start here:** [01_print_debugging](01_print_debugging/)
+**Start here:** [01_print_debugging](01_print_debugging/README.md)

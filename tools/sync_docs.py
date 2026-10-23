@@ -42,7 +42,7 @@ MODULE_DIR_PATTERN = re.compile(r"^\d{2}_")
 EXTRA_DIRS = ("Resources", "Projects", "Exercises", "stylesheets")
 
 # Root-level files that belong on the site (copied only if they exist).
-EXTRA_FILES = ("README.md", "404.md")
+EXTRA_FILES = ("README.md", "404.md", "DEVELOPMENT.md", "ROADMAP.md")
 
 # Files/directories never copied, even if they live inside a source dir.
 IGNORED_NAMES = {".DS_Store", "Thumbs.db", "__pycache__", ".git", ".pytest_cache"}

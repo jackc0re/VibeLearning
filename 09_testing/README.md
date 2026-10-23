@@ -13,11 +13,11 @@ This module focuses on practical testing skills using Python's built-in `unittes
 
 | # | Topic | Description | Key Concepts |
 |---|-------|-------------|--------------|
-| 01 | [Why Testing](01_why_testing/) | What testing is and why it's valuable | confidence, regression, fast feedback |
-| 02 | [Unit Testing](02_unit_testing/) | Testing small units of logic | arrange/act/assert, `unittest`, `pytest` |
-| 03 | [Test-Driven Development](03_test_driven_development/) | Writing tests before code | red/green/refactor, small steps |
-| 04 | [Mocking](04_mocking/) | Replacing slow/unreliable dependencies | `unittest.mock`, stubs, fakes |
-| 05 | [Integration Testing](05_integration_testing/) | Testing multiple components together | boundaries, fixtures, test data |
+| 01 | [Why Testing](01_why_testing/README.md) | What testing is and why it's valuable | confidence, regression, fast feedback |
+| 02 | [Unit Testing](02_unit_testing/README.md) | Testing small units of logic | arrange/act/assert, `unittest`, `pytest` |
+| 03 | [Test-Driven Development](03_test_driven_development/README.md) | Writing tests before code | red/green/refactor, small steps |
+| 04 | [Mocking](04_mocking/README.md) | Replacing slow/unreliable dependencies | `unittest.mock`, stubs, fakes |
+| 05 | [Integration Testing](05_integration_testing/README.md) | Testing multiple components together | boundaries, fixtures, test data |
 
 ---
 
@@ -77,5 +77,5 @@ pip install pytest
 
 ---
 
-**Ready to start? Begin with [01_why_testing](01_why_testing/)!**
+**Ready to start? Begin with [01_why_testing](01_why_testing/README.md)!**
 

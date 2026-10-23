@@ -3,7 +3,7 @@
 > **Your comprehensive guide to fundamental programming concepts**
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
-[![No dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](#-quick-start)
+[![No dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](#quick-start)
 [![Docs](https://img.shields.io/badge/docs-jackc0re.github.io%2FVibeLearning-8839ef.svg)](https://jackc0re.github.io/VibeLearning/)
 
 Welcome to **VibeLearning** — a beginner-friendly repository that takes you from

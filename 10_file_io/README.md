@@ -1,7 +1,7 @@
 # 📁 Module 10: File & I/O
 
 Files are how programs **persist data** and exchange information with the outside world.
-In Python, most file operations revolve around the built-in [`open()`](10_file_io/README.md:1) function and using context managers (`with`) to ensure files are closed properly.
+In Python, most file operations revolve around the built-in `open()` function and using context managers (`with`) to ensure files are closed properly.
 
 > **Estimated Time:** 4-6 hours  \
 > **Prerequisites:** Module 01 (Foundations)  \
@@ -13,11 +13,11 @@ In Python, most file operations revolve around the built-in [`open()`](10_file_i
 
 | # | Topic | Description | Key Concepts |
 |---|-------|-------------|--------------|
-| 01 | [Reading Files](01_reading_files/) | Open and read text safely | encodings, iterating lines, `with open(...)` |
-| 02 | [Writing Files](02_writing_files/) | Create, overwrite, append | modes (`w`, `a`), newline handling |
-| 03 | [Working with JSON](03_working_with_json/) | Read/write structured data | `json.dumps`, `json.load`, validation |
-| 04 | [Working with CSV](04_working_with_csv/) | Tabular data | `csv.reader`, `DictReader`, `DictWriter` |
-| 05 | [Binary Files](05_binary_files/) | Read/write bytes | `rb`/`wb`, hashing, chunked IO |
+| 01 | [Reading Files](01_reading_files/README.md) | Open and read text safely | encodings, iterating lines, `with open(...)` |
+| 02 | [Writing Files](02_writing_files/README.md) | Create, overwrite, append | modes (`w`, `a`), newline handling |
+| 03 | [Working with JSON](03_working_with_json/README.md) | Read/write structured data | `json.dumps`, `json.load`, validation |
+| 04 | [Working with CSV](04_working_with_csv/README.md) | Tabular data | `csv.reader`, `DictReader`, `DictWriter` |
+| 05 | [Binary Files](05_binary_files/README.md) | Read/write bytes | `rb`/`wb`, hashing, chunked IO |
 
 ---
 
@@ -67,5 +67,5 @@ By the end of this module, you should be able to:
 
 ---
 
-**Start here:** [01_reading_files](01_reading_files/)
+**Start here:** [01_reading_files](01_reading_files/README.md)
 

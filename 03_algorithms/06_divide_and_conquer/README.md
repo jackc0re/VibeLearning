@@ -463,4 +463,4 @@ In such cases, use DP with memoization.
 
 - Practice with [`exercises.py`](exercises.py)
 - Test your knowledge with [`quiz.md`](quiz.md)
-- Move on to [07_graph_algorithms](../07_graph_algorithms/)
+- Move on to [07_graph_algorithms](../07_graph_algorithms/README.md)

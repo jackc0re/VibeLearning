@@ -128,4 +128,4 @@ deactivate
 
 ---
 
-[Back: Packages](../03_packages/) | [Next: Dependency Management](../05_dependency_management/)
+[Back: Packages](../03_packages/README.md) | [Next: Dependency Management](../05_dependency_management/README.md)

@@ -376,4 +376,4 @@ The other problems require DP:
 
 ---
 
-[Back to Greedy Algorithms README](README.md) | [Next: Divide and Conquer →](../06_divide_and_conquer/)
+[Back to Greedy Algorithms README](README.md) | [Next: Divide and Conquer →](../06_divide_and_conquer/README.md)

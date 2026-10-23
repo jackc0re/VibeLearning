@@ -412,4 +412,4 @@ So the total minimum cost to reach step i is the cost of standing on step i plus
 
 ---
 
-[Back to Dynamic Programming README](README.md) | [Next: Greedy Algorithms →](../05_greedy_algorithms/)
+[Back to Dynamic Programming README](README.md) | [Next: Greedy Algorithms →](../05_greedy_algorithms/README.md)

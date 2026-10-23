@@ -1,7 +1,7 @@
 # 🧩 Working with JSON
 
 JSON (JavaScript Object Notation) is a **text-based** format for structured data.
-In Python, you work with JSON via the built-in [`json`](10_file_io/03_working_with_json/README.md:1) module.
+In Python, you work with JSON via the built-in `json` module.
 
 ---
 

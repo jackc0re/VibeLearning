@@ -250,4 +250,4 @@ req = Request("https://api.example.com/post", data=json_data,
 
 Now that you can make requests, let's learn to handle the responses properly!
 
-→ Continue to [03: Parsing Responses](../03_parsing_responses/)
+→ Continue to [03: Parsing Responses](../03_parsing_responses/README.md)

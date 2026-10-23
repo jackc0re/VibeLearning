@@ -18,11 +18,11 @@ In Python:
 
 | # | Topic | Description | Key Concepts |
 |---|-------|-------------|--------------|
-| 01 | [Imports](01_imports/) | How Python finds and loads modules | `import`, `from`, `as`, `sys.path` |
-| 02 | [Creating Modules](02_creating_modules/) | Writing reusable modules | `__name__`, `__all__`, module design |
-| 03 | [Packages](03_packages/) | Organizing modules into packages | `__init__.py`, subpackages, relative imports |
-| 04 | [Virtual Environments](04_virtual_environments/) | Isolating project dependencies | `venv`, activation, isolation |
-| 05 | [Dependency Management](05_dependency_management/) | Managing external packages | `pip`, `requirements.txt`, `pyproject.toml` |
+| 01 | [Imports](01_imports/README.md) | How Python finds and loads modules | `import`, `from`, `as`, `sys.path` |
+| 02 | [Creating Modules](02_creating_modules/README.md) | Writing reusable modules | `__name__`, `__all__`, module design |
+| 03 | [Packages](03_packages/README.md) | Organizing modules into packages | `__init__.py`, subpackages, relative imports |
+| 04 | [Virtual Environments](04_virtual_environments/README.md) | Isolating project dependencies | `venv`, activation, isolation |
+| 05 | [Dependency Management](05_dependency_management/README.md) | Managing external packages | `pip`, `requirements.txt`, `pyproject.toml` |
 
 ---
 
@@ -85,4 +85,4 @@ This module teaches the standard Python practices used in professional developme
 
 ---
 
-**Start here:** [01_imports](01_imports/)
+**Start here:** [01_imports](01_imports/README.md)

@@ -2,7 +2,7 @@
 
 Reading files is a foundational I/O skill. The key idea is:
 
-- Use [`open()`](10_file_io/01_reading_files/README.md:1) with a **context manager** (`with`) so the file closes automatically.
+- Use `open()` with a **context manager** (`with`) so the file closes automatically.
 - Specify an **encoding** for text files (UTF-8 is the modern default).
 
 ---
@@ -30,7 +30,7 @@ with open("notes.txt", "r", encoding="utf-8") as f:
 ## ⚠️ Paths and Working Directory
 
 Relative paths are resolved from the **current working directory** (where you run `python`).
-If you need robust paths, consider [`pathlib.Path`](10_file_io/01_reading_files/README.md:1).
+If you need robust paths, consider `pathlib.Path`.
 
 ---
 

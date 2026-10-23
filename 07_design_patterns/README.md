@@ -12,9 +12,9 @@ Design patterns are **reusable solutions** to common software design problems. T
 
 | # | Topic | Description | Key Concepts |
 |---|-------|-------------|--------------|
-| 01 | [Creational Patterns](01_creational/) | How objects are created and configured | singleton, factory, builder |
-| 02 | [Structural Patterns](02_structural/) | How parts are composed into larger structures | adapter, decorator, facade |
-| 03 | [Behavioral Patterns](03_behavioral/) | How objects communicate and share responsibilities | observer, strategy, command |
+| 01 | [Creational Patterns](01_creational/README.md) | How objects are created and configured | singleton, factory, builder |
+| 02 | [Structural Patterns](02_structural/README.md) | How parts are composed into larger structures | adapter, decorator, facade |
+| 03 | [Behavioral Patterns](03_behavioral/README.md) | How objects communicate and share responsibilities | observer, strategy, command |
 
 ---
 
@@ -53,4 +53,4 @@ By the end of this module, you should be able to:
 
 ---
 
-**Ready to begin? Start with [01_creational](01_creational/)!**
+**Ready to begin? Start with [01_creational](01_creational/README.md)!**

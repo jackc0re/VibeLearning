@@ -363,4 +363,4 @@ index = bisect.bisect_left(sorted_list, target)
 
 - Practice with [`exercises.py`](exercises.py)
 - Test your knowledge with [`quiz.md`](quiz.md)
-- Move on to [02_sorting](../02_sorting/)
+- Move on to [02_sorting](../02_sorting/README.md)

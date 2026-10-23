@@ -113,4 +113,4 @@ import mypkg.module_b
 
 ---
 
-[Back: Creating Modules](../02_creating_modules/) | [Next: Virtual Environments](../04_virtual_environments/)
+[Back: Creating Modules](../02_creating_modules/README.md) | [Next: Virtual Environments](../04_virtual_environments/README.md)

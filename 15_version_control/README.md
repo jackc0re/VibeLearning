@@ -18,10 +18,10 @@ This module covers:
 
 | # | Topic | Description | Key Concepts |
 |---|-------|-------------|--------------|
-| 01 | [Git Basics](01_git_basics/) | Core Git commands | `init`, `add`, `commit`, `status`, `log` |
-| 02 | [Branching](02_branching/) | Creating and managing branches | `branch`, `checkout`, `switch`, `HEAD` |
-| 03 | [Merging](03_merging/) | Combining changes | `merge`, `rebase`, conflicts |
-| 04 | [Collaboration](04_collaboration/) | Working with remotes | `clone`, `push`, `pull`, `remote` |
+| 01 | [Git Basics](01_git_basics/README.md) | Core Git commands | `init`, `add`, `commit`, `status`, `log` |
+| 02 | [Branching](02_branching/README.md) | Creating and managing branches | `branch`, `checkout`, `switch`, `HEAD` |
+| 03 | [Merging](03_merging/README.md) | Combining changes | `merge`, `rebase`, conflicts |
+| 04 | [Collaboration](04_collaboration/README.md) | Working with remotes | `clone`, `push`, `pull`, `remote` |
 
 ---
 
@@ -118,4 +118,4 @@ git config --list
 
 ---
 
-**Start here:** [01_git_basics](01_git_basics/)
+**Start here:** [01_git_basics](01_git_basics/README.md)

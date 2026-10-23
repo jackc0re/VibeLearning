@@ -12,13 +12,13 @@ Software design is about writing code that stays **readable, changeable, and rel
 
 | # | Topic | Description | Key Concepts |
 |---|-------|-------------|--------------|
-| 01 | [DRY Principle](01_dry_principle/) | Remove duplication and centralize knowledge | duplication, single source of truth |
-| 02 | [KISS Principle](02_kiss_principle/) | Prefer simple solutions that are easy to understand | simplicity, readability |
-| 03 | [YAGNI Principle](03_yagni_principle/) | Build what you need now, not what you might need later | scope, overengineering |
-| 04 | [Separation of Concerns](04_separation_of_concerns/) | Split responsibilities so each part has one job | layers, boundaries, modules |
-| 05 | [Coupling and Cohesion](05_coupling_and_cohesion/) | Design for low coupling and high cohesion | dependencies, responsibility |
-| 06 | [Code Smells](06_code_smells/) | Recognize warning signs of maintainability issues | long functions, god objects |
-| 07 | [Refactoring](07_refactoring/) | Improve code structure without changing behavior | safe changes, small steps |
+| 01 | [DRY Principle](01_dry_principle/README.md) | Remove duplication and centralize knowledge | duplication, single source of truth |
+| 02 | [KISS Principle](02_kiss_principle/README.md) | Prefer simple solutions that are easy to understand | simplicity, readability |
+| 03 | [YAGNI Principle](03_yagni_principle/README.md) | Build what you need now, not what you might need later | scope, overengineering |
+| 04 | [Separation of Concerns](04_separation_of_concerns/README.md) | Split responsibilities so each part has one job | layers, boundaries, modules |
+| 05 | [Coupling and Cohesion](05_coupling_and_cohesion/README.md) | Design for low coupling and high cohesion | dependencies, responsibility |
+| 06 | [Code Smells](06_code_smells/README.md) | Recognize warning signs of maintainability issues | long functions, god objects |
+| 07 | [Refactoring](07_refactoring/README.md) | Improve code structure without changing behavior | safe changes, small steps |
 
 ---
 
@@ -80,4 +80,4 @@ By the end of this module, you should be able to:
 
 ---
 
-**Ready to start? Begin with [01_dry_principle](01_dry_principle/)!**
+**Ready to start? Begin with [01_dry_principle](01_dry_principle/README.md)!**

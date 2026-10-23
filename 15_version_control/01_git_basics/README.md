@@ -235,4 +235,4 @@ git revert commit-hash
 
 ---
 
-[Back: Module 15 README](../README.md) | [Next: Branching](../02_branching/)
+[Back: Module 15 README](../README.md) | [Next: Branching](../02_branching/README.md)

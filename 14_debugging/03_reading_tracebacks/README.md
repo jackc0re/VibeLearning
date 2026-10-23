@@ -121,4 +121,4 @@ better_exceptions.hook()
 
 ---
 
-[Back: Using Debuggers](../02_using_debuggers/) | [Next: Common Bugs](../04_common_bugs/)
+[Back: Using Debuggers](../02_using_debuggers/README.md) | [Next: Common Bugs](../04_common_bugs/README.md)

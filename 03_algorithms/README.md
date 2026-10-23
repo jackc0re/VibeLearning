@@ -24,13 +24,13 @@ Algorithms are step-by-step procedures for solving problems. In this module, you
 
 | # | Topic | Description | Key Concepts |
 |---|-------|-------------|--------------|
-| 01 | [Searching](01_searching/) | Finding elements in collections | Linear search, binary search |
-| 02 | [Sorting](02_sorting/) | Ordering elements | Bubble, selection, insertion, merge, quick sort |
-| 03 | [Recursion](03_recursion/) | Self-referential problem solving | Base case, recursive case, call stack |
-| 04 | [Dynamic Programming](04_dynamic_programming/) | Optimization through memoization | Overlapping subproblems, optimal substructure |
-| 05 | [Greedy Algorithms](05_greedy_algorithms/) | Local optimization strategies | Greedy choice property, activity selection |
-| 06 | [Divide and Conquer](06_divide_and_conquer/) | Breaking down problems | Merge sort, quick sort, binary search |
-| 07 | [Graph Algorithms](07_graph_algorithms/) | Traversing connected structures | BFS, DFS, shortest paths |
+| 01 | [Searching](01_searching/README.md) | Finding elements in collections | Linear search, binary search |
+| 02 | [Sorting](02_sorting/README.md) | Ordering elements | Bubble, selection, insertion, merge, quick sort |
+| 03 | [Recursion](03_recursion/README.md) | Self-referential problem solving | Base case, recursive case, call stack |
+| 04 | [Dynamic Programming](04_dynamic_programming/README.md) | Optimization through memoization | Overlapping subproblems, optimal substructure |
+| 05 | [Greedy Algorithms](05_greedy_algorithms/README.md) | Local optimization strategies | Greedy choice property, activity selection |
+| 06 | [Divide and Conquer](06_divide_and_conquer/README.md) | Breaking down problems | Merge sort, quick sort, binary search |
+| 07 | [Graph Algorithms](07_graph_algorithms/README.md) | Traversing connected structures | BFS, DFS, shortest paths |
 
 ---
 
@@ -178,4 +178,4 @@ Understanding Big-O notation is crucial for this module:
 
 ---
 
-**Ready to start? Begin with [01_searching](01_searching/)!**
+**Ready to start? Begin with [01_searching](01_searching/README.md)!**

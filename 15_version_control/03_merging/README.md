@@ -374,4 +374,4 @@ git branch -d feature-login
 
 ---
 
-[Back: Module 15 README](../README.md) | [Previous: Branching](../02_branching/) | [Next: Collaboration](../04_collaboration/)
+[Back: Module 15 README](../README.md) | [Previous: Branching](../02_branching/README.md) | [Next: Collaboration](../04_collaboration/README.md)

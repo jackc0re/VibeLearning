@@ -28,11 +28,11 @@ You're using APIs behind the scenes.
 
 | Topic | Description |
 |-------|-------------|
-| [01: HTTP Fundamentals](./01_http_fundamentals/) | Methods, status codes, headers, URLs |
-| [02: Making Requests](./02_making_requests/) | GET/POST with `urllib` |
-| [03: Parsing Responses](./03_parsing_responses/) | JSON handling, error management |
-| [04: Building Simple API](./04_building_simple_api/) | REST API with `http.server` |
-| [05: API Best Practices](./05_api_best_practices/) | Rate limiting, retries, authentication |
+| [01: HTTP Fundamentals](./01_http_fundamentals/README.md) | Methods, status codes, headers, URLs |
+| [02: Making Requests](./02_making_requests/README.md) | GET/POST with `urllib` |
+| [03: Parsing Responses](./03_parsing_responses/README.md) | JSON handling, error management |
+| [04: Building Simple API](./04_building_simple_api/README.md) | REST API with `http.server` |
+| [05: API Best Practices](./05_api_best_practices/README.md) | Rate limiting, retries, authentication |
 
 ---
 

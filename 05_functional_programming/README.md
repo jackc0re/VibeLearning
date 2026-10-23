@@ -12,13 +12,13 @@ Functional Programming (FP) is a paradigm that treats computation as the evaluat
 
 | # | Topic | Description | Key Concepts |
 |---|-------|-------------|--------------|
-| 01 | [Pure Functions](01_pure_functions/) | Deterministic functions without side effects | determinism, referential transparency |
-| 02 | [Immutability](02_immutability/) | Avoid changing data in place | tuples, frozen data, copy-on-write |
-| 03 | [Higher-Order Functions](03_higher_order_functions/) | Functions that take/return functions | callbacks, composition |
-| 04 | [Lambda Expressions](04_lambda_expressions/) | Anonymous functions for short logic | lambda, inline functions |
-| 05 | [Map, Filter, Reduce](05_map_filter_reduce/) | Transform and reduce collections | map, filter, reduce |
-| 06 | [Closures](06_closures/) | Functions that remember outer variables | enclosing scope, nonlocal |
-| 07 | [Decorators](07_decorators/) | Functions that wrap other functions | @syntax, wrappers |
+| 01 | [Pure Functions](01_pure_functions/README.md) | Deterministic functions without side effects | determinism, referential transparency |
+| 02 | [Immutability](02_immutability/README.md) | Avoid changing data in place | tuples, frozen data, copy-on-write |
+| 03 | [Higher-Order Functions](03_higher_order_functions/README.md) | Functions that take/return functions | callbacks, composition |
+| 04 | [Lambda Expressions](04_lambda_expressions/README.md) | Anonymous functions for short logic | lambda, inline functions |
+| 05 | [Map, Filter, Reduce](05_map_filter_reduce/README.md) | Transform and reduce collections | map, filter, reduce |
+| 06 | [Closures](06_closures/README.md) | Functions that remember outer variables | enclosing scope, nonlocal |
+| 07 | [Decorators](07_decorators/README.md) | Functions that wrap other functions | @syntax, wrappers |
 
 ---
 
@@ -80,4 +80,4 @@ By the end of this module, you should be able to:
 
 ---
 
-**Ready to start? Begin with [01_pure_functions](01_pure_functions/)!**
+**Ready to start? Begin with [01_pure_functions](01_pure_functions/README.md)!**

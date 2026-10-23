@@ -28,11 +28,11 @@ This knowledge helps you debug issues, understand framework internals, and build
 
 | Topic | Description |
 |-------|-------------|
-| [01: HTML & CSS Overview](./01_html_css_overview/) | Structure, tags, basic styling |
-| [02: HTTP Server](./02_http_server/) | `http.server` module deep dive |
-| [03: Simple Routing](./03_simple_routing/) | Simple URL routing without frameworks |
-| [04: Templating](./04_templating/) | String templating for HTML generation |
-| [05: Forms Handling](./05_forms_handling/) | Handling GET/POST form data |
+| [01: HTML & CSS Overview](./01_html_css_overview/README.md) | Structure, tags, basic styling |
+| [02: HTTP Server](./02_http_server/README.md) | `http.server` module deep dive |
+| [03: Simple Routing](./03_simple_routing/README.md) | Simple URL routing without frameworks |
+| [04: Templating](./04_templating/README.md) | String templating for HTML generation |
+| [05: Forms Handling](./05_forms_handling/README.md) | Handling GET/POST form data |
 
 ---
 

@@ -473,4 +473,4 @@ The other problems are more naturally solved with simple loops.
 
 ---
 
-[Back to Recursion README](README.md) | [Next: Dynamic Programming →](../04_dynamic_programming/)
+[Back to Recursion README](README.md) | [Next: Dynamic Programming →](../04_dynamic_programming/README.md)

@@ -117,4 +117,4 @@ Be careful with module-level code that has side effects!
 
 ---
 
-[Back: Imports](../01_imports/) | [Next: Packages](../03_packages/)
+[Back: Imports](../01_imports/README.md) | [Next: Packages](../03_packages/README.md)

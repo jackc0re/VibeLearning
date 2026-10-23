@@ -394,4 +394,4 @@ That's 50,000x faster!
 
 ---
 
-[Back to Searching README](README.md) | [Next: Sorting →](../02_sorting/)
+[Back to Searching README](README.md) | [Next: Sorting →](../02_sorting/README.md)
