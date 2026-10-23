@@ -173,10 +173,10 @@ Before changing anything, make sure we can always roll back and can prove what "
 
 **Why:** this is a *learning* repo — the 245 `examples.py` files are the product, and nothing anywhere ever executes them. A broken example ships silently today. One careful job catches regressions forever after.
 
-- [ ] 1. Add a `python-examples` job to the workflow: checkout, setup Python 3.11+, then run every `**/examples.py` at root with a **per-file timeout** (e.g. 10 s via a small runner script or `timeout` command), and a curated skip-list for interactive/slow ones (candidates: `Projects/09_chat_server`, `Projects/10_static_site_generator`, anything with `input()` loops or `time.sleep`). Exercise files stay out of scope for now (they're often intentionally incomplete).
+- [x] 1. Add a `python-examples` job to the workflow: checkout, setup Python 3.11+, then run every `**/examples.py` at root with a **per-file timeout** (e.g. 10 s via a small runner script or `timeout` command), and a curated skip-list for interactive/slow ones (candidates: `Projects/09_chat_server`, `Projects/10_static_site_generator`, anything with `input()` loops or `time.sleep`). Exercise files stay out of scope for now (they're often intentionally incomplete).
       Files: `.github/workflows/mkdocs.yml`, optionally `tools/run_examples.py`
       Done when: the job runs green on the current code with a documented skip-list, and deliberately breaking one example makes it fail.
-- [ ] 2. Fix any examples that fail when first run (expect a handful; this job's first run is also an audit). Keep fixes minimal — this is not a content-rewrite phase.
+- [x] 2. Fix any examples that fail when first run (expect a handful; this job's first run is also an audit). Keep fixes minimal — this is not a content-rewrite phase.
       Files: failing `examples.py` files (root copies)
       Done when: `python-examples` job green with the minimal skip-list.
 
