@@ -30,9 +30,12 @@ jobs:
         run: |
           pip install mkdocs mkdocs-material pymdown-extensions mkdocs-minify-plugin
       
+      - name: Sync docs from repo root
+        run: python tools/sync_docs.py
+
       - name: Build site
         run: |
-          # Build directly from repo root - mkdocs.yml handles docs_dir: docs
+          # docs/ is generated from the repo root by tools/sync_docs.py
           mkdocs build
           mv site _site
       

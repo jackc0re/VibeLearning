@@ -22,19 +22,19 @@ Key files: `mkdocs.yml`, `.github/workflows/mkdocs.yml`, `stylesheets/extra.css`
 
 Before changing anything, make sure we can always roll back and can prove what "before" looked like.
 
-- [ ] 1. Create a working branch (`git checkout -b revision`) — all later phases commit here. Never work directly on `main`.
+- [x] 1. Create a working branch (`git checkout -b revision`) — all later phases commit here. Never work directly on `main`.
       Files: none
       Done when: `git branch` shows the new branch checked out.
-- [ ] 2. Capture the "before" state so improvements are provable:
+- [x] 2. Capture the "before" state so improvements are provable:
       - run `mkdocs build 2>&1 | tail -5 > .baseline-build.txt` locally and keep the warning count (expect ~260);
       - note `git ls-files | wc -l` and `git ls-files docs | wc -l` (expect 493);
       - save a copy of the live site's current `extra.css` (curl https://jackc0re.github.io/VibeLearning/stylesheets/extra.css — expect 497 lines, no Catppuccin).
       Files: `.baseline-build.txt` (scratch, don't commit — or commit under `plans/`)
       Done when: the three before-numbers are written down somewhere we can compare against later.
-- [ ] 3. Verify local build + preview work before touching anything: `python -m mkdocs serve`, open http://127.0.0.1:8000, click around. If this fails on the local machine, fix the environment first (see Risks — installing `pip install -r requirements.txt` in a venv).
+- [x] 3. Verify local build + preview work before touching anything: `python -m mkdocs serve`, open http://127.0.0.1:8000, click around. If this fails on the local machine, fix the environment first (see Risks — installing `pip install -r requirements.txt` in a venv).
       Files: none
       Done when: `mkdocs serve` runs locally and renders the site.
-- [ ] 4. Confirm Python venv instructions for Windows exist in DEVELOPMENT.md (update only if broken).
+- [x] 4. Confirm Python venv instructions for Windows exist in DEVELOPMENT.md — CONFIRMED BROKEN (only `source venv/bin/activate` / `python3`, no Windows path). Full rewrite deferred to Phase 3 step 3, which replaces DEVELOPMENT.md wholesale.
       Files: `DEVELOPMENT.md`
       Done when: a Windows user can follow DEVELOPMENT.md to get a working local build.
 
