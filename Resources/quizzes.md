@@ -3,7 +3,7 @@
 Every topic ends with a short knowledge check. Work through them after you have run
 the examples and tried the exercises — they are the quickest way to find the gaps.
 
-**120 quizzes across 20 modules.**
+**124 quizzes across 20 modules.**
 
 ---
 
@@ -30,6 +30,8 @@ the examples and tried the exercises — they are the quickest way to find the g
 - [Trees](../02_data_structures/08_trees/quiz.md)
 - [Graphs](../02_data_structures/09_graphs/quiz.md)
 - [Hash Tables](../02_data_structures/10_hash_tables/quiz.md)
+- [Heaps and Priority Queues](../02_data_structures/11_heaps_priority_queues/quiz.md)
+- [Tries](../02_data_structures/12_tries/quiz.md)
 
 ## Algorithms
 
@@ -40,6 +42,8 @@ the examples and tried the exercises — they are the quickest way to find the g
 - [Greedy Algorithms](../03_algorithms/05_greedy_algorithms/quiz.md)
 - [Divide and Conquer](../03_algorithms/06_divide_and_conquer/quiz.md)
 - [Graph Algorithms](../03_algorithms/07_graph_algorithms/quiz.md)
+- [Two Pointers and Sliding Window](../03_algorithms/08_two_pointers_sliding_window/quiz.md)
+- [Backtracking](../03_algorithms/09_backtracking/quiz.md)
 
 ## OOP Concepts
 

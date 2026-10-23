@@ -97,8 +97,88 @@ Inserting at start is O(1) vs O(n) for arrays.
 
 ---
 
+## Question 6
+What does each node store in a **doubly** linked list?
+
+A) Data only  
+B) Data and a next pointer  
+C) Data, a next pointer, and a prev pointer  
+D) Data and its index
+
+<details>
+<summary>Click for answer</summary>
+
+**C) Data, a next pointer, and a prev pointer**
+
+Two pointers per node - which is why backward traversal works, and why the
+memory cost is higher than a singly linked list.
+
+</details>
+
+---
+
+## Question 7
+You already hold a reference to a node in a doubly linked list. How long does deleting it take?
+
+A) O(1)  
+B) O(n)  
+C) O(log n)  
+D) O(n²)
+
+<details>
+<summary>Click for answer</summary>
+
+**A) O(1)**
+
+The node's own `prev` pointer tells you the previous node, so no traversal
+from the head is needed. In a singly list this would be O(n).
+
+</details>
+
+---
+
+## Question 8
+When traversing a circular linked list, when do you stop?
+
+A) When `current` becomes None  
+B) When you arrive back at the starting node  
+C) After exactly n steps  
+D) You cannot traverse it safely
+
+<details>
+<summary>Click for answer</summary>
+
+**B) When you arrive back at the starting node**
+
+There is no None to stop at. Checking `while current is not head` (after
+processing head) is the safe pattern - `while current:` loops forever.
+
+</details>
+
+---
+
+## Question 9
+Which application is the classic fit for a circular linked list?
+
+A) Binary search  
+B) Round-robin scheduling  
+C) Random access by index  
+D) Sorting a large array
+
+<details>
+<summary>Click for answer</summary>
+
+**B) Round-robin scheduling**
+
+Players or processes take turns in a cycle - exactly what a circular list
+models, since following `next` forever just walks the loop again.
+
+</details>
+
+---
+
 ## How did you do?
 
-- **5 correct:** Excellent!
-- **3-4 correct:** Good, review the ones you missed.
-- **0-2 correct:** Re-read the README, then try again.
+- **9 correct:** Excellent!
+- **6-8 correct:** Good, review the ones you missed.
+- **0-5 correct:** Re-read the README, then try again.

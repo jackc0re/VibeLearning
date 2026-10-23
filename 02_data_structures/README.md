@@ -18,6 +18,8 @@ Learn how to organize and store data efficiently. From Python's built-in collect
 | [08_trees](08_trees/README.md) | Hierarchical data organization |
 | [09_graphs](09_graphs/README.md) | Network-like connections |
 | [10_hash_tables](10_hash_tables/README.md) | Fast key lookups explained |
+| [11_heaps_priority_queues](11_heaps_priority_queues/README.md) | Heaps from scratch + the heapq module |
+| [12_tries](12_tries/README.md) | Prefix trees for autocomplete |
 
 ---
 
@@ -28,6 +30,7 @@ By the end of this module, you will:
 - ✅ Master Python's built-in data structures (lists, dicts, sets, tuples)
 - ✅ Understand when to use each data structure
 - ✅ Implement classic structures from scratch (linked lists, trees)
+- ✅ Implement heaps and tries from scratch
 - ✅ Analyze time complexity of common operations
 - ✅ Choose the right structure for different problems
 
@@ -35,7 +38,7 @@ By the end of this module, you will:
 
 ## Time Estimate
 
-⏱️ **12-15 hours** total for this module
+⏱️ **15-18 hours** total for this module
 
 | Topic | Time |
 |-------|------|
@@ -49,6 +52,8 @@ By the end of this module, you will:
 | Trees | 2-3 hours |
 | Graphs | 2-3 hours |
 | Hash Tables | 1-2 hours |
+| Heaps & Priority Queues | 1-2 hours |
+| Tries | 1-2 hours |
 
 ---
 

@@ -198,6 +198,10 @@ def dfs_iterative(graph, start):
 
 Finds shortest path from source to all vertices in **weighted graphs with non-negative edges**.
 
+> **New:** the priority queue doing the heavy lifting here (`heapq.heappush` /
+> `heapq.heappop`) now has its own from-scratch topic —
+> **[Heaps & Priority Queues](../../02_data_structures/11_heaps_priority_queues/README.md)**.
+
 ```python
 import heapq
 

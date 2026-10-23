@@ -147,6 +147,8 @@ nav:
       - Trees: 02_data_structures/08_trees/README.md
       - Graphs: 02_data_structures/09_graphs/README.md
       - Hash Tables: 02_data_structures/10_hash_tables/README.md
+      - Heaps & Priority Queues: 02_data_structures/11_heaps_priority_queues/README.md
+      - Tries: 02_data_structures/12_tries/README.md
     - Algorithms:
       - Algorithms: 03_algorithms/README.md
       - Searching: 03_algorithms/01_searching/README.md
@@ -156,6 +158,8 @@ nav:
       - Greedy Algorithms: 03_algorithms/05_greedy_algorithms/README.md
       - Divide & Conquer: 03_algorithms/06_divide_and_conquer/README.md
       - Graph Algorithms: 03_algorithms/07_graph_algorithms/README.md
+      - Two Pointers & Sliding Window: 03_algorithms/08_two_pointers_sliding_window/README.md
+      - Backtracking: 03_algorithms/09_backtracking/README.md
     - OOP Concepts:
       - OOP Concepts: 04_oop_concepts/README.md
       - Classes & Objects: 04_oop_concepts/01_classes_and_objects/README.md

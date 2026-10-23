@@ -85,6 +85,55 @@ def postorder(node):
 
 ---
 
+## Level-Order Traversal (BFS)
+
+The three traversals above are *depth-first*: they dive down one branch all the way to a
+leaf before backing up. **Level-order** is *breadth-first*: it reads the tree like lines
+on a page - every node on a level, left to right, then drop down a row.
+
+The tool for the job is a **queue** (first in, first out - like a line at a shop). Visit
+the node at the front of the line, and append its children to the back; they wait their
+turn behind everyone already queued.
+
+```python
+from collections import deque
+
+def level_order(node):
+    """Return a list of lists - one list of values per level, top to bottom."""
+    if node is None:
+        return []
+    result = []
+    queue = deque([node])                # the line starts with just the root
+    while queue:
+        level = []
+        for _ in range(len(queue)):      # everyone in line RIGHT NOW = one level
+            current = queue.popleft()
+            level.append(current.val)
+            if current.left:
+                queue.append(current.left)
+            if current.right:
+                queue.append(current.right)
+        result.append(level)
+    return result
+```
+
+```
+         1
+       /   \
+      2     3        level_order(tree) -> [[1], [2, 3], [4, 5]]
+     / \
+    4   5
+```
+
+The key trick is `for _ in range(len(queue))`: it freezes *how many* nodes are on the
+current level before the loop starts appending their children, so two levels never blur
+into one list. Notice also that no recursion is needed - a plain `while` loop does it.
+
+This queue-driven walk is exactly **breadth-first search (BFS)** on a graph - a tree is
+just the friendly special case. See [BFS in Graphs](../09_graphs/README.md#bfs-breadth-first-search).
+
+---
+
 ## Binary Search Tree (BST)
 
 Left child < parent < right child
@@ -139,9 +188,100 @@ def search(node, val):
 Now search `9`: `9 > 5` goes right to `7`, `9 > 7` goes right to `8`, `9 > 8` goes right,
 which is empty, so `search` returns `None` - the value is not in the tree.
 
-**Delete** is the awkward one, so it is left as a challenge: a leaf just disappears, a node
-with one child is replaced by that child, and a node with two children is usually replaced
-by its in-order successor (the smallest value in its right subtree).
+**Delete** is the awkward one, so it gets its own walkthrough below - see
+[BST Delete: The Three Cases](#bst-delete-the-three-cases). In short: a leaf just
+disappears, a node with one child is replaced by that child, and a node with two children
+is replaced by its in-order successor (the smallest value in its right subtree).
+
+---
+
+## BST Delete: The Three Cases
+
+Deleting a node must keep the BST rule (`left < node < right`) intact. Everything depends
+on one question: **how many children does the doomed node have?**
+
+### Case 1 - A leaf (no children)
+
+A leaf depends on nothing and nothing depends on it. Just remove it.
+
+```
+Before (delete 7):        After:
+
+       5                     5
+      / \                   /
+     3   7                 3
+    /                     /
+   2                     2
+```
+
+### Case 2 - One child
+
+Splice the child upward. The child's whole subtree moves up as one block, and the sorted
+order survives - it never depended on the deleted node, only on the position it occupied.
+
+```
+Before (delete 3):        After:
+
+       5                     5
+      / \                   / \
+     3   7                 4   7
+      \
+       4
+```
+
+### Case 3 - Two children
+
+You cannot just remove the node - that would orphan two subtrees. Instead, **replace the
+node's value with its in-order successor** (the smallest value in its right subtree),
+then delete that successor from the right subtree.
+
+```
+Before (delete 5):        After (5 becomes 6, old 6 removed):
+
+         5                     6
+        / \                   / \
+       3   7                 3   7
+      / \  / \              / \    \
+     2  4  6  8            2   4    8
+```
+
+Why the successor? It is the smallest value that is still larger than the whole left
+subtree - the only kind of value that can sit in the deleted node's spot and keep both
+sides honest. And the follow-up delete is always easy: the smallest node in a subtree has
+no left child, so removing it always falls through to Case 1 or Case 2.
+
+```python
+def find_min(node):
+    """Smallest value in a subtree: keep walking left."""
+    while node.left:
+        node = node.left
+    return node
+
+
+def delete(node, val):
+    """Remove val from the BST, return the root of the tree."""
+    if node is None:
+        return None
+    if val < node.val:
+        node.left = delete(node.left, val)
+    elif val > node.val:
+        node.right = delete(node.right, val)
+    else:
+        # Found it. Cases 1 and 2 collapse into one move:
+        if node.left is None:
+            return node.right       # leaf: None; one right child: that child
+        if node.right is None:
+            return node.left        # one (left-only) child: that child
+        # Case 3: two children - copy the successor's value here,
+        # then delete the successor (a Case 1 or 2 delete) from the right subtree.
+        node.val = find_min(node.right).val
+        node.right = delete(node.right, node.val)
+    return node
+```
+
+The recursion pattern is the same as `insert`: walk down comparing values, then reattach
+the (possibly changed) subtrees on the way back up with `node.left = delete(...)`. Since
+the root itself can be deleted, call it as `root = delete(root, val)`.
 
 ---
 
@@ -221,6 +361,9 @@ root.right = TreeNode(7)
 #   preorder   node, left, right
 #   postorder  left, right, node
 
+# Traverse with a queue instead (iterative, BFS)
+level_order(root)   # [[1], [2, 3], [4, 5]] - one list per level
+
 # Measure
 height(root)        # levels: 0 for None, 1 for a single node
 count(root)         # 1 + count(left) + count(right)
@@ -228,6 +371,7 @@ count(root)         # 1 + count(left) + count(right)
 # BST
 insert(root, 4)     # returns the root, O(log n) when balanced
 search(root, 4)     # returns the node or None, O(log n) when balanced
+delete(root, 4)     # all three cases - see BST Delete section
 ```
 
 ---

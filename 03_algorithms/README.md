@@ -1,6 +1,6 @@
 # 📊 Module 03: Algorithms
 
-> **Estimated Time:** 15-20 hours  
+> **Estimated Time:** 19-24 hours  
 > **Prerequisites:** Modules 01 (Foundations), 02 (Data Structures)  
 > **Level:** ⭐⭐⭐ Intermediate
 
@@ -17,6 +17,8 @@ Algorithms are step-by-step procedures for solving problems. In this module, you
 - **Greedy Algorithms** — Making locally optimal choices
 - **Divide and Conquer** — Breaking problems into independent subproblems
 - **Graph Algorithms** — Traversing and analyzing connected data
+- **Two Pointers & Sliding Window** — Turning nested loops into one pass
+- **Backtracking** — Enumerating solutions with choose/explore/unchoose
 
 ---
 
@@ -31,6 +33,8 @@ Algorithms are step-by-step procedures for solving problems. In this module, you
 | 05 | [Greedy Algorithms](05_greedy_algorithms/README.md) | Local optimization strategies | Greedy choice property, activity selection |
 | 06 | [Divide and Conquer](06_divide_and_conquer/README.md) | Breaking down problems | Merge sort, quick sort, binary search |
 | 07 | [Graph Algorithms](07_graph_algorithms/README.md) | Traversing connected structures | BFS, DFS, shortest paths |
+| 08 | [Two Pointers & Sliding Window](08_two_pointers_sliding_window/README.md) | Interview-pattern techniques | opposite/fast-slow pointers, fixed & dynamic windows |
+| 09 | [Backtracking](09_backtracking/README.md) | Building solutions, then undoing | choose/explore/unchoose, pruning, N-Queens, Sudoku |
 
 ---
 
@@ -103,6 +107,9 @@ Understanding Big-O notation is crucial for this module:
                    └──► 07_graph_algorithms
 ```
 
+> 08_two_pointers_sliding_window and 09_backtracking slot in after sorting and
+> recursion respectively — they are pattern drills, not new dependencies.
+
 **Recommended order:**
 1. Start with **Searching** — simplest algorithms
 2. Move to **Sorting** — builds on comparisons
@@ -111,6 +118,8 @@ Understanding Big-O notation is crucial for this module:
 5. Tackle **Dynamic Programming** — optimizes recursion
 6. Explore **Greedy Algorithms** — alternative approach
 7. Finish with **Graph Algorithms** — combines everything
+8. Drill **Two Pointers & Sliding Window** — the interview-pattern workhorses
+9. Explore **Backtracking** — decision trees you walk and then undo
 
 ---
 
@@ -159,7 +168,17 @@ Understanding Big-O notation is crucial for this module:
 │   ├── examples.py
 │   ├── exercises.py
 │   └── quiz.md
-└── 07_graph_algorithms/
+├── 07_graph_algorithms/
+│   ├── README.md
+│   ├── examples.py
+│   ├── exercises.py
+│   └── quiz.md
+├── 08_two_pointers_sliding_window/
+│   ├── README.md
+│   ├── examples.py
+│   ├── exercises.py
+│   └── quiz.md
+└── 09_backtracking/
     ├── README.md
     ├── examples.py
     ├── exercises.py
@@ -170,7 +189,7 @@ Understanding Big-O notation is crucial for this module:
 
 ## ✅ Completion Checklist
 
-- [ ] Complete all 7 topic READMEs
+- [ ] Complete all 9 topic READMEs
 - [ ] Run and understand all examples
 - [ ] Solve at least 3 exercises per topic
 - [ ] Pass all quizzes with 80%+ score
