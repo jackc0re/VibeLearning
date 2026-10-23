@@ -34,6 +34,17 @@ Quick reference guides for syntax, patterns, and common operations. Print them o
 | [Functional Programming](cheatsheets/functional.md) | Lambdas, map/filter/reduce, closures | When writing functional code |
 | [File I/O](cheatsheets/file_io.md) | File modes, JSON/CSV, pathlib | When handling files |
 | [Algorithms](cheatsheets/algorithms.md) | Big O notation, sorting, searching | When analyzing performance |
+| [Regex](cheatsheets/regex.md) | Pattern syntax, re functions, recipes | When matching or extracting text |
+| [Debugging](cheatsheets/debugging.md) | Print checklist, pdb commands, bug patterns | When something doesn't work |
+| [CLI & argparse](cheatsheets/cli.md) | argparse skeleton, argument kinds, exit codes | When building a command-line tool |
+| [Git](cheatsheets/git.md) | Everyday commands, branching, undo recipes | When stuck in a Git situation |
+| [SQLite](cheatsheets/sqlite.md) | Connect/cursor pattern, CRUD, parameterized queries | When storing structured data |
+| [HTTP & urllib](cheatsheets/http.md) | Requests, methods, status codes, urllib snippets | When talking to an API |
+
+---
+
+### 🎯 Interview Prep ([interview_prep/](interview_prep/README.md))
+Practice material for job interviews, pulling together what the curriculum already taught: **40 Python questions** with collapsible answers, a **problem set ordered by pattern** (each linking the topic that teaches it), a **beginner-honest system design primer** built around the URL shortener project, and **behavioral tips** with STAR stories drawn from the repo's own projects.
 
 ---
 
@@ -49,7 +60,7 @@ Curated external resources for those who want to go deeper. Includes books, arti
 ---
 
 ### 🧠 Quizzes ([quizzes.md](quizzes.md))
-A short knowledge check for every topic — **114 quizzes across 20 modules**, with answers included at the bottom of each quiz.
+A short knowledge check for every topic — **124 quizzes across 20 modules**, with answers included at the bottom of each quiz.
 
 **How they work:**
 - Every topic's quiz lives next to the topic (`quiz.md`), and the index here links to all of them

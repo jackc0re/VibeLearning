@@ -314,6 +314,12 @@ nav:
     - Intermediate: Exercises/intermediate/README.md
     - Advanced: Exercises/advanced/README.md
     - Quizzes: Resources/quizzes.md
+    - Interview Prep:
+      - Overview: Resources/interview_prep/README.md
+      - Python Questions: Resources/interview_prep/python_questions.md
+      - Algorithm Problems: Resources/interview_prep/algorithm_problems.md
+      - System Design Basics: Resources/interview_prep/system_design_basics.md
+      - Behavioral Tips: Resources/interview_prep/behavioral_tips.md
 
   - Resources:
     - Overview: Resources/README.md
@@ -326,6 +332,12 @@ nav:
       - OOP: Resources/cheatsheets/oop_cheatsheet.md
       - Functional Programming: Resources/cheatsheets/functional.md
       - File I/O: Resources/cheatsheets/file_io.md
+      - Regex: Resources/cheatsheets/regex.md
+      - Debugging: Resources/cheatsheets/debugging.md
+      - CLI & argparse: Resources/cheatsheets/cli.md
+      - Git: Resources/cheatsheets/git.md
+      - SQLite: Resources/cheatsheets/sqlite.md
+      - HTTP & urllib: Resources/cheatsheets/http.md
     - Further Reading: Resources/further_reading.md
 
   - About:
