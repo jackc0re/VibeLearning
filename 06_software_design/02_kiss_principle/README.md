@@ -60,3 +60,10 @@ def can_edit(user):
 ---
 
 [Back: DRY Principle](../01_dry_principle/README.md) | [Next: YAGNI Principle](../03_yagni_principle/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

@@ -50,3 +50,10 @@ Thread pools manage thread creation and reuse for you.
 ---
 
 [Back: Module 12 README](../README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

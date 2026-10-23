@@ -77,3 +77,10 @@ class FlyingCar(Car, Airplane):
 ---
 
 [Next: Polymorphism](../04_polymorphism/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

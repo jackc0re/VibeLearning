@@ -38,3 +38,9 @@ In Python, the standard tool is `unittest.mock`.
 
 [Next: Integration Testing →](../05_integration_testing/README.md)
 
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

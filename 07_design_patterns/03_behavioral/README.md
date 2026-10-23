@@ -62,3 +62,10 @@ total = checkout(40, ExpressShipping())
 ---
 
 [Back: Structural Patterns](../02_structural/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

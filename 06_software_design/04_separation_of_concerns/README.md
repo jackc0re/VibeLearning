@@ -57,3 +57,10 @@ def run():
 ---
 
 [Back: YAGNI Principle](../03_yagni_principle/README.md) | [Next: Coupling and Cohesion](../05_coupling_and_cohesion/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

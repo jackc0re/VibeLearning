@@ -237,3 +237,10 @@ re.split(r'pattern', text)           # Split by pattern
 Run `examples.py` to see regex in action, then try `exercises.py`!
 
 **Remember:** "Some people, when confronted with a problem, think 'I know, I'll use regular expressions.' Now they have two problems." — Use them wisely!
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

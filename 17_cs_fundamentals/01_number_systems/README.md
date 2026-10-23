@@ -263,3 +263,10 @@ python exercises.py
 ---
 
 **Next:** [Bitwise Operations →](../02_bitwise_operations/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

@@ -60,3 +60,10 @@ except Exception:
 ---
 
 [Back: Defensive Programming ←](../04_defensive_programming/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

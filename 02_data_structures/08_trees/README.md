@@ -99,3 +99,10 @@ Left child < parent < right child
 ## Next Steps
 
 Practice with [examples.py](examples.py)!
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

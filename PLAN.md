@@ -129,13 +129,13 @@ Before changing anything, make sure we can always roll back and can prove what "
 
 **Why:** these are real dead links visitors hit on the live site today. Mostly mechanical: module READMEs link to directories like `./01_searching/` which MkDocs can't resolve — they need to point at `./01_searching/README.md`.
 
-- [ ] 1. Run `mkdocs build 2>&1 | grep -i "warning" | sort | uniq -c | sort -rn` to get the grouped warning list. Fix the dominant pattern (relative `./NN_topic/` links → `./NN_topic/README.md`) — likely a handful of sed-able patterns across the module READMEs. Fix at the **root copies** (source of truth), never in `docs/`.
+- [x] 1. Run `mkdocs build 2>&1 | grep -i "warning" | sort | uniq -c | sort -rn` to get the grouped warning list. Fix the dominant pattern (relative `./NN_topic/` links → `./NN_topic/README.md`) — likely a handful of sed-able patterns across the module READMEs. Fix at the **root copies** (source of truth), never in `docs/`.
       Files: `*/README.md` at root (source files only)
       Done when: warnings from unresolved relative links are gone.
-- [ ] 2. Fix anchor breakage: `Resources/further_reading.md` (5 broken in-page anchors) and `Resources/glossary.md` (links to nonexistent anchors `#j` and `#q` — those sections don't exist; either add "no terms" placeholders or remove the links).
+- [x] 2. Fix anchor breakage: `Resources/further_reading.md` (5 broken in-page anchors) and `Resources/glossary.md` (links to nonexistent anchors `#j` and `#q` — those sections don't exist; either add "no terms" placeholders or remove the links).
       Files: `Resources/further_reading.md`, `Resources/glossary.md`
       Done when: no anchor warnings in build output.
-- [ ] 3. Reach zero: `python tools/sync_docs.py && mkdocs build --strict` exits 0 locally.
+- [x] 3. Reach zero: `python tools/sync_docs.py && mkdocs build --strict` exits 0 locally.
       Files: none
       Done when: `mkdocs build --strict; echo $?` → 0, and the Phase 3 CI validation job goes green on main.
 
@@ -149,7 +149,7 @@ Before changing anything, make sure we can always roll back and can prove what "
 
 **Why:** the site hides roughly a third of the content. 11 projects (including the newest: quiz_game, personal_journal, password_manager, url_shortener, chat_server, static_site_generator, tic_tac_toe_ai) and the whole Exercises track (beginner/intermediate/advanced) exist in the repo but never appear in the site nav. 114 quiz pages are built yet unreachable, and cheatsheets/further reading are likewise orphaned.
 
-- [ ] 1. Extend `nav` in `mkdocs.yml`:
+- [x] 1. Extend `nav` in `mkdocs.yml` — **deviation:** adding Projects/Exercises/Resources/About pushed the top tab bar to 13 entries, which overflows at common laptop widths (measured: the previous 10-tab row already clipped "Practical Skills" at 1280px). So the tab bar was regrouped into 9 short tabs (Home, Start Here, Learn, Advanced, Practical, Projects, Practice, Resources, About) with the per-module sections nested as second-row sub-tabs. All content stays reachable; no URLs changed.
       - add a **Projects** section (Projects/README.md + all 11 project pages);
       - add an **Exercises** section (Exercises/README.md + beginner/intermediate/advanced);
       - extend **Resources** with `Resources/further_reading.md` and the cheatsheets (list every file under `Resources/cheatsheets/`).

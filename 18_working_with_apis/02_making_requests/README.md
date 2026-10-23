@@ -251,3 +251,10 @@ req = Request("https://api.example.com/post", data=json_data,
 Now that you can make requests, let's learn to handle the responses properly!
 
 → Continue to [03: Parsing Responses](../03_parsing_responses/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

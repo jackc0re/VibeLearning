@@ -271,3 +271,10 @@ server.serve_forever()
 Now you can build APIs! Let's learn best practices for production-ready code.
 
 → Continue to [05: API Best Practices](../05_api_best_practices/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

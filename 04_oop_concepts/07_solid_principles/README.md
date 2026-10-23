@@ -36,3 +36,10 @@ High-level modules (logic) should not depend on low-level modules (database/API)
 ---
 
 [Return to Module Overview](../README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

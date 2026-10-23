@@ -72,3 +72,10 @@ add1_then_square(3)  # 16
 ---
 
 [Next: Lambda Expressions](../04_lambda_expressions/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

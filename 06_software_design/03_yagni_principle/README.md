@@ -64,3 +64,10 @@ When requirements change (e.g., DB storage), *then* introduce an interface.
 ---
 
 [Back: KISS Principle](../02_kiss_principle/README.md) | [Next: Separation of Concerns](../04_separation_of_concerns/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

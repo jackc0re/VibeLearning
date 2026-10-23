@@ -335,3 +335,10 @@ python exercises.py
 - [CPython Internals](https://realpython.com/cpython-source-code-guide/)
 - [Python Bytecode](https://docs.python.org/3/library/dis.html)
 - [Understanding the GIL](https://realpython.com/python-gil/)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

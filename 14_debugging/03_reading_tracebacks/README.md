@@ -122,3 +122,10 @@ better_exceptions.hook()
 ---
 
 [Back: Using Debuggers](../02_using_debuggers/README.md) | [Next: Common Bugs](../04_common_bugs/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

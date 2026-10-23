@@ -65,3 +65,10 @@ print(p3) # Output: (4, 6)
 ---
 
 [Next: Abstraction](../05_abstraction/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

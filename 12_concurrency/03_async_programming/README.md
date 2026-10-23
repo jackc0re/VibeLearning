@@ -46,3 +46,10 @@ Even in async code you sometimes need to limit parallel work (e.g. 1000 requests
 ---
 
 [Back: Module 12 README](../README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

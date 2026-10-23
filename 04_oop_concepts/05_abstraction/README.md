@@ -61,3 +61,10 @@ In many languages (like Java), there is a distinction between `abstract class` a
 ---
 
 [Next: Composition vs Inheritance](../06_composition_vs_inheritance/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

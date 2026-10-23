@@ -48,3 +48,9 @@ On Windows, not using `newline=""` can lead to extra blank lines in CSV output.
 
 [Back: Module 10 README](../README.md)
 
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

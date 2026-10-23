@@ -273,3 +273,10 @@ def api_get(url):
 Now that you can parse responses, let's build our own API server!
 
 → Continue to [04: Building Simple API](../04_building_simple_api/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

@@ -39,3 +39,9 @@ The goal is not "more tests", but **better feedback** and **better design**.
 
 [Next: Mocking →](../04_mocking/README.md)
 
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

@@ -95,3 +95,10 @@ from myproject.models import User
 ---
 
 [Back: Module 13 README](../README.md) | [Next: Creating Modules](../02_creating_modules/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

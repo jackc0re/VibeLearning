@@ -58,3 +58,10 @@ def withdraw(balance, amount):
 ---
 
 [Next: Try/Except/Finally →](../02_try_except_finally/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

@@ -57,3 +57,10 @@ next_count()  # 2
 ---
 
 [Next: Decorators](../07_decorators/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

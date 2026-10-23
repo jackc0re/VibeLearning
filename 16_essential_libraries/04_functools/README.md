@@ -237,3 +237,10 @@ def wrapper(*args, **kwargs):
 ## 🎓 Next Steps
 
 Run `examples.py` to see functools in action, then try `exercises.py`!
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

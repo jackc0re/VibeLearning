@@ -61,3 +61,10 @@ If the logic gets complex, use a named function instead. Readability matters mor
 ---
 
 [Next: Map, Filter, Reduce](../05_map_filter_reduce/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

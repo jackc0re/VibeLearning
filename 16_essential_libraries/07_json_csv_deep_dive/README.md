@@ -285,3 +285,10 @@ with open('file.csv', newline='') as f:
 ## 🎓 Next Steps
 
 Run `examples.py` to see these in action, then try `exercises.py`!
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

@@ -38,3 +38,9 @@ Generators often reduce memory usage because they don’t store all results at o
 
 [Back: Module 11 README](../README.md)
 
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

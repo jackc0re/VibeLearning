@@ -243,3 +243,10 @@ except sqlite3.Error as e:
 - Run `examples.py` to see SQLite in action
 - Practice with `exercises.py`
 - Learn SQL queries in the next topic!
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

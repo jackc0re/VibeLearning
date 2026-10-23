@@ -49,3 +49,9 @@ Good tests act like a **safety net**: you can change code and quickly detect reg
 
 [Next: Unit Testing →](../02_unit_testing/README.md)
 
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

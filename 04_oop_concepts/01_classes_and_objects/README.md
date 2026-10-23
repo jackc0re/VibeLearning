@@ -87,3 +87,10 @@ print(student2.name) # Output: Bob
 ---
 
 [Next: Encapsulation](../02_encapsulation/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

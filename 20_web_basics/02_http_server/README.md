@@ -345,3 +345,10 @@ python -m http.server 8000
 Now that you can build a basic server, let's learn how to route different URLs!
 
 → Continue to [03: Simple Routing](../03_simple_routing/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

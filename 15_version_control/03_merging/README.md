@@ -375,3 +375,10 @@ git branch -d feature-login
 ---
 
 [Back: Module 15 README](../README.md) | [Previous: Branching](../02_branching/README.md) | [Next: Collaboration](../04_collaboration/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

@@ -129,3 +129,10 @@ deactivate
 ---
 
 [Back: Packages](../03_packages/README.md) | [Next: Dependency Management](../05_dependency_management/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

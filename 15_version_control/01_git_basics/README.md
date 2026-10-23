@@ -236,3 +236,10 @@ git revert commit-hash
 ---
 
 [Back: Module 15 README](../README.md) | [Next: Branching](../02_branching/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

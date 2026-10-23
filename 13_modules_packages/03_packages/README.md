@@ -114,3 +114,10 @@ import mypkg.module_b
 ---
 
 [Back: Creating Modules](../02_creating_modules/README.md) | [Next: Virtual Environments](../04_virtual_environments/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

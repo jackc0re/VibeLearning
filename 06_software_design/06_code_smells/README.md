@@ -44,3 +44,10 @@ The key is being intentional.
 ---
 
 [Back: Coupling and Cohesion](../05_coupling_and_cohesion/README.md) | [Next: Refactoring](../07_refactoring/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.

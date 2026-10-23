@@ -417,3 +417,10 @@ page = Template("""
 Now you can generate dynamic HTML! Let's learn how to handle user input through forms.
 
 → Continue to [05: Forms Handling](../05_forms_handling/README.md)
+
+---
+
+## 🧠 Test Yourself
+
+Ready to check what stuck? Take the **[quiz for this topic](quiz.md)** — answers and
+explanations are included.
