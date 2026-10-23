@@ -74,16 +74,16 @@ Before changing anything, make sure we can always roll back and can prove what "
 
 **Why:** the whole UI overhaul exists in the repo but never deployed because CI read the stale copy in `docs/`. With the sync script from Phase 1, this mostly ships itself — but light mode needs finishing.
 
-- [ ] 1. After Phase 1's sync, the 985-line Catppuccin Mocha CSS is what gets built. Verify locally: `mkdocs serve` → check the dark palette (Mocha colors, JetBrains Mono code font, Inter text font) renders.
+- [x] 1. After Phase 1's sync, the 985-line Catppuccin Mocha CSS is what gets built. Verify locally: `mkdocs serve` → check the dark palette (Mocha colors, JetBrains Mono code font, Inter text font) renders.
       Files: none (delivered by sync)
       Done when: local preview shows the Catppuccin theme.
-- [ ] 2. Define the missing Catppuccin **Latte** (light mode) variables in `stylesheets/extra.css`. The CSS defines Mocha (dark) variables but the `default`-scheme (light) block is incomplete or absent — with `primary: custom` in mkdocs.yml, light mode would render undefined. Add the full Latte palette block so the light/dark toggle works properly.
+- [x] 2. Define the missing Catppuccin **Latte** (light mode) variables in `stylesheets/extra.css`. The CSS defines Mocha (dark) variables but the `default`-scheme (light) block is incomplete or absent — with `primary: custom` in mkdocs.yml, light mode would render undefined. Add the full Latte palette block so the light/dark toggle works properly.
       Files: `stylesheets/extra.css`
       Done when: local preview, toggling dark↔light, shows Mocha dark and Latte light (both readable, no fallback blue).
-- [ ] 3. Resolve the `overrides/` duplication: keep exactly one canonical copy at root (`overrides/main.html`, which loads JetBrains Mono) — it is what MkDocs actually uses (see step 3b). The sync script does NOT need to mirror `overrides/` into `docs/`; when Phase 1 untracks `docs/`, the stale `docs/overrides/` copy disappears from git entirely.
+- [x] 3. Resolve the `overrides/` duplication: keep exactly one canonical copy at root (`overrides/main.html`, which loads JetBrains Mono) — it is what MkDocs actually uses (see step 3b). The sync script does NOT need to mirror `overrides/` into `docs/`; when Phase 1 untracks `docs/`, the stale `docs/overrides/` copy disappears from git entirely.
       Files: `mkdocs.yml`, `overrides/`, sync script
       Done when: exactly one `main.html` exists in the repo, and the built site includes the font-loading override.
-- [ ] 3b. **Verified correction (this was tested empirically):** `custom_dir: overrides` resolves relative to the **project root** (where mkdocs.yml sits), NOT to `docs/overrides/` — a marker edited into root `overrides/main.html` appears in the built HTML; a marker in `docs/overrides/main.html` does not. So the root copy is the live one today. Two consequences:
+- [x] 3b. **Verified correction (this was tested empirically):** `custom_dir: overrides` resolves relative to the **project root** (where mkdocs.yml sits), NOT to `docs/overrides/` — a marker edited into root `overrides/main.html` appears in the built HTML; a marker in `docs/overrides/main.html` does not. So the root copy is the live one today. Two consequences:
       - the sync script does NOT need to mirror `overrides/` into `docs/` for theming to work;
       - BUT `docs/overrides/` currently leaks into the built site as a stray published file (`site/overrides/main.html` is live today). Fix: add `overrides/` to `exclude_docs` in mkdocs.yml so a mirrored overrides dir never publishes.
       Files: `mkdocs.yml` (exclude_docs), `tools/sync_docs.py`
