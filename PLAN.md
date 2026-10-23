@@ -44,21 +44,21 @@ Before changing anything, make sure we can always roll back and can prove what "
 
 **Why:** right now every edit can land in one of two copies, and the site reads the copy nobody edits. This phase makes drift structurally impossible.
 
-- [ ] 1. Write `tools/sync_docs.py` (Python stdlib only — no dependencies, works on Windows):
+- [x] 1. Write `tools/sync_docs.py` (Python stdlib only — no dependencies, works on Windows):
       - mirrors the root content into `docs/`: copy `00_*`–`20_*` module dirs, `Resources/`, `Projects/`, `Exercises/`, `stylesheets/`, `overrides/`, and the merged `README.md` (from Phase 1 step 3);
       - deletes anything in `docs/` that no longer exists at root (a true mirror, not a copy-over);
       - prints a short summary (files copied / removed).
       Files: `tools/sync_docs.py`
       Done when: running `python tools/sync_docs.py` twice in a row is idempotent (second run copies nothing, deletes nothing), and `docs/stylesheets/extra.css` is identical to root `stylesheets/extra.css` (985 lines).
-- [ ] 2. Fix `.gitignore` and untrack `docs/`:
+- [x] 2. Fix `.gitignore` and untrack `docs/`:
       - replace the malformed line `docs/           # Local dev docs directory` with `docs/` on its own line (the trailing comment is why the pattern never matched);
       - run `git rm -r --cached docs` so the 493 files stop being tracked (files stay on disk — nothing is lost).
       Files: `.gitignore`
       Done when: `git ls-files | grep -c '^docs/'` returns 0, and `git status` does NOT show docs/ as untracked noise (it's ignored).
-- [ ] 3. Merge the two READMEs into ONE good `README.md` at root. Root README is the plain 3.7 KB GitHub landing; `docs/README.md` is the nicer 6.9 KB site landing. Keep the better content (site landing), fold in anything useful from the plain one (badges, quick start), and add a clear "how to run the examples locally" section. The sync script then copies it into `docs/`.
+- [x] 3. Merge the two READMEs into ONE good `README.md` at root. Root README is the plain 3.7 KB GitHub landing; `docs/README.md` is the nicer 6.9 KB site landing. Keep the better content (site landing), fold in anything useful from the plain one (badges, quick start), and add a clear "how to run the examples locally" section. The sync script then copies it into `docs/`.
       Files: `README.md`
       Done when: one README.md at root serves both GitHub and the site; `docs/README.md` is only ever produced by the sync script.
-- [ ] 4. Add the sync step to CI BEFORE untracking merges to main (order matters — once docs/ is untracked, CI must regenerate it):
+- [x] 4. Add the sync step to CI BEFORE untracking merges to main (order matters — once docs/ is untracked, CI must regenerate it):
       - in `.github/workflows/mkdocs.yml`, add a step after checkout: `python tools/sync_docs.py`, then `mkdocs build` as today.
       Files: `.github/workflows/mkdocs.yml`
       Done when: a push to the branch produces a green workflow and the deployed site still renders (spot-check a module page).
