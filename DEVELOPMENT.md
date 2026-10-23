@@ -109,6 +109,7 @@ python -m mkdocs build --strict   # same, but fails on any warning
 | Preview | `python tools/sync_docs.py && python -m mkdocs serve` |
 | Check for broken links | `python tools/sync_docs.py && python -m mkdocs build --strict` |
 | Start from scratch | delete `docs/` and `site/`, then sync again |
+| Learner tools | `python tools/run_quiz.py --list` (also `check_exercise.py`, `progress_tracker.py`, `generate_path.py`, `repo_stats.py`) |
 
 `--strict` is the important one: it turns every build warning into an error, which is
 exactly what CI runs. If it passes locally, CI passes too.

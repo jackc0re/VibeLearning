@@ -1,7 +1,7 @@
 # 📓 Project 06: Personal Journal - Implementation Plan
 
 > **Created:** 2026-02-11  
-> **Status:** Planning  
+> **Status:** Complete (built — see Projects/06_personal_journal)  
 > **Priority:** Medium (Phase 2 continuation)
 
 ---

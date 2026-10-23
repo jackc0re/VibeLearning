@@ -35,7 +35,7 @@ Each module includes:
 ### 01 - Foundations
 | ⏱️ Time | 📋 Prerequisites | 🎯 Level |
 |---------|------------------|----------|
-| 8-10 hours | Module 00 | ⭐ |
+| 10-12 hours | Module 00 | ⭐ |
 
 **What you'll learn:**
 - Variables and data types
@@ -44,11 +44,13 @@ Each module includes:
 - Loops (for, while)
 - Writing functions
 - Input and output
+- Type hints
+- Pattern matching (match/case, Python 3.10+)
 
 ### 02 - Data Structures
 | ⏱️ Time | 📋 Prerequisites | 🎯 Level |
 |---------|------------------|----------|
-| 12-15 hours | Module 01 | ⭐⭐ |
+| 15-18 hours | Module 01 | ⭐⭐ |
 
 **What you'll learn:**
 - Lists and arrays
@@ -58,11 +60,13 @@ Each module includes:
 - Stacks and queues
 - Linked lists, trees, and graphs
 - Hash tables
+- Heaps and priority queues
+- Tries
 
 ### 03 - Algorithms
 | ⏱️ Time | 📋 Prerequisites | 🎯 Level |
 |---------|------------------|----------|
-| 15-20 hours | Modules 01, 02 | ⭐⭐⭐ |
+| 19-24 hours | Modules 01, 02 | ⭐⭐⭐ |
 
 **What you'll learn:**
 - Searching algorithms (linear, binary)
@@ -72,6 +76,8 @@ Each module includes:
 - Greedy algorithms
 - Divide and conquer
 - Graph traversal (BFS, DFS)
+- Two pointers and sliding window
+- Backtracking (N-Queens, Sudoku)
 
 ---
 
@@ -80,7 +86,7 @@ Each module includes:
 ### 04 - OOP Concepts
 | ⏱️ Time | 📋 Prerequisites | 🎯 Level |
 |---------|------------------|----------|
-| 10-12 hours | Modules 01-02 | ⭐⭐ |
+| 12-14 hours | Modules 01-02 | ⭐⭐ |
 
 **What you'll learn:**
 - Classes and objects
@@ -90,11 +96,13 @@ Each module includes:
 - Abstraction
 - Composition vs inheritance
 - SOLID principles
+- Dunder methods and the data model
+- Dataclasses
 
 ### 05 - Functional Programming
 | ⏱️ Time | 📋 Prerequisites | 🎯 Level |
 |---------|------------------|----------|
-| 8-10 hours | Module 01 | ⭐⭐ |
+| 9-11 hours | Module 01 | ⭐⭐ |
 
 **What you'll learn:**
 - Pure functions and side effects
@@ -104,6 +112,7 @@ Each module includes:
 - Map, filter, reduce
 - Closures
 - Decorators
+- Generators and iterators
 
 ---
 
@@ -140,7 +149,7 @@ Each module includes:
 ### 08 - Error Handling
 | ⏱️ Time | 📋 Prerequisites | 🎯 Level |
 |---------|------------------|----------|
-| 4-6 hours | Module 01 | ⭐⭐ |
+| 7-9 hours | Module 01 | ⭐⭐ |
 
 **What you'll learn:**
 - Understanding exceptions
@@ -148,6 +157,7 @@ Each module includes:
 - Creating custom exceptions
 - Defensive programming
 - Logging best practices
+- Context managers
 
 ### 09 - Testing
 | ⏱️ Time | 📋 Prerequisites | 🎯 Level |
@@ -301,6 +311,16 @@ Practice problems organized by difficulty:
 - **Intermediate** — Apply multiple concepts
 - **Advanced** — Challenge yourself
 
+### Interview Prep
+Ready-for-work practice in [Resources/interview_prep](Resources/interview_prep/README.md):
+- 40 Python interview questions with answers
+- Practice problems grouped by pattern (two pointers, heaps, tries, DP, ...)
+- Beginner-friendly system design and behavioral tips
+
+### Learner Tools
+CLI helpers in `tools/`: `run_quiz.py`, `check_exercise.py`, `progress_tracker.py`,
+`generate_path.py`, `repo_stats.py` — run any with `--help`.
+
 ### Projects
 Build complete applications (11 guided projects):
 1. **Calculator** — Apply basics
@@ -330,7 +350,7 @@ Build complete applications (11 guided projects):
 | 7 | Weeks 19-21 | CS Fundamentals, APIs, Data, Web |
 | 8 | Ongoing | Practice & Projects |
 
-**Total estimated time:** ~22-24 weeks at 10-15 hours/week
+**Total estimated time:** ~24-26 weeks at 10-15 hours/week
 
 ---
 

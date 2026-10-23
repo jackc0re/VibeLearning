@@ -261,6 +261,15 @@ Checking that input data has the expected type, shape, and range before you proc
 
 ---
 
+### Dataclass
+A class that mainly holds data, with the repetitive boilerplate — constructor, readable display, equality check — generated for you from a simple list of fields. You declare the fields once, and Python writes the mechanical code.
+
+**Python Context:** The `@dataclass` decorator does the work: above `class Point:` with `x: float` and `y: float` lines, it builds `__init__`, a readable `repr`, and `==` comparison automatically. Use `field(default_factory=list)` when a field needs a mutable default like an empty list.
+
+**Related Terms:** Class, Decorator, Type Hint, Immutable
+
+---
+
 ### Decorator
 A design pattern that allows adding functionality to an existing function or method without modifying its structure.
 
@@ -401,6 +410,15 @@ A data structure that implements an associative array, mapping keys to values us
 **Python Context:** Python dictionaries are implemented as hash tables.
 
 **Related Terms:** Dictionary, Hash, Key-Value, Array
+
+---
+
+### Heap
+A tree-shaped structure where every parent is no larger (a min-heap) or no smaller (a max-heap) than its children. That single rule guarantees the best-priority item always sits at the top, so peeking at it is instant while inserting and removing stay fast even in huge collections.
+
+**Python Context:** The `heapq` module turns a plain list into a min-heap: after `heappush(h, 5)`, `heappop(h)` always removes the smallest value, in O(log n) time.
+
+**Related Terms:** Priority Queue, Tree, Data Structure
 
 ---
 
@@ -699,6 +717,15 @@ A SQL query with placeholders (`?`) for values, which are passed to the database
 
 ---
 
+### Pattern Matching
+A way to test a value against a structure — "is this a list starting with 'go'?" — and bind its pieces to names in one step. It goes beyond equality checks: it can match the shape of sequences, mappings, and objects, and often replaces long `if`/`elif` chains.
+
+**Python Context:** The `match`/`case` statement (Python 3.10+) provides it: `match command:` / `case ["go", direction]:` matches any two-item list whose first item is `"go"` and puts the second into `direction`.
+
+**Related Terms:** Tuple, Dictionary (Dict), Statement
+
+---
+
 ### Polymorphism
 The ability of different classes to be treated as instances of the same superclass. Allows code to work with objects of different types.
 
@@ -714,6 +741,15 @@ A column (or combination of columns) that uniquely identifies each row in a data
 **Python Context:** In `CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT)`, SQLite automatically assigns increasing `id` values when you insert a row without one.
 
 **Related Terms:** SQL, Parameterized Query, Key-Value Pair
+
+---
+
+### Priority Queue
+A collection where each item travels with a priority, and the most urgent item comes out first — not the one that arrived first. It is the data structure behind schedulers, pathfinding, and any "most important thing next" way of working.
+
+**Python Context:** `heapq` is the standard building block: push `(priority, name)` tuples so the smallest tuple pops first. For code shared across threads, `queue.PriorityQueue` wraps the same idea and makes it safe.
+
+**Related Terms:** Heap, Stack, Data Structure
 
 ---
 
@@ -828,6 +864,15 @@ Any observable effect of a function beyond returning a value. Examples: modifyin
 **Python Context:** Functions with side effects are harder to test and reason about. Pure functions have no side effects.
 
 **Related Terms:** Pure Function, Mutable, Global Variable
+
+---
+
+### Sliding Window
+A technique for problems about consecutive elements: keep a "window" covering part of a sequence and slide it along, updating the running answer as elements enter and leave. It turns many nested-loop solutions into a single pass, cutting O(n²) down to O(n).
+
+**Python Context:** To find the largest sum of any 3 consecutive numbers, compute the first window's sum once, then at each step subtract the number leaving the window and add the one arriving — one loop, no inner loop.
+
+**Related Terms:** Two Pointers, Big O Notation, List
 
 ---
 
@@ -982,6 +1027,15 @@ A hierarchical data structure with nodes connected by edges. Each tree has a roo
 
 ---
 
+### Trie
+A tree purpose-built for storing strings: every path from the root spells a prefix, one character per edge, so words sharing a beginning share the same branches. Looking up whether any stored word starts with "ca" costs about the length of the prefix — not a scan of every word.
+
+**Python Context:** The name comes from reTRIEval. A simple version is nested dictionaries: each node maps a character to the next node, plus a marker flagging where complete words end.
+
+**Related Terms:** Tree, Dictionary (Dict), Node
+
+---
+
 ### Truth Table
 A table that lists every combination of input values for a logical expression and the output each combination produces. It is the surest way to reason about `and`, `or`, `not`, and combinations of them.
 
@@ -1000,6 +1054,15 @@ An ordered, immutable sequence. Similar to lists but cannot be modified after cr
 
 ---
 
+### Two Pointers
+A technique that walks a sequence with two indexes — one at each end moving inward, or one chasing the other — comparing or swapping as they go. It often replaces a nested loop with a single pass, turning O(n²) into O(n).
+
+**Python Context:** To check whether a sorted list holds two numbers that sum to a target, start one pointer at each end: on a small sum move the left one right, on a big sum move the right one left.
+
+**Related Terms:** Sliding Window, Big O Notation, List
+
+---
+
 ### Two's Complement
 The scheme computers use to represent negative integers: flip all the bits of the positive value and add 1. It lets the same circuits do signed and unsigned arithmetic.
 
@@ -1015,6 +1078,15 @@ Changing a value from one data type to another. Can be implicit (automatic) or e
 **Python Context:** `int("42")`, `str(3.14)`, `bool(1)` are explicit conversions. Python also performs implicit conversions in expressions.
 
 **Related Terms:** Data Type, Casting, Integer, Float, String
+
+---
+
+### Type Hint
+An optional annotation recording what type a variable, parameter, or return value is expected to be, written with a colon: `def greet(name: str) -> str:`. Hints make code self-documenting and let editors and tools catch mistakes, though Python itself does not enforce them at runtime.
+
+**Python Context:** The `typing` module adds richer forms such as `list[int]` and `Optional[str]`; checkers like mypy read the hints and flag mismatches before the code ever runs.
+
+**Related Terms:** Variable, Function, Dataclass, Duck Typing
 
 ---
 

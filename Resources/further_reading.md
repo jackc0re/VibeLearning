@@ -57,6 +57,14 @@ Curated external resources to deepen your understanding beyond this course. Each
 | [Python Operators](https://www.w3schools.com/python/python_operators.asp) | 📄 Article | ⭐ | Quick reference for all operators |
 | [Real Python - Python Ternary Operator](https://realpython.com/python-conditional-expressions/) | 📄 Article | ⭐⭐ | Master conditional expressions |
 
+#### Type Hints & Pattern Matching
+
+| Resource | Type | Level | Description |
+|----------|------|-------|-------------|
+| [typing - Support for Type Hints](https://docs.python.org/3/library/typing.html) | 📖 Docs | ⭐⭐⭐ | Official reference for the `typing` module and annotation syntax |
+| [PEP 484 - Type Hints](https://peps.python.org/pep-0484/) | 📖 Docs | ⭐⭐⭐⭐ | The specification that introduced type hints, with rationale and examples |
+| [PEP 636 - Structural Pattern Matching: Tutorial](https://peps.python.org/pep-0636/) | 📖 Docs | ⭐⭐⭐⭐ | The official tutorial for `match`/`case`, taught through a text adventure game |
+
 #### Data Structures
 
 | Resource | Type | Level | Description |
@@ -64,6 +72,7 @@ Curated external resources to deepen your understanding beyond this course. Each
 | [Python Lists Explained](https://realpython.com/python-lists-tuples/) | 📄 Article | ⭐⭐ | Deep dive into lists and tuples |
 | [Understanding Dictionaries](https://realpython.com/python-dicts/) | 📄 Article | ⭐⭐ | Dictionary internals and best practices |
 | [Real Python - Sets in Python](https://realpython.com/python-sets/) | 📄 Article | ⭐⭐ | When and why to use sets |
+| [heapq - Heap Queue Algorithm](https://docs.python.org/3/library/heapq.html) | 📖 Docs | ⭐⭐ | The standard-library binary heap behind priority queues |
 
 #### Algorithms
 
@@ -84,6 +93,7 @@ Curated external resources to deepen your understanding beyond this course. Each
 | [Python OOP Crash Course](https://realpython.com/python3-object-oriented-programming/) | 📄 Article | ⭐⭐ | Comprehensive OOP introduction |
 | [Python Super() Explained](https://realpython.com/python-super/) | 📄 Article | ⭐⭐⭐ | Understanding `super()` in inheritance |
 | [OOP Design Principles](https://www.youtube.com/watch?v=TMcC-052i9I) | 🎥 Video | ⭐⭐⭐ | Practical OOP design patterns |
+| [dataclasses - Data Classes](https://docs.python.org/3/library/dataclasses.html) | 📖 Docs | ⭐⭐ | Official docs for `@dataclass` and its generated methods |
 
 #### Functional Programming
 
@@ -92,6 +102,7 @@ Curated external resources to deepen your understanding beyond this course. Each
 | [Functional Python](https://realpython.com/python-functional-programming/) | 📄 Article | ⭐⭐ | Map, filter, reduce, and lambdas |
 | [Python Lambda Functions](https://realpython.com/python-lambda/) | 📄 Article | ⭐⭐ | Mastering lambda expressions |
 | [Understanding Closures](https://realpython.com/python-closures/) | 📄 Article | ⭐⭐⭐ | Deep dive into closures and decorators |
+| [Functional Programming HOWTO](https://docs.python.org/3/howto/functional.html) | 📖 Docs | ⭐⭐⭐ | The official tutorial on iterators, generators, and generator expressions |
 
 #### Design Patterns
 
@@ -120,6 +131,7 @@ Curated external resources to deepen your understanding beyond this course. Each
 | [Python Exceptions](https://realpython.com/python-exceptions/) | 📄 Article | ⭐⭐ | Master exception handling |
 | [Best Practices for Exceptions](https://docs.python-guide.org/writing/style/#exceptions) | 📄 Article | ⭐⭐ | Python style guide on exceptions |
 | [Logging Guide](https://docs.python.org/3/howto/logging.html) | 📖 Docs | ⭐⭐ | Official Python logging tutorial |
+| [contextlib - Utilities for with-statement Contexts](https://docs.python.org/3/library/contextlib.html) | 📖 Docs | ⭐⭐⭐ | Official docs for `@contextmanager`, `suppress`, and `ExitStack` |
 
 #### Testing
 

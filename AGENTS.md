@@ -38,7 +38,7 @@ root (source of truth)          docs/ (generated, git-ignored)
 - **Docs toolchain:** MkDocs + Material, pinned in `requirements.txt`
 - **Deployment:** GitHub Actions → GitHub Pages (no deploy script, no `gh-pages` branch)
 
-**Current size:** 21 modules, 11 projects, ~247 `.py` files, ~311 `.md` files.
+**Current size:** 21 modules, 124 topics, 11 projects, ~288 `.py` files, ~344 `.md` files.
 
 ---
 
@@ -69,8 +69,8 @@ VibeLearning/
 ├── 20_web_basics/             # HTML/CSS, HTTP server, routing, templating
 ├── Projects/                  # 11 guided projects
 ├── Exercises/                 # beginner / intermediate / advanced
-├── Resources/                 # glossary, quizzes index, cheatsheets, further reading
-├── tools/                     # sync_docs.py, run_examples.py
+├── Resources/                 # glossary, quizzes index, cheatsheets, interview prep, further reading
+├── tools/                     # sync_docs.py, run_examples.py + 5 learner tools (run_quiz, check_exercise, progress_tracker, generate_path, repo_stats)
 ├── stylesheets/extra.css      # Catppuccin Mocha (dark) + Latte (light) theme
 ├── overrides/main.html        # Loads JetBrains Mono
 ├── mkdocs.yml                 # Site config + nav
@@ -251,6 +251,7 @@ the bottom. Add the topic to `Resources/quizzes.md`, and the topic README alread
 | `mkdocs.yml` | Site config, theme, extensions, nav |
 | `tools/sync_docs.py` | Root → `docs/` mirror; idempotent |
 | `tools/run_examples.py` | Runs every lesson example with a timeout |
+| `tools/` learner tools | `run_quiz.py`, `check_exercise.py`, `progress_tracker.py`, `generate_path.py`, `repo_stats.py` — interactive learner CLIs (not run by CI; state in `~/.vibelearning/`) |
 | `stylesheets/extra.css` | Catppuccin theme, `--vl-*` color tokens |
 | `.github/workflows/mkdocs.yml` | validate / deploy / examples jobs |
 | `PROGRESS.md` | Internal implementation status |

@@ -53,16 +53,16 @@ Each topic gives you four files:
 | Module | Topics |
 |--------|--------|
 | [**Getting Started**](00_getting_started/README.md) | [Python Setup](00_getting_started/01_python_setup.md), [Running Code](00_getting_started/02_running_code.md), [Using This Repo](00_getting_started/03_using_this_repo.md) |
-| [**Foundations**](01_foundations/README.md) | [Variables & Types](01_foundations/01_variables_and_types/README.md), [Operators](01_foundations/02_operators/README.md), [Control Flow](01_foundations/03_control_flow/README.md), [Loops](01_foundations/04_loops/README.md), [Functions](01_foundations/05_functions_basics/README.md), [Input & Output](01_foundations/06_input_output/README.md) |
+| [**Foundations**](01_foundations/README.md) | [Variables & Types](01_foundations/01_variables_and_types/README.md), [Operators](01_foundations/02_operators/README.md), [Control Flow](01_foundations/03_control_flow/README.md), [Loops](01_foundations/04_loops/README.md), [Functions](01_foundations/05_functions_basics/README.md), [Input & Output](01_foundations/06_input_output/README.md), [Type Hints](01_foundations/07_type_hints/README.md), [Pattern Matching](01_foundations/08_pattern_matching/README.md) |
 
 ### 🪜 Intermediate
 
 | Module | Topics |
 |--------|--------|
-| [**Data Structures**](02_data_structures/README.md) | [Lists & Arrays](02_data_structures/01_lists_arrays/README.md), [Strings](02_data_structures/02_strings/README.md), [Dictionaries & Maps](02_data_structures/03_dictionaries_maps/README.md), [Sets](02_data_structures/04_sets/README.md), [Tuples](02_data_structures/05_tuples/README.md), [Stacks & Queues](02_data_structures/06_stacks_queues/README.md), [Linked Lists](02_data_structures/07_linked_lists/README.md), [Trees](02_data_structures/08_trees/README.md), [Graphs](02_data_structures/09_graphs/README.md), [Hash Tables](02_data_structures/10_hash_tables/README.md) |
-| [**Algorithms**](03_algorithms/README.md) | [Searching](03_algorithms/01_searching/README.md), [Sorting](03_algorithms/02_sorting/README.md), [Recursion](03_algorithms/03_recursion/README.md), [Dynamic Programming](03_algorithms/04_dynamic_programming/README.md), [Greedy Algorithms](03_algorithms/05_greedy_algorithms/README.md), [Divide & Conquer](03_algorithms/06_divide_and_conquer/README.md), [Graph Algorithms](03_algorithms/07_graph_algorithms/README.md) |
-| [**OOP Concepts**](04_oop_concepts/README.md) | [Classes & Objects](04_oop_concepts/01_classes_and_objects/README.md), [Encapsulation](04_oop_concepts/02_encapsulation/README.md), [Inheritance](04_oop_concepts/03_inheritance/README.md), [Polymorphism](04_oop_concepts/04_polymorphism/README.md), [Abstraction](04_oop_concepts/05_abstraction/README.md), [Composition vs Inheritance](04_oop_concepts/06_composition_vs_inheritance/README.md), [SOLID Principles](04_oop_concepts/07_solid_principles/README.md) |
-| [**Functional Programming**](05_functional_programming/README.md) | [Pure Functions](05_functional_programming/01_pure_functions/README.md), [Immutability](05_functional_programming/02_immutability/README.md), [Higher-Order Functions](05_functional_programming/03_higher_order_functions/README.md), [Lambda Expressions](05_functional_programming/04_lambda_expressions/README.md), [Map, Filter, Reduce](05_functional_programming/05_map_filter_reduce/README.md), [Closures](05_functional_programming/06_closures/README.md), [Decorators](05_functional_programming/07_decorators/README.md) |
+| [**Data Structures**](02_data_structures/README.md) | [Lists & Arrays](02_data_structures/01_lists_arrays/README.md), [Strings](02_data_structures/02_strings/README.md), [Dictionaries & Maps](02_data_structures/03_dictionaries_maps/README.md), [Sets](02_data_structures/04_sets/README.md), [Tuples](02_data_structures/05_tuples/README.md), [Stacks & Queues](02_data_structures/06_stacks_queues/README.md), [Linked Lists](02_data_structures/07_linked_lists/README.md), [Trees](02_data_structures/08_trees/README.md), [Graphs](02_data_structures/09_graphs/README.md), [Hash Tables](02_data_structures/10_hash_tables/README.md), [Heaps & Priority Queues](02_data_structures/11_heaps_priority_queues/README.md), [Tries](02_data_structures/12_tries/README.md) |
+| [**Algorithms**](03_algorithms/README.md) | [Searching](03_algorithms/01_searching/README.md), [Sorting](03_algorithms/02_sorting/README.md), [Recursion](03_algorithms/03_recursion/README.md), [Dynamic Programming](03_algorithms/04_dynamic_programming/README.md), [Greedy Algorithms](03_algorithms/05_greedy_algorithms/README.md), [Divide & Conquer](03_algorithms/06_divide_and_conquer/README.md), [Graph Algorithms](03_algorithms/07_graph_algorithms/README.md), [Two Pointers & Sliding Window](03_algorithms/08_two_pointers_sliding_window/README.md), [Backtracking](03_algorithms/09_backtracking/README.md) |
+| [**OOP Concepts**](04_oop_concepts/README.md) | [Classes & Objects](04_oop_concepts/01_classes_and_objects/README.md), [Encapsulation](04_oop_concepts/02_encapsulation/README.md), [Inheritance](04_oop_concepts/03_inheritance/README.md), [Polymorphism](04_oop_concepts/04_polymorphism/README.md), [Abstraction](04_oop_concepts/05_abstraction/README.md), [Composition vs Inheritance](04_oop_concepts/06_composition_vs_inheritance/README.md), [SOLID Principles](04_oop_concepts/07_solid_principles/README.md), [Dunder Methods](04_oop_concepts/08_dunder_methods/README.md), [Dataclasses](04_oop_concepts/09_dataclasses/README.md) |
+| [**Functional Programming**](05_functional_programming/README.md) | [Pure Functions](05_functional_programming/01_pure_functions/README.md), [Immutability](05_functional_programming/02_immutability/README.md), [Higher-Order Functions](05_functional_programming/03_higher_order_functions/README.md), [Lambda Expressions](05_functional_programming/04_lambda_expressions/README.md), [Map, Filter, Reduce](05_functional_programming/05_map_filter_reduce/README.md), [Closures](05_functional_programming/06_closures/README.md), [Decorators](05_functional_programming/07_decorators/README.md), [Generators & Iterators](05_functional_programming/08_generators_and_iterators/README.md) |
 
 ### 🎓 Advanced
 
@@ -70,7 +70,7 @@ Each topic gives you four files:
 |--------|--------|
 | [**Software Design**](06_software_design/README.md) | [DRY](06_software_design/01_dry_principle/README.md), [KISS](06_software_design/02_kiss_principle/README.md), [YAGNI](06_software_design/03_yagni_principle/README.md), [Separation of Concerns](06_software_design/04_separation_of_concerns/README.md), [Coupling & Cohesion](06_software_design/05_coupling_and_cohesion/README.md), [Code Smells](06_software_design/06_code_smells/README.md), [Refactoring](06_software_design/07_refactoring/README.md) |
 | [**Design Patterns**](07_design_patterns/README.md) | [Creational](07_design_patterns/01_creational/README.md), [Structural](07_design_patterns/02_structural/README.md), [Behavioral](07_design_patterns/03_behavioral/README.md) |
-| [**Error Handling**](08_error_handling/README.md) | [Exceptions](08_error_handling/01_exceptions/README.md), [try / except / finally](08_error_handling/02_try_except_finally/README.md), [Custom Exceptions](08_error_handling/03_custom_exceptions/README.md), [Defensive Programming](08_error_handling/04_defensive_programming/README.md), [Logging](08_error_handling/05_logging/README.md) |
+| [**Error Handling**](08_error_handling/README.md) | [Exceptions](08_error_handling/01_exceptions/README.md), [try / except / finally](08_error_handling/02_try_except_finally/README.md), [Custom Exceptions](08_error_handling/03_custom_exceptions/README.md), [Defensive Programming](08_error_handling/04_defensive_programming/README.md), [Logging](08_error_handling/05_logging/README.md), [Context Managers](08_error_handling/06_context_managers/README.md) |
 | [**Testing**](09_testing/README.md) | [Why Testing](09_testing/01_why_testing/README.md), [Unit Testing](09_testing/02_unit_testing/README.md), [Test-Driven Development](09_testing/03_test_driven_development/README.md), [Mocking](09_testing/04_mocking/README.md), [Integration Testing](09_testing/05_integration_testing/README.md) |
 | [**File & I/O**](10_file_io/README.md) | [Reading Files](10_file_io/01_reading_files/README.md), [Writing Files](10_file_io/02_writing_files/README.md), [Working with JSON](10_file_io/03_working_with_json/README.md), [Working with CSV](10_file_io/04_working_with_csv/README.md), [Binary Files](10_file_io/05_binary_files/README.md) |
 | [**Memory & Performance**](11_memory_performance/README.md) | [Memory Basics](11_memory_performance/01_memory_basics/README.md), [References vs Values](11_memory_performance/02_references_vs_values/README.md), [Time Complexity](11_memory_performance/03_time_complexity/README.md), [Space Complexity](11_memory_performance/04_space_complexity/README.md), [Big-O Notation](11_memory_performance/05_big_o_notation/README.md), [Optimization Techniques](11_memory_performance/06_optimization_techniques/README.md) |
@@ -122,10 +122,23 @@ Extra practice grouped by difficulty — no reading, just problems:
 
 ---
 
+## 🧰 Learner Tools
+
+Five small CLI tools (standard library only) to use alongside the lessons:
+
+- `python tools/run_quiz.py --list` — take any topic's quiz right in your terminal
+- `python tools/check_exercise.py <module>/<topic>` — check exercises without spoilers
+- `python tools/progress_tracker.py status` — track which topics you've finished
+- `python tools/generate_path.py --preset beginner` — get a personalized study plan
+- `python tools/repo_stats.py` — see what's inside the repo
+
+---
+
 ## 📖 Reference
 
-- **[Glossary](Resources/glossary.md)** — 50+ programming terms defined in plain language
-- **[Cheatsheets](Resources/README.md)** — quick syntax references for [Python basics](Resources/cheatsheets/python_basics.md), [data structures](Resources/cheatsheets/data_structures.md), [algorithms](Resources/cheatsheets/algorithms.md), [OOP](Resources/cheatsheets/oop_cheatsheet.md), [functional programming](Resources/cheatsheets/functional.md), and [file I/O](Resources/cheatsheets/file_io.md)
+- **[Glossary](Resources/glossary.md)** — 110+ programming terms defined in plain language
+- **[Cheatsheets](Resources/README.md)** — quick syntax references for [Python basics](Resources/cheatsheets/python_basics.md), [data structures](Resources/cheatsheets/data_structures.md), [algorithms](Resources/cheatsheets/algorithms.md), [OOP](Resources/cheatsheets/oop_cheatsheet.md), [functional programming](Resources/cheatsheets/functional.md), [file I/O](Resources/cheatsheets/file_io.md), [regex](Resources/cheatsheets/regex.md), [debugging](Resources/cheatsheets/debugging.md), [CLI](Resources/cheatsheets/cli.md), [git](Resources/cheatsheets/git.md), [SQLite](Resources/cheatsheets/sqlite.md), and [HTTP](Resources/cheatsheets/http.md)
+- **[Interview Prep](Resources/interview_prep/README.md)** — 40 Python questions, practice problems grouped by pattern, system-design basics, and behavioral tips
 - **[Further Reading](Resources/further_reading.md)** — books, courses, and sites worth your time
 
 ---

@@ -1,6 +1,6 @@
 # 📊 VibeLearning Progress Tracker
 
-> **Last Updated:** 2026-01-24
+> **Last Updated:** 2026-10-23
 
 Track the implementation status of all modules in this repository.
 
@@ -35,6 +35,8 @@ Track the implementation status of all modules in this repository.
 - [x] 04_loops/
 - [x] 05_functions_basics/
 - [x] 06_input_output/
+- [x] 07_type_hints/
+- [x] 08_pattern_matching/
 
 ### 02 - Data Structures
 - [x] README.md
@@ -48,6 +50,8 @@ Track the implementation status of all modules in this repository.
 - [x] 08_trees/
 - [x] 09_graphs/
 - [x] 10_hash_tables/
+- [x] 11_heaps_priority_queues/
+- [x] 12_tries/
 
 ### 03 - Algorithms
 - [x] README.md
@@ -58,6 +62,8 @@ Track the implementation status of all modules in this repository.
 - [x] 05_greedy_algorithms/
 - [x] 06_divide_and_conquer/
 - [x] 07_graph_algorithms/
+- [x] 08_two_pointers_sliding_window/
+- [x] 09_backtracking/
 
 ---
 
@@ -72,6 +78,8 @@ Track the implementation status of all modules in this repository.
 - [x] 05_abstraction/
 - [x] 06_composition_vs_inheritance/
 - [x] 07_solid_principles/
+- [x] 08_dunder_methods/
+- [x] 09_dataclasses/
 
 ### 05 - Functional Programming
 - [x] README.md
@@ -82,6 +90,7 @@ Track the implementation status of all modules in this repository.
 - [x] 05_map_filter_reduce/
 - [x] 06_closures/
 - [x] 07_decorators/
+- [x] 08_generators_and_iterators/
 
 ### 06 - Software Design
 - [x] README.md
@@ -110,6 +119,7 @@ Track the implementation status of all modules in this repository.
 - [x] 03_custom_exceptions/
 - [x] 04_defensive_programming/
 - [x] 05_logging/
+- [x] 06_context_managers/
 
 ### 09 - Testing
 - [x] README.md
@@ -198,6 +208,13 @@ Track the implementation status of all modules in this repository.
 - [x] 02_todo_app/
 - [x] 03_file_organizer/
 - [x] 04_data_analyzer/
+- [x] 05_quiz_game/
+- [x] 06_personal_journal/
+- [x] 07_password_manager/
+- [x] 08_url_shortener/
+- [x] 09_chat_server/
+- [x] 10_static_site_generator/
+- [x] 11_tic_tac_toe_ai/
 
 ### Resources
 - [x] README.md
@@ -209,7 +226,55 @@ Track the implementation status of all modules in this repository.
   - [x] functional.md
   - [x] file_io.md
   - [x] algorithms.md
+  - [x] cli.md
+  - [x] debugging.md
+  - [x] git.md
+  - [x] http.md
+  - [x] regex.md
+  - [x] sqlite.md
 - [x] further_reading.md
+- [x] quizzes.md
+- [x] interview_prep/
+  - [x] algorithm_problems.md
+  - [x] behavioral_tips.md
+  - [x] python_questions.md
+  - [x] system_design_basics.md
+
+---
+
+## Phase 6: CS Fundamentals & the Web
+
+### 17 - CS Fundamentals
+- [x] README.md
+- [x] 01_number_systems/
+- [x] 02_bitwise_operations/
+- [x] 03_boolean_logic/
+- [x] 04_memory_architecture/
+- [x] 05_how_python_works/
+
+### 18 - Working with APIs
+- [x] README.md
+- [x] 01_http_fundamentals/
+- [x] 02_making_requests/
+- [x] 03_parsing_responses/
+- [x] 04_building_simple_api/
+- [x] 05_api_best_practices/
+
+### 19 - Data Processing
+- [x] README.md
+- [x] 01_sqlite_basics/
+- [x] 02_sql_fundamentals/
+- [x] 03_data_cleaning/
+- [x] 04_data_transformation/
+- [x] 05_generating_reports/
+
+### 20 - Web Basics
+- [x] README.md
+- [x] 01_html_css_overview/
+- [x] 02_http_server/
+- [x] 03_simple_routing/
+- [x] 04_templating/
+- [x] 05_forms_handling/
 
 ---
 
@@ -218,18 +283,26 @@ Track the implementation status of all modules in this repository.
 | Phase | Status | Progress |
 |-------|--------|----------|
 | Root Files | 🟢 Complete | 3/3 |
-| Phase 1: Core Foundation | 🟢 Complete | 30/30 |
-| Phase 2: Paradigms & Principles | 🟢 Complete | 28/28 |
-| Phase 3: Professional Skills | 🟢 Complete | 25/25 |
-| Phase 4: Advanced Concepts | 🟢 Complete | 22/22 |
-| Phase 5: Practice Materials | 🟢 Complete | 15/15 |
+| Phase 1: Core Foundation | 🟢 Complete | 36/36 |
+| Phase 2: Paradigms & Principles | 🟢 Complete | 31/31 |
+| Phase 3: Professional Skills | 🟢 Complete | 26/26 |
+| Phase 4: Advanced Concepts | 🟢 Complete | 31/31 |
+| Phase 5: Practice Materials | 🟢 Complete | 38/38 |
+| Phase 6: CS Fundamentals & the Web | 🟢 Complete | 24/24 |
 
-**Total Progress:** 126/126 items (100%) 🎉
+**Total Progress:** 189/189 items (100%) 🎉
 
 
 ---
 
 ## Recent Updates
+
+### 2026-10-23
+- ✅ 2026-10 content expansion added the items now shown in the checklists above:
+  - Modules 17-20 (CS Fundamentals, Working with APIs, Data Processing, Web Basics) with 5 complete topics each
+  - Projects 05-11: quiz game, personal journal, password manager, URL shortener, chat server, static site generator, tic-tac-toe AI
+  - 10 new topics: type hints, pattern matching, heaps & priority queues, tries, two pointers & sliding window, backtracking, dunder methods, dataclasses, generators & iterators, context managers (07_linked_lists and 08_trees extended in place)
+  - Resources: quizzes.md (124 quizzes across 20 modules), cheatsheets grown from 6 to 12, new interview_prep track
 
 ### 2026-01-23
 - ✅ Completed Module 06: Software Design (7 topics, 29 files)
