@@ -74,6 +74,13 @@ def exercise_5_format_currency(amount):
 # =============================================================================
 
 
+def close_enough(result, expected):
+    """True when two numbers match within normal float rounding error."""
+    if isinstance(result, (int, float)) and isinstance(expected, (int, float)):
+        return abs(result - expected) < 0.0001
+    return result == expected
+
+
 def run_tests():
     print("Running DRY Principle Exercises Tests")
     print("=" * 50)
@@ -88,8 +95,9 @@ def run_tests():
     ]
     for amount, rate, expected in tests_1:
         result = exercise_1_apply_tax(amount, rate)
-        status = "✓" if result == expected else "✗"
-        if result != expected:
+        passed = close_enough(result, expected)
+        status = "PASS" if passed else "FAIL"
+        if not passed:
             all_passed = False
         print(f"  {status} apply_tax({amount}, {rate}) = {result} (expected {expected})")
 
@@ -101,7 +109,7 @@ def run_tests():
     ]
     for items, expected in tests_2:
         result = exercise_2_subtotal(items)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} subtotal({items}) = {result} (expected {expected})")
@@ -111,8 +119,9 @@ def run_tests():
     items = [("book", 10.0), ("pen", 2.0)]
     result = exercise_3_total(items, 0.10, 5.0)
     expected = 18.2
-    status = "✓" if result == expected else "✗"
-    if result != expected:
+    passed = close_enough(result, expected)
+    status = "PASS" if passed else "FAIL"
+    if not passed:
         all_passed = False
     print(f"  {status} total(items, 0.10, 5.0) = {result} (expected {expected})")
 
@@ -120,8 +129,9 @@ def run_tests():
     print("\nExercise 4: Refund")
     result = exercise_4_refund(items, 0.10, 1.0)
     expected = 12.2
-    status = "✓" if result == expected else "✗"
-    if result != expected:
+    passed = close_enough(result, expected)
+    status = "PASS" if passed else "FAIL"
+    if not passed:
         all_passed = False
     print(f"  {status} refund(items, 0.10, 1.0) = {result} (expected {expected})")
 
@@ -134,16 +144,16 @@ def run_tests():
     ]
     for amount, expected in tests_5:
         result = exercise_5_format_currency(amount)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} format_currency({amount}) = {result} (expected {expected})")
 
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 

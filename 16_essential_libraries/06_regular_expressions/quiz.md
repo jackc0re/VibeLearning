@@ -89,10 +89,11 @@ D) A list of tuples containing groups
 <details>
 <summary>Click for answer</summary>
 
-**D) A list of tuples containing groups**
+**C) Only the grouped parts**
 
-If pattern has one group: returns list of strings
-If pattern has multiple groups: returns list of tuples
+With one group you get a list of strings (`['Python', 'regex']`); with several
+groups you get a list of tuples of those groups. The full match is not returned
+once the pattern contains groups.
 </details>
 
 ---

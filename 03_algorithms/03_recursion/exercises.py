@@ -17,7 +17,7 @@ def exercise_1_factorial(n):
     """
     Calculate n! (n factorial) recursively.
     
-    n! = n × (n-1) × (n-2) × ... × 2 × 1
+    n! = n x (n-1) x (n-2) x ... x 2 x 1
     0! = 1 (by definition)
     
     Args:
@@ -371,7 +371,7 @@ def run_tests():
     ]
     for n, expected in tests_1:
         result = exercise_1_factorial(n)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} factorial({n}) = {result} (expected {expected})")
@@ -386,7 +386,7 @@ def run_tests():
     ]
     for n, expected in tests_2:
         result = exercise_2_sum_digits(n)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} sum_digits({n}) = {result} (expected {expected})")
@@ -401,8 +401,9 @@ def run_tests():
     ]
     for base, exp, expected in tests_3:
         result = exercise_3_power(base, exp)
-        status = "✓" if abs(result - expected) < 0.0001 else "✗"
-        if abs(result - expected) >= 0.0001:
+        close = isinstance(result, (int, float)) and abs(result - expected) < 0.0001
+        status = "PASS" if close else "FAIL"
+        if not close:
             all_passed = False
         print(f"  {status} power({base}, {exp}) = {result} (expected {expected})")
     
@@ -416,7 +417,7 @@ def run_tests():
     ]
     for s, expected in tests_4:
         result = exercise_4_reverse_string(s)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} reverse('{s}') = '{result}' (expected '{expected}')")
@@ -432,7 +433,7 @@ def run_tests():
     ]
     for n, expected in tests_5:
         result = exercise_5_fibonacci(n)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} fibonacci({n}) = {result} (expected {expected})")
@@ -447,7 +448,7 @@ def run_tests():
     ]
     for arr, expected in tests_6:
         result = exercise_6_sum_list(arr)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} sum_list({arr}) = {result} (expected {expected})")
@@ -462,7 +463,7 @@ def run_tests():
     ]
     for arr, target, expected in tests_7:
         result = exercise_7_count(arr, target)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} count({arr}, {target}) = {result} (expected {expected})")
@@ -478,7 +479,7 @@ def run_tests():
     ]
     for s, expected in tests_8:
         result = exercise_8_is_palindrome(s)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} is_palindrome('{s}') = {result} (expected {expected})")
@@ -493,7 +494,7 @@ def run_tests():
     ]
     for arr, target, expected in tests_9:
         result = exercise_9_binary_search(arr, target)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} binary_search({arr}, {target}) = {result} (expected {expected})")
@@ -508,7 +509,7 @@ def run_tests():
     ]
     for a, b, expected in tests_10:
         result = exercise_10_gcd(a, b)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} gcd({a}, {b}) = {result} (expected {expected})")
@@ -523,7 +524,7 @@ def run_tests():
     ]
     for nested, expected in tests_11:
         result = exercise_11_flatten(nested)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} flatten({nested}) = {result}")
@@ -541,7 +542,7 @@ def run_tests():
     else:
         is_correct = False
     
-    status = "✓" if is_correct else "✗"
+    status = "PASS" if is_correct else "FAIL"
     if not is_correct:
         all_passed = False
     print(f"  {status} permutations([1,2,3]) has {len(result_12) if result_12 else 0} results (expected 6)")
@@ -550,7 +551,7 @@ def run_tests():
     print("\nBonus: Tower of Hanoi")
     result_bonus = bonus_hanoi(2, 'A', 'B', 'C')
     expected_bonus = ['Move disk 1 from A to B', 'Move disk 2 from A to C', 'Move disk 1 from B to C']
-    status = "✓" if result_bonus == expected_bonus else "✗"
+    status = "PASS" if result_bonus == expected_bonus else "FAIL"
     if result_bonus != expected_bonus:
         all_passed = False
     print(f"  {status} hanoi(2, 'A', 'B', 'C') = {result_bonus}")
@@ -558,9 +559,9 @@ def run_tests():
     # Summary
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 

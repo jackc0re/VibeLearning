@@ -90,7 +90,7 @@ print("""
 Write a function that converts a hex color code (like "#FF5733") to
 its RGB components (red, green, blue as decimal values).
 
-Example: "#FF5733" → Red: 255, Green: 87, Blue: 51
+Example: "#FF5733" -> Red: 255, Green: 87, Blue: 51
 """)
 
 def hex_to_rgb(hex_color):
@@ -152,7 +152,7 @@ print("""
 Write a function that counts the number of 1 bits in a number's binary
 representation (population count).
 
-Example: 13 = 1101 in binary → 3 bits set
+Example: 13 = 1101 in binary -> 3 bits set
 """)
 
 def count_set_bits(n):
@@ -219,19 +219,19 @@ print("=" * 60)
 
 print("\n--- Exercise 1: Binary to Decimal ---")
 print("a) 1010 = 10")
-print("   Calculation: 1×8 + 0×4 + 1×2 + 0×1 = 10")
+print("   Calculation: 1x8 + 0x4 + 1x2 + 0x1 = 10")
 print("b) 1111 = 15")
-print("   Calculation: 1×8 + 1×4 + 1×2 + 1×1 = 15")
+print("   Calculation: 1x8 + 1x4 + 1x2 + 1x1 = 15")
 print("c) 10000 = 16")
-print("   Calculation: 1×16 = 16")
+print("   Calculation: 1x16 = 16")
 print("d) 11001100 = 204")
 print("   Calculation: 128 + 64 + 0 + 0 + 8 + 4 + 0 + 0 = 204")
 
 print("\n--- Exercise 2: Decimal to Binary ---")
 print("a) 5 = 101")
-print("   5 ÷ 2 = 2 R 1")
-print("   2 ÷ 2 = 1 R 0")
-print("   1 ÷ 2 = 0 R 1")
+print("   5 / 2 = 2 R 1")
+print("   2 / 2 = 1 R 0")
+print("   1 / 2 = 0 R 1")
 print("   Read bottom-up: 101")
 print("b) 12 = 1100")
 print("c) 50 = 110010")
@@ -239,18 +239,18 @@ print("d) 200 = 11001000")
 
 print("\n--- Exercise 3: Hexadecimal Conversions ---")
 print("a) FF = 255")
-print("   F(15) × 16 + F(15) × 1 = 255")
+print("   F(15) x 16 + F(15) x 1 = 255")
 print("b) 1A3 = 419")
-print("   1×256 + 10×16 + 3×1 = 419")
+print("   1x256 + 10x16 + 3x1 = 419")
 print("c) 100 = 0x64")
 print("d) ABC = 101010111100")
 print("   A=1010, B=1011, C=1100")
 
 print("\n--- Exercise 4: Octal Conversions ---")
 print("a) 77 = 63")
-print("   7×8 + 7×1 = 63")
+print("   7x8 + 7x1 = 63")
 print("b) 100 = 64")
-print("   1×64 = 64")
+print("   1x64 = 64")
 print("c) 64 = 0o100")
 print("d) 52 = 101010")
 print("   5=101, 2=010")

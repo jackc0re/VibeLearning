@@ -229,6 +229,7 @@ for name, age in zip(names, ages):
 # Sorting by tuple element
 students = [('Alice', 85), ('Bob', 92), ('Charlie', 78)]
 print(f"\nOriginal: {students}")
+# lambda = tiny unnamed function ("given a tuple x, use x[1]"), full treatment in Module 05
 sorted_by_grade = sorted(students, key=lambda x: x[1])
 print(f"By grade: {sorted_by_grade}")
 

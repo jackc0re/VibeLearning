@@ -93,7 +93,7 @@ D) [[1], [2]]
 
 **C) (1, 2)**
 
-Tuples are hashable (immutable), so they can be dict keys. Lists and sets cannot.
+Tuples are hashable **if all their items are**, so `(1, 2)` works as a dict key. Lists and sets are never hashable.
 
 </details>
 

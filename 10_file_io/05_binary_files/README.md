@@ -33,6 +33,34 @@ with open("big.bin", "rb") as f:
 
 ---
 
+## ⚠️ Common Mistakes
+
+1. **Mixing bytes and str** - in `"rb"` mode you get `bytes`, and in `"wb"`
+   mode you must write `bytes`. `f.write("hello")` in binary mode raises
+   `TypeError`; use `f.write(b"hello")` or `s.encode("utf-8")`.
+2. **Decoding binary data as text** - opening a PNG with `open(p, "r")`
+   produces mojibake or `UnicodeDecodeError`. If the content is not text,
+   don't open it in text mode.
+3. **Reading whole huge files** - `f.read()` slurps every byte into RAM.
+   For big files, read fixed-size chunks in a loop until you get back `b""`.
+4. **Confusing `b""` with `None`** - at end-of-file, `f.read(n)` returns the
+   empty bytes object `b""`; that is your EOF signal, not an error.
+
+---
+
+## 📝 Quick Reference
+
+| Task | Code |
+|---|---|
+| Write bytes | `open(p, "wb")`, `f.write(b"...")` |
+| Read bytes | `open(p, "rb")`, `data = f.read()` |
+| str -> bytes | `s.encode("utf-8")` |
+| bytes -> str | `b.decode("utf-8")` |
+| EOF signal in chunk loop | `f.read(n)` returns `b""` |
+| Typical uses | images, PDFs, hashing (`hashlib.sha256`) |
+
+---
+
 ## 🔍 Key Takeaways
 
 - Text uses encodings; binary is raw bytes.

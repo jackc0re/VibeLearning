@@ -39,6 +39,29 @@ That statement is multiple bytecode operations: load, add, store. Another thread
 
 ---
 
+## ⚠️ Common Mistakes
+
+- Trusting the GIL to make `counter += 1` safe — it is a multi-step read-modify-write and can interleave
+- "Fixing" a race by adding `sleep()` calls — it makes the bug rarer, not impossible
+- Two locks guarding one invariant (each update must lock **both** — or the race survives half-protected)
+
+---
+
+## 📝 Quick Reference
+
+```python
+counter += 1          # NOT atomic: load, add, store (racy)
+
+with lock:            # mutual exclusion makes it atomic
+    counter += 1
+
+q = queue.Queue()     # or avoid sharing: pass messages instead
+q.put(item)
+q.get()
+```
+
+---
+
 [Back: Module 12 README](../README.md)
 
 ---

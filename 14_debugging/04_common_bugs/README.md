@@ -188,6 +188,38 @@ for i in range(3):
 
 ---
 
+## ⚠️ Common Mistakes
+
+1. **Fixing the bug's symptom, not its cause** - adding `if x is not None`
+   everywhere hides a bug instead of fixing the function that returned
+   `None` unexpectedly. Trace the wrong value back to its origin.
+2. **"Fixing" a mutable default by copying inside** - `def f(items=[]): items = list(items)`
+   still hides the real trap: use `def f(items=None):` and
+   `items = [] if items is None else items`.
+3. **Testing only the happy path** - the off-by-one and empty-input bugs on
+   this page survive because nobody runs the code with `[]`, `0`, `""`, or a
+   one-element list. Those are the first inputs to try.
+4. **Assuming `==` and `is` are interchangeable** - `x == None` happens to work,
+   but `x is None` is the convention and is safe with objects that override
+   `__eq__` weirdly.
+
+---
+
+## 📝 Quick Reference
+
+| Symptom | Likely bug on this page |
+|---|---|
+| Last element never processed | `range(len(x))` off-by-one - iterate the sequence directly |
+| State leaks between calls | mutable default argument - use `None` sentinel |
+| `IndexError` during a loop | modifying a list while iterating - iterate a copy |
+| `UnboundLocalError` | assigning to a name also read as a global |
+| `"10" > 5` behaves oddly | string/integer confusion - convert before comparing |
+| `if x == None` / `if not x` fails for `0` or `[]` | use `is None` / be explicit about empty vs zero |
+| Nested copy changed the original | shallow vs deep copy - `copy.deepcopy` |
+| All closures share one value | late binding - bind now with a default arg |
+
+---
+
 ## 🔍 Key Takeaways
 
 - Check loop bounds for off-by-one errors.

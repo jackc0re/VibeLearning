@@ -265,7 +265,7 @@ def _create_backup(self, filename: str):
     try:
         vault_data = self.storage.load_vault(self.master_password)
         if vault_data:
-            encrypted = SimpleEncryption.encrypt(json.dumps(vault_data), self.master_password)
+            encrypted = VaultCrypto.encrypt(json.dumps(vault_data), self.master_password)
             
             with open(filename, 'w', encoding='utf-8') as f:
                 f.write(encrypted)
@@ -282,7 +282,7 @@ def _restore_backup(self, filename: str):
         with open(filename, 'r', encoding='utf-8') as f:
             encrypted = f.read()
         
-        decrypted = SimpleEncryption.decrypt(encrypted, self.master_password)
+        decrypted = VaultCrypto.decrypt(encrypted, self.master_password)
         vault_data = json.loads(decrypted)
         
         self.entries = [PasswordEntry.from_dict(e) for e in vault_data.get("entries", [])]
@@ -518,7 +518,7 @@ class ShareManager:
         
         # Encrypt the password for sharing
         share_key = secrets.token_bytes(32)
-        encrypted = SimpleEncryption.encrypt(password, share_key.hex())
+        encrypted = VaultCrypto.encrypt(password, share_key.hex())
         
         self.shares[token_id] = {
             "encrypted_password": encrypted,
@@ -553,7 +553,7 @@ class ShareManager:
                 return None
             
             # Decrypt password
-            return SimpleEncryption.decrypt(share["encrypted_password"], key)
+            return VaultCrypto.decrypt(share["encrypted_password"], key)
         
         except Exception:
             return None
@@ -671,7 +671,7 @@ class VaultStorage:
     def load_vault(self, master_password: str) -> Optional[Dict]:
         try:
             encrypted = self.backend.read()
-            decrypted = SimpleEncryption.decrypt(encrypted, master_password)
+            decrypted = VaultCrypto.decrypt(encrypted, master_password)
             return json.loads(decrypted)
         except Exception:
             return None
@@ -679,7 +679,7 @@ class VaultStorage:
     def save_vault(self, vault_data: Dict, master_password: str) -> bool:
         try:
             vault_json = json.dumps(vault_data, indent=2)
-            encrypted = SimpleEncryption.encrypt(vault_json, master_password)
+            encrypted = VaultCrypto.encrypt(vault_json, master_password)
             return self.backend.write(encrypted)
         except Exception:
             return False

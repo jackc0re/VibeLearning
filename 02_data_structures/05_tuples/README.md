@@ -111,7 +111,7 @@ numbers.index(4)  # 4
 | Mutable | ❌ No | ✅ Yes |
 | Syntax | `(1, 2, 3)` | `[1, 2, 3]` |
 | Methods | 2 | Many |
-| Hashable | ✅ Yes | ❌ No |
+| Hashable | ✅ Yes (if its items are) | ❌ No |
 | Speed | Slightly faster | Slightly slower |
 | Memory | Less | More |
 
@@ -232,6 +232,46 @@ for name, age in zip(names, ages):
 ```python
 students = [('Alice', 85), ('Bob', 92), ('Charlie', 78)]
 students.sort(key=lambda x: x[1])  # Sort by grade
+```
+
+`lambda` = tiny unnamed function (here: "given a tuple `x`, use `x[1]`"), full treatment in
+Module 05.
+
+---
+
+## Common Mistakes
+
+### 1. Forgetting the comma for a single element
+```python
+single = (42)     # ❌ Just the integer 42, not a tuple
+single = (42,)    # ✅ Tuple with one element
+```
+
+### 2. Trying to change a tuple
+```python
+t = (1, 2, 3)
+t[0] = 99         # ❌ TypeError: 'tuple' object does not support item assignment
+
+t = (99, t[1], t[2])  # ✅ Build a new tuple instead (or use a list)
+```
+
+### 3. Assuming everything inside a tuple is frozen
+```python
+t = ([1, 2], [3, 4])
+t[0].append(3)    # ✅ Works! The tuple is immutable, the list inside it is not
+```
+
+### 4. Unpacking the wrong number of items
+```python
+x, y = (1, 2, 3)          # ❌ ValueError: too many values to unpack
+x, y, z = (1, 2, 3)       # ✅
+first, *rest = (1, 2, 3)  # ✅ *rest collects the leftovers
+```
+
+### 5. Unhashable items break dict keys
+```python
+grid = {(1, [2, 3]): "value"}   # ❌ TypeError: list is unhashable
+grid = {(1, (2, 3)): "value"}   # ✅ All items must be immutable too
 ```
 
 ---

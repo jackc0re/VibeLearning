@@ -54,7 +54,7 @@ print("Basic routing results:")
 for path in test_paths:
     handler = MockHandler(path)
     result = basic_route(handler)
-    print(f"  {path:12} → {result['status']}: {result['body']}")
+    print(f"  {path:12} -> {result['status']}: {result['body']}")
 
 # =============================================================================
 # SECTION 2: Dictionary-Based Routing
@@ -94,7 +94,7 @@ print("Dictionary routing results:")
 for path in ['/', '/home', '/about', '/missing']:
     handler = MockHandler(path)
     result = dict_route(handler)
-    print(f"  {path:12} → Handler: {result['body']}")
+    print(f"  {path:12} -> Handler: {result['body']}")
 
 # =============================================================================
 # SECTION 3: Router Class
@@ -132,7 +132,7 @@ print("Router class results:")
 for path in ['/', '/about', '/other']:
     handler = MockHandler(path)
     router.handle(handler)
-    print(f"  {path:12} → {handler.response['body']}")
+    print(f"  {path:12} -> {handler.response['body']}")
 
 # =============================================================================
 # SECTION 4: Dynamic Route Parameters
@@ -195,7 +195,7 @@ test_cases = [
 for path in test_cases:
     handler = MockHandler(path)
     dyn_router.handle(handler)
-    print(f"  {path:30} → {handler.response['body']}")
+    print(f"  {path:30} -> {handler.response['body']}")
 
 # =============================================================================
 # SECTION 5: Method-Based Routing
@@ -223,16 +223,16 @@ class RESTRouter:
 
 # Handlers for /users endpoint
 def list_users(handler):
-    handler.set_body('GET /users → List all users')
+    handler.set_body('GET /users -> List all users')
 
 def create_user(handler):
-    handler.set_body('POST /users → Create new user')
+    handler.set_body('POST /users -> Create new user')
 
 def update_user(handler):
-    handler.set_body('PUT /users → Update user')
+    handler.set_body('PUT /users -> Update user')
 
 def delete_user(handler):
-    handler.set_body('DELETE /users → Delete user')
+    handler.set_body('DELETE /users -> Delete user')
 
 # Usage
 rest_router = RESTRouter()
@@ -248,9 +248,9 @@ for method in test_methods:
     route_handler = rest_router.match('/users', method)
     if route_handler:
         route_handler(handler)
-        print(f"  {method:6} /users → {handler.response['body']}")
+        print(f"  {method:6} /users -> {handler.response['body']}")
     else:
-        print(f"  {method:6} /users → 405 Method Not Allowed")
+        print(f"  {method:6} /users -> 405 Method Not Allowed")
 
 # =============================================================================
 # SECTION 6: Route Priority
@@ -294,7 +294,7 @@ for path in ['/users/new', '/users/123']:
     route_handler = priority_router.match(path)
     if route_handler:
         route_handler(handler)
-        print(f"  {path:15} → {handler.response['body']}")
+        print(f"  {path:15} -> {handler.response['body']}")
 
 # =============================================================================
 # SECTION 7: Middleware Pattern
@@ -338,7 +338,7 @@ logged_app = LoggingMiddleware(simple_app)
 protected_app = AuthMiddleware(logged_app)
 
 print("Middleware chain:")
-print("  Request → AuthMiddleware → LoggingMiddleware → App")
+print("  Request -> AuthMiddleware -> LoggingMiddleware -> App")
 print()
 
 for path in ['/home', '/admin/dashboard']:
@@ -394,7 +394,7 @@ print("Nested routing results:")
 test_paths = ['/', '/about', '/api/users', '/api/posts']
 for path in test_paths:
     result = main_router.handle(path)
-    print(f"  {path:15} → {result}")
+    print(f"  {path:15} -> {result}")
 
 # =============================================================================
 # SECTION 9: URL Building
@@ -430,9 +430,9 @@ url_builder.add('user', '/users/{id}')
 url_builder.add('post', '/blog/{year}/{month}/{slug}')
 
 print("URL building:")
-print(f"  home              → {url_builder.build('home')}")
-print(f"  user(id=123)      → {url_builder.build('user', id=123)}")
-print(f"  post(...)         → {url_builder.build('post', year=2026, month=1, slug='hello')}")
+print(f"  home              -> {url_builder.build('home')}")
+print(f"  user(id=123)      -> {url_builder.build('user', id=123)}")
+print(f"  post(...)         -> {url_builder.build('post', year=2026, month=1, slug='hello')}")
 
 # =============================================================================
 # SECTION 10: Complete Routing System
@@ -486,11 +486,11 @@ complete.add('/users', lambda h: 'Create user', methods=['POST'])
 complete.add('/users/{id}', lambda h, **kw: f"User {kw.get('id')}", name='user')
 
 print("Complete router routes:")
-print("  /                 → Home (GET)")
-print("  /about            → About (GET)")
-print("  /users            → List users (GET)")
-print("  /users            → Create user (POST)")
-print("  /users/{id}       → User detail (GET)")
+print("  /                 -> Home (GET)")
+print("  /about            -> About (GET)")
+print("  /users            -> List users (GET)")
+print("  /users            -> Create user (POST)")
+print("  /users/{id}       -> User detail (GET)")
 
 # Test matching
 print("\nMatching tests:")
@@ -506,9 +506,9 @@ for path, method in tests:
     handler, params = complete.match(path, method)
     if handler:
         result = handler(None) if not params else handler(None, **params)
-        print(f"  {method:6} {path:15} → {result}")
+        print(f"  {method:6} {path:15} -> {result}")
     else:
-        print(f"  {method:6} {path:15} → 404")
+        print(f"  {method:6} {path:15} -> 404")
 
 print("\n" + "=" * 60)
 print("Key Routing Patterns:")

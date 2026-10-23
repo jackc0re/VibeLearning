@@ -61,4 +61,4 @@ def demo_kiss():
 
 if __name__ == "__main__":
     demo_kiss()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

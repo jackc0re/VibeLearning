@@ -16,7 +16,7 @@ This directory contains supplementary materials designed to help you learn faste
 Comprehensive dictionary of programming terms you'll encounter throughout this course. Perfect for when you encounter unfamiliar terminology.
 
 **What you'll find:**
-- 50+ programming terms defined
+- 110+ programming terms defined
 - Python-specific context for each term
 - Related terms for deeper understanding
 - Alphabetical organization for quick lookup
@@ -41,10 +41,20 @@ Quick reference guides for syntax, patterns, and common operations. Print them o
 Curated external resources for those who want to go deeper. Includes books, articles, videos, and official documentation.
 
 **Organized by:**
-- Module (00-15)
+- Module (00-20)
 - Resource type (books, articles, videos)
 - Difficulty level
 - Brief description of what makes each resource valuable
+
+---
+
+### 🧠 Quizzes ([quizzes.md](quizzes.md))
+A short knowledge check for every topic — **114 quizzes across 20 modules**, with answers included at the bottom of each quiz.
+
+**How they work:**
+- Every topic's quiz lives next to the topic (`quiz.md`), and the index here links to all of them
+- Take each quiz after running the topic's `examples.py` and doing the exercises
+- Stuck on a question? Go back to the topic's `README.md`, re-read the section, and try again
 
 ---
 
@@ -63,6 +73,7 @@ Curated external resources for those who want to go deeper. Includes books, arti
 - **Need Big O lookup?** → Check `algorithms.md`
 - **Confused about 'polymorphism'?** → Check `glossary.md`
 - **Want book recommendations?** → Check `further_reading.md`
+- **Finished a topic?** → Take its quiz in `quizzes.md`
 
 ---
 

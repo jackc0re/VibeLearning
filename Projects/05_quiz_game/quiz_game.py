@@ -180,11 +180,11 @@ class Leaderboard:
         for i, entry in enumerate(self.scores[:limit], 1):
             medal = ""
             if i == 1:
-                medal = "🥇 "
+                medal = "1st  "
             elif i == 2:
-                medal = "🥈 "
+                medal = "2nd  "
             elif i == 3:
-                medal = "🥉 "
+                medal = "3rd  "
             
             print(f"{medal}{i:<4} {entry['name']:<15} {entry['score']:<8} "
                   f"{entry['category']:<12} {entry['difficulty']:<8} {entry['date']:<16}")

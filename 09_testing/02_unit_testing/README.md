@@ -5,19 +5,16 @@ They should run fast and avoid external dependencies (network, filesystem, real 
 
 ---
 
-## ✅ Two Common Tools
+## ✅ The Tool: `unittest` (built-in)
 
-### 1) `unittest` (built-in)
+- Comes with Python: `import unittest`, nothing to install.
+- Uses test classes and `test_*` methods.
+- Ships assertion helpers (`assertEqual`, `assertRaises`, ...) and its own runner
+  (`python -m unittest`).
 
-- Comes with Python.
-- Uses test classes and methods.
-- Great when you can't install extra dependencies.
-
-### 2) `pytest` (third-party)
-
-- Very popular in the Python ecosystem.
-- Uses simple `assert` statements.
-- Excellent output and fixtures.
+> **Aside:** `pytest` is the most common third-party alternative - you will meet it in
+> real projects; this repo needs nothing installed. Plain `assert` statements work
+> without it, as `examples.py` shows.
 
 ---
 

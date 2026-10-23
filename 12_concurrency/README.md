@@ -6,7 +6,7 @@ In Python, concurrency usually shows up in three practical forms:
 
 - **Threads** (`threading`, `concurrent.futures.ThreadPoolExecutor`) for I/O-bound work
 - **Async** (`asyncio`) for high-concurrency I/O without many OS threads
-- **Processes** (`multiprocessing`, `ProcessPoolExecutor`) for CPU-bound parallelism (briefly mentioned)
+- **Processes** (`multiprocessing`, `ProcessPoolExecutor`) for CPU-bound parallelism (introduced in [Threads Basics](01_threads_basics/README.md))
 
 > **Estimated Time:** 10-12 hours  \
 > **Prerequisites:** Modules 01-05  \
@@ -18,7 +18,7 @@ In Python, concurrency usually shows up in three practical forms:
 
 | # | Topic | Description | Key Concepts |
 |---|-------|-------------|--------------|
-| 01 | [Threads Basics](01_threads_basics/README.md) | Starting and joining threads | `Thread`, `join()`, thread pools |
+| 01 | [Threads Basics](01_threads_basics/README.md) | Starting and joining threads | `Thread`, `join()`, thread pools, `multiprocessing` |
 | 02 | [Synchronization](02_synchronization/README.md) | Coordinating shared state safely | `Lock`, `Event`, `Semaphore`, `Queue` |
 | 03 | [Async Programming](03_async_programming/README.md) | Cooperative concurrency with `asyncio` | `async`/`await`, tasks, `gather()` |
 | 04 | [Race Conditions](04_race_conditions/README.md) | Understanding data races and fixes | atomicity, locks, message passing |

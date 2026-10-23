@@ -75,4 +75,4 @@ def demo_coupling_and_cohesion():
 
 if __name__ == "__main__":
     demo_coupling_and_cohesion()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

@@ -48,25 +48,25 @@ x = 10
 y = 20
 
 print(f"x = {x}, y = {y}")
-print(f"x == y  → {x == y}")    # Equal to
-print(f"x != y  → {x != y}")    # Not equal to
-print(f"x < y   → {x < y}")     # Less than
-print(f"x > y   → {x > y}")     # Greater than
-print(f"x <= y  → {x <= y}")    # Less than or equal
-print(f"x >= y  → {x >= y}")    # Greater than or equal
+print(f"x == y  -> {x == y}")    # Equal to
+print(f"x != y  -> {x != y}")    # Not equal to
+print(f"x < y   -> {x < y}")     # Less than
+print(f"x > y   -> {x > y}")     # Greater than
+print(f"x <= y  -> {x <= y}")    # Less than or equal
+print(f"x >= y  -> {x >= y}")    # Greater than or equal
 
 # Chained comparisons
 print("\n--- Chained Comparisons ---")
 age = 25
 print(f"age = {age}")
-print(f"18 <= age <= 65  → {18 <= age <= 65}")  # Working age
-print(f"13 <= age <= 19  → {13 <= age <= 19}")  # Teenager
+print(f"18 <= age <= 65  -> {18 <= age <= 65}")  # Working age
+print(f"13 <= age <= 19  -> {13 <= age <= 19}")  # Teenager
 
 # String comparison
 print("\n--- String Comparison ---")
-print(f"'apple' < 'banana'  → {'apple' < 'banana'}")
-print(f"'Apple' < 'apple'   → {'Apple' < 'apple'}")  # Uppercase first
-print(f"'10' < '9'          → {'10' < '9'}")  # String, not numeric!
+print(f"'apple' < 'banana'  -> {'apple' < 'banana'}")
+print(f"'Apple' < 'apple'   -> {'Apple' < 'apple'}")  # Uppercase first
+print(f"'10' < '9'          -> {'10' < '9'}")  # String, not numeric!
 
 # =============================================================================
 # LOGICAL OPERATORS
@@ -80,14 +80,14 @@ print(f"has_ticket = {has_ticket}")
 print(f"is_adult = {is_adult}")
 
 # AND - both must be True
-print(f"\nhas_ticket and is_adult  → {has_ticket and is_adult}")
+print(f"\nhas_ticket and is_adult  -> {has_ticket and is_adult}")
 
 # OR - at least one must be True
-print(f"has_ticket or is_adult   → {has_ticket or is_adult}")
+print(f"has_ticket or is_adult   -> {has_ticket or is_adult}")
 
 # NOT - inverts the value
-print(f"not has_ticket           → {not has_ticket}")
-print(f"not is_adult             → {not is_adult}")
+print(f"not has_ticket           -> {not has_ticket}")
+print(f"not is_adult             -> {not is_adult}")
 
 # Practical example
 print("\n--- Practical Example: Access Control ---")
@@ -110,22 +110,22 @@ x = 10
 print(f"Starting x = {x}")
 
 x += 5
-print(f"x += 5  → x = {x}")   # x = x + 5
+print(f"x += 5  -> x = {x}")   # x = x + 5
 
 x -= 3
-print(f"x -= 3  → x = {x}")   # x = x - 3
+print(f"x -= 3  -> x = {x}")   # x = x - 3
 
 x *= 2
-print(f"x *= 2  → x = {x}")   # x = x * 2
+print(f"x *= 2  -> x = {x}")   # x = x * 2
 
 x //= 3
-print(f"x //= 3 → x = {x}")   # x = x // 3
+print(f"x //= 3 -> x = {x}")   # x = x // 3
 
 x **= 2
-print(f"x **= 2 → x = {x}")   # x = x ** 2
+print(f"x **= 2 -> x = {x}")   # x = x ** 2
 
 x %= 7
-print(f"x %= 7  → x = {x}")   # x = x % 7
+print(f"x %= 7  -> x = {x}")   # x = x % 7
 
 # =============================================================================
 # MEMBERSHIP OPERATORS
@@ -135,22 +135,22 @@ print("\n--- Membership Operators ---\n")
 # In strings
 text = "Hello, World!"
 print(f"Text: '{text}'")
-print(f"'World' in text     → {'World' in text}")
-print(f"'world' in text     → {'world' in text}")  # Case sensitive!
-print(f"'x' not in text     → {'x' not in text}")
+print(f"'World' in text     -> {'World' in text}")
+print(f"'world' in text     -> {'world' in text}")  # Case sensitive!
+print(f"'x' not in text     -> {'x' not in text}")
 
 # In lists
 fruits = ["apple", "banana", "cherry"]
 print(f"\nFruits: {fruits}")
-print(f"'apple' in fruits   → {'apple' in fruits}")
-print(f"'grape' in fruits   → {'grape' in fruits}")
-print(f"'grape' not in fruits → {'grape' not in fruits}")
+print(f"'apple' in fruits   -> {'apple' in fruits}")
+print(f"'grape' in fruits   -> {'grape' in fruits}")
+print(f"'grape' not in fruits -> {'grape' not in fruits}")
 
 # In dictionaries (checks keys, not values)
 person = {"name": "Alice", "age": 25}
 print(f"\nPerson: {person}")
-print(f"'name' in person    → {'name' in person}")
-print(f"'Alice' in person   → {'Alice' in person}")  # Values are not checked!
+print(f"'name' in person    -> {'name' in person}")
+print(f"'Alice' in person   -> {'Alice' in person}")  # Values are not checked!
 
 # =============================================================================
 # IDENTITY OPERATORS
@@ -165,9 +165,9 @@ print(f"list1 = {list1}")
 print(f"list2 = {list2}")
 print(f"list3 = list1")
 
-print(f"\nlist1 == list2  → {list1 == list2}")  # Same values?
-print(f"list1 is list2  → {list1 is list2}")    # Same object?
-print(f"list1 is list3  → {list1 is list3}")    # Same object!
+print(f"\nlist1 == list2  -> {list1 == list2}")  # Same values?
+print(f"list1 is list2  -> {list1 is list2}")    # Same object?
+print(f"list1 is list3  -> {list1 is list3}")    # Same object!
 
 # Modifying to prove identity
 print("\n--- Proof of Identity ---")
@@ -180,7 +180,7 @@ print(f"list3 = {list3}")
 print("\n--- None Check ---")
 result = None
 print(f"result = {result}")
-print(f"result is None  → {result is None}")  # ✅ Recommended
+print(f"result is None  -> {result is None}")  # PASS Recommended
 
 # =============================================================================
 # OPERATOR PRECEDENCE

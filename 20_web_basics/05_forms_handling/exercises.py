@@ -221,7 +221,7 @@ test_registrations = [
 print("Registration validation:")
 for i, test in enumerate(test_registrations, 1):
     errors = validate_registration(test)
-    status = "✅ Valid" if not errors else f"❌ {errors}"
+    status = "PASS Valid" if not errors else f"FAIL {errors}"
     print(f"  Test {i}: {status}")
 
 # -------------------------------------------------------------------------
@@ -549,7 +549,7 @@ class ContactFormHandler:
 <html>
 <head><title>Message Sent</title></head>
 <body style="max-width: 500px; margin: 50px auto; font-family: Arial; text-align: center;">
-    <h1>✅ Message Sent!</h1>
+    <h1>PASS Message Sent!</h1>
     <p>Thank you, <strong>{escape(submission['name'])}</strong>!</p>
     <p>We'll get back to you at {escape(submission['email'])} soon.</p>
     <a href="/contact">Send another message</a>
@@ -567,7 +567,7 @@ result = handler.process({
     'subject': 'Hello',
     'message': 'This is a test message that is long enough.'
 })
-print(f"Submission 1: {'✅ Success' if result['success'] else '❌ Failed'}")
+print(f"Submission 1: {'PASS Success' if result['success'] else 'FAIL Failed'}")
 
 # Rate limit test
 for i in range(4):
@@ -577,7 +577,7 @@ for i in range(4):
         'subject': 'Test',
         'message': 'This is a test message that is long enough.'
     })
-    print(f"Submission {i+2} (bob): {'✅ Success' if result['success'] else '❌ Rate limited'}")
+    print(f"Submission {i+2} (bob): {'PASS Success' if result['success'] else 'FAIL Rate limited'}")
 
 # -------------------------------------------------------------------------
 # Solution 5
@@ -602,11 +602,11 @@ class FormWizard:
         progress = []
         for i, step in enumerate(self.steps):
             if i < current_idx:
-                status = '✓'
+                status = 'PASS'
             elif i == current_idx:
-                status = '→'
+                status = '->'
             else:
-                status = '○'
+                status = '( )'
             progress.append(f"{status} {i+1}. {step['title']}")
         return ' | '.join(progress)
     
@@ -662,10 +662,10 @@ class FormWizard:
         buttons = []
         
         if current_idx > 0:
-            buttons.append('<button type="submit" name="action" value="back">← Back</button>')
+            buttons.append('<button type="submit" name="action" value="back"><- Back</button>')
         
         if current_idx < len(self.steps) - 1:
-            buttons.append('<button type="submit" name="action" value="next">Next →</button>')
+            buttons.append('<button type="submit" name="action" value="next">Next -></button>')
         else:
             buttons.append('<button type="submit" name="action" value="confirm">Confirm Booking</button>')
         
@@ -737,7 +737,7 @@ class FormWizard:
 <html>
 <head><title>Booking Confirmed</title></head>
 <body style="max-width: 600px; margin: 50px auto; font-family: Arial; text-align: center;">
-    <h1>✅ Booking Confirmed!</h1>
+    <h1>PASS Booking Confirmed!</h1>
     <p>Your appointment has been scheduled.</p>
     <p>Confirmation details sent to {escape(session['data'].get('email', 'your email'))}</p>
 </body>
@@ -920,7 +920,7 @@ test_cases = [
 
 for test in test_cases:
     result = builder.validate(test)
-    status = "✅ Valid" if result['valid'] else f"❌ {result['errors']}"
+    status = "PASS Valid" if result['valid'] else f"FAIL {result['errors']}"
     print(f"  {status}")
 
 print("\n" + "=" * 60)

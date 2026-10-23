@@ -84,7 +84,7 @@ def run_tests():
     ]
     for raw, expected in tests_1:
         result = exercise_1_normalize_name(raw)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} normalize_name({raw!r}) = {result!r} (expected {expected!r})")
@@ -93,7 +93,7 @@ def run_tests():
     tests_2 = [(None, "age: ?"), (10, "age: 10")]
     for age, expected in tests_2:
         result = exercise_2_format_age(age)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} format_age({age}) = {result!r} (expected {expected!r})")
@@ -102,14 +102,14 @@ def run_tests():
     user = {"name": "  alice ", "age": 30, "is_active": True}
     result = exercise_3_user_summary(user)
     expected = "Alice (age: 30, active)"
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} user_summary(user) = {result!r} (expected {expected!r})")
 
     result = exercise_3_user_summary(None)
     expected = "<missing user>"
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} user_summary(None) = {result!r} (expected {expected!r})")
@@ -123,7 +123,7 @@ def run_tests():
     ]
     for email, expected in tests_4:
         result = exercise_4_is_valid_email(email)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} is_valid_email({email!r}) = {result} (expected {expected})")
@@ -131,16 +131,16 @@ def run_tests():
     print("\nExercise 5: Total Seconds")
     result = exercise_5_total_seconds(1, 2, 3)
     expected = 3723
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} total_seconds(1,2,3) = {result} (expected {expected})")
 
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 

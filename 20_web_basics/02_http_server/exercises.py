@@ -56,12 +56,12 @@ Endpoint: GET /calc
 Parameters: a (number), b (number), op (operation)
 Operations: add, subtract, multiply, divide
 
-Example: /calc?a=5&b=3&op=add → {"result": 8}
+Example: /calc?a=5&b=3&op=add -> {"result": 8}
 
 Handle errors:
-- Missing parameters → 400 Bad Request
-- Invalid operation → 400 Bad Request
-- Division by zero → 400 Bad Request
+- Missing parameters -> 400 Bad Request
+- Invalid operation -> 400 Bad Request
+- Division by zero -> 400 Bad Request
 """
 
 # Your code here:
@@ -217,9 +217,9 @@ class JSONAPIHandler(BaseHTTPRequestHandler):
         pass
 
 print("JSON API Handler created with endpoints:")
-print("  /api/time   → Current server time")
-print("  /api/random → Random numbers")
-print("  /api/info   → Server information")
+print("  /api/time   -> Current server time")
+print("  /api/random -> Random numbers")
+print("  /api/info   -> Server information")
 
 # -------------------------------------------------------------------------
 # Solution 3
@@ -284,7 +284,7 @@ class CalculatorHandler(BaseHTTPRequestHandler):
         pass
 
 print("Calculator API Handler created")
-print("  Example: /calc?a=10&b=5&op=add → {'result': 15.0}")
+print("  Example: /calc?a=10&b=5&op=add -> {'result': 15.0}")
 
 # -------------------------------------------------------------------------
 # Solution 4

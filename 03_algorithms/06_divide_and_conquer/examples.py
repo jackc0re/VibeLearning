@@ -64,7 +64,7 @@ def merge_sort_visualized(arr, depth=0):
     print(f"{indent}merge_sort({arr})")
     
     if len(arr) <= 1:
-        print(f"{indent}  → base case: {arr}")
+        print(f"{indent}  -> base case: {arr}")
         return arr
     
     mid = len(arr) // 2
@@ -74,7 +74,7 @@ def merge_sort_visualized(arr, depth=0):
     right = merge_sort_visualized(arr[mid:], depth + 1)
     
     result = merge(left, right)
-    print(f"{indent}  Combine: {left} + {right} → {result}")
+    print(f"{indent}  Combine: {left} + {right} -> {result}")
     
     return result
 
@@ -91,7 +91,7 @@ def quick_sort(arr):
     2. Conquer: Recursively sort partitions
     3. Combine: Concatenate (trivial)
     
-    Time: O(n log n) average, O(n²) worst
+    Time: O(n log n) average, O(n^2) worst
     Space: O(log n)
     """
     if len(arr) <= 1:
@@ -206,21 +206,21 @@ def power_visualized(x, n, depth=0):
     print(f"{indent}power({x}, {n})")
     
     if n == 0:
-        print(f"{indent}  → 1 (base case)")
+        print(f"{indent}  -> 1 (base case)")
         return 1
     if n < 0:
         result = 1 / power_visualized(x, -n, depth + 1)
-        print(f"{indent}  → 1/{x}^{-n} = {result}")
+        print(f"{indent}  -> 1/{x}^{-n} = {result}")
         return result
     
     half = power_visualized(x, n // 2, depth + 1)
     
     if n % 2 == 0:
         result = half * half
-        print(f"{indent}  → {half}² = {result}")
+        print(f"{indent}  -> {half}^2 = {result}")
     else:
         result = x * half * half
-        print(f"{indent}  → {x} × {half}² = {result}")
+        print(f"{indent}  -> {x} x {half}^2 = {result}")
     
     return result
 
@@ -420,7 +420,7 @@ def karatsuba(x, y):
     Multiply two numbers using Karatsuba algorithm.
     
     For n-digit numbers:
-    - Normal multiplication: O(n²)
+    - Normal multiplication: O(n^2)
     - Karatsuba: O(n^1.585)
     
     Key insight: 3 multiplications instead of 4
@@ -461,7 +461,7 @@ def quickselect(arr, k):
     
     Like QuickSort but only recurse on one side.
     
-    Time: O(n) average, O(n²) worst
+    Time: O(n) average, O(n^2) worst
     """
     if len(arr) == 1:
         return arr[0]
@@ -619,7 +619,7 @@ def demo_karatsuba():
     for x, y in pairs:
         result = karatsuba(x, y)
         expected = x * y
-        print(f"\n{x} × {y} = {result}")
+        print(f"\n{x} x {y} = {result}")
         print(f"Verified: {expected} ({result == expected})")
 
 
@@ -635,7 +635,7 @@ def demo_quickselect():
     
     for k in [1, 3, 6]:
         result = quickselect(arr.copy(), k)
-        print(f"{k}th smallest: {result}")
+        print(f"k={k} -> {result}")
 
 
 def demo_complexity_comparison():
@@ -682,5 +682,5 @@ if __name__ == "__main__":
     demo_complexity_comparison()
     
     print("\n" + "=" * 60)
-    print("✓ All divide and conquer examples completed!")
+    print("PASS All divide and conquer examples completed!")
     print("=" * 60)

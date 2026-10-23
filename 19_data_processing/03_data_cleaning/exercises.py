@@ -116,10 +116,10 @@ Then insert cleaned data, setting price to NULL for invalid values.
 # EXERCISE 4: Validate Emails
 # =============================================================================
 print("\n--- Exercise 4: Email Validation ---\n")
-"""
+r"""
 Write a function to validate email addresses using a regex pattern.
 Update the products_clean table to set email_valid based on validation.
-Pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+Pattern: r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 
 Print a list of invalid emails found.
 """
@@ -132,7 +132,7 @@ Print a list of invalid emails found.
 # EXERCISE 5: Remove Duplicates
 # =============================================================================
 print("\n--- Exercise 5: Remove Duplicates ---\n")
-"""
+r"""
 Remove duplicate products from products_clean based on name and price.
 Keep the record with the lowest ID for each duplicate group.
 
@@ -183,7 +183,7 @@ print("=" * 70)
 # =============================================================================
 # SOLUTIONS
 # =============================================================================
-print("""
+print(r"""
 # SOLUTIONS
 # =========
 
@@ -199,7 +199,7 @@ cursor.execute('''
     FROM products
 ''')
 nulls = cursor.fetchone()
-print(f"Missing values: {dict(nulls)}")
+print(f"Missing values: {nulls}")
 
 cursor.execute('''
     SELECT name, COUNT(*) FROM products GROUP BY name HAVING COUNT(*) > 1
@@ -229,13 +229,13 @@ def clean_price(p):
     try:
         p = float(p)
         return p if p >= 0 else None
-    except:
+    except (ValueError, TypeError):
         return None
 
 def clean_quantity(q):
     try:
         return int(q)
-    except:
+    except (ValueError, TypeError):
         return 0
 
 cursor.execute('SELECT * FROM products')

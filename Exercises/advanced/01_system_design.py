@@ -29,14 +29,14 @@ class LRUCache:
     pass
 
 
-# Test
-cache = LRUCache(capacity=2)
-cache.put("a", 1)
-cache.put("b", 2)
-print(cache.get("a"))  # 1
-cache.put("c", 3)  # evicts "b"
-print(cache.get("b"))  # None
-print(cache.get("c"))  # 3
+# Test (uncomment after implementing)
+# cache = LRUCache(capacity=2)
+# cache.put("a", 1)
+# cache.put("b", 2)
+# print(cache.get("a"))  # 1
+# cache.put("c", 3)  # evicts "b"
+# print(cache.get("b"))  # None
+# print(cache.get("c"))  # 3
 
 
 # =============================================================================
@@ -104,28 +104,6 @@ Implement a dependency injection container:
 - Resolve dependencies
 - Singleton and transient lifetimes
 """
-
-
-# Your code below:
-class Container:
-    """Dependency injection container."""
-
-    pass
-
-
-# =============================================================================
-# EXERCISE 1.5: Dependency Injection Container
-# =============================================================================
-print(
-    "\n--- Exercise 1.5: DI Container ---"
-    ""
-    """
-Implement a dependency injection container:
-- Register services
-- Resolve dependencies
-- Singleton and transient lifetimes
-"""
-)
 
 
 # Your code below:

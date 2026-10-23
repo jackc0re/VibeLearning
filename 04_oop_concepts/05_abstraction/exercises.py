@@ -51,13 +51,19 @@ print(bird.move())
 print(fish.make_sound())
 print(fish.move())
 
+# Step 5: an abstract class cannot be instantiated
+try:
+    Animal()
+except TypeError:
+    print("Animal cannot be instantiated: it is an abstract class.")
+
 
 # -----------------------------------------------------------------------------
 # Exercise 2: Appliance Interface
 # -----------------------------------------------------------------------------
 # 1. Create an abstract class `Appliance`.
 # 2. Abstract methods: `turn_on()`, `turn_off()`.
-# 3. Concrete method in `Appliance`: `plug_in()` whch prints "Appliance plugged in.".
+# 3. Concrete method in `Appliance`: `plug_in()` which prints "Appliance plugged in.".
 # 4. Create a `WashingMachine` class.
 #    - Implement turn_on/off.
 # 5. Create a `Microwave` class.

@@ -33,7 +33,8 @@ def calculate_subtotal(items):
 
 
 def apply_tax(amount, tax_rate):
-    return amount * (1 + tax_rate)
+    # Same arithmetic as the BEFORE version, so results stay identical.
+    return amount + (amount * tax_rate)
 
 
 def total_price_after(items, tax_rate, shipping_fee):
@@ -75,4 +76,4 @@ def demo_before_and_after():
 
 if __name__ == "__main__":
     demo_before_and_after()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

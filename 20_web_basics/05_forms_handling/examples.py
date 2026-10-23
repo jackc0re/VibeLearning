@@ -133,7 +133,7 @@ test_cases = [
 print("Form validation:")
 for i, test in enumerate(test_cases, 1):
     errors = validate_contact_form(test)
-    status = "✅ Valid" if not errors else f"❌ Errors: {errors}"
+    status = "PASS Valid" if not errors else f"FAIL Errors: {errors}"
     print(f"  Test {i}: {status}")
 
 # =============================================================================
@@ -183,7 +183,7 @@ type_tests = [
 
 for value, type_ in type_tests:
     result = parse_typed_value(value, type_)
-    print(f"  {value!r} ({type_}) → {result!r} ({type(result).__name__ if result else 'None'})")
+    print(f"  {value!r} ({type_}) -> {result!r} ({type(result).__name__ if result else 'None'})")
 
 # =============================================================================
 # SECTION 6: Form Data Sanitization

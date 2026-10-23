@@ -40,7 +40,7 @@ def analyze_string(text):
 print("\n--- Exercise 2: Title Case Converter ---\n")
 """
 Write a function that converts a sentence to title case,
-but keeps certain words lowercase (a, an, the, and, or, but, in, on, at)
+but keeps certain words lowercase (a, an, the, and, or, but, in, on, at, of)
 unless they're the first word.
 
 Example: "the lord of the rings" -> "The Lord of the Rings"

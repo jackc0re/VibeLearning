@@ -51,6 +51,26 @@ Avoid copying when:
 
 ---
 
+## ⚠️ Common Mistakes
+
+- Expecting `copy.copy()` to duplicate **nested** objects (it doesn't — that's `deepcopy`)
+- Copying "just in case" — wasted memory and time when read access would do
+- Using `is` to compare values: `a == b` compares content, `a is b` compares identity
+
+---
+
+## 📝 Quick Reference
+
+```python
+b = a                # alias: same object, no copy
+copy.copy(a)         # shallow: new outer container, shared inner objects
+copy.deepcopy(a)     # deep: nested objects copied too
+a == b               # equal values?
+a is b               # same object?
+```
+
+---
+
 [Back: Module 11 README](../README.md)
 
 ---

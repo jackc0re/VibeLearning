@@ -281,7 +281,7 @@ def bellman_ford(vertices, edges, start):
     Handles negative edge weights.
     Detects negative cycles.
     
-    Time: O(V × E)
+    Time: O(V x E)
     Space: O(V)
     
     Args:
@@ -316,8 +316,8 @@ def floyd_warshall(vertices, edges):
     """
     Floyd-Warshall all-pairs shortest path.
     
-    Time: O(V³)
-    Space: O(V²)
+    Time: O(V^3)
+    Space: O(V^2)
     """
     n = len(vertices)
     vertex_to_idx = {v: i for i, v in enumerate(vertices)}
@@ -446,7 +446,7 @@ def topological_sort_dfs(graph):
     """
     Topological sort using DFS.
     
-    Orders vertices so that for every edge u→v,
+    Orders vertices so that for every edge u->v,
     u comes before v.
     
     Time: O(V + E)
@@ -623,7 +623,7 @@ def demo_bfs():
     print(f"\nLevels from 'A': {levels}")
     
     path = bfs_shortest_path(graph, 'A', 'E')
-    print(f"\nShortest path A → E: {' → '.join(path)}")
+    print(f"\nShortest path A -> E: {' -> '.join(path)}")
 
 
 def demo_dfs():
@@ -638,9 +638,9 @@ def demo_dfs():
     print(f"DFS (iterative) from 'A': {dfs_iterative(graph, 'A')}")
     
     all_paths = dfs_all_paths(graph, 'A', 'E')
-    print(f"\nAll paths A → E:")
+    print(f"\nAll paths A -> E:")
     for path in all_paths:
-        print(f"  {' → '.join(path)}")
+        print(f"  {' -> '.join(path)}")
 
 
 def demo_dijkstra():
@@ -661,10 +661,10 @@ def demo_dijkstra():
     distances, _ = dijkstra(weighted, 'A')
     print(f"\nShortest distances from 'A':")
     for node, dist in sorted(distances.items()):
-        print(f"  A → {node}: {dist}")
+        print(f"  A -> {node}: {dist}")
     
     path, dist = dijkstra_path(weighted, 'A', 'E')
-    print(f"\nShortest path A → E: {' → '.join(path)} (distance: {dist})")
+    print(f"\nShortest path A -> E: {' -> '.join(path)} (distance: {dist})")
 
 
 def demo_bellman_ford():
@@ -682,7 +682,7 @@ def demo_bellman_ford():
         ('C', 'D', 5),
     ]
     
-    print("\nGraph with negative edge (C→B = -1):")
+    print("\nGraph with negative edge (C->B = -1):")
     print("    A --4--> B")
     print("    |        |")
     print("    2       3")
@@ -695,7 +695,7 @@ def demo_bellman_ford():
     if distances:
         print(f"\nShortest distances from 'A':")
         for node, dist in sorted(distances.items()):
-            print(f"  A → {node}: {dist}")
+            print(f"  A -> {node}: {dist}")
     else:
         print("\nNegative cycle detected!")
 
@@ -750,10 +750,10 @@ def demo_topological_sort():
     print("    C --> E --> F")
     
     topo_dfs = topological_sort_dfs(dag)
-    print(f"\nTopological order (DFS): {' → '.join(topo_dfs)}")
+    print(f"\nTopological order (DFS): {' -> '.join(topo_dfs)}")
     
     topo_kahn = topological_sort_kahn(dag)
-    print(f"Topological order (Kahn): {' → '.join(topo_kahn)}")
+    print(f"Topological order (Kahn): {' -> '.join(topo_kahn)}")
 
 
 def demo_cycle_detection():
@@ -784,14 +784,14 @@ def demo_cycle_detection():
     directed_cycle = {
         'A': ['B'],
         'B': ['C'],
-        'C': ['A']  # Cycle: A→B→C→A
+        'C': ['A']  # Cycle: A->B->C->A
     }
     
     # DAG (no cycle)
     _, _, dag = create_sample_graphs()
     
     print("\nDirected graphs:")
-    print(f"  A→B→C→A: has cycle = {has_cycle_directed(directed_cycle)}")
+    print(f"  A->B->C->A: has cycle = {has_cycle_directed(directed_cycle)}")
     print(f"  DAG: has cycle = {has_cycle_directed(dag)}")
 
 
@@ -837,5 +837,5 @@ if __name__ == "__main__":
     demo_connected_components()
     
     print("\n" + "=" * 60)
-    print("✓ All graph algorithm examples completed!")
+    print("PASS All graph algorithm examples completed!")
     print("=" * 60)

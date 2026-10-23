@@ -319,6 +319,155 @@ def download_file(url, filename):
 
 print("download_file() defined. Test with download_file('https://httpbin.org/bytes/100', 'test_download.bin')")
 
+# =============================================================================
+# OFFLINE DEMONSTRATIONS (no network needed)
+# =============================================================================
+print("\n" + "=" * 60)
+print("OFFLINE DEMONSTRATIONS")
+print("=" * 60)
+print("""
+The solutions above call https://httpbin.org when YOU run them.
+So that this file also runs anywhere (CI, a classroom, offline),
+the demos below temporarily swap urlopen() for a small fake that
+simulates the server. Every solution is still the real code from
+above - only the network layer is simulated.
+""")
+
+import os
+import tempfile
+from urllib.parse import urlsplit, parse_qs
+from urllib.request import urlopen as real_urlopen
+
+
+class FakeResponse:
+    """Minimal stand-in for the object urlopen() returns."""
+
+    def __init__(self, status, headers, body):
+        self.status = status
+        self._headers = headers
+        self._body = body
+
+    def read(self):
+        return self._body
+
+    def getheader(self, name, default=None):
+        return self._headers.get(name, default)
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc, tb):
+        return False
+
+
+def fake_urlopen(target):
+    """Simulate httpbin.org: echo the request back as JSON."""
+    if isinstance(target, str):
+        url, method = target, "GET"
+        data, req_headers = b"", {}
+    else:  # urllib.request.Request
+        url = target.full_url
+        method = target.get_method()
+        data = target.data or b""
+        req_headers = dict(target.header_items())
+
+    parts = urlsplit(url)
+    query = {k: v[0] for k, v in parse_qs(parts.query).items()}
+    headers = {
+        "Content-Type": "application/json",
+        "Server": "FakeHTTPBin/1.0",
+    }
+
+    # Route: /bytes/<n> - return n raw bytes (used by download_file)
+    if parts.path.startswith("/bytes/"):
+        n = int(parts.path.rsplit("/", 1)[1])
+        body = bytes(range(256)) * (n // 256) + bytes(range(n % 256))
+        headers["Content-Type"] = "application/octet-stream"
+        headers["Content-Length"] = str(len(body))
+        return FakeResponse(200, headers, body)
+
+    # Route: everything else - echo the request, like httpbin does
+    payload = {
+        "method": method,
+        "path": parts.path,
+        "args": query,
+        "headers": req_headers,
+    }
+    if data:
+        payload["data"] = data.decode("utf-8", "replace")
+
+    body = json.dumps(payload).encode("utf-8")
+    headers["Content-Length"] = str(len(body))
+    return FakeResponse(200, headers, body)
+
+
+# Swap the network layer for the fake. Solution functions look up the
+# global name urlopen at call time, so this patch takes effect for them.
+urlopen = fake_urlopen
+
+# Exercise 1: fetch_url
+print("\n--- Demo 1: fetch_url ---")
+status, text = fetch_url("https://httpbin.org/get")
+print(f"status={status}")
+print(f"body starts with: {text[:50]}...")
+print("PASS" if status == 200 and '"method": "GET"' in text else "FAIL")
+
+# Exercise 2: search
+print("\n--- Demo 2: search ---")
+result = search("python", page=2)
+print(f"server saw args: {result['args']}")
+print("PASS" if result["args"] == {"search": "python", "page": "2"} else "FAIL")
+
+# Exercise 3: submit_form
+print("\n--- Demo 3: submit_form ---")
+result = submit_form("alice", "alice@example.com")
+print(f"server received form data: {result['data']}")
+print("PASS" if "username=alice" in result["data"] else "FAIL")
+
+# Exercise 4: create_user
+print("\n--- Demo 4: create_user ---")
+result = create_user({"name": "Alice", "role": "admin"})
+sent = json.loads(result["data"])
+headers_lc = {k.lower(): v for k, v in result["headers"].items()}
+print(f"server received JSON: {sent}")
+print(f"Content-Type sent: {headers_lc.get('content-type')}")
+ok = sent == {"name": "Alice", "role": "admin"} and headers_lc.get("content-type") == "application/json"
+print("PASS" if ok else "FAIL")
+
+# Exercise 5: get_response_info
+print("\n--- Demo 5: get_response_info ---")
+info = get_response_info("https://httpbin.org/get")
+print(f"response info: {info}")
+ok = info["status"] == 200 and info["server"] == "FakeHTTPBin/1.0"
+print("PASS" if ok else "FAIL")
+
+# Exercise 6: SimpleAPIClient
+print("\n--- Demo 6: SimpleAPIClient ---")
+client = SimpleAPIClient("https://httpbin.org")
+get_status, get_data = client.get("/get", params={"key": "value"})
+print(f"GET  /get  -> status={get_status}, server saw args={get_data['args']}")
+post_status, post_data = client.post("/post", json_data={"name": "test"})
+print(f"POST /post -> status={post_status}, server received {post_data['data']}")
+ok = (
+    get_status == 200
+    and get_data["args"] == {"key": "value"}
+    and json.loads(post_data["data"]) == {"name": "test"}
+)
+print("PASS" if ok else "FAIL")
+
+# Bonus: download_file
+print("\n--- Demo 7: download_file ---")
+with tempfile.TemporaryDirectory() as tmp_dir:
+    out_path = os.path.join(tmp_dir, "demo_download.bin")
+    n_bytes = download_file("https://httpbin.org/bytes/100", out_path)
+    print(f"saved {n_bytes} bytes to {out_path}")
+    ok = n_bytes == 100 and os.path.getsize(out_path) == 100
+print("PASS" if ok else "FAIL")
+
+# Restore the real network function so pasted-into-a-REPL code works as before
+urlopen = real_urlopen
+print("\n(fake server disconnected; urlopen is back to the real one)")
+
 print("\n" + "=" * 60)
 print("All exercises complete! Great job!")
 print("=" * 60)

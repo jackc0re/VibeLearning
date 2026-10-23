@@ -30,7 +30,8 @@ class FilteredWindow(Window):
 
 # What if we want a Secure AND Filtered Window?
 # class SecureFilteredWindow(SecureWindow, FilteredWindow): ... ?
-# This gets messy (Diamond Problem / Multiple Inheritance Complexity).
+# Python would run it (MRO resolves the order), but every new combination of
+# features needs yet another class. Composition (below) avoids that.
 
 sw = SecureWindow()
 sw.open()

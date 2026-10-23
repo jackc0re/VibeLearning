@@ -118,7 +118,7 @@ Deque with maxlen acts as a circular buffer, automatically discarding elements f
 ---
 
 ## Question 7
-**Which factory function would you use with defaultdict to automatically create nested dictionaries?**
+**Which factory function do you pass to `defaultdict` so a missing key automatically gets an empty dictionary?**
 
 A) `dict`
 B) `lambda: defaultdict(dict)`
@@ -128,9 +128,10 @@ D) `set`
 <details>
 <summary>Click for answer</summary>
 
-**B) `lambda: defaultdict(dict)`**
+**A) `dict`**
 
-For nested structures, you need a lambda that returns a new defaultdict.
+`defaultdict(dict)` gives a missing key the value `{}`, so `d['a']['b'] = 1` works.
+For deeper nesting you can chain defaultdicts with a lambda.
 </details>
 
 ---

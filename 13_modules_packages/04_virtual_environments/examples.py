@@ -137,20 +137,20 @@ def demo_venv_structure() -> None:
     print("Typical venv directory structure:")
     print("""
     .venv/
-    ├── bin/                    # (Scripts/ on Windows)
-    │   ├── activate            # Activation script (bash)
-    │   ├── activate.csh        # Activation script (csh)
-    │   ├── activate.fish       # Activation script (fish)
-    │   ├── Activate.ps1        # Activation script (PowerShell)
-    │   ├── pip                 # pip executable
-    │   ├── pip3
-    │   ├── python              # Python symlink/copy
-    │   └── python3
-    ├── include/                # Header files (for building C extensions)
-    ├── lib/
-    │   └── pythonX.Y/
-    │       └── site-packages/  # Installed packages go here
-    └── pyvenv.cfg              # Configuration file
+    +-- bin/                    # (Scripts/ on Windows)
+    |   +-- activate            # Activation script (bash)
+    |   +-- activate.csh        # Activation script (csh)
+    |   +-- activate.fish       # Activation script (fish)
+    |   +-- Activate.ps1        # Activation script (PowerShell)
+    |   +-- pip                 # pip executable
+    |   +-- pip3
+    |   +-- python              # Python symlink/copy
+    |   +-- python3
+    +-- include/                # Header files (for building C extensions)
+    +-- lib/
+    |   +-- pythonX.Y/
+    |       +-- site-packages/  # Installed packages go here
+    +-- pyvenv.cfg              # Configuration file
     """)
 
     print("pyvenv.cfg contents (example):")

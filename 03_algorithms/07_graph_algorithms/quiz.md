@@ -332,3 +332,7 @@ If you struggled with certain questions, review these topics:
 - **Questions 9-11**: Topological sort and cycle detection
 - **Questions 12-13**: Minimum Spanning Tree
 - **Questions 14-15**: Graph properties and comparisons
+
+---
+
+[Back to Graph Algorithms README](README.md) | [Back to Module Overview](../README.md)

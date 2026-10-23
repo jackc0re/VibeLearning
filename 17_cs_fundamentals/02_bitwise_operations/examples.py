@@ -116,7 +116,7 @@ def not_8bit(n):
 
 for n in [0, 1, 5, 10, 255]:
     result = not_8bit(n)
-    print(f"  NOT {n:3d} (8-bit) = {result:3d}  ({n:08b} → {result:08b})")
+    print(f"  NOT {n:3d} (8-bit) = {result:3d}  ({n:08b} -> {result:08b})")
 
 # =============================================================================
 # LEFT SHIFT (<<)
@@ -130,7 +130,7 @@ value = 5
 print(f"Starting value: {value} ({value:08b})")
 for i in range(1, 5):
     result = value << i
-    print(f"  {value} << {i} = {result:2d}  ({result:08b})  [×{2**i}]")
+    print(f"  {value} << {i} = {result:2d}  ({result:08b})  [x{2**i}]")
 
 # =============================================================================
 # RIGHT SHIFT (>>)
@@ -144,7 +144,7 @@ value = 80
 print(f"Starting value: {value} ({value:08b})")
 for i in range(1, 5):
     result = value >> i
-    print(f"  {value} >> {i} = {result:2d}  ({result:08b})  [÷{2**i}]")
+    print(f"  {value} >> {i} = {result:2d}  ({result:08b})  [/{2**i}]")
 
 # =============================================================================
 # PRACTICAL APPLICATION: PERMISSION SYSTEM

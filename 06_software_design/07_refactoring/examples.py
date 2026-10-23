@@ -55,6 +55,34 @@ def format_user_summary_after(user):
 
 
 # =============================================================================
+# THE REFACTORING RITUAL: PIN BEHAVIOR, CHANGE, PROVE
+# =============================================================================
+
+REFACTORING_CHECKLIST = [
+    "1. Run the tests (or examples) BEFORE touching anything",
+    "2. Capture the current output as your golden behavior",
+    "3. Make ONE small move (extract, rename, guard clause)",
+    "4. Re-run and compare. Same behavior? Repeat with the next move.",
+]
+
+CASES = [
+    {"name": "  alice ", "age": 30, "is_active": True},
+    {"name": None, "age": None, "is_active": False},
+    None,
+]
+
+
+def prove_behavior_unchanged():
+    """After-version must match before-version for every case."""
+    for user in CASES:
+        expected = format_user_summary_before(user)
+        actual = format_user_summary_after(user)
+        assert actual == expected, (
+            f"behavior changed for {user!r}: {actual!r} != {expected!r}"
+        )
+
+
+# =============================================================================
 # DEMONSTRATIONS
 # =============================================================================
 
@@ -64,20 +92,21 @@ def demo_refactoring():
     print("Refactoring: Improve structure, keep behavior")
     print("=" * 60)
 
-    users = [
-        {"name": "  alice ", "age": 30, "is_active": True},
-        {"name": None, "age": None, "is_active": False},
-        None,
-    ]
-
-    for user in users:
+    for user in CASES:
         before = format_user_summary_before(user)
         after = format_user_summary_after(user)
         print(f"before: {before}")
         print(f"after : {after}")
         print(f"same? : {before == after}\n")
 
+    prove_behavior_unchanged()
+    print("Behavior check: PASS (after == before for every case)")
+
+    print("\nRefactoring checklist:")
+    for step in REFACTORING_CHECKLIST:
+        print(" ", step)
+
 
 if __name__ == "__main__":
     demo_refactoring()
-    print("✓ Examples complete!")
+    print("PASS Examples complete!")

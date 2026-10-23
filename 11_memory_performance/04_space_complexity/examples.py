@@ -1,4 +1,5 @@
 """Space Complexity - Examples
+=============================
 
 Demonstrations:
 - list vs generator expressions
@@ -11,6 +12,10 @@ Run:
 from __future__ import annotations
 
 
+# =============================================================================
+# DEMO: LIST VS GENERATOR
+# =============================================================================
+
 def demo_list_vs_generator() -> None:
     squares_list = [x * x for x in range(10)]
     squares_gen = (x * x for x in range(10))
@@ -20,6 +25,10 @@ def demo_list_vs_generator() -> None:
     print("  gen first three:", [next(squares_gen), next(squares_gen), next(squares_gen)])
 
 
+# =============================================================================
+# DEMO: IN-PLACE VS OUT-OF-PLACE
+# =============================================================================
+
 def demo_in_place() -> None:
     nums = [3, 1, 2]
     print("\nSorting:")
@@ -28,7 +37,25 @@ def demo_in_place() -> None:
     print("  after sort():", nums)
 
 
-if __name__ == "__main__":
+# =============================================================================
+# MAIN
+# =============================================================================
+
+def main() -> None:
+    print("=" * 50)
+    print("SPACE COMPLEXITY - Examples")
+    print("=" * 50)
+
+    print("\n--- List vs generator ---\n")
     demo_list_vs_generator()
+
+    print("\n--- In-place vs out-of-place ---")
     demo_in_place()
 
+    print("\n" + "=" * 50)
+    print("Examples complete! Try exercises.py next.")
+    print("=" * 50)
+
+
+if __name__ == "__main__":
+    main()

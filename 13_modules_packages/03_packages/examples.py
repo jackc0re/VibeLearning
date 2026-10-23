@@ -58,9 +58,16 @@ def demo_package_vs_module() -> None:
     import json  # Package (directory)
 
     print("math (module):")
-    # Built-in modules are compiled into the interpreter, so they have no __file__
+    # Whether an extension module has __file__ depends on the build: on Windows
+    # math is compiled into the interpreter (no __file__), elsewhere it is a
+    # shared library (has __file__). Either way it has no __path__, so it is
+    # not a package. sys is always built in, so it never has __file__.
     print(f"  __file__: {getattr(math, '__file__', '(built-in, no file)')}")
     print(f"  has __path__: {hasattr(math, '__path__')}")
+
+    print("\nsys (built-in module):")
+    print(f"  __file__: {getattr(sys, '__file__', '(built-in, no file)')}")
+    print(f"  has __path__: {hasattr(sys, '__path__')}")
 
     print("\njson (package):")
     print(f"  __file__: {json.__file__}")
@@ -160,7 +167,7 @@ def demo_package_resources() -> None:
     """Show how to access package resources."""
     print("=== Package Resources ===\n")
 
-    # Modern way: importlib.resources (Python 3.9+)
+    # Modern way: importlib.resources (resources.files() needs Python 3.9+)
     try:
         from importlib import resources
 

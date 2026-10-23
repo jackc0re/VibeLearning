@@ -73,7 +73,7 @@ print([f() for f in funcs])
 ---
 
 ## Question 4
-What does `[1, 2].copy()` create for nested lists like `[[1, 2], [3, 4]]`?
+What does `[[1, 2], [3, 4]].copy()` create?
 
 - A) A completely independent copy
 - B) A shallow copy - inner lists are still shared

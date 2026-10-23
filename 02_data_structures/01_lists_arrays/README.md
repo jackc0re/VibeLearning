@@ -109,6 +109,10 @@ letters.clear()       # Remove all: []
 | `reverse()` | Reverse in place | `[1,2,3].reverse()` → `[3,2,1]` |
 | `copy()` | Shallow copy | `new = old.copy()` |
 
+> 💡 **Note:** `append`, `insert`, `extend`, `remove`, `sort`, and `reverse` change the list
+> **in place** and return `None` — the example shows the list *after* the call.
+> `pop`, `index`, and `count` show the value they return.
+
 ---
 
 ## List Comprehensions
@@ -205,7 +209,8 @@ for n in nums:
     if n % 2 == 0:
         nums.remove(n)  # ❌ Dangerous! Skips elements
 
-# ✅ Better: create new list
+# ✅ Better: create a new list from the original data
+nums = [1, 2, 3, 4, 5]  # start over
 odds = [n for n in nums if n % 2 != 0]
 ```
 

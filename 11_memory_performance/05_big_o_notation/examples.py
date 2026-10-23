@@ -1,4 +1,5 @@
 """Big-O Notation - Examples
+===========================
 
 This file includes small functions with typical Big-O behaviors.
 
@@ -8,6 +9,10 @@ Run:
 
 from __future__ import annotations
 
+
+# =============================================================================
+# DEMO: CONSTANT, LINEAR AND QUADRATIC FUNCTIONS
+# =============================================================================
 
 def constant_time_first(items: list[int]) -> int | None:
     """O(1): first element access."""
@@ -32,9 +37,25 @@ def quadratic_pairs(items: list[int]) -> int:
     return count
 
 
-if __name__ == "__main__":
+# =============================================================================
+# MAIN
+# =============================================================================
+
+def main() -> None:
+    print("=" * 50)
+    print("BIG-O NOTATION - Examples")
+    print("=" * 50)
+
+    print("\n--- Constant vs linear vs quadratic ---\n")
     data = list(range(10))
     print("O(1) first:", constant_time_first(data))
     print("O(n) sum:", linear_sum(data))
     print("O(n^2) pairs:", quadratic_pairs(data))
 
+    print("\n" + "=" * 50)
+    print("Examples complete! Try exercises.py next.")
+    print("=" * 50)
+
+
+if __name__ == "__main__":
+    main()

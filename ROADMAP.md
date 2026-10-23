@@ -156,7 +156,7 @@ Each module includes:
 
 **What you'll learn:**
 - Why testing matters
-- Unit testing with pytest
+- Unit testing with plain asserts (plus a guided look at pytest)
 - Test-driven development (TDD)
 - Mocking and stubbing
 - Integration testing
@@ -250,6 +250,47 @@ Each module includes:
 - Advanced JSON and CSV handling
 - Hashing and secure random generation
 
+### 17 - CS Fundamentals
+| ⏱️ Time | 📋 Prerequisites | 🎯 Level |
+|---------|------------------|----------|
+| 6-8 hours | Modules 01-03 | ⭐⭐⭐ |
+
+**What you'll learn:**
+- Number systems (binary, hex)
+- Bitwise operations and masks
+- Boolean logic
+- How memory and the call stack work
+
+### 18 - Working with APIs
+| ⏱️ Time | 📋 Prerequisites | 🎯 Level |
+|---------|------------------|----------|
+| 8-10 hours | Modules 10, 16 | ⭐⭐⭐ |
+
+**What you'll learn:**
+- How HTTP works (methods, status codes, headers)
+- Parsing JSON API responses
+- Building simple APIs yourself
+
+### 19 - Data Processing
+| ⏱️ Time | 📋 Prerequisites | 🎯 Level |
+|---------|------------------|----------|
+| 8-10 hours | Modules 10, 16 | ⭐⭐⭐ |
+
+**What you'll learn:**
+- SQLite and SQL fundamentals
+- Cleaning messy data
+- Transformations and report generation
+
+### 20 - Web Basics
+| ⏱️ Time | 📋 Prerequisites | 🎯 Level |
+|---------|------------------|----------|
+| 6-8 hours | Modules 18, 19 | ⭐⭐⭐ |
+
+**What you'll learn:**
+- HTML/CSS essentials
+- Serving pages with Python's HTTP server
+- Routing and templating
+
 ---
 
 ## 🎯 Stage 7: Practice & Projects (Ongoing)
@@ -261,11 +302,18 @@ Practice problems organized by difficulty:
 - **Advanced** — Challenge yourself
 
 ### Projects
-Build complete applications:
+Build complete applications (11 guided projects):
 1. **Calculator** — Apply basics
 2. **Todo App** — Practice OOP and file I/O
 3. **File Organizer** — Work with the filesystem
 4. **Data Analyzer** — Combine everything
+5. **Quiz Game** — Practice control flow and data structures
+6. **Personal Journal** — JSON storage and dates
+7. **Password Manager** — Hashing, key derivation, authenticated encryption
+8. **URL Shortener** — Hashing and lookup tables
+9. **Chat Server** — Sockets and concurrency
+10. **Static Site Generator** — Templates and file I/O
+11. **Tic-Tac-Toe AI** — Recursion and minimax
 
 ---
 
@@ -279,10 +327,10 @@ Build complete applications:
 | 4 | Weeks 8-10 | Design Principles, Patterns |
 | 5 | Weeks 11-14 | Professional Skills |
 | 6 | Weeks 15-18 | Advanced Concepts |
-| 7 | Weeks 19-20 | Essential Libraries |
+| 7 | Weeks 19-21 | CS Fundamentals, APIs, Data, Web |
 | 8 | Ongoing | Practice & Projects |
 
-**Total estimated time:** ~20-22 weeks at 10-15 hours/week
+**Total estimated time:** ~22-24 weeks at 10-15 hours/week
 
 ---
 

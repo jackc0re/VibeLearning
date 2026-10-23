@@ -46,4 +46,4 @@ if __name__ == "__main__":
     print("Separation of Concerns")
     print("=" * 60)
     run_program()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

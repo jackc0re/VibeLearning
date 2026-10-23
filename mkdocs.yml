@@ -174,23 +174,115 @@ nav:
       - Decorators: 05_functional_programming/07_decorators/README.md
 
   - Advanced:
-    - Software Design: 06_software_design/README.md
-    - Design Patterns: 07_design_patterns/README.md
-    - Error Handling: 08_error_handling/README.md
-    - Testing: 09_testing/README.md
-    - File & I/O: 10_file_io/README.md
-    - Memory & Performance: 11_memory_performance/README.md
-    - Concurrency: 12_concurrency/README.md
-    - Modules & Packages: 13_modules_packages/README.md
-    - Debugging: 14_debugging/README.md
-    - Version Control: 15_version_control/README.md
+    - Software Design:
+      - Software Design: 06_software_design/README.md
+      - DRY Principle: 06_software_design/01_dry_principle/README.md
+      - KISS Principle: 06_software_design/02_kiss_principle/README.md
+      - YAGNI Principle: 06_software_design/03_yagni_principle/README.md
+      - Separation of Concerns: 06_software_design/04_separation_of_concerns/README.md
+      - Coupling and Cohesion: 06_software_design/05_coupling_and_cohesion/README.md
+      - Code Smells: 06_software_design/06_code_smells/README.md
+      - Refactoring: 06_software_design/07_refactoring/README.md
+    - Design Patterns:
+      - Design Patterns: 07_design_patterns/README.md
+      - Creational Patterns: 07_design_patterns/01_creational/README.md
+      - Structural Patterns: 07_design_patterns/02_structural/README.md
+      - Behavioral Patterns: 07_design_patterns/03_behavioral/README.md
+    - Error Handling:
+      - Error Handling: 08_error_handling/README.md
+      - Exceptions: 08_error_handling/01_exceptions/README.md
+      - Try/Except/Finally: 08_error_handling/02_try_except_finally/README.md
+      - Custom Exceptions: 08_error_handling/03_custom_exceptions/README.md
+      - Defensive Programming: 08_error_handling/04_defensive_programming/README.md
+      - Logging: 08_error_handling/05_logging/README.md
+    - Testing:
+      - Testing: 09_testing/README.md
+      - Why Testing: 09_testing/01_why_testing/README.md
+      - Unit Testing: 09_testing/02_unit_testing/README.md
+      - Test-Driven Development: 09_testing/03_test_driven_development/README.md
+      - Mocking: 09_testing/04_mocking/README.md
+      - Integration Testing: 09_testing/05_integration_testing/README.md
+    - File & I/O:
+      - File & I/O: 10_file_io/README.md
+      - Reading Files: 10_file_io/01_reading_files/README.md
+      - Writing Files: 10_file_io/02_writing_files/README.md
+      - Working with JSON: 10_file_io/03_working_with_json/README.md
+      - Working with CSV: 10_file_io/04_working_with_csv/README.md
+      - Binary Files: 10_file_io/05_binary_files/README.md
+    - Memory & Performance:
+      - Memory & Performance: 11_memory_performance/README.md
+      - Memory Basics: 11_memory_performance/01_memory_basics/README.md
+      - References vs Values: 11_memory_performance/02_references_vs_values/README.md
+      - Time Complexity: 11_memory_performance/03_time_complexity/README.md
+      - Space Complexity: 11_memory_performance/04_space_complexity/README.md
+      - Big-O Notation: 11_memory_performance/05_big_o_notation/README.md
+      - Optimization Techniques: 11_memory_performance/06_optimization_techniques/README.md
+    - Concurrency:
+      - Concurrency: 12_concurrency/README.md
+      - Threads Basics: 12_concurrency/01_threads_basics/README.md
+      - Synchronization: 12_concurrency/02_synchronization/README.md
+      - Async Programming: 12_concurrency/03_async_programming/README.md
+      - Race Conditions: 12_concurrency/04_race_conditions/README.md
+      - Deadlocks: 12_concurrency/05_deadlocks/README.md
+    - Modules & Packages:
+      - Modules & Packages: 13_modules_packages/README.md
+      - Imports: 13_modules_packages/01_imports/README.md
+      - Creating Modules: 13_modules_packages/02_creating_modules/README.md
+      - Packages: 13_modules_packages/03_packages/README.md
+      - Virtual Environments: 13_modules_packages/04_virtual_environments/README.md
+      - Dependency Management: 13_modules_packages/05_dependency_management/README.md
+    - Debugging:
+      - Debugging: 14_debugging/README.md
+      - Print Debugging: 14_debugging/01_print_debugging/README.md
+      - Using Debuggers: 14_debugging/02_using_debuggers/README.md
+      - Reading Tracebacks: 14_debugging/03_reading_tracebacks/README.md
+      - Common Bugs: 14_debugging/04_common_bugs/README.md
+    - Version Control:
+      - Version Control: 15_version_control/README.md
+      - Git Basics: 15_version_control/01_git_basics/README.md
+      - Branching: 15_version_control/02_branching/README.md
+      - Merging: 15_version_control/03_merging/README.md
+      - Collaboration: 15_version_control/04_collaboration/README.md
 
   - Practical:
-    - Essential Libraries: 16_essential_libraries/README.md
-    - CS Fundamentals: 17_cs_fundamentals/README.md
-    - Working with APIs: 18_working_with_apis/README.md
-    - Data Processing: 19_data_processing/README.md
-    - Web Basics: 20_web_basics/README.md
+    - Essential Libraries:
+      - Essential Libraries: 16_essential_libraries/README.md
+      - Collections Module: 16_essential_libraries/01_collections_module/README.md
+      - Datetime Module: 16_essential_libraries/02_datetime/README.md
+      - Itertools Module: 16_essential_libraries/03_itertools/README.md
+      - Functools Module: 16_essential_libraries/04_functools/README.md
+      - Pathlib Module: 16_essential_libraries/05_pathlib/README.md
+      - Regular Expressions: 16_essential_libraries/06_regular_expressions/README.md
+      - JSON & CSV Deep Dive: 16_essential_libraries/07_json_csv_deep_dive/README.md
+      - Hashlib & Secrets: 16_essential_libraries/08_hashlib_secrets/README.md
+    - CS Fundamentals:
+      - CS Fundamentals: 17_cs_fundamentals/README.md
+      - Number Systems: 17_cs_fundamentals/01_number_systems/README.md
+      - Bitwise Operations: 17_cs_fundamentals/02_bitwise_operations/README.md
+      - Boolean Logic: 17_cs_fundamentals/03_boolean_logic/README.md
+      - Memory Architecture: 17_cs_fundamentals/04_memory_architecture/README.md
+      - How Python Works: 17_cs_fundamentals/05_how_python_works/README.md
+    - Working with APIs:
+      - Working with APIs: 18_working_with_apis/README.md
+      - HTTP Fundamentals: 18_working_with_apis/01_http_fundamentals/README.md
+      - Making Requests: 18_working_with_apis/02_making_requests/README.md
+      - Parsing Responses: 18_working_with_apis/03_parsing_responses/README.md
+      - Building a Simple API: 18_working_with_apis/04_building_simple_api/README.md
+      - API Best Practices: 18_working_with_apis/05_api_best_practices/README.md
+    - Data Processing:
+      - Data Processing: 19_data_processing/README.md
+      - SQLite Basics: 19_data_processing/01_sqlite_basics/README.md
+      - SQL Fundamentals: 19_data_processing/02_sql_fundamentals/README.md
+      - Data Cleaning: 19_data_processing/03_data_cleaning/README.md
+      - Data Transformation: 19_data_processing/04_data_transformation/README.md
+      - Generating Reports: 19_data_processing/05_generating_reports/README.md
+    - Web Basics:
+      - Web Basics: 20_web_basics/README.md
+      - HTML & CSS Overview: 20_web_basics/01_html_css_overview/README.md
+      - HTTP Server: 20_web_basics/02_http_server/README.md
+      - Simple Routing: 20_web_basics/03_simple_routing/README.md
+      - Templating: 20_web_basics/04_templating/README.md
+      - Forms Handling: 20_web_basics/05_forms_handling/README.md
 
   - Projects:
     - Overview: Projects/README.md

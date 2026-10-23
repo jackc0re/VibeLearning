@@ -30,6 +30,18 @@
 - [ ] Database drivers
 - [ ] Abstractions (Interfaces)
 
+## 6. A `Square` class inherits from `Rectangle`, but `Square.set_width()` must also change `height`, breaking callers that set width and height independently. Which principle does this violate?
+- [ ] Single Responsibility Principle (SRP)
+- [ ] Open/Closed Principle (OCP)
+- [ ] Liskov Substitution Principle (LSP)
+- [ ] Dependency Inversion Principle (DIP)
+
+## 7. `NotificationService` accepts any object with a `send()` method through its constructor, instead of creating an `EmailSender` internally. Which principle -- and which technique -- is this?
+- [ ] ISP, via method overriding
+- [ ] DIP, via dependency injection
+- [ ] OCP, via operator overloading
+- [ ] SRP, via inheritance
+
 ---
 
 ### Answers
@@ -38,3 +50,5 @@
 3. Polymorphism
 4. They violate the Interface Segregation Principle (ISP)
 5. Abstractions (Interfaces)
+6. Liskov Substitution Principle (LSP)
+7. DIP, via dependency injection

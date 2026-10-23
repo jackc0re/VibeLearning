@@ -1,7 +1,7 @@
 """
 Creational Design Patterns - Examples
 
-Demonstrates Singleton, Simple Factory, and Builder patterns.
+Demonstrates Singleton (two idioms), Simple Factory, and Builder patterns.
 Run with:
     python examples.py
 """
@@ -26,6 +26,30 @@ def demo_singleton():
     b.settings["retries"] = 5
     print("Same instance:", a is b)
     print("Config settings:", a.settings)
+
+
+# =============================================================================
+# SINGLETON (class-based, via __new__)
+# =============================================================================
+
+
+class AppConfig:
+    _instance = None
+
+    def __new__(cls):
+        # First call creates the instance; every later call reuses it.
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+
+
+def demo_singleton_class():
+    print("\nSingleton (class-based) demo")
+    a = AppConfig()
+    b = AppConfig()
+    a.theme = "dark"
+    print("Same instance:", a is b)
+    print("b sees the change:", b.theme)
 
 
 # =============================================================================
@@ -111,6 +135,7 @@ def demo_builder():
 
 if __name__ == "__main__":
     demo_singleton()
+    demo_singleton_class()
     demo_factory()
     demo_builder()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

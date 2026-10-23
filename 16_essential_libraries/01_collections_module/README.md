@@ -63,7 +63,7 @@ for word in words:
     by_length[len(word)].append(word)
 
 print(dict(by_length))
-# {3: ['cat', 'dog'], 8: ['elephant'], 4: ['bird'], 4: ['fish']}
+# {3: ['cat', 'dog'], 4: ['bird', 'fish'], 8: ['elephant']}
 ```
 
 ### Common Default Factory Functions

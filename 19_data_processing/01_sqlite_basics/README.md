@@ -61,7 +61,7 @@ conn.commit()
 conn.close()
 ```
 
-**Best Practice:** Use context managers (`with` statement) for automatic cleanup:
+**Best Practice:** Use the `with` statement so a failed block rolls back and a successful one commits:
 
 ```python
 import sqlite3
@@ -69,7 +69,9 @@ import sqlite3
 with sqlite3.connect('my_database.db') as conn:
     cursor = conn.cursor()
     # ... operations ...
-    conn.commit()  # Don't forget to commit!
+    # Committed automatically when the block exits without an error,
+    # rolled back if an exception escapes the block.
+    # Careful: `with` does NOT close the connection - call conn.close() too.
 ```
 
 ---
@@ -96,8 +98,10 @@ cursor.execute('''
 | `REAL` | Floating point | `3.14`, `-0.5` |
 | `TEXT` | Strings | `'Hello'` |
 | `BLOB` | Binary data | Images, files |
-| `NUMERIC` | Numbers/dates | Dates, booleans |
+| `NUMERIC` | Numbers/dates stored as numbers when possible | `3.14`, `'2025-01-01'` |
 | `NULL` | Missing value | `None` in Python |
+
+> SQLite has no separate boolean type - `True`/`False` are stored as `1`/`0` in an `INTEGER` column.
 
 ### Constraints
 
@@ -135,7 +139,11 @@ cursor.executemany('''
 ''', users)
 ```
 
-> **Note:** Always use `?` placeholders to prevent SQL injection attacks!
+> **Note:** Always use `?` placeholders to prevent SQL injection attacks! If
+> user input like `bob' OR '1'='1` is pasted into SQL with an f-string, the query
+> becomes `... WHERE name = 'bob' OR '1'='1'` and returns **every** row; with a
+> `?` placeholder the same input is just a literal value and matches nothing.
+> `examples.py` section 9 runs this attack and the safe version side by side.
 
 ### Read (SELECT)
 

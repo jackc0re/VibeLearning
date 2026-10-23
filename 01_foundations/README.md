@@ -54,6 +54,17 @@ By the end of this module, you will:
 
 ## Key Concepts Preview
 
+> **60-second list & dict primer** — the examples below (and later topics) sometimes
+> group values together before Module 02 explains how. This is all you need for now:
+>
+> **A list** is an ordered group of items.
+> `colors = ["red", "green"]` → `colors.append("blue")` adds one → `colors[0]` is `"red"`.
+>
+> **A dict** (dictionary) is a group of labeled items.
+> `ages = {"Alice": 25}` → `ages["Alice"]` is `25` → `ages["Bob"] = 30` adds one.
+>
+> Full treatment in **[Module 02: Data Structures](../02_data_structures/README.md)**.
+
 ### Variables
 ```python
 name = "Alice"      # A string (text)

@@ -47,7 +47,7 @@ def demo_copy_on_write():
 
 
 # =============================================================================
-# IMMUTABLE DEFAULTS
+# NON-MUTATING FUNCTIONS
 # =============================================================================
 
 def append_item(items, item):
@@ -73,4 +73,4 @@ if __name__ == "__main__":
     demo_immutable_types()
     demo_copy_on_write()
     demo_no_mutation()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

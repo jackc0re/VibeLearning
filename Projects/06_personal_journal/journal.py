@@ -46,12 +46,12 @@ class Entry:
         self.tags = tags if tags else []
     
     def _generate_id(self):
-        """Generate a unique ID using timestamp.
+        """Generate a unique ID using the timestamp (microseconds included).
         
         Returns:
             str: Unique identifier string
         """
-        return datetime.now().strftime("%Y%m%d%H%M%S%f")[:16]
+        return datetime.now().strftime("%Y%m%d%H%M%S%f")
     
     def to_dict(self):
         """Convert entry to dictionary for JSON serialization.
@@ -78,13 +78,16 @@ class Entry:
         Returns:
             Entry: New Entry instance
         """
-        return cls(
+        entry = cls(
             title=data["title"],
             content=data["content"],
             mood=data.get("mood", "neutral"),
             date=datetime.fromisoformat(data["date"]),
             tags=data.get("tags", [])
         )
+        if data.get("id"):
+            entry.id = data["id"]  # keep the ID that was saved to disk
+        return entry
     
     def display(self, show_full=True):
         """Display the entry in formatted output.
@@ -92,14 +95,14 @@ class Entry:
         Args:
             show_full: If True, show full content; otherwise show summary
         """
-        mood_emoji = self._get_mood_emoji()
+        mood_icon = self._get_mood_icon()
         
         print("\n" + "=" * 60)
         print("                    ENTRY")
         print("=" * 60)
         print(f"ID: {self.id}")
         print(f"Date: {self.date.strftime('%Y-%m-%d %H:%M')}")
-        print(f"Mood: {mood_emoji} {self.mood.capitalize()}")
+        print(f"Mood: {mood_icon} {self.mood.capitalize()}")
         print(f"\nTitle: {self.title}")
         print("-" * 60)
         
@@ -116,25 +119,25 @@ class Entry:
         
         print("=" * 60)
     
-    def _get_mood_emoji(self):
-        """Get emoji for current mood.
+    def _get_mood_icon(self):
+        """Return a short plain-text face for the mood.
         
         Returns:
-            str: Emoji representing the mood
+            str: Plain-text icon for the mood
         """
         mood_map = {
-            "happy": "😊",
-            "sad": "😢",
-            "neutral": "😐",
-            "excited": "🎉",
-            "anxious": "😰",
-            "calm": "😌",
-            "angry": "😠",
-            "grateful": "🙏",
-            "tired": "😴",
-            "inspired": "💡"
+            "happy": ":)",
+            "sad": ";(",
+            "neutral": ":|",
+            "excited": ":D",
+            "anxious": ":-S",
+            "calm": ":}",
+            "angry": ":(",
+            "grateful": "<3",
+            "tired": "Zzz",
+            "inspired": "!*"
         }
-        return mood_map.get(self.mood, "📝")
+        return mood_map.get(self.mood, ":?")
     
     def _print_wrapped(self, text, width=60):
         """Print text with word wrapping.
@@ -663,10 +666,10 @@ class JournalApp:
         print("-" * 60)
         
         for i, entry in enumerate(entries, 1):
-            mood_emoji = entry._get_mood_emoji()
+            mood_icon = entry._get_mood_icon()
             title_display = entry.title[:27] + "..." if len(entry.title) > 30 else entry.title
             print(f"{i:<4} {entry.date.strftime('%Y-%m-%d'):<12} "
-                  f"{mood_emoji} {entry.mood:<8} {title_display}")
+                  f"{mood_icon} {entry.mood:<8} {title_display}")
         
         print("-" * 60)
         print(f"Total: {len(entries)} entries")

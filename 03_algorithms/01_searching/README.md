@@ -12,6 +12,8 @@
 4. [Comparison](#comparison)
 5. [When to Use Each](#when-to-use-each)
 6. [Common Variations](#common-variations)
+7. [Key Takeaways](#key-takeaways)
+8. [Python Built-in Tools](#python-built-in-tools)
 
 ---
 

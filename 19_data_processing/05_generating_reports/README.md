@@ -86,7 +86,7 @@ High-level overview for decision-makers:
 
 ```python
 def generate_executive_summary(cursor):
-    print("\n📊 EXECUTIVE SUMMARY\n")
+    print("\nEXECUTIVE SUMMARY\n")
     
     # Key metrics
     cursor.execute('SELECT COUNT(*), SUM(revenue) FROM sales')
@@ -99,7 +99,7 @@ def generate_executive_summary(cursor):
     ''')
     recent = cursor.fetchone()[0] or 0
     
-    print(f"Total Customers: {count:,}")
+    print(f"Total Transactions: {count:,}")
     print(f"Total Revenue: ${revenue:,.2f}")
     print(f"Recent Activity (30 days): ${recent:,.2f}")
 ```
@@ -108,7 +108,7 @@ def generate_executive_summary(cursor):
 
 ```python
 def generate_trend_report(cursor):
-    print("\n📈 MONTHLY TRENDS\n")
+    print("\nMONTHLY TRENDS\n")
     
     cursor.execute('''
         SELECT 
@@ -124,7 +124,7 @@ def generate_trend_report(cursor):
     for month, orders, revenue in cursor.fetchall():
         if prev_revenue:
             change = ((revenue - prev_revenue) / prev_revenue) * 100
-            trend = "📈" if change > 0 else "📉"
+            trend = "UP" if change > 0 else "DOWN"
             print(f"{month}: ${revenue:>10,.2f} ({trend} {change:+.1f}%)")
         else:
             print(f"{month}: ${revenue:>10,.2f}")
@@ -135,7 +135,7 @@ def generate_trend_report(cursor):
 
 ```python
 def generate_top_products(cursor, n=5):
-    print(f"\n🏆 TOP {n} PRODUCTS\n")
+    print(f"\nTOP {n} PRODUCTS\n")
     
     cursor.execute('''
         SELECT product, SUM(quantity) as qty, SUM(revenue) as rev
@@ -146,8 +146,8 @@ def generate_top_products(cursor, n=5):
     ''', (n,))
     
     for i, (product, qty, rev) in enumerate(cursor.fetchall(), 1):
-        medal = {1: "🥇", 2: "🥈", 3: "🥉"}.get(i, f"{i}.")
-        print(f"{medal} {product:<20} Qty: {qty:>4}  Rev: ${rev:>10,.2f}")
+        label = {1: "1st", 2: "2nd", 3: "3rd"}.get(i, f"{i}.")
+        print(f"{label:<5} {product:<20} Qty: {qty:>4}  Rev: ${rev:>10,.2f}")
 ```
 
 ---

@@ -202,9 +202,9 @@ print("Token Bucket (capacity=3, refill=2/sec):")
 for i in range(5):
     wait = bucket.consume()
     if wait == 0:
-        print(f"  Request {i+1}: ✅ Consumed token")
+        print(f"  Request {i+1}: PASS Consumed token")
     else:
-        print(f"  Request {i+1}: ⏳ Wait {wait:.2f}s")
+        print(f"  Request {i+1}: Wait {wait:.2f}s")
 
 # Exercise 2 Solution
 print("\n--- Exercise 2 Solution ---")
@@ -325,11 +325,11 @@ def unreliable():
 for i in range(6):
     try:
         result = cb.call(unreliable)
-        print(f"  Call {i+1}: ✅ {result}")
+        print(f"  Call {i+1}: PASS {result}")
     except CircuitBreakerOpen:
-        print(f"  Call {i+1}: ⛔ Circuit open (fast fail)")
+        print(f"  Call {i+1}: FAIL Circuit open (fast fail)")
     except ConnectionError as e:
-        print(f"  Call {i+1}: ❌ {e}")
+        print(f"  Call {i+1}: FAIL {e}")
 
 # Exercise 4 Solution
 print("\n--- Exercise 4 Solution ---")
@@ -533,5 +533,5 @@ print("ETagCache defined")
 print("Use: cache.make_conditional_request(url) -> (data, from_cache)")
 
 print("\n" + "=" * 60)
-print("All exercises complete! You're ready for production! 🚀")
+print("All exercises complete! You're ready for production!")
 print("=" * 60)

@@ -1,10 +1,13 @@
 """
 Password Manager - Main Application
 ====================================
-A secure CLI-based password manager with encryption and password generation.
+A CLI password manager for learning: hashing, key derivation, encryption, and
+password generation. The vault crypto is a teaching example - see the README
+warning before storing anything that matters.
 """
 
 import hashlib
+import hmac
 import secrets
 import base64
 import json
@@ -174,73 +177,110 @@ class PasswordStrengthChecker:
 
 
 # =============================================================================
-# SIMPLE ENCRYPTION
+# VAULT CRYPTO
 # =============================================================================
 
-class SimpleEncryption:
-    """Simple XOR encryption with PBKDF2 key derivation."""
-    
+class VaultCrypto:
+    """Authenticated encryption for the vault, built from hashlib + hmac.
+
+    TEACHING CODE, not a production cipher (see the README warning).
+
+    Layout of a stored blob (before base64):
+
+        salt(16) | nonce(16) | ciphertext(n bytes) | tag(32)
+
+    Why each piece exists:
+    - salt: fresh random bytes per save, so the same master password
+      never produces the same key material twice.
+    - key separation: one PBKDF2-HMAC-SHA256 pass derives 64 bytes,
+      split into an ENCRYPTION key and a MAC key. Using one key for
+      both jobs is a classic mistake.
+    - keystream: SHAKE-256 produces output as long as the message, so
+      the key material never repeats within a message (the old
+      repeating-key XOR did repeat, which is breakable).
+    - tag: HMAC-SHA256 over nonce + ciphertext, verified with
+      hmac.compare_digest BEFORE decrypting ("encrypt-then-MAC").
+      A wrong password or a tampered file fails the tag check
+      instead of silently producing garbage.
+    """
+
     SALT_SIZE = 16
+    NONCE_SIZE = 16
+    TAG_SIZE = 32
     ITERATIONS = 100000
-    
+
     @classmethod
-    def derive_key(cls, password: str, salt: bytes) -> bytes:
-        """Derive encryption key from password using PBKDF2."""
-        return hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt, cls.ITERATIONS)
-    
+    def derive_keys(cls, password: str, salt: bytes) -> Tuple[bytes, bytes]:
+        """Derive (encryption_key, mac_key) from the master password."""
+        block = hashlib.pbkdf2_hmac(
+            'sha256', password.encode('utf-8'), salt, cls.ITERATIONS, dklen=64
+        )
+        return block[:32], block[32:]
+
+    @classmethod
+    def _keystream(cls, key: bytes, nonce: bytes, length: int) -> bytes:
+        """Key material exactly as long as the message (SHAKE-256)."""
+        return hashlib.shake_256(key + nonce).digest(length)
+
     @classmethod
     def encrypt(cls, plaintext: str, password: str) -> str:
-        """Encrypt plaintext using XOR cipher with derived key.
-        
+        """Encrypt plaintext -> base64(salt | nonce | ciphertext | tag).
+
         Args:
             plaintext: Text to encrypt
-            password: Password for key derivation
-        
+            password: Master password for key derivation
+
         Returns:
-            Base64-encoded encrypted data with salt
+            Base64-encoded authenticated ciphertext
         """
         salt = secrets.token_bytes(cls.SALT_SIZE)
-        key = cls.derive_key(password, salt)
-        
+        nonce = secrets.token_bytes(cls.NONCE_SIZE)
+        enc_key, mac_key = cls.derive_keys(password, salt)
+
         plaintext_bytes = plaintext.encode('utf-8')
-        encrypted_bytes = bytearray()
-        
-        for i, byte in enumerate(plaintext_bytes):
-            key_byte = key[i % len(key)]
-            encrypted_bytes.append(byte ^ key_byte)
-        
-        combined = salt + bytes(encrypted_bytes)
-        return base64.b64encode(combined).decode('utf-8')
-    
+        stream = cls._keystream(enc_key, nonce, len(plaintext_bytes))
+        ciphertext = bytes(a ^ b for a, b in zip(plaintext_bytes, stream))
+
+        tag = hmac.new(mac_key, nonce + ciphertext, 'sha256').digest()
+        blob = salt + nonce + ciphertext + tag
+        return base64.b64encode(blob).decode('ascii')
+
     @classmethod
     def decrypt(cls, ciphertext: str, password: str) -> str:
-        """Decrypt ciphertext using XOR cipher with derived key.
-        
+        """Reverse encrypt(). Verify the tag first, then decrypt.
+
         Args:
-            ciphertext: Base64-encoded encrypted data
-            password: Password for key derivation
-        
+            ciphertext: Base64-encoded authenticated ciphertext
+            password: Master password for key derivation
+
         Returns:
             Decrypted plaintext
-        
+
         Raises:
-            ValueError: If decryption fails
+            ValueError: If the password is wrong or the data was tampered with
         """
         try:
-            combined = base64.b64decode(ciphertext.encode('utf-8'))
-            salt = combined[:cls.SALT_SIZE]
-            encrypted_bytes = combined[cls.SALT_SIZE:]
-            
-            key = cls.derive_key(password, salt)
-            
-            decrypted_bytes = bytearray()
-            for i, byte in enumerate(encrypted_bytes):
-                key_byte = key[i % len(key)]
-                decrypted_bytes.append(byte ^ key_byte)
-            
-            return decrypted_bytes.decode('utf-8')
-        except Exception as e:
-            raise ValueError("Decryption failed - incorrect password or corrupted data")
+            blob = base64.b64decode(ciphertext.encode('ascii'))
+            split = cls.SALT_SIZE + cls.NONCE_SIZE
+            if len(blob) < split + cls.TAG_SIZE:
+                raise ValueError("truncated blob")
+
+            salt = blob[:cls.SALT_SIZE]
+            nonce = blob[cls.SALT_SIZE:split]
+            body = blob[split:-cls.TAG_SIZE]
+            tag = blob[-cls.TAG_SIZE:]
+
+            enc_key, mac_key = cls.derive_keys(password, salt)
+            expected = hmac.new(mac_key, nonce + body, 'sha256').digest()
+            if not hmac.compare_digest(tag, expected):
+                raise ValueError("authentication failed")
+
+            stream = cls._keystream(enc_key, nonce, len(body))
+            return bytes(a ^ b for a, b in zip(body, stream)).decode('utf-8')
+        except ValueError as e:
+            raise ValueError(
+                "Decryption failed - incorrect password or corrupted data"
+            ) from e
 
 
 # =============================================================================
@@ -276,7 +316,7 @@ class VaultStorage:
             "modified": datetime.now().isoformat()
         })
         
-        encrypted = SimpleEncryption.encrypt(vault_data, master_password)
+        encrypted = VaultCrypto.encrypt(vault_data, master_password)
         
         with open(self.vault_path, 'w', encoding='utf-8') as f:
             f.write(encrypted)
@@ -296,7 +336,7 @@ class VaultStorage:
             with open(self.vault_path, 'r', encoding='utf-8') as f:
                 encrypted = f.read()
             
-            decrypted = SimpleEncryption.decrypt(encrypted, master_password)
+            decrypted = VaultCrypto.decrypt(encrypted, master_password)
             return json.loads(decrypted)
         except (ValueError, json.JSONDecodeError, FileNotFoundError):
             return None
@@ -314,7 +354,7 @@ class VaultStorage:
         try:
             vault_data["modified"] = datetime.now().isoformat()
             vault_json = json.dumps(vault_data, indent=2)
-            encrypted = SimpleEncryption.encrypt(vault_json, master_password)
+            encrypted = VaultCrypto.encrypt(vault_json, master_password)
             
             with open(self.vault_path, 'w', encoding='utf-8') as f:
                 f.write(encrypted)
@@ -420,7 +460,8 @@ class PasswordManager:
             "created": datetime.now().isoformat(),
             "modified": datetime.now().isoformat()
         }
-        self.storage.save_vault(vault_data, self.master_password)
+        if not self.storage.save_vault(vault_data, self.master_password):
+            print("Error: could not write the vault file - your changes are NOT saved!")
     
     def _get_password(self, prompt: str) -> str:
         """Get password input without echo."""

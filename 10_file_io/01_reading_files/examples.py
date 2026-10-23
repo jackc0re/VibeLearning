@@ -47,8 +47,6 @@ if __name__ == "__main__":
     demo_read_all(p)
     demo_read_lines(p)
     # NOTE: line iteration is the most memory-friendly for large files.
-    with open(p, "r", encoding="utf-8") as f:
-        for line in f:
-            pass
-    print("\n✓ Examples complete!")
+    demo_iterate_lines(p)
+    print("\nPASS Examples complete!")
 

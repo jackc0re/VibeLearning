@@ -325,7 +325,7 @@ def test_merge_sort():
         result = merge_sort(arr)
         assert result == expected, f"merge_sort({arr}) = {result}, expected {expected}"
     
-    print("✓ All merge_sort tests passed!")
+    print("PASS All merge_sort tests passed!")
 
 
 def test_binary_search():
@@ -348,7 +348,7 @@ def test_binary_search():
         result = binary_search(array, target)
         assert result == expected, f"binary_search({array}, {target}) = {result}, expected {expected}"
     
-    print("✓ All binary_search tests passed!")
+    print("PASS All binary_search tests passed!")
 
 
 def test_power():
@@ -368,7 +368,7 @@ def test_power():
         result = power(x, n)
         assert abs(result - expected) < 1e-9, f"power({x}, {n}) = {result}, expected {expected}"
     
-    print("✓ All power tests passed!")
+    print("PASS All power tests passed!")
 
 
 def test_count_inversions():
@@ -388,7 +388,7 @@ def test_count_inversions():
         result = count_inversions(arr)
         assert result == expected, f"count_inversions({arr}) = {result}, expected {expected}"
     
-    print("✓ All count_inversions tests passed!")
+    print("PASS All count_inversions tests passed!")
 
 
 def test_max_subarray_sum():
@@ -407,7 +407,7 @@ def test_max_subarray_sum():
         result = max_subarray_sum(arr)
         assert result == expected, f"max_subarray_sum({arr}) = {result}, expected {expected}"
     
-    print("✓ All max_subarray_sum tests passed!")
+    print("PASS All max_subarray_sum tests passed!")
 
 
 def test_find_peak():
@@ -431,7 +431,7 @@ def test_find_peak():
             is_peak = False
         assert is_peak, f"find_peak({arr}) = {result}, but arr[{result}]={arr[result]} is not a peak"
     
-    print("✓ All find_peak tests passed!")
+    print("PASS All find_peak tests passed!")
 
 
 def test_kth_smallest():
@@ -450,7 +450,7 @@ def test_kth_smallest():
         result = kth_smallest(arr.copy(), k)
         assert result == expected, f"kth_smallest({arr}, {k}) = {result}, expected {expected}"
     
-    print("✓ All kth_smallest tests passed!")
+    print("PASS All kth_smallest tests passed!")
 
 
 def test_majority_element():
@@ -468,7 +468,7 @@ def test_majority_element():
         result = majority_element(arr)
         assert result == expected, f"majority_element({arr}) = {result}, expected {expected}"
     
-    print("✓ All majority_element tests passed!")
+    print("PASS All majority_element tests passed!")
 
 
 def test_closest_pair_distance():
@@ -487,7 +487,7 @@ def test_closest_pair_distance():
         result = closest_pair_distance(points)
         assert abs(result - expected) < 1e-6, f"closest_pair_distance({points}) = {result}, expected {expected}"
     
-    print("✓ All closest_pair_distance tests passed!")
+    print("PASS All closest_pair_distance tests passed!")
 
 
 def test_find_median_sorted_arrays():
@@ -507,7 +507,7 @@ def test_find_median_sorted_arrays():
         result = find_median_sorted_arrays(nums1, nums2)
         assert abs(result - expected) < 1e-6, f"find_median_sorted_arrays({nums1}, {nums2}) = {result}, expected {expected}"
     
-    print("✓ All find_median_sorted_arrays tests passed!")
+    print("PASS All find_median_sorted_arrays tests passed!")
 
 
 # =============================================================================
@@ -815,52 +815,52 @@ if __name__ == "__main__":
         try:
             test_merge_sort()
         except (AssertionError, TypeError) as e:
-            print(f"✗ merge_sort: {e}")
+            print(f"FAIL merge_sort: {e}")
         
         try:
             test_binary_search()
         except (AssertionError, TypeError) as e:
-            print(f"✗ binary_search: {e}")
+            print(f"FAIL binary_search: {e}")
         
         try:
             test_power()
         except (AssertionError, TypeError) as e:
-            print(f"✗ power: {e}")
+            print(f"FAIL power: {e}")
         
         try:
             test_count_inversions()
         except (AssertionError, TypeError) as e:
-            print(f"✗ count_inversions: {e}")
+            print(f"FAIL count_inversions: {e}")
         
         try:
             test_max_subarray_sum()
         except (AssertionError, TypeError) as e:
-            print(f"✗ max_subarray_sum: {e}")
+            print(f"FAIL max_subarray_sum: {e}")
         
         try:
             test_find_peak()
         except (AssertionError, TypeError) as e:
-            print(f"✗ find_peak: {e}")
+            print(f"FAIL find_peak: {e}")
         
         try:
             test_kth_smallest()
         except (AssertionError, TypeError) as e:
-            print(f"✗ kth_smallest: {e}")
+            print(f"FAIL kth_smallest: {e}")
         
         try:
             test_majority_element()
         except (AssertionError, TypeError) as e:
-            print(f"✗ majority_element: {e}")
+            print(f"FAIL majority_element: {e}")
         
         try:
             test_closest_pair_distance()
         except (AssertionError, TypeError) as e:
-            print(f"✗ closest_pair_distance: {e}")
+            print(f"FAIL closest_pair_distance: {e}")
         
         try:
             test_find_median_sorted_arrays()
         except (AssertionError, TypeError) as e:
-            print(f"✗ find_median_sorted_arrays: {e}")
+            print(f"FAIL find_median_sorted_arrays: {e}")
         
         print("\n" + "=" * 60)
         print("Testing complete!")

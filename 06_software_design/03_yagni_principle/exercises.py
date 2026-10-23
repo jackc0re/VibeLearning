@@ -85,7 +85,7 @@ def run_tests():
     ]
     for title, expected in tests_12:
         result = exercise_2_get_note(store, title)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} get_note({title!r}) = {result!r} (expected {expected!r})")
@@ -98,7 +98,7 @@ def run_tests():
     ]
     result = exercise_3_count_done(tasks)
     expected = 2
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} count_done(tasks) = {result} (expected {expected})")
@@ -106,7 +106,7 @@ def run_tests():
     print("\nExercise 4: CSV Line")
     result = exercise_4_to_csv_line(["a", "b", "c"])
     expected = "a,b,c"
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} to_csv_line(['a','b','c']) = {result!r} (expected {expected!r})")
@@ -119,16 +119,16 @@ def run_tests():
     ]
     for reqs, feature, expected in tests_5:
         result = exercise_5_should_add_feature(reqs, feature)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} should_add_feature({feature!r}) = {result} (expected {expected})")
 
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 

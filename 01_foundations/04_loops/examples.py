@@ -28,7 +28,7 @@ for i in range(0, 10, 2):
 print("\nCountdown:")
 for i in range(5, 0, -1):
     print(f"  {i}...")
-print("  Liftoff! 🚀")
+print("  Liftoff! ")
 
 # =============================================================================
 # ITERATING OVER COLLECTIONS
@@ -115,7 +115,7 @@ print("\n--- For-Else ---\n")
 print("Searching for 4 in [1, 2, 3, 4, 5]:")
 for num in [1, 2, 3, 4, 5]:
     if num == 4:
-        print("  Found 4! ✓")
+        print("  Found 4! PASS")
         break
 else:
     print("  4 not found")
@@ -127,7 +127,7 @@ for num in [1, 2, 3, 4, 5]:
         print("  Found 10!")
         break
 else:
-    print("  10 not found ✗")
+    print("  10 not found FAIL")
 
 # =============================================================================
 # NESTED LOOPS
@@ -139,14 +139,14 @@ print("Multiplication Table (1-3):")
 for i in range(1, 4):
     row = ""
     for j in range(1, 4):
-        row += f"  {i}×{j}={i*j:2}"
+        row += f"  {i}x{j}={i*j:2}"
     print(row)
 
 # Grid pattern
 print("\nGrid pattern:")
 for row in range(3):
     for col in range(4):
-        print("■ ", end="")
+        print("# ", end="")
     print()  # New line after each row
 
 # =============================================================================

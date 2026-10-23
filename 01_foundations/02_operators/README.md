@@ -156,12 +156,13 @@ True or expensive_function()    # expensive_function() never runs
 age = 25
 has_license = True
 has_car = False
+has_bicycle = True
 
 # Can drive alone?
 can_drive = age >= 16 and has_license  # True
 
 # Has transportation?
-has_transport = has_car or has_bicycle  # Depends on has_bicycle
+has_transport = has_car or has_bicycle  # True (he has a bicycle)
 
 # Is teenager?
 is_teen = age >= 13 and age <= 19  # False (25 is not 13-19)
@@ -243,14 +244,15 @@ x == None      # ⚠️ Works but not recommended
 |----------|-----------|-------------|
 | 1 | `()` | Parentheses |
 | 2 | `**` | Exponentiation |
-| 3 | `+x`, `-x`, `not` | Unary plus, minus, NOT |
+| 3 | `+x`, `-x` | Unary plus, minus |
 | 4 | `*`, `/`, `//`, `%` | Multiplication, division |
 | 5 | `+`, `-` | Addition, subtraction |
 | 6 | `<`, `<=`, `>`, `>=`, `==`, `!=` | Comparisons |
 | 7 | `is`, `is not` | Identity |
 | 8 | `in`, `not in` | Membership |
-| 9 | `and` | Logical AND |
-| 10 | `or` | Logical OR |
+| 9 | `not` | Logical NOT |
+| 10 | `and` | Logical AND |
+| 11 | `or` | Logical OR |
 
 **Tip:** When in doubt, use parentheses to make your intent clear!
 

@@ -45,6 +45,31 @@ With `memoryview()`, you can create a **view** into the same underlying buffer.
 
 ---
 
+## ⚠️ Common Mistakes
+
+- Thinking `b = a` copies the list — it only copies the **reference**
+- Assuming immutability goes all the way down: a tuple can still hold a **mutable list**
+- Comparing values with `is` — use `==` for values, `is` for identity
+
+---
+
+## 📝 Quick Reference
+
+```python
+id(obj)          # identity: "which object is this?"
+x is y           # same object?
+x == y           # same value?
+type(obj)        # the object's type
+
+# mutable:   list, dict, set
+# immutable: int, float, str, tuple, bytes
+
+view = memoryview(data)   # view into a buffer, no copy
+view[1:4].tobytes()       # now materialize just the piece you need
+```
+
+---
+
 [Back: Module 11 README](../README.md)
 
 ---

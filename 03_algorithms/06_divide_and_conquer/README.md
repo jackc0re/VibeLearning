@@ -139,7 +139,7 @@ def quick_sort(arr):
     Sort array using Divide and Conquer with partitioning.
     
     Time: O(n log n) average, O(n²) worst
-    Space: O(log n)
+    Space: O(n) — the list comprehensions copy elements at every level
     """
     if len(arr) <= 1:
         return arr
@@ -365,6 +365,8 @@ def closest_pair(points):
 ```
 
 ---
+
+> **Optional** — skip this on your first pass through the module. The Master Theorem is a lookup shortcut for the complexity of a D&C recurrence `T(n) = aT(n/b) + f(n)`; every example above can be analyzed without it.
 
 ## Master Theorem
 

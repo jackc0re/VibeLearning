@@ -37,6 +37,9 @@ popped = my_list.pop()   # Remove and return last element
 del my_list[0]           # Remove by index
 my_list.clear()          # Remove all elements: []
 
+# Reset to the state the examples below assume
+my_list = [1, 5, 3, 4, 6]
+
 # Modify elements
 my_list[0] = 10          # [10, 5, 3, 4, 6]
 my_list.sort()           # Sort in place: [3, 4, 5, 6, 10]
@@ -176,6 +179,9 @@ my_dict.pop("age", None)    # Remove and return (None if not found)
 my_dict.popitem()           # Remove and return last inserted (Python 3.7+)
 my_dict.clear()             # Remove all items: {}
 
+# Reset to the state the examples below assume
+my_dict = {"name": "Alice", "city": "NYC"}
+
 # Keys, values, items
 my_dict.keys()              # View of keys: dict_keys(['name', 'city'])
 my_dict.values()            # View of values: dict_values(['Alice', 'NYC'])
@@ -228,13 +234,17 @@ set1.discard(1)           # Remove element (no error if not found)
 set1.pop()                # Remove and return arbitrary element
 set1.clear()              # Remove all elements: set()
 
+# Reset to the state the examples below assume
+set1 = {1, 2, 3, 4, 5, 6, 7}
+
 # Length
 len(set1)                 # 7
 
 # Check membership
 3 in set1                 # True
 
-# Set operations (return new sets)
+# Set operations (return new sets) -- back to the two starting sets
+set1 = {1, 2, 3, 4}
 set1 | set2               # Union: {1, 2, 3, 4, 5, 6}
 set1 & set2               # Intersection: {3, 4}
 set1 - set2               # Difference: {1, 2}

@@ -119,19 +119,21 @@ In an array of 1,024 elements, what is the **maximum** number of comparisons bin
 <details>
 <summary>Show Answer</summary>
 
-**B) 10**
+**C) 11**
 
-Maximum comparisons = ⌊log₂(1024)⌋ + 1 = 10 + 1 = 11
+Binary search halves the remaining elements on every comparison, so the number of
+comparisons grows like log₂(n). The exact worst case for the `left <= right` version is
+⌈log₂(n + 1)⌉ comparisons:
 
-Wait, let me recalculate:
-- log₂(1024) = 10
-- Maximum comparisons = 10 (since 2¹⁰ = 1024)
+- n = 1024, so ⌈log₂(1025)⌉ = 11 comparisons in the worst case
+- Roughly, after each comparison the search space halves:
+  - After 1 comparison: 512 elements remain
+  - After 2 comparisons: 256 elements remain
+  - ...
+  - After 10 comparisons: 1 element remains (and we still need one more comparison
+    to check that last element)
 
-Actually **B) 10** is correct. In binary search of 1024 elements:
-- After 1 comparison: 512 elements remain
-- After 2 comparisons: 256 elements remain
-- ...
-- After 10 comparisons: 1 element remains
+So "about 10" is the right ballpark, and 11 is the guaranteed maximum.
 
 </details>
 

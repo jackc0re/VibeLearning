@@ -83,11 +83,16 @@ Most modern editors can run Python directly.
 
 ---
 
-## Method 4: Jupyter Notebooks
+## Method 4: Jupyter Notebooks (optional, for later)
 
-Interactive notebooks that mix code, output, and documentation.
+> **You don't need this to follow the repo.** Everything in VibeLearning runs with the
+> plain Python you already installed — no extra tools required. Come back to this
+> section only when you're curious about notebooks.
 
-### Install:
+Interactive notebooks that mix code, output, and documentation. They need an extra
+install, so treat this as a "later" tool rather than part of your setup.
+
+### Install (only if you want to try notebooks):
 ```bash
 pip install jupyter
 ```

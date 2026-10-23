@@ -174,6 +174,12 @@ Examples must run unattended: no `input()`, no `while True` without a bound, no
 network servers. If something genuinely cannot run unattended, add it to `SKIP` in
 `tools/run_examples.py` with a reason — do not silently leave it broken.
 
+**ASCII-only print output** (repo-wide policy): every string a lesson `.py` file prints
+must be plain ASCII. Emoji, `→`, `✓`, box-drawing chars crash a default Windows console
+(cp1251/cp1252/cp437). Use `PASS`/`FAIL`, `->`, `= | + -` banners. If a lesson must show
+a non-ASCII value (e.g. URL encoding), write it with `\uXXXX` escapes in the source.
+Emoji in Markdown headings/tables are fine — the rule is about Python print output only.
+
 ### Markdown links (matters for `--strict`)
 - To a page: `01_foundations/01_variables_and_types/README.md`
 - To a source file: `01_foundations/01_variables_and_types/examples.py`
@@ -221,8 +227,9 @@ the bottom. Add the topic to `Resources/quizzes.md`, and the topic README alread
 
 ## Gotchas
 
-- **Windows consoles** use cp1251/cp1252 and crash on emoji/arrows. `tools/run_examples.py`
-  forces `PYTHONIOENCODING=utf-8` for children; do the same in any new subprocess code.
+- **Windows consoles** use cp1251/cp1252 and crash on emoji/arrows. Lesson `.py` files
+  therefore print ASCII-only (see the policy above). `tools/run_examples.py` still forces
+  `PYTHONIOENCODING=utf-8` for children; do the same in any new subprocess code.
 - **`docs/` is ignored by git.** `git status` should never show it. If it does, the
   ignore rule broke.
 - **The theme uses `--vl-*` tokens** for colors, defined per scheme in

@@ -185,12 +185,14 @@ import http.client
 # Create persistent connection
 conn = http.client.HTTPSConnection("api.example.com")
 
-# Make multiple requests
+# Make multiple requests on the same connection
 conn.request("GET", "/users")
 response1 = conn.getresponse()
+response1.read()      # read the body before reusing the connection
 
 conn.request("GET", "/posts")
 response2 = conn.getresponse()
+response2.read()
 
 conn.close()
 ```
@@ -316,7 +318,7 @@ You've completed the Working with APIs module! You now know how to:
 
 **Next Steps:**
 - Build a project that uses a real API
-- Try the `requests` library (it's much nicer!)
+- Try the `requests` library (it's much nicer!) - it is a separate pip install, not required for this module
 - Learn about async APIs with `aiohttp`
 
 ---

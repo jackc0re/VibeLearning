@@ -49,7 +49,7 @@ D) `price / 1.15`
 
 A) `MONTH(date)`  
 B) `EXTRACT(MONTH FROM date)`  
-C) `SUBSTR(date, 6, 2)`  
+C) `SUBSTR(date, 5, 2)`  
 D) `strftime('%m', date)`
 
 ---

@@ -224,7 +224,8 @@ git push -u origin feature-new-stuff
 # 8. Update with upstream changes
 git fetch upstream
 git rebase upstream/main
-git push origin feature-new-stuff
+# Rebase rewrote your branch, so the push must be forced (but safely)
+git push --force-with-lease origin feature-new-stuff
 ```
 
 ---
@@ -291,7 +292,7 @@ git push origin main
 # Or update feature branch
 git checkout feature-xyz
 git rebase upstream/main
-git push origin feature-xyz
+git push --force-with-lease origin feature-xyz
 ```
 
 ---

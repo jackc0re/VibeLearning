@@ -56,4 +56,4 @@ def demo_counter():
 if __name__ == "__main__":
     demo_function_factory()
     demo_counter()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

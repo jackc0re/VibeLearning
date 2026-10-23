@@ -7,6 +7,10 @@ print("=" * 50)
 print("TREES - Examples")
 print("=" * 50)
 
+# =============================================================================
+# TREE NODE AND SAMPLE TREE
+# =============================================================================
+
 class TreeNode:
     def __init__(self, val):
         self.val = val
@@ -26,6 +30,9 @@ root.right = TreeNode(3)
 root.left.left = TreeNode(4)
 root.left.right = TreeNode(5)
 
+# =============================================================================
+# TRAVERSALS
+# =============================================================================
 print("\n--- Tree Traversals ---")
 
 def inorder(node, result=None):
@@ -59,6 +66,9 @@ print(f"Inorder:   {inorder(root)}")
 print(f"Preorder:  {preorder(root)}")
 print(f"Postorder: {postorder(root)}")
 
+# =============================================================================
+# TREE HEIGHT
+# =============================================================================
 print("\n--- Tree Height ---")
 def height(node):
     if not node:
@@ -68,5 +78,5 @@ def height(node):
 print(f"Height: {height(root)}")
 
 print("\n" + "=" * 50)
-print("Examples complete!")
+print("Examples complete! Try exercises.py next.")
 print("=" * 50)

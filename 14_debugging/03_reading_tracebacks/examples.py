@@ -188,6 +188,7 @@ SyntaxError: expected ':'
 
     print("The ^ points to where Python got confused.")
     print("The actual mistake (missing colon) is at the end of the line.")
+    print("(Python 3.10+ says \"expected ':'\"; 3.8 and 3.9 say 'invalid syntax')")
     print()
 
 
@@ -269,6 +270,10 @@ def demo_interpreting_traceback() -> None:
 
 
 if __name__ == "__main__":
+    print("=" * 50)
+    print("READING TRACEBACKS - Examples")
+    print("=" * 50)
+
     demo_basic_traceback()
     demo_keyerror()
     demo_indexerror()
@@ -281,3 +286,7 @@ if __name__ == "__main__":
     demo_traceback_module()
     demo_common_mistakes()
     demo_interpreting_traceback()
+
+    print("\n" + "=" * 50)
+    print("Examples complete! Try exercises.py next.")
+    print("=" * 50)

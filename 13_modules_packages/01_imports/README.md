@@ -16,7 +16,7 @@ from math import sqrt, pi
 print(sqrt(16))  # 4.0
 
 # Import with alias
-import numpy as np
+import numpy as np            # third-party: pip install numpy (not needed here)
 from datetime import datetime as dt
 ```
 

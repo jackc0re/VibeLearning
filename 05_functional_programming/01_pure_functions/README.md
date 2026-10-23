@@ -76,6 +76,45 @@ def next_id(current):
 
 ---
 
+## ⚠️ Common Mistakes
+
+1. **Printing inside a "pure" function** - `print` is a side effect: the function now
+   talks to the console, so it is not pure. Return the value; let the caller decide
+   whether to display it.
+2. **Reading or writing global state** - a function that depends on (or bumps) a
+   module-level counter gives different answers on repeated calls with the same
+   arguments. Pass the state in as a parameter instead.
+3. **Mutating the input** - `items.sort()` or `items.append(x)` changes the caller's
+   list. Return a new list (`sorted(items)`, `items + [x]`) to stay pure.
+4. **Hidden impurity from the clock or randomness** - `datetime.now()` and
+   `random.random()` are impure: the output depends on more than the arguments.
+   Inject them as parameters (`def price_at(now, item)`) to keep the core pure.
+
+---
+
+## 📝 Quick Reference
+
+| Call | Pure? | Why |
+|---|---|---|
+| `add(a, b)` returning `a + b` | Yes | output depends only on inputs |
+| `len(items)` | Yes | no state touched |
+| `print(result)` | No | writes to the console |
+| `random.random()` | No | new answer on every call |
+| `datetime.now()` | No | depends on the clock |
+| `nums.sort()` on an argument | No | mutates the caller's list |
+
+```python
+def average(nums):                     # pure: same input, same output
+    if not nums:
+        return None
+    return sum(nums) / len(nums)
+
+result = average([1, 2, 3])            # compute
+print(result)                          # display - side effect lives out here
+```
+
+---
+
 ## 🔍 Key Takeaways
 
 - Pure functions are deterministic and side-effect free.

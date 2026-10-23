@@ -37,10 +37,15 @@ print(page)
 print("\n--- 2: Building HTML Elements ---\n")
 
 def make_tag(name, content, **attrs):
-    """Create an HTML tag with attributes."""
+    """Create an HTML tag with attributes.
+
+    A trailing underscore marks a Python keyword, so `class_="main-title"`
+    becomes the real HTML attribute `class="main-title"`.
+    """
     attr_str = ""
     for key, value in attrs.items():
-        attr_str += f' {key}="{value}"'
+        attr_name = key[:-1] if key.endswith("_") else key
+        attr_str += f' {attr_name}="{value}"'
     return f"<{name}{attr_str}>{content}</{name}>"
 
 # Create elements
@@ -399,7 +404,7 @@ try:
     if os.path.exists("sample_page.html"):
         os.remove("sample_page.html")
         print("\n(Cleaned up sample_page.html)")
-except:
+except OSError:
     pass
 
 print("\n" + "=" * 60)

@@ -121,12 +121,12 @@ A, B, C = True, False, True
 left = A and (B or C)
 right = (A and B) or (A and C)
 print(f"A AND (B OR C) = (A AND B) OR (A AND C)")
-print(f"  {left} = {right} ✓")
+print(f"  {left} = {right} PASS")
 
 left = A or (B and C)
 right = (A or B) and (A or C)
 print(f"A OR (B AND C) = (A OR B) AND (A OR C)")
-print(f"  {left} = {right} ✓")
+print(f"  {left} = {right} PASS")
 
 # =============================================================================
 # DE MORGAN'S LAWS
@@ -143,7 +143,7 @@ for A in [False, True]:
     for B in [False, True]:
         left = not (A and B)
         right = (not A) or (not B)
-        match = "✓" if left == right else "✗"
+        match = "PASS" if left == right else "FAIL"
         print(f"  {int(A)} | {int(B)} |     {int(left)}    |    {int(right)}     |  {match}")
 
 print("\nLaw 2: NOT (A OR B) = (NOT A) AND (NOT B)")
@@ -154,7 +154,7 @@ for A in [False, True]:
     for B in [False, True]:
         left = not (A or B)
         right = (not A) and (not B)
-        match = "✓" if left == right else "✗"
+        match = "PASS" if left == right else "FAIL"
         print(f"  {int(A)} | {int(B)} |     {int(left)}    |     {int(right)}     |  {match}")
 
 # Real-world examples
@@ -197,8 +197,8 @@ test_cases = [
 
 for has_key, knows_pin, admin, description in test_cases:
     allowed = can_enter(has_key, knows_pin, admin)
-    status = "✓ ALLOWED" if allowed else "✗ DENIED"
-    print(f"  {description:35s} → {status}")
+    status = "ALLOWED" if allowed else "DENIED"
+    print(f"  {description:35s} -> {status}")
 
 # =============================================================================
 # PRACTICAL: VOTING SYSTEM
@@ -234,8 +234,8 @@ vote_cases = [
 
 for for_votes, against_votes, description in vote_cases:
     passes = motion_passes(for_votes, against_votes, for_votes + against_votes)
-    status = "✓ PASSES" if passes else "✗ FAILS"
-    print(f"  {for_votes}-{against_votes}: {description:30s} → {status}")
+    status = "PASSES" if passes else "FAILS"
+    print(f"  {for_votes}-{against_votes}: {description:30s} -> {status}")
 
 # =============================================================================
 # PRACTICAL: DISCOUNT ELIGIBILITY
@@ -288,9 +288,9 @@ for student, senior, member, amount, description in discount_cases:
     if qualifies:
         discount = calculate_discount(student, senior, member)
         final = amount * (1 - discount)
-        print(f"  {description:40s} → {discount*100:.0f}% off, ${final:.2f}")
+        print(f"  {description:40s} -> {discount*100:.0f}% off, ${final:.2f}")
     else:
-        print(f"  {description:40s} → No discount")
+        print(f"  {description:40s} -> No discount")
 
 # =============================================================================
 # TRUTHINESS IN PYTHON
@@ -302,12 +302,12 @@ print("=" * 60)
 print("\nValues considered False (falsy):")
 falsy_values = [False, 0, 0.0, "", [], {}, None]
 for val in falsy_values:
-    print(f"  {repr(val):15s} → bool({val}) = {bool(val)}")
+    print(f"  {repr(val):15s} -> bool({val}) = {bool(val)}")
 
 print("\nValues considered True (truthy):")
 truthy_values = [True, 1, 3.14, "hello", [1, 2], {"a": 1}, [0]]
 for val in truthy_values:
-    print(f"  {repr(val):15s} → bool({val}) = {bool(val)}")
+    print(f"  {repr(val):15s} -> bool({val}) = {bool(val)}")
 
 print("\n--- Practical Truthiness ---")
 

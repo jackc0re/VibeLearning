@@ -375,10 +375,10 @@ def run_tests():
     for activities, expected_count in tests_1:
         result = exercise_1_activity_selection(activities)
         count = len(result) if result else 0
-        status = "✓" if count == expected_count else "✗"
+        status = "PASS" if count == expected_count else "FAIL"
         if count != expected_count:
             all_passed = False
-        print(f"  {status} activities={len(activities)} → {count} selected (expected {expected_count})")
+        print(f"  {status} activities={len(activities)} -> {count} selected (expected {expected_count})")
     
     # Test Exercise 2: Fractional Knapsack
     print("\nExercise 2: Fractional Knapsack")
@@ -389,7 +389,7 @@ def run_tests():
     ]
     for weights, values, cap, expected in tests_2:
         result = exercise_2_fractional_knapsack(weights, values, cap)
-        status = "✓" if abs((result or 0) - expected) < 0.01 else "✗"
+        status = "PASS" if abs((result or 0) - expected) < 0.01 else "FAIL"
         if abs((result or 0) - expected) >= 0.01:
             all_passed = False
         print(f"  {status} knapsack(..., {cap}) = {result} (expected {expected})")
@@ -403,10 +403,10 @@ def run_tests():
     ]
     for coins, amount, expected in tests_3:
         result = exercise_3_coin_change_greedy(coins, amount)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
-        print(f"  {status} coins={coins}, amount={amount} → {result} (expected {expected})")
+        print(f"  {status} coins={coins}, amount={amount} -> {result} (expected {expected})")
     
     # Test Exercise 4: Jump Game
     print("\nExercise 4: Jump Game")
@@ -418,7 +418,7 @@ def run_tests():
     ]
     for nums, expected in tests_4:
         result = exercise_4_can_jump(nums)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} can_jump({nums}) = {result} (expected {expected})")
@@ -431,7 +431,7 @@ def run_tests():
     ]
     for arr, dep, expected in tests_5:
         result = exercise_5_min_platforms(arr, dep)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} platforms needed = {result} (expected {expected})")
@@ -445,7 +445,7 @@ def run_tests():
     ]
     for ropes, expected in tests_6:
         result = exercise_6_connect_ropes(ropes)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} connect({ropes}) = {result} (expected {expected})")
@@ -459,7 +459,7 @@ def run_tests():
     ]
     for balloons, expected in tests_7:
         result = exercise_7_min_arrows(balloons)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} min_arrows({balloons}) = {result} (expected {expected})")
@@ -472,7 +472,7 @@ def run_tests():
     ]
     for boxes, size, expected in tests_8:
         result = exercise_8_max_units(boxes, size)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} max_units(..., {size}) = {result} (expected {expected})")
@@ -485,7 +485,7 @@ def run_tests():
     ]
     for mice, holes, expected in tests_9:
         result = exercise_9_mice_to_holes(mice, holes)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} mice_to_holes(...) = {result} (expected {expected})")
@@ -498,7 +498,7 @@ def run_tests():
     for jobs, expected_profit in tests_10:
         result = exercise_10_job_sequencing(jobs)
         profit = result[0] if result else 0
-        status = "✓" if profit == expected_profit else "✗"
+        status = "PASS" if profit == expected_profit else "FAIL"
         if profit != expected_profit:
             all_passed = False
         print(f"  {status} job_sequencing(...) = ${profit} (expected ${expected_profit})")
@@ -512,7 +512,7 @@ def run_tests():
     ]
     for meetings, expected in tests_11:
         result = exercise_11_min_meeting_rooms(meetings)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} min_rooms({meetings}) = {result} (expected {expected})")
@@ -526,7 +526,7 @@ def run_tests():
     ]
     for nums, expected in tests_12:
         result = exercise_12_min_jumps(nums)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} min_jumps({nums}) = {result} (expected {expected})")
@@ -540,7 +540,7 @@ def run_tests():
     ]
     for tasks, n, expected in tests_bonus:
         result = bonus_task_scheduler(tasks, n)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} task_scheduler(..., {n}) = {result} (expected {expected})")
@@ -548,9 +548,9 @@ def run_tests():
     # Summary
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 
@@ -717,6 +717,7 @@ def exercise_11_min_meeting_rooms(meetings):
 
 # Exercise 12: Minimum Jumps
 def exercise_12_min_jumps(nums):
+    # Assumes the end is reachable - see exercise_4_can_jump for the full handling.
     if len(nums) <= 1:
         return 0
     jumps = 0

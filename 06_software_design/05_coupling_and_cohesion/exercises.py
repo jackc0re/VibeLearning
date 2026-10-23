@@ -76,7 +76,7 @@ def run_tests():
     print("\nExercise 1: Subtotal")
     result = exercise_1_subtotal(items)
     expected = 3.5
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} subtotal(items) = {result} (expected {expected})")
@@ -84,8 +84,10 @@ def run_tests():
     print("\nExercise 2: Total With Tax")
     result = exercise_2_total_with_tax(items, 0.10)
     expected = 3.85
-    status = "✓" if result == expected else "✗"
-    if result != expected:
+    # 3.5 * 1.1 is 3.8500000000000005 in floating point, so allow rounding.
+    passed = isinstance(result, (int, float)) and abs(result - expected) < 0.0001
+    status = "PASS" if passed else "FAIL"
+    if not passed:
         all_passed = False
     print(f"  {status} total_with_tax(items,0.10) = {result} (expected {expected})")
 
@@ -96,15 +98,15 @@ def run_tests():
         sent.append(msg)
 
     exercise_3_notify(capture, "hello")
-    status = "✓" if sent == ["hello"] else "✗"
-    if status == "✗":
+    status = "PASS" if sent == ["hello"] else "FAIL"
+    if status == "FAIL":
         all_passed = False
     print(f"  {status} notify(capture,'hello') -> sent={sent}")
 
     print("\nExercise 4: Build Message")
     result = exercise_4_build_order_message(123, 10)
     expected = "Order #123 total $10.00"
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} build_order_message(123,10) = {result!r} (expected {expected!r})")
@@ -117,16 +119,16 @@ def run_tests():
     ]
     for sample, expected in tests_5:
         result = exercise_5_is_valid_order(sample)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} is_valid_order({sample}) = {result} (expected {expected})")
 
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 

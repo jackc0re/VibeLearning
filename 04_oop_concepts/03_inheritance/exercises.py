@@ -40,8 +40,8 @@ print("\n--- Exercise 1 Output ---")
 
 rect = Rectangle(5, 10)
 circle = Circle(3)
-print(f"Rectangle area: {rect.area()}")
-print(f"Circle area: {circle.area()}")
+print(f"Rectangle area: {rect.area():.2f}")
+print(f"Circle area: {circle.area():.2f}")
 
 
 # -----------------------------------------------------------------------------

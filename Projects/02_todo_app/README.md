@@ -29,7 +29,7 @@ This project helps you practice:
 3. ✅ Data Persistence
    - Save tasks to file
    - Load tasks on startup
-   - Automatic backup
+   - Manual backup from the menu (option 11)
 
 4. ✅ Search & Filter
    - Search by task description

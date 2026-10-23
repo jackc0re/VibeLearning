@@ -134,7 +134,8 @@ def demo_reload_module() -> None:
 
     print(f"Before reload - id: {id(json)}")
 
-    # Reload the module (gets fresh version)
+    # Reload re-executes the module's code in the SAME module object,
+    # so the id is unchanged (and the cached import is refreshed).
     json = importlib.reload(json)
 
     print(f"After reload - id: {id(json)}")

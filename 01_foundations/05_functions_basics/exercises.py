@@ -21,7 +21,7 @@ Formulas:
 - F = C * 9/5 + 32
 - C = (F - 32) * 5/9
 
-Test with: 0°C, 100°C, 32°F, 212°F
+Test with: 0 degC, 100 degC, 32 degF, 212 degF
 """
 
 # Your code here:
@@ -124,10 +124,10 @@ def fahrenheit_to_celsius(fahrenheit):
     """Convert Fahrenheit to Celsius."""
     return (fahrenheit - 32) * 5/9
 
-print(f"0°C = {celsius_to_fahrenheit(0):.1f}°F")
-print(f"100°C = {celsius_to_fahrenheit(100):.1f}°F")
-print(f"32°F = {fahrenheit_to_celsius(32):.1f}°C")
-print(f"212°F = {fahrenheit_to_celsius(212):.1f}°C")
+print(f"0 degC = {celsius_to_fahrenheit(0):.1f} degF")
+print(f"100 degC = {celsius_to_fahrenheit(100):.1f} degF")
+print(f"32 degF = {fahrenheit_to_celsius(32):.1f} degC")
+print(f"212 degF = {fahrenheit_to_celsius(212):.1f} degC")
 
 # SOLUTION 2
 print("\n--- Solution 2 ---")

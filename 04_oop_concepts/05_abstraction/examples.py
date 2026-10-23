@@ -28,7 +28,7 @@ class PaymentProcessor(ABC):
 # class GenericProcessor(PaymentProcessor):
 #     pass
 # p = GenericProcessor() 
-# TypeError: Can't instantiate abstract class GenericProcessor with abstract methods...
+# TypeError: Can't instantiate abstract class GenericProcessor (abstract methods not implemented)
 
 class PayPalProcessor(PaymentProcessor):
     def process_payment(self, amount):

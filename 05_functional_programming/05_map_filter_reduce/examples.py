@@ -58,4 +58,4 @@ if __name__ == "__main__":
     demo_filter()
     demo_reduce()
     demo_comprehensions()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

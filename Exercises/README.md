@@ -30,12 +30,12 @@ Practice problems to solidify your understanding. Start where you're comfortable
 Focus on foundational concepts:
 
 - **Variables & Types** — Type conversions, operators
-- **Control Flow** — If statements, switch cases
+- **Control Flow** — if / elif / else, conditional expressions
 - **Loops** — For/while, nested loops, comprehensions
 - **Functions** — Parameters, return values, scope
 - **Data Structures** — Lists, strings, dictionaries, sets
 
-`→ [Beginner Exercises](beginner/README.md)`
+→ [Beginner Exercises](beginner/README.md)
 
 ### Intermediate Exercises
 
@@ -47,7 +47,7 @@ Combine multiple concepts:
 - **Data Structures** — Stacks, queues, trees, graphs
 - **Error Handling** — Exceptions, custom errors
 
-`→ [Intermediate Exercises](intermediate/README.md)`
+→ [Intermediate Exercises](intermediate/README.md)
 
 ### Advanced Exercises
 
@@ -59,7 +59,7 @@ Complex, multi-step problems:
 - **Real-world Applications** — File I/O, APIs, databases
 - **Testing & Debugging** — TDD, mocking, debugging strategies
 
-`→ [Advanced Exercises](advanced/README.md)`
+→ [Advanced Exercises](advanced/README.md)
 
 ---
 

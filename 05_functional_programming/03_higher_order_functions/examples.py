@@ -77,4 +77,4 @@ if __name__ == "__main__":
     demo_apply_twice()
     demo_make_multiplier()
     demo_composition()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

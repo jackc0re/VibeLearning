@@ -6,6 +6,9 @@ Run with:
     python examples.py
 """
 
+import tempfile
+from pathlib import Path
+
 
 def demo_basic_try_except():
     print("Basic try/except demo")
@@ -21,17 +24,20 @@ def demo_basic_try_except():
 def demo_else_finally():
     print("\nElse/finally demo")
     file = None
-    try:
-        file = open("temp_demo.txt", "w", encoding="utf-8")
-        file.write("hello")
-    except OSError as exc:
-        print("  Failed to write:", exc)
-    else:
-        print("  Write succeeded")
-    finally:
-        if file:
-            file.close()
-            print("  File closed")
+    # A temporary directory keeps this demo from leaving files in your folder.
+    with tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / "demo.txt"
+        try:
+            file = open(path, "w", encoding="utf-8")
+            file.write("hello")
+        except OSError as exc:
+            print("  Failed to write:", exc)
+        else:
+            print("  Write succeeded")
+        finally:
+            if file is not None:
+                file.close()
+                print("  File closed")
 
 
 def demo_multiple_exceptions():
@@ -48,4 +54,4 @@ if __name__ == "__main__":
     demo_basic_try_except()
     demo_else_finally()
     demo_multiple_exceptions()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

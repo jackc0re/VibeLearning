@@ -147,7 +147,7 @@ The `x = 20` inside the function creates a local variable. The global `x` remain
 ## Question 7
 Which is a valid lambda?
 
-A) `lambda: x * 2`  
+A) `lambda x -> x * 2`  
 B) `lambda x: x * 2`  
 C) `def lambda(x): return x * 2`  
 D) `lambda x: return x * 2`

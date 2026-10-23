@@ -14,9 +14,12 @@ Run with:
 
 def exercise_1_validate_score(score):
     """
+    Raise TypeError if score is not a number.
     Raise ValueError if score is not between 0 and 100 inclusive.
     Return score when valid.
     """
+    if not isinstance(score, (int, float)):
+        raise TypeError(f"score must be a number, got {type(score).__name__}")
     if not (0 <= score <= 100):
         raise ValueError("score must be between 0 and 100")
     return score
@@ -83,6 +86,16 @@ def run_tests():
         print("  FAIL did not raise for invalid score")
     except ValueError:
         print("  PASS raises for invalid score")
+
+    try:
+        exercise_1_validate_score("eighty")
+        all_passed = False
+        print("  FAIL did not raise for non-numeric score")
+    except TypeError as exc:
+        print(f"  PASS raises TypeError with a clear message: {exc}")
+    except ValueError as exc:
+        all_passed = False
+        print(f"  FAIL raised ValueError instead of TypeError: {exc}")
 
     # Exercise 2
     print("\nExercise 2: Apply Discount")

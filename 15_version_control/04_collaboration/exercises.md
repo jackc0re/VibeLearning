@@ -187,8 +187,9 @@ cd your-repo
 git fetch origin
 git branch -r
 
-git checkout origin/develop
-# Creates local 'develop' branch
+git checkout develop
+# DWIM: creates local 'develop' tracking origin/develop
+# (git checkout origin/develop would leave you in detached HEAD!)
 
 git checkout -b my-feature
 echo "new feature" > new.txt

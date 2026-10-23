@@ -12,6 +12,7 @@ Curated external resources to deepen your understanding beyond this course. Each
   - [04-07: Paradigms & Design](#04-07-paradigms-design)
   - [08-11: Professional Skills](#08-11-professional-skills)
   - [12-15: Advanced Concepts](#12-15-advanced-concepts)
+  - [16-20: Libraries, CS Fundamentals & the Web](#16-20-libraries-cs-fundamentals-the-web)
 - [Community & Help](#community-help)
 - [Practice Platforms](#practice-platforms)
 
@@ -69,7 +70,7 @@ Curated external resources to deepen your understanding beyond this course. Each
 | Resource | Type | Level | Description |
 |----------|------|-------|-------------|
 | [Visualizing Algorithms](https://bost.ocks.org/mike/algorithms/) | 📄 Article | ⭐⭐⭐ | Interactive visualizations of sorting algorithms |
-| [Groking Algorithms](https://www.manning.com/books/grokking-algorithms) | 📕 Book | ⭐⭐⭐ | Best beginner algorithms book with illustrations |
+| [Grokking Algorithms](https://www.manning.com/books/grokking-algorithms) | 📕 Book | ⭐⭐⭐ | Best beginner algorithms book with illustrations |
 | [AlgoExpert](https://www.algoexpert.io/) | 💻 Platform | ⭐⭐⭐⭐ | Comprehensive algorithm interview prep |
 
 ---
@@ -179,6 +180,62 @@ Curated external resources to deepen your understanding beyond this course. Each
 | [Pro Git Book](https://git-scm.com/book/en/v2) | 📕 Book | ⭐⭐ | Free, comprehensive Git book |
 | [Git Tower Tutorial](https://www.git-tower.com/learn/git/ebook/command-line/introduction) | 📄 Article | ⭐⭐ | Visual Git tutorials |
 | [GitHub Skills](https://skills.github.com/) | 💻 Platform | ⭐⭐ | Interactive GitHub learning labs |
+
+---
+
+### 16 - 20: Libraries, CS Fundamentals & the Web
+
+#### Essential Libraries
+
+| Resource | Type | Level | Description |
+|----------|------|-------|-------------|
+| [collections - Container Datatypes](https://docs.python.org/3/library/collections.html) | 📖 Docs | ⭐⭐ | Official docs for `Counter`, `defaultdict`, and `namedtuple` |
+| [datetime - Basic Date and Time Types](https://docs.python.org/3/library/datetime.html) | 📖 Docs | ⭐⭐ | Naive vs aware datetimes, `timedelta`, and formatting codes |
+| [itertools - Functions Creating Iterators](https://docs.python.org/3/library/itertools.html) | 📖 Docs | ⭐⭐⭐ | Building blocks for chaining, grouping, and slicing iterators |
+| [Regular Expression HOWTO](https://docs.python.org/3/howto/regex.html) | 📖 Docs | ⭐⭐⭐ | The official tutorial for the `re` module |
+
+**Course lessons:** [Module 16 - Essential Libraries](../16_essential_libraries/README.md)
+
+#### CS Fundamentals
+
+| Resource | Type | Level | Description |
+|----------|------|-------|-------------|
+| [Bitwise Operators in Python](https://realpython.com/python-bitwise-operators/) | 📄 Article | ⭐⭐⭐ | Masks, shifts, and flags explained step by step |
+| [Numeric Types - Bitwise Operations](https://docs.python.org/3/library/stdtypes.html#bitwise-operations-on-integer-types) | 📖 Docs | ⭐⭐ | Reference for `&`, `|`, `^`, `<<`, and `>>` on integers |
+| [Your Guide to the CPython Source Code](https://realpython.com/cpython-source-code-guide/) | 📄 Article | ⭐⭐⭐⭐⭐ | How Python actually works under the hood |
+| [dis - Python Bytecode Disassembler](https://docs.python.org/3/library/dis.html) | 📖 Docs | ⭐⭐⭐⭐ | Look at the bytecode your functions compile to |
+
+**Course lessons:** [Module 17 - CS Fundamentals](../17_cs_fundamentals/README.md)
+
+#### Working with APIs
+
+| Resource | Type | Level | Description |
+|----------|------|-------|-------------|
+| [An Overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) | 📖 Docs | ⭐⭐ | MDN's introduction to HTTP: methods, headers, and responses |
+| [HTTP Status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) | 📖 Docs | ⭐⭐ | Every HTTP status code explained, grouped by class |
+| [Python's Requests Library (Guide)](https://realpython.com/python-requests/) | 📄 Article | ⭐⭐ | The most popular third-party HTTP client for Python |
+
+**Course lessons:** [Module 18 - Working with APIs](../18_working_with_apis/README.md)
+
+#### Data Processing
+
+| Resource | Type | Level | Description |
+|----------|------|-------|-------------|
+| [sqlite3 - DB-API Interface for SQLite](https://docs.python.org/3/library/sqlite3.html) | 📖 Docs | ⭐⭐ | Official tutorial on Python's built-in database module |
+| [SQLite Documentation](https://sqlite.org/docs.html) | 📖 Docs | ⭐⭐⭐ | The full documentation for SQLite itself |
+| [SQLBolt](https://sqlbolt.com/) | 💻 Platform | ⭐⭐ | Interactive SQL lessons that run in your browser |
+
+**Course lessons:** [Module 19 - Data Processing](../19_data_processing/README.md)
+
+#### Web Basics
+
+| Resource | Type | Level | Description |
+|----------|------|-------|-------------|
+| [http.server - HTTP Servers](https://docs.python.org/3/library/http.server.html) | 📖 Docs | ⭐⭐ | The standard-library server used in this module's lessons |
+| [HTML Basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) | 📖 Docs | ⭐ | MDN's beginner introduction to HTML |
+| [Jinja Template Designer Documentation](https://jinja.palletsprojects.com/) | 📖 Docs | ⭐⭐⭐ | The templating engine most real projects reach for next |
+
+**Course lessons:** [Module 20 - Web Basics](../20_web_basics/README.md)
 
 ---
 

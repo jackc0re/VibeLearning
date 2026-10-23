@@ -61,13 +61,13 @@ git add file.txt
 git commit -m "Base commit"
 
 git checkout -b feature
-echo "feature" >> file.txt
-git add file.txt
+echo "feature" > feature.txt
+git add feature.txt
 git commit -m "Feature commit"
 
 git checkout main
-echo "main" >> file.txt
-git add file.txt
+echo "main" > main.txt
+git add main.txt
 git commit -m "Main commit"
 
 git merge feature

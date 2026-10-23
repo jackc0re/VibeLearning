@@ -98,7 +98,7 @@ def safe_api_call(url):
 |------------|-----------------|---------------|
 | `HTTPError` | Server returns 4xx/5xx status | Check `e.code`, read `e.read()` for details |
 | `URLError` | Network/connectivity issues | Check `e.reason`, retry or notify user |
-| `TimeoutError` | Request takes too long | Implement timeout, retry with backoff |
+| Timeout (`TimeoutError`) | Request takes too long - `urllib` raises `URLError` with a timeout `.reason` | Pass `timeout=`, retry with backoff |
 | `JSONDecodeError` | Response isn't valid JSON | Check Content-Type, handle gracefully |
 
 ---
@@ -180,6 +180,7 @@ xml_data = """<?xml version="1.0"?>
 
 root = ET.fromstring(xml_data)
 name = root.find("name").text
+print(name)  # Alice
 ```
 
 ### CSV Data

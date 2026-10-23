@@ -47,10 +47,12 @@ Every recursive problem can be broken down into:
 
 ## Anatomy of a Recursive Function
 
+Every recursive function follows this four-part shape. The names below are placeholders, not real functions:
+
 ```python
 def recursive_function(problem):
     # 1. BASE CASE - When to stop
-    if problem is simple enough:
+    if is_simple_enough(problem):
         return simple_answer
     
     # 2. RECURSIVE CASE - Break down the problem

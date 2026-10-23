@@ -105,7 +105,7 @@ def run_tests():
     adapter = TemperatureAdapter(LegacyTemperatureSensor())
     result = adapter.read_celsius()
     expected = 25.0
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} read_celsius() = {result} (expected {expected})")
@@ -114,7 +114,7 @@ def run_tests():
     print("\nExercise 2: Decorator")
     msg = exercise_2_decorate_message()
     expected = "HELLO!"
-    status = "✓" if msg == expected else "✗"
+    status = "PASS" if msg == expected else "FAIL"
     if msg != expected:
         all_passed = False
     print(f"  {status} decorated message: {msg} (expected {expected})")
@@ -124,16 +124,16 @@ def run_tests():
     facade = OrderFacade()
     steps = facade.place_order("book")
     expected_steps = ["reserved book", "shipped book", "notified book"]
-    status = "✓" if steps == expected_steps else "✗"
+    status = "PASS" if steps == expected_steps else "FAIL"
     if steps != expected_steps:
         all_passed = False
     print(f"  {status} facade steps: {steps}")
 
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 

@@ -239,6 +239,10 @@ def demo_loop_debugging() -> None:
 
 
 if __name__ == "__main__":
+    print("=" * 50)
+    print("PRINT DEBUGGING - Examples")
+    print("=" * 50)
+
     demo_basic_print_debugging()
     demo_f_string_equals()
     demo_type_debugging()
@@ -248,3 +252,7 @@ if __name__ == "__main__":
     demo_dict_debugging()
     demo_logging_debugging()
     demo_loop_debugging()
+
+    print("\n" + "=" * 50)
+    print("Examples complete! Try exercises.py next.")
+    print("=" * 50)

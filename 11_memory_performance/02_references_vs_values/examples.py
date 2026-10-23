@@ -1,4 +1,5 @@
 """References vs Values - Examples
+=================================
 
 Demonstrations:
 - aliasing
@@ -13,6 +14,10 @@ from __future__ import annotations
 import copy
 
 
+# =============================================================================
+# DEMO: ALIASING
+# =============================================================================
+
 def demo_aliasing() -> None:
     nums = [1, 2]
     alias = nums
@@ -22,6 +27,10 @@ def demo_aliasing() -> None:
     print("  alias:", alias)
     print("  same object:", nums is alias)
 
+
+# =============================================================================
+# DEMO: SHALLOW VS DEEP COPY
+# =============================================================================
 
 def demo_copying() -> None:
     nested = [[1], [2]]
@@ -37,7 +46,25 @@ def demo_copying() -> None:
     print("  deep:", deep, "(independent)")
 
 
-if __name__ == "__main__":
+# =============================================================================
+# MAIN
+# =============================================================================
+
+def main() -> None:
+    print("=" * 50)
+    print("REFERENCES VS VALUES - Examples")
+    print("=" * 50)
+
+    print("\n--- Aliasing ---\n")
     demo_aliasing()
+
+    print("\n--- Shallow vs deep copy ---")
     demo_copying()
 
+    print("\n" + "=" * 50)
+    print("Examples complete! Try exercises.py next.")
+    print("=" * 50)
+
+
+if __name__ == "__main__":
+    main()

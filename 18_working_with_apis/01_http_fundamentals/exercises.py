@@ -25,7 +25,7 @@ URL: https://api.weather.com:8443/v1/current?city=London&units=metric
 Expected output format:
 Scheme: https
 Host: api.weather.com
-Port: 8444
+Port: 8443
 Path: /v1/current
 Query: {'city': ['London'], 'units': ['metric']}
 """

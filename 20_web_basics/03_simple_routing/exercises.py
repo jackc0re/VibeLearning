@@ -71,8 +71,8 @@ Example:
     )
     
 Results in:
-    /api/users → list_users
-    /api/posts → list_posts
+    /api/users -> list_users
+    /api/posts -> list_posts
 """
 
 # Your code here:
@@ -106,7 +106,7 @@ Add reverse URL generation to your router:
 
 Example:
     router.add('/users/{id}', user_handler, name='user_detail')
-    router.url('user_detail', id=123) → '/users/123'
+    router.url('user_detail', id=123) -> '/users/123'
 """
 
 # Your code here:
@@ -151,7 +151,7 @@ test_paths = ['/', '/about', '/contact', '/products', '/products/123', '/missing
 for path in test_paths:
     handler = router.match(path)
     result = handler() if handler else '404 Not Found'
-    print(f"  {path:15} → {result}")
+    print(f"  {path:15} -> {result}")
 
 # -------------------------------------------------------------------------
 # Solution 2
@@ -179,7 +179,7 @@ class DynamicRouter:
             match = route['pattern'].match(path)
             if match:
                 return route['handler'], match.groupdict()
-        return None, None
+        return None
 
 # Test
 dyn_router = DynamicRouter()
@@ -202,9 +202,9 @@ for path in test_cases:
     result = dyn_router.match(path)
     if result:
         handler, params = result
-        print(f"  {path:30} → {handler(**params)} (params: {params})")
+        print(f"  {path:30} -> {handler(**params)} (params: {params})")
     else:
-        print(f"  {path:30} → 404")
+        print(f"  {path:30} -> 404")
 
 # -------------------------------------------------------------------------
 # Solution 3
@@ -247,10 +247,10 @@ print("REST routing for /users:")
 for method in ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']:
     handler = rest.match('/users', method)
     if handler:
-        print(f"  {method:6} → {handler()}")
+        print(f"  {method:6} -> {handler()}")
     else:
         allowed = rest.get_allowed_methods('/users')
-        print(f"  {method:6} → 405 (allowed: {', '.join(allowed)})")
+        print(f"  {method:6} -> 405 (allowed: {', '.join(allowed)})")
 
 # -------------------------------------------------------------------------
 # Solution 4
@@ -306,7 +306,7 @@ test_paths = ['/', '/about', '/api/users', '/api/users/123',
 for path in test_paths:
     handler = group_router.match(path)
     result = handler() if handler else '404'
-    print(f"  {path:20} → {result}")
+    print(f"  {path:20} -> {result}")
 
 # -------------------------------------------------------------------------
 # Solution 5
@@ -388,17 +388,17 @@ print("Middleware routing:")
 # Test without auth
 request1 = {'path': '/'}
 result1 = mw_router.handle('/', request1)
-print(f"  GET /              → {result1['status']} ({result1.get('headers', {})})")
+print(f"  GET /              -> {result1['status']} ({result1.get('headers', {})})")
 
 # Test admin without auth
 request2 = {'path': '/admin/dashboard'}
 result2 = mw_router.handle('/admin/dashboard', request2)
-print(f"  GET /admin         → {result2['status']} ({result2['body']})")
+print(f"  GET /admin         -> {result2['status']} ({result2['body']})")
 
 # Test admin with auth
 request3 = {'path': '/admin/dashboard', 'headers': {'Authorization': 'Bearer token'}}
 result3 = mw_router.handle('/admin/dashboard', request3)
-print(f"  GET /admin (auth)  → {result3['status']} ({result3.get('headers', {})})")
+print(f"  GET /admin (auth)  -> {result3['status']} ({result3.get('headers', {})})")
 
 # -------------------------------------------------------------------------
 # Solution 6
@@ -448,11 +448,11 @@ url_router.add('/users/{id}', lambda: 'Detail', name='user_detail')
 url_router.add('/posts/{year}/{month}/{slug}', lambda: 'Post', name='blog_post')
 
 print("URL generation:")
-print(f"  home              → {url_router.url('home')}")
-print(f"  about             → {url_router.url('about')}")
-print(f"  users             → {url_router.url('users')}")
-print(f"  user_detail(id=1) → {url_router.url('user_detail', id=1)}")
-print(f"  blog_post(...)    → {url_router.url('blog_post', year=2026, month=1, slug='hello')}")
+print(f"  home              -> {url_router.url('home')}")
+print(f"  about             -> {url_router.url('about')}")
+print(f"  users             -> {url_router.url('users')}")
+print(f"  user_detail(id=1) -> {url_router.url('user_detail', id=1)}")
+print(f"  blog_post(...)    -> {url_router.url('blog_post', year=2026, month=1, slug='hello')}")
 
 print("\n" + "=" * 60)
 print("All solutions complete!")

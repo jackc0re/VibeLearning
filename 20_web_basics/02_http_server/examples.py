@@ -111,8 +111,8 @@ def demonstrate_status_codes():
     print("Common HTTP Status Codes:")
     for code, description in status_codes.items():
         category = (code // 100)
-        emoji = {2: "✅", 3: "🔄", 4: "❌", 5: "🔥"}.get(category, "❓")
-        print(f"  {emoji} {code}: {description}")
+        marker = {2: "OK  ", 3: "MOVE", 4: "FAIL", 5: "ERR "}.get(category, "?   ")
+        print(f"  [{marker}] {code}: {description}")
 
 demonstrate_status_codes()
 
@@ -137,7 +137,7 @@ content_types = {
 
 print("Common Content-Type headers:")
 for ext, mime in content_types.items():
-    print(f"  {ext:6} → {mime}")
+    print(f"  {ext:6} -> {mime}")
 
 # Function to guess content type from filename
 def guess_content_type(filename):
@@ -146,9 +146,9 @@ def guess_content_type(filename):
     return content_types.get('.' + ext, 'application/octet-stream')
 
 print("\nExamples:")
-print(f"  index.html  → {guess_content_type('index.html')}")
-print(f"  style.css   → {guess_content_type('style.css')}")
-print(f"  data.json   → {guess_content_type('data.json')}")
+print(f"  index.html  -> {guess_content_type('index.html')}")
+print(f"  style.css   -> {guess_content_type('style.css')}")
+print(f"  data.json   -> {guess_content_type('data.json')}")
 
 # =============================================================================
 # SECTION 5: URL Routing Pattern
@@ -193,10 +193,10 @@ class RoutingHandler(BaseHTTPRequestHandler):
         pass
 
 print("Routing pattern implemented:")
-print("  /        → serve_home()")
-print("  /about   → serve_about()")
-print("  /contact → serve_contact()")
-print("  *        → serve_404()")
+print("  /        -> serve_home()")
+print("  /about   -> serve_about()")
+print("  /contact -> serve_contact()")
+print("  *        -> serve_404()")
 
 # =============================================================================
 # SECTION 6: Serving JSON API
@@ -239,8 +239,8 @@ class APIHandler(BaseHTTPRequestHandler):
         pass
 
 print("API endpoints demonstrated:")
-print("  GET /api/users  → Returns list of users")
-print("  GET /api/status → Returns server status")
+print("  GET /api/users  -> Returns list of users")
+print("  GET /api/status -> Returns server status")
 
 # =============================================================================
 # SECTION 7: Handling Query Parameters
@@ -402,7 +402,7 @@ class CompleteHandler(BaseHTTPRequestHandler):
     </style>
 </head>
 <body>
-    <h1>🐍 Python HTTP Server</h1>
+    <h1>Python HTTP Server</h1>
     <h2>Available Endpoints:</h2>
     <ul>
         <li><code>GET /</code> - This page</li>

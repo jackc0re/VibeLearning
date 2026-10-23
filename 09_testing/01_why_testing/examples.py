@@ -22,7 +22,7 @@ def fixed_is_even(n: int) -> bool:
 def demo_manual_test():
     print("Manual checks (not ideal)")
     print("buggy_is_even(2) =>", buggy_is_even(2))
-    print("buggy_is_even(3) =>", buggy_is_even(3), "(WRONG)")
+    print("buggy_is_even(1) =>", buggy_is_even(1), "(WRONG)")
 
 
 def demo_simple_assertions():

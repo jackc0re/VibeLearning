@@ -56,4 +56,4 @@ def demo_yagni():
 
 if __name__ == "__main__":
     demo_yagni()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

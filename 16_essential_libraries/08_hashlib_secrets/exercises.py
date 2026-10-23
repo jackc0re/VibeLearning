@@ -9,6 +9,7 @@ print("HASHLIB & SECRETS - Exercises")
 print("=" * 60)
 
 import hashlib
+import json
 import secrets
 import tempfile
 from pathlib import Path
@@ -81,7 +82,7 @@ Tokens should:
 - Contain embedded expiration timestamp
 - Be verifiable (not tampered with)
 
-Hint: Use HMAC or simple hash of token+secret for verification.
+Hint: Use hmac.new(secret, payload, hashlib.sha256) to sign, and secrets.compare_digest to verify.
 """
 
 def generate_url_token(data: str, secret: bytes, expiry_hours: int = 24) -> str:
@@ -174,7 +175,7 @@ def secure_shuffle(items: list) -> list:
     pass  # TODO: Implement
 
 # Test
-# cards = ['A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠']
+# cards = ['AS', '2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', '10S', 'JS', 'QS', 'KS']
 # print(secure_shuffle(cards))
 
 print("\n" + "=" * 60)
@@ -288,6 +289,7 @@ for _ in range(3):
 print("\n--- Solution 3: URL Token Generator ---\n")
 
 import base64
+import hmac
 import struct
 import time
 
@@ -297,8 +299,8 @@ def generate_url_token_solution(data: str, secret: bytes, expiry_hours: int = 24
     # Create payload: expiry + data
     payload = struct.pack('>I', expiry) + data.encode()
 
-    # Sign payload
-    signature = hashlib.sha256(payload + secret).hexdigest()[:16]
+    # Sign payload with HMAC (never hash(payload + secret): that is forgeable)
+    signature = hmac.new(secret, payload, hashlib.sha256).hexdigest()[:16]
 
     # Combine and encode
     token = base64.urlsafe_b64encode(payload).decode().rstrip('=') + '.' + signature
@@ -316,7 +318,7 @@ def verify_url_token_solution(token: str, secret: bytes) -> tuple:
         payload = base64.urlsafe_b64decode(payload_b64)
 
         # Verify signature
-        expected_sig = hashlib.sha256(payload + secret).hexdigest()[:16]
+        expected_sig = hmac.new(secret, payload, hashlib.sha256).hexdigest()[:16]
         if not secrets.compare_digest(signature, expected_sig):
             return (False, None, False)
 
@@ -411,7 +413,7 @@ def secure_shuffle_solution(items: list) -> list:
 
     return result
 
-cards = ['A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠']
+cards = ['AS', '2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', '10S', 'JS', 'QS', 'KS']
 shuffled = secure_shuffle_solution(cards)
 print(f"Original: {cards}")
 print(f"Shuffled: {shuffled}")

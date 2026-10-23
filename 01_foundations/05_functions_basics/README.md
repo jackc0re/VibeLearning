@@ -308,7 +308,7 @@ def calculate_bmi(weight, height):
         BMI as a float
     
     Example:
-        >>> calculate_bmi(70, 1.75)
+        >>> round(calculate_bmi(70, 1.75), 2)
         22.86
     """
     return weight / (height ** 2)

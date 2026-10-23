@@ -58,4 +58,4 @@ if __name__ == "__main__":
     demo_basic_lambdas()
     demo_sorting()
     demo_filter_map()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

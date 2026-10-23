@@ -28,5 +28,5 @@ def demo_write_and_read_back() -> None:
 
 if __name__ == "__main__":
     demo_write_and_read_back()
-    print("✓ Examples complete!")
+    print("PASS Examples complete!")
 

@@ -128,13 +128,13 @@ print("\n--- Solution 1 ---")
 name = "Alex"
 age = 25
 
-print(f"╔{'═' * 40}╗")
-print(f"║{'Welcome, ' + name + '!':^40}║")
-print(f"╠{'═' * 40}╣")
-print(f"║ You are currently {age} years old.{' ' * 9}║")
-print(f"║ Next year, you'll be {age + 1}!{' ' * 13}║")
-print(f"║ You've been alive ~{age * 365:,} days!{' ' * 6}║")
-print(f"╚{'═' * 40}╝")
+print(f"+{'=' * 40}+")
+print(f"|{'Welcome, ' + name + '!':^40}|")
+print(f"+{'=' * 40}+")
+print(f"| You are currently {age} years old.{' ' * 8}|")
+print(f"| Next year, you'll be {age + 1}!{' ' * 15}|")
+print(f"| You've been alive ~{age * 365:,} days!{' ' * 9}|")
+print(f"+{'=' * 40}+")
 
 # SOLUTION 2
 print("\n--- Solution 2 ---")
@@ -148,23 +148,23 @@ tax_rate = 0.08
 print("=" * 35)
 print(f"{'STORE RECEIPT':^35}")
 print("=" * 35)
-print(f"{'Item':<12} {'Qty':>4} {'Price':>7} {'Total':>8}")
+print(f"{'Item':<12} {'Qty':>4} {'Price':>8} {'Total':>8}")
 print("-" * 35)
 
 subtotal = 0
 for name, qty, price in items:
     item_total = qty * price
     subtotal += item_total
-    print(f"{name:<12} {qty:>4} ${price:>5.2f} ${item_total:>6.2f}")
+    print(f"{name:<12} {qty:>4} ${price:>7.2f} ${item_total:>7.2f}")
 
 tax = subtotal * tax_rate
 total = subtotal + tax
 
 print("-" * 35)
-print(f"{'Subtotal:':<20} ${subtotal:>10.2f}")
-print(f"{'Tax (8%):':<20} ${tax:>10.2f}")
+print(f"{'Subtotal:':<23} ${subtotal:>10.2f}")
+print(f"{'Tax (8%):':<23} ${tax:>10.2f}")
 print("=" * 35)
-print(f"{'TOTAL:':<20} ${total:>10.2f}")
+print(f"{'TOTAL:':<23} ${total:>10.2f}")
 print("=" * 35)
 
 # SOLUTION 3
@@ -187,11 +187,11 @@ show_progress(100)
 print("\n--- Solution 4 ---")
 
 # Header
-print("    ", end="")
+print("     ", end="")
 for i in range(1, 6):
     print(f"{i:4}", end="")
 print()
-print("    " + "----" * 5)
+print("     " + "----" * 5)
 
 # Body
 for i in range(1, 6):
@@ -219,23 +219,23 @@ scores = {
     "Art": 85
 }
 
-print("╔" + "═" * 36 + "╗")
-print(f"║{'REPORT CARD':^36}║")
-print(f"║{'Student: ' + student:^36}║")
-print("╠" + "═" * 36 + "╣")
-print(f"║ {'Subject':<12} {'Score':>8} {'Grade':>8}  ║")
-print("║" + "-" * 34 + "  ║")
+print("+" + "=" * 36 + "+")
+print(f"|{'REPORT CARD':^36}|")
+print(f"|{'Student: ' + student:^36}|")
+print("+" + "=" * 36 + "+")
+print(f"| {'Subject':<13} {'Score':>9} {'Grade':>9}  |")
+print("|" + "-" * 34 + "  |")
 
 for subject, score in scores.items():
     grade = get_grade(score)
-    print(f"║ {subject:<12} {score:>8} {grade:>8}  ║")
+    print(f"| {subject:<13} {score:>9} {grade:>9}  |")
 
 avg = sum(scores.values()) / len(scores)
-print("║" + "-" * 34 + "  ║")
-print(f"║ {'Average':<12} {avg:>8.1f} {get_grade(avg):>8}  ║")
-print("╚" + "═" * 36 + "╝")
+print("|" + "-" * 34 + "  |")
+print(f"| {'Average':<13} {avg:>9.1f} {get_grade(avg):>9}  |")
+print("+" + "=" * 36 + "+")
 
 print("\n" + "=" * 50)
-print("🎉 Congratulations! Module 01 Complete!")
+print(" Congratulations! Module 01 Complete!")
 print("Move on to 02_data_structures to continue.")
 print("=" * 50)

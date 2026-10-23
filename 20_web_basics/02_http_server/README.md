@@ -231,7 +231,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
 <body>
     <h1>About This Server</h1>
     <p>Built with Python's http.server module!</p>
-    <a href="/">← Back Home</a>
+    <a href="/">&larr; Back Home</a>
 </body>
 </html>"""
         self.send_response(200)

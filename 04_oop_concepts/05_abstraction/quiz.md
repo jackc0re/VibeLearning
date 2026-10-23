@@ -1,6 +1,6 @@
 # 🌫️ Abstraction Quiz
 
-## 1. Can you create an instance of an Abstract Base Class (ABC)?
+## 1. Can you create an instance of an Abstract Base Class (ABC) that declares abstract methods?
 - [ ] Yes, always
 - [ ] No, never
 - [ ] Only if it has no methods

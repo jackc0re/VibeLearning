@@ -148,28 +148,42 @@ def bad_hash_password(password):
 ### What TO do (Concept)
 
 ```python
-# ✅ GOOD - Use proper password hashing library
-# In real applications, use: bcrypt, argon2, or scrypt
-# These handle salting and stretching automatically
+# ✅ GOOD - use a memory-hard password hash. The standard library has one:
+import hashlib
+import secrets
 
-# Example with bcrypt (requires: pip install bcrypt)
-import bcrypt
+def hash_password(password: str) -> bytes:
+    """Store: salt + scrypt digest (salt is not secret, it just must be unique)."""
+    salt = secrets.token_bytes(16)
+    return salt + hashlib.scrypt(
+        password.encode(), salt=salt, n=2**14, r=8, p=1, dklen=32
+    )
 
-# Hash a password
-password = b'super secret'
-salt = bcrypt.gensalt()
-hashed = bcrypt.hashpw(password, salt)
+def verify_password(password: str, stored: bytes) -> bool:
+    """Recompute with the SAME salt, then compare in constant time."""
+    salt, digest = stored[:16], stored[16:]
+    expected = hashlib.scrypt(
+        password.encode(), salt=salt, n=2**14, r=8, p=1, dklen=32
+    )
+    return secrets.compare_digest(digest, expected)
 
-# Verify
-bcrypt.checkpw(password, hashed)  # True
+stored = hash_password('super secret')
+verify_password('super secret', stored)    # True
+verify_password('wrong password', stored)  # False
 ```
+
+`scrypt` is deliberately slow and memory-hungry, which makes large-scale
+guessing expensive. Vetted third-party libraries (`bcrypt`, `argon2-cffi`)
+are the usual choice in real applications — but they need `pip install`;
+the stdlib `scrypt` needs nothing.
 
 ### Key Points
 
 1. **Always salt** - Random data added to each password
 2. **Use slow hashes** - Make brute force expensive
 3. **Never use MD5/SHA1** for passwords
-4. **Use specialized libraries** - bcrypt, argon2, scrypt
+4. **Use a memory-hard password hash** - `hashlib.scrypt` (stdlib) in lessons;
+   `bcrypt`/`argon2-cffi` in real applications
 
 ---
 
@@ -177,6 +191,7 @@ bcrypt.checkpw(password, hashed)  # True
 
 ```python
 import hashlib
+import secrets
 from pathlib import Path
 
 def calculate_hash(filepath, algorithm='sha256'):

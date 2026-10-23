@@ -15,7 +15,7 @@ print("=" * 50)
 print("\n--- Exercise 3.1: Sum of Squares ---")
 """
 Calculate the sum of squares from 1 to n.
-Example: n=3 -> 1² + 2² + 3² = 1 + 4 + 9 = 14
+Example: n=3 -> 1^2 + 2^2 + 3^2 = 1 + 4 + 9 = 14
 """
 
 n = 10

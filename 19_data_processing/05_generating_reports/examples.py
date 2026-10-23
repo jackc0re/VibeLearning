@@ -98,7 +98,7 @@ conn.commit()
 # SECTION 1: EXECUTIVE SUMMARY
 # =============================================================================
 print("\n" + "=" * 70)
-print("📊 EXECUTIVE SUMMARY")
+print(" EXECUTIVE SUMMARY")
 print("=" * 70)
 print(f"Report Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 print(f"Data Source: {DB_NAME}")
@@ -128,7 +128,7 @@ print(f"  Total Units Sold:    {kpis['total_units']:,}")
 # SECTION 2: MONTHLY BREAKDOWN
 # =============================================================================
 print("\n" + "=" * 70)
-print("📅 MONTHLY PERFORMANCE")
+print(" MONTHLY PERFORMANCE")
 print("=" * 70)
 
 cursor.execute('''
@@ -153,7 +153,7 @@ for row in cursor.fetchall():
     change_str = ""
     if prev_revenue:
         change = ((row['revenue'] - prev_revenue) / prev_revenue) * 100
-        trend = "📈" if change > 0 else "📉"
+        trend = "UP" if change > 0 else "DOWN"
         change_str = f"{trend} {change:+.1f}%"
     print(f"  {row['month']:<12} {row['transactions']:>8,} ${row['revenue']:>14,.2f} ${row['avg_sale']:>11,.2f} {change_str}")
     prev_revenue = row['revenue']
@@ -162,7 +162,7 @@ for row in cursor.fetchall():
 # SECTION 3: CATEGORY ANALYSIS
 # =============================================================================
 print("\n" + "=" * 70)
-print("📦 SALES BY CATEGORY")
+print(" SALES BY CATEGORY")
 print("=" * 70)
 
 cursor.execute('''
@@ -181,14 +181,14 @@ print(f"  {'Category':<15} {'Orders':>8} {'Units':>8} {'Revenue':>15} {'Share':>
 print("  " + "-" * 60)
 total_rev = 0
 for row in cursor.fetchall():
-    bar = "█" * int(row['pct'] / 5)  # Simple bar chart
+    bar = "#" * int(row['pct'] / 5)  # Simple bar chart
     print(f"  {row['category']:<15} {row['transactions']:>8,} {row['units']:>8,} ${row['revenue']:>14,.2f} {row['pct']:>6}% {bar}")
 
 # =============================================================================
 # SECTION 4: REGIONAL PERFORMANCE
 # =============================================================================
 print("\n" + "=" * 70)
-print("🌍 REGIONAL PERFORMANCE")
+print(" REGIONAL PERFORMANCE")
 print("=" * 70)
 
 cursor.execute('''
@@ -211,7 +211,7 @@ for row in cursor.fetchall():
 # SECTION 5: TOP CUSTOMERS
 # =============================================================================
 print("\n" + "=" * 70)
-print("🏆 TOP 5 CUSTOMERS")
+print(" TOP 5 CUSTOMERS")
 print("=" * 70)
 
 cursor.execute('''
@@ -229,14 +229,14 @@ cursor.execute('''
 print(f"  {'Rank':<6} {'Customer':<15} {'Orders':>8} {'Total Spent':>15} {'Avg Order':>12}")
 print("  " + "-" * 60)
 for i, row in enumerate(cursor.fetchall(), 1):
-    medal = {1: "🥇", 2: "🥈", 3: "🥉"}.get(i, f"  {i}.")
+    medal = {1: "1st", 2: "2nd", 3: "3rd"}.get(i, f"{i}.")
     print(f"  {medal:<6} {row['customer']:<15} {row['orders']:>8,} ${row['total_spent']:>14,.2f} ${row['avg_order']:>11,.2f}")
 
 # =============================================================================
 # SECTION 6: TOP PRODUCTS
 # =============================================================================
 print("\n" + "=" * 70)
-print("📈 TOP 5 PRODUCTS BY REVENUE")
+print(" TOP 5 PRODUCTS BY REVENUE")
 print("=" * 70)
 
 cursor.execute('''
@@ -261,7 +261,7 @@ for i, row in enumerate(cursor.fetchall(), 1):
 # SECTION 7: INVENTORY ALERT
 # =============================================================================
 print("\n" + "=" * 70)
-print("⚠️  LOW STOCK ALERT")
+print("  LOW STOCK ALERT")
 print("=" * 70)
 
 cursor.execute('''
@@ -276,16 +276,16 @@ if alerts:
     print(f"  {'Product':<20} {'Category':<12} {'Stock':>8} {'Reorder At':>12} {'Status':>10}")
     print("  " + "-" * 65)
     for row in alerts:
-        status = "🔴 CRITICAL" if row['stock_level'] < row['reorder_point'] / 2 else "🟡 LOW"
+        status = " CRITICAL" if row['stock_level'] < row['reorder_point'] / 2 else " LOW"
         print(f"  {row['name']:<20} {row['category']:<12} {row['stock_level']:>8} {row['reorder_point']:>12} {status:>10}")
 else:
-    print("  ✅ All stock levels are healthy!")
+    print("  PASS All stock levels are healthy!")
 
 # =============================================================================
 # SECTION 8: EXPORT TO CSV
 # =============================================================================
 print("\n" + "=" * 70)
-print("💾 EXPORTING REPORT DATA")
+print(" EXPORTING REPORT DATA")
 print("=" * 70)
 
 # Export detailed sales data
@@ -317,7 +317,7 @@ print(f"  Exported {len(rows)} records to 'sales_report.csv'")
 # SECTION 9: SAVE FULL REPORT TO FILE
 # =============================================================================
 print("\n" + "=" * 70)
-print("📝 SAVING COMPLETE REPORT")
+print(" SAVING COMPLETE REPORT")
 print("=" * 70)
 
 def generate_full_report(conn, filename):
@@ -358,11 +358,11 @@ print(f"  Full report saved to: {report_file}")
 
 conn.close()
 
+# Clean up the files this example exported
+for f in [DB_NAME, REPORT_FILE, "sales_report.csv"]:
+    if os.path.exists(f):
+        os.remove(f)
+
 print("\n" + "=" * 70)
 print("Examples complete!")
 print("=" * 70)
-
-# Cleanup (optional - comment out to keep files)
-# for f in [DB_NAME, REPORT_FILE, "sales_report.csv"]:
-#     if os.path.exists(f):
-#         os.remove(f)

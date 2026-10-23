@@ -18,8 +18,8 @@ VibeLearning/
 ├── 03_algorithms/      # Problem-solving techniques
 │   ...                 # More modules
 │
-├── exercises/          # Practice problems
-├── projects/           # Complete projects to build
+├── Exercises/          # Practice problems
+├── Projects/           # Complete projects to build
 └── Resources/          # Cheatsheets, glossary, etc.
 ```
 
@@ -70,15 +70,17 @@ python examples.py
 For each concept:
 
 ```
-1. 📚 Read README.md
+1. 📚 Skim README.md for the big picture
         ↓
 2. 💻 Run and study examples.py
         ↓
-3. ✏️ Attempt exercises.py
+3. 📚 Re-read README.md with the code open
         ↓
-4. ❓ Take the quiz.md
+4. ✏️ Attempt exercises.py
         ↓
-5. 🔄 Review if needed
+5. ❓ Take the quiz.md
+        ↓
+6. 🔄 Review if needed
 ```
 
 ### Time Per Concept
@@ -95,7 +97,7 @@ For each concept:
 | Tip | Why |
 |-----|-----|
 | **Type code yourself** | Muscle memory matters |
-| **Run examples before reading** | See behavior first, then understand |
+| **Skim the README, then run the examples** | Big picture first, see the behavior, then re-read with the code open |
 | **Modify examples** | Experimenting deepens understanding |
 | **Make mistakes** | Errors are learning opportunities |
 | **Take breaks** | Your brain consolidates during rest |

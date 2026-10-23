@@ -49,6 +49,44 @@ def withdraw(balance, amount):
 
 ---
 
+## ⚠️ Common Mistakes
+
+1. **A bare `except:`** - it catches *everything*, so Ctrl+C stops working
+   (`KeyboardInterrupt` is swallowed and the loop keeps running) and `sys.exit()`
+   cannot exit (`SystemExit` is swallowed too). It hides typos as well: `except: prnt(...)`
+   catches the `NameError` and prints nothing. Name the exception you expect.
+2. **Believing `except Exception:` catches everything** - it does not catch
+   `KeyboardInterrupt`, `SystemExit`, or `GeneratorExit`, because those subclass
+   `BaseException`, not `Exception`. That is deliberate: shutdown requests are not
+   errors, and your handler should not intercept them.
+3. **Raising with no message** - `raise ValueError` produces a blank `ValueError:` and
+   leaves the reader guessing. `raise ValueError("amount must be positive")` says what
+   was wrong and why.
+
+---
+
+## 📝 Quick Reference
+
+| What you see | Exception | First thing to check |
+|---|---|---|
+| `int("abc")` | `ValueError` | the value's format, not its type |
+| `"3" + 4` | `TypeError` | convert before combining |
+| `data["missing"]` | `KeyError` | `data.get("missing", default)` |
+| `items[10]` | `IndexError` | check `len(items)` first |
+| `10 / 0` | `ZeroDivisionError` | guard the divisor |
+| `undefined_name` | `NameError` | typo, or assigned in another branch |
+
+```python
+raise ValueError("amount must be positive")   # raise your own, with a message
+
+try:
+    amount = int(user_input)
+except ValueError as exc:                     # catch the narrowest type that fits
+    print("not a number:", exc)
+```
+
+---
+
 ## 🔍 Key Takeaways
 
 - Exceptions are **signals of failure** with context.

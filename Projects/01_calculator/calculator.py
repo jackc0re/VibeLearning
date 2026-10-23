@@ -37,7 +37,7 @@ def power(a, b):
 def modulo(a, b):
     """Calculate the remainder of a divided by b."""
     if b == 0:
-        raise ValueError("Cannot divide by zero")
+        raise ValueError("Cannot take a remainder with zero")
     return a % b
 
 
@@ -120,7 +120,7 @@ def perform_operation(choice):
     try:
         result = operation(num1, num2)
         return symbol, num1, num2, result
-    except ValueError as e:
+    except (ValueError, OverflowError) as e:
         print(f"Error: {e}")
         return None
 
@@ -132,7 +132,7 @@ def main():
     print("=" * 40)
     print("       WELCOME TO CALCULATOR")
     print("=" * 40)
-    print("Enter \"clear\" to clear history at any time")
+    print("Choose option 8 to clear the history at any time")
     print("=" * 40)
     
     while True:

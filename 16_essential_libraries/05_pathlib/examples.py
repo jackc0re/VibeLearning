@@ -199,11 +199,11 @@ def print_tree(path, prefix='', max_depth=3, current_depth=0):
     items = sorted(path.iterdir(), key=lambda x: (not x.is_dir(), x.name))
     for i, item in enumerate(items):
         is_last = i == len(items) - 1
-        connector = '└── ' if is_last else '├── '
+        connector = '+-- ' if is_last else '|-- '
         print(f"{prefix}{connector}{item.name}")
 
         if item.is_dir():
-            extension = '    ' if is_last else '│   '
+            extension = '    ' if is_last else '|   '
             print_tree(item, prefix + extension, max_depth, current_depth + 1)
 
 # Example 5: Batch rename

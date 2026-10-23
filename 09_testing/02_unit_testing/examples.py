@@ -3,7 +3,7 @@ Unit Testing - Examples
 
 Shows:
   - unittest style
-  - pytest-style plain asserts (without requiring pytest)
+  - plain `assert` statements (no test framework needed)
 
 Run with:
     python examples.py
@@ -39,16 +39,17 @@ class TestClamp(unittest.TestCase):
             clamp(1, 10, 0)
 
 
-def pytest_style_demo():
-    # This looks like pytest, but plain Python `assert` works too.
+def plain_assert_demo():
+    # Plain Python `assert` checks behaviour without any test framework.
     assert clamp(5, 0, 10) == 5
     assert clamp(-1, 0, 10) == 0
 
 
 if __name__ == "__main__":
-    print("Running unittest example")
+    # flush=True so this line appears before unittest writes its report to stderr.
+    print("Running unittest example", flush=True)
     unittest.main(exit=False)
-    print("\nRunning pytest-style assertions")
-    pytest_style_demo()
+    print("\nRunning plain assert statements")
+    plain_assert_demo()
     print("OK - Examples complete")
 

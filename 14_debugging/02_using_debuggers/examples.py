@@ -118,7 +118,8 @@ def demo_navigation() -> None:
     print("  (Pdb) s    # Step - enters inner(), stops at line 6")
     print("             # You DO see inside inner()")
     print()
-    print("  (Pdb) r    # Return - runs until inner() returns, back to line 2")
+    print("  (Pdb) r    # Return - runs until outer() returns (the current function)")
+    print("             # Stops in the caller, not inside inner()")
     print()
     print("  (Pdb) c    # Continue - runs until next breakpoint or end")
     print()
@@ -281,6 +282,10 @@ def demo_debugger_in_loops() -> None:
 
 
 if __name__ == "__main__":
+    print("=" * 50)
+    print("USING DEBUGGERS - Examples")
+    print("=" * 50)
+
     demo_breakpoint_usage()
     demo_pdb_commands()
     demo_inspect_variables()
@@ -291,3 +296,7 @@ if __name__ == "__main__":
     demo_breakpoint_env()
     demo_debugging_workflow()
     demo_debugger_in_loops()
+
+    print("\n" + "=" * 50)
+    print("Examples complete! Try exercises.py next.")
+    print("=" * 50)

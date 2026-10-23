@@ -35,12 +35,12 @@ temperature = 35
 
 if temperature > 30:
     weather = "hot"
-    advice = "Stay hydrated! 💧"
+    advice = "Stay hydrated! "
 else:
     weather = "comfortable"
-    advice = "Enjoy the weather! 🌤️"
+    advice = "Enjoy the weather! "
 
-print(f"Temperature: {temperature}°C")
+print(f"Temperature: {temperature} degC")
 print(f"Weather: {weather}")
 print(f"Advice: {advice}")
 
@@ -87,7 +87,7 @@ for score in scores:
         grade = "D"
     else:
         grade = "F"
-    print(f"Score {score} → Grade {grade}")
+    print(f"Score {score} -> Grade {grade}")
 
 # =============================================================================
 # NESTED CONDITIONS
@@ -104,26 +104,26 @@ print(f"With adult: {is_with_adult}")
 
 if has_ticket:
     if age >= 18:
-        print("✅ Welcome! Enjoy the movie!")
+        print("PASS Welcome! Enjoy the movie!")
     else:
         if is_with_adult:
-            print("✅ Welcome! You must stay with your guardian.")
+            print("PASS Welcome! You must stay with your guardian.")
         else:
-            print("❌ Sorry, you need an adult guardian.")
+            print("FAIL Sorry, you need an adult guardian.")
 else:
-    print("❌ Please purchase a ticket at the counter.")
+    print("FAIL Please purchase a ticket at the counter.")
 
 # Flattened (better) version
 print("\n--- Same Logic (Flattened) ---")
 
 if not has_ticket:
-    print("❌ Please purchase a ticket at the counter.")
+    print("FAIL Please purchase a ticket at the counter.")
 elif age >= 18:
-    print("✅ Welcome! Enjoy the movie!")
+    print("PASS Welcome! Enjoy the movie!")
 elif is_with_adult:
-    print("✅ Welcome! You must stay with your guardian.")
+    print("PASS Welcome! You must stay with your guardian.")
 else:
-    print("❌ Sorry, you need an adult guardian.")
+    print("FAIL Sorry, you need an adult guardian.")
 
 # =============================================================================
 # CONDITIONAL EXPRESSIONS (TERNARY)
@@ -167,7 +167,7 @@ falsy_values = [False, None, 0, 0.0, "", [], {}]
 print("Falsy values:")
 for val in falsy_values:
     result = "truthy" if val else "falsy"
-    print(f"  {repr(val):10} → {result}")
+    print(f"  {repr(val):10} -> {result}")
 
 # Demonstrating truthy values
 print("\nTruthy values:")
@@ -175,18 +175,18 @@ truthy_values = [True, 1, -1, 0.1, "hello", [1], {"a": 1}]
 
 for val in truthy_values:
     result = "truthy" if val else "falsy"
-    print(f"  {repr(val):15} → {result}")
+    print(f"  {repr(val):15} -> {result}")
 
 # Practical application
 print("\n--- Practical Truthy/Falsy ---")
 
 username = ""
 display_name = username if username else "Anonymous"
-print(f"Username: '{username}' → Display: {display_name}")
+print(f"Username: '{username}' -> Display: {display_name}")
 
 username = "alice"
 display_name = username if username else "Anonymous"
-print(f"Username: '{username}' → Display: {display_name}")
+print(f"Username: '{username}' -> Display: {display_name}")
 
 # Using 'or' for defaults
 print("\n--- Using 'or' for Defaults ---")
@@ -211,20 +211,20 @@ elif temperature < 18:
 else:
     comfort = "hot"
 
-print(f"Temperature {temperature}°C is {comfort}")
+print(f"Temperature {temperature} degC is {comfort}")
 
 # Multiple range checks
 print("\nTemperature Comfort Levels:")
 for temp in [10, 18, 22, 25, 35]:
     if temp < 15:
-        level = "❄️ Cold"
+        level = " Cold"
     elif 15 <= temp < 20:
-        level = "🌤️ Cool"
+        level = " Cool"
     elif 20 <= temp < 28:
-        level = "☀️ Comfortable"
+        level = " Comfortable"
     else:
-        level = "🔥 Hot"
-    print(f"  {temp}°C → {level}")
+        level = " Hot"
+    print(f"  {temp} degC -> {level}")
 
 # =============================================================================
 # COMBINING CONDITIONS

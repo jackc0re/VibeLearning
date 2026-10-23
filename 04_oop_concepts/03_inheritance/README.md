@@ -62,6 +62,7 @@ You can inherit from a class that inherits from another class.
 Python supports inheriting from multiple classes at once (less common, can be complex).
 
 ```python
+# Assuming Car and Airplane are already defined
 class FlyingCar(Car, Airplane):
     pass
 ```

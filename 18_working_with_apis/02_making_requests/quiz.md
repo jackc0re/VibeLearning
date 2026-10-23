@@ -60,8 +60,8 @@ D) `html.escape()`
 What is the purpose of the `User-Agent` header?
 
 A) To authenticate with the server  
-C) To identify the client making the request  
 B) To compress the response  
+C) To identify the client making the request  
 D) To set cookies  
 
 ---

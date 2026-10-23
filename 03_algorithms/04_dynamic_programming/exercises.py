@@ -97,7 +97,7 @@ def exercise_4_coin_change(coins, amount):
         
     Example:
         >>> exercise_4_coin_change([1, 5, 10, 25], 67)
-        7
+        6
         >>> exercise_4_coin_change([2], 3)
         -1
     """
@@ -156,7 +156,7 @@ def exercise_6_house_robber(nums):
 
 def exercise_7_unique_paths(m, n):
     """
-    Count unique paths from top-left to bottom-right in m×n grid.
+    Count unique paths from top-left to bottom-right in mxn grid.
     Can only move right or down.
     
     Args:
@@ -336,7 +336,7 @@ def run_tests():
     ]
     for n, expected in tests_1:
         result = exercise_1_fib_memo(n)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} fib_memo({n}) = {result} (expected {expected})")
@@ -351,7 +351,7 @@ def run_tests():
     ]
     for n, expected in tests_2:
         result = exercise_2_fib_tab(n)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} fib_tab({n}) = {result} (expected {expected})")
@@ -366,7 +366,7 @@ def run_tests():
     ]
     for n, expected in tests_3:
         result = exercise_3_climb_stairs(n)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} climb_stairs({n}) = {result} (expected {expected})")
@@ -374,14 +374,14 @@ def run_tests():
     # Test Exercise 4: Coin Change
     print("\nExercise 4: Coin Change (Minimum)")
     tests_4 = [
-        ([1, 5, 10, 25], 67, 7),
+        ([1, 5, 10, 25], 67, 6),
         ([1, 2, 5], 11, 3),
         ([2], 3, -1),
         ([1], 0, 0),
     ]
     for coins, amount, expected in tests_4:
         result = exercise_4_coin_change(coins, amount)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} coin_change({coins}, {amount}) = {result} (expected {expected})")
@@ -396,7 +396,7 @@ def run_tests():
     ]
     for nums, expected in tests_5:
         result = exercise_5_max_subarray(nums)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} max_subarray({nums}) = {result} (expected {expected})")
@@ -411,7 +411,7 @@ def run_tests():
     ]
     for nums, expected in tests_6:
         result = exercise_6_house_robber(nums)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} house_robber({nums}) = {result} (expected {expected})")
@@ -426,7 +426,7 @@ def run_tests():
     ]
     for m, n, expected in tests_7:
         result = exercise_7_unique_paths(m, n)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} unique_paths({m}, {n}) = {result} (expected {expected})")
@@ -441,7 +441,7 @@ def run_tests():
     ]
     for t1, t2, expected in tests_8:
         result = exercise_8_lcs(t1, t2)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} lcs('{t1}', '{t2}') = {result} (expected {expected})")
@@ -455,7 +455,7 @@ def run_tests():
     ]
     for weights, values, cap, expected in tests_9:
         result = exercise_9_knapsack(weights, values, cap)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} knapsack(..., {cap}) = {result} (expected {expected})")
@@ -469,7 +469,7 @@ def run_tests():
     ]
     for nums, expected in tests_10:
         result = exercise_10_lis(nums)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} lis({nums}) = {result} (expected {expected})")
@@ -484,7 +484,7 @@ def run_tests():
     ]
     for w1, w2, expected in tests_11:
         result = exercise_11_edit_distance(w1, w2)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} edit_distance('{w1}', '{w2}') = {result} (expected {expected})")
@@ -499,7 +499,7 @@ def run_tests():
     ]
     for coins, amount, expected in tests_12:
         result = exercise_12_coin_ways(coins, amount)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} coin_ways({coins}, {amount}) = {result} (expected {expected})")
@@ -514,7 +514,7 @@ def run_tests():
     ]
     for s, expected in tests_bonus:
         result = bonus_min_cuts(s)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} min_cuts('{s}') = {result} (expected {expected})")
@@ -522,9 +522,9 @@ def run_tests():
     # Summary
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 

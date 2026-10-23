@@ -320,6 +320,19 @@ if name:  # same as: if name != ""
     pass
 ```
 
+## Sneak Peek: The `for` Loop
+
+Every exercise in this topic prints results for several values, and Python repeats work
+with a `for` loop. You get the full story in [04_loops](../04_loops/README.md) — here's
+just enough to read the solutions:
+
+```python
+for item in ["a", "b", "c"]:
+    print(item)   # a, then b, then c
+```
+
+Read it as: "for each item in this list, run the indented lines below." That's it.
+
 ---
 
 ## Next Steps

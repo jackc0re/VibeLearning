@@ -65,14 +65,14 @@ class Student:
         self.grade = grade
     
     def introduce(self):
-        print(f"Hi, I'm {self.name} and I got a {self.grade}!")
+        print(f"Hi, I'm {self.name} and my grade is {self.grade}!")
 
 # 2. Create objects
 student1 = Student("Alice", "A")
 student2 = Student("Bob", "B")
 
 # 3. Access attributes and methods
-student1.introduce() # Output: Hi, I'm Alice and I got a A!
+student1.introduce() # Output: Hi, I'm Alice and my grade is A!
 print(student2.name) # Output: Bob
 ```
 

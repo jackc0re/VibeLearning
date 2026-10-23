@@ -113,6 +113,37 @@ Advantages:
 
 ---
 
+## ⚠️ Common Mistakes
+
+1. **Leaving debug prints in committed code** - they flood the user's console
+   and can even leak data. Remove them before committing, or switch to
+   `logger.debug(...)` which you can silence without edits.
+2. **Printing too little context** - `print(x)` in a big log is useless an hour
+   later. Print the variable *name* (`f"{x=}"`) and a location label so you can
+   tell 40 prints apart.
+3. **Prints that change behavior** - a print inside a loop can mask a bug that
+   only appears when the loop is fast (timing-sensitive code), or consume a
+   generator's items if you print next(...) instead of peeking. Prefer passive
+   inspection.
+4. **Debugging the wrong run** - editing the file while it runs, or prints
+   buffered so they never appear before the crash. In scripts that die, prints
+   to a pipe may be buffered; `print(..., flush=True)` forces output.
+
+---
+
+## 📝 Quick Reference
+
+| Goal | Code |
+|---|---|
+| Show name and value | `print(f"{x=}")` -> `x=42` |
+| Show type too | `print(f"{type(x)=}")` |
+| Show repr (spots hidden spaces) | `print(f"{value!r}")` |
+| Label the checkpoint | `print("[DEBUG] after loop:", total)` |
+| Force output before a crash | `print(..., flush=True)` |
+| Production-grade version | `logger.debug(...)` from the `logging` module |
+
+---
+
 ## 🔍 Key Takeaways
 
 - Print debugging is simple but powerful.

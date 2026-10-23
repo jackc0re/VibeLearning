@@ -361,7 +361,7 @@ def run_tests():
     ]
     for arr, target, expected in tests_1:
         result = exercise_1_linear_search(arr, target)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} linear_search({arr}, {target}) = {result} (expected {expected})")
@@ -378,7 +378,7 @@ def run_tests():
     ]
     for arr, target, expected in tests_2:
         result = exercise_2_binary_search(arr, target)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} binary_search({arr}, {target}) = {result} (expected {expected})")
@@ -394,7 +394,7 @@ def run_tests():
     ]
     for arr, target, expected in tests_3:
         result = exercise_3_binary_search_recursive(arr, target)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} binary_search_recursive({arr}, {target}) = {result} (expected {expected})")
@@ -410,7 +410,7 @@ def run_tests():
     ]
     for arr, target, expected in tests_4:
         result = exercise_4_find_first_last(arr, target)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} find_first_last({arr}, {target}) = {result} (expected {expected})")
@@ -426,7 +426,7 @@ def run_tests():
     ]
     for arr, target, expected in tests_5:
         result = exercise_5_search_insert(arr, target)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} search_insert({arr}, {target}) = {result} (expected {expected})")
@@ -443,7 +443,7 @@ def run_tests():
     for arr, valid_answers in tests_6:
         result = exercise_6_find_peak(arr)
         is_valid = result in valid_answers
-        status = "✓" if is_valid else "✗"
+        status = "PASS" if is_valid else "FAIL"
         if not is_valid:
             all_passed = False
         print(f"  {status} find_peak({arr}) = {result} (valid: {valid_answers})")
@@ -459,7 +459,7 @@ def run_tests():
     ]
     for arr, target, expected in tests_7:
         result = exercise_7_search_rotated(arr, target)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} search_rotated({arr}, {target}) = {result} (expected {expected})")
@@ -475,7 +475,7 @@ def run_tests():
     ]
     for arr, expected in tests_8:
         result = exercise_8_find_min_rotated(arr)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} find_min_rotated({arr}) = {result} (expected {expected})")
@@ -497,7 +497,7 @@ def run_tests():
     ]
     for mat, target, expected in tests_9:
         result = exercise_9_search_matrix(mat, target)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} search_matrix(matrix, {target}) = {result} (expected {expected})")
@@ -515,7 +515,7 @@ def run_tests():
     ]
     for x, expected in tests_10:
         result = exercise_10_sqrt(x)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} sqrt({x}) = {result} (expected {expected})")
@@ -530,7 +530,7 @@ def run_tests():
     ]
     for arr, k, expected in tests_bonus:
         result = bonus_kth_smallest(arr, k)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} kth_smallest({arr}, {k}) = {result} (expected {expected})")
@@ -538,9 +538,9 @@ def run_tests():
     # Summary
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 

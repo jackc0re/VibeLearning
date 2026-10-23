@@ -56,7 +56,7 @@ What does `logging.exception()` do?
 ---
 
 ## Question 4
-Which level indicates a serious failure that may stop the program?
+Which level is for a failure so severe the app cannot continue?
 
 - A) DEBUG
 - B) INFO

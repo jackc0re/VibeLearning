@@ -250,18 +250,18 @@ def demo_dependency_tree() -> None:
 
     tree = """
 myproject
-├── flask>=2.0.0
-│   ├── Werkzeug>=2.0.0
-│   ├── Jinja2>=3.0.0
-│   │   └── MarkupSafe>=2.0
-│   ├── itsdangerous>=2.0.0
-│   ├── click>=8.0.0
-│   └── blinker>=1.0.0
-└── requests>=2.25.0
-    ├── charset-normalizer>=2.0.0
-    ├── idna>=2.5
-    ├── urllib3>=1.21.1
-    └── certifi>=2017.4.17
++-- flask>=2.0.0
+|   +-- Werkzeug>=2.0.0
+|   +-- Jinja2>=3.0.0
+|   |   +-- MarkupSafe>=2.0
+|   +-- itsdangerous>=2.0.0
+|   +-- click>=8.0.0
+|   +-- blinker>=1.0.0
++-- requests>=2.25.0
+    +-- charset-normalizer>=2.0.0
+    +-- idna>=2.5
+    +-- urllib3>=1.21.1
+    +-- certifi>=2017.4.17
 """
 
     print("Example dependency tree:")

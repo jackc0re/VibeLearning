@@ -230,7 +230,7 @@ def create_blog_preview(posts):
         <h2><a href="{post['url']}" style="color: #333; text-decoration: none;">{post['title']}</a></h2>
         <p style="color: #666; font-size: 0.9em;">By {post['author']} on {post['date']}</p>
         <p>{post['excerpt']}</p>
-        <a href="{post['url']}" style="color: #007bff;">Read more →</a>
+        <a href="{post['url']}" style="color: #007bff;">Read more -></a>
     </article>"""
         articles.append(article)
     

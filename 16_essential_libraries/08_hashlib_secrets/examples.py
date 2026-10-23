@@ -166,7 +166,7 @@ print(f"Hash: {hashed}")
 print(f"\nVerification (correct): {verify_salted_hash(password, salt, hashed)}")
 print(f"Verification (wrong): {verify_salted_hash('wrong_password', salt, hashed)}")
 
-print("\n⚠️  Note: Use bcrypt/argon2/scrypt in production, not this!")
+print("\n  Note: Use bcrypt/argon2/scrypt in production, not this!")
 
 # =============================================================================
 # PRACTICAL EXAMPLES

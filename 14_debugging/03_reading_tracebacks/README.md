@@ -94,10 +94,14 @@ SyntaxError: expected ':'
 ```
 
 The `^` points to where Python got confused (often the error is just before).
+Python 3.10+ says `expected ':'`; 3.8 and 3.9 say `invalid syntax`.
 
 ---
 
 ## ✅ Improving Tracebacks
+
+These third-party packages make tracebacks easier to read, but they are **not**
+part of the standard library - they need `pip install`:
 
 ```python
 # Use rich library for colorful tracebacks
@@ -107,6 +111,46 @@ traceback.install()
 # Use better_exceptions
 import better_exceptions
 better_exceptions.hook()
+```
+
+With nothing installed, the standard-library `traceback` module already gives
+you the same information (`traceback.print_exc()` in `examples.py`).
+
+---
+
+## ⚠️ Common Mistakes
+
+1. **Reading top-to-bottom** - the most recent call is at the **bottom**, and
+   the exception line (the actual error) is the very last line. Start there,
+   then find the last frame that is *your* code.
+2. **Fixing only the symptom line** - the failing line tells you *where* the
+   crash happened, not always *why*. A `KeyError` on `data['key']` may really
+   be a misspelled key created ten lines earlier.
+3. **Pasting traceback text instead of the exception type into a search** -
+   search for `TypeError: cannot unpack non-iterable int object`, not the whole
+   dump with your file paths in it.
+4. **Ignoring chained exceptions** - when you see "During handling of the above
+   exception, another exception occurred", the *first* traceback is usually the
+   root cause; read both.
+
+---
+
+## 📝 Quick Reference
+
+| Part of the traceback | What it tells you |
+|---|---|
+| Last line: `KeyError: 'key'` | the error type + message (read first) |
+| Frame lines: `File "app.py", line 42` | the call chain, oldest at top |
+| `^` under `SyntaxError` code | where parsing got confused |
+| `The above exception was the direct cause...` | exception chaining (`raise ... from err`) |
+| `ZeroDivisionError` | a denominator was 0 - find where it came from |
+
+```python
+import traceback
+try:
+    risky()
+except Exception:
+    traceback.print_exc()   # print the full traceback and keep going
 ```
 
 ---

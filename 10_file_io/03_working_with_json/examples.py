@@ -38,5 +38,5 @@ def demo_json_file() -> None:
 if __name__ == "__main__":
     demo_json_string()
     demo_json_file()
-    print("✓ Examples complete!")
+    print("PASS Examples complete!")
 

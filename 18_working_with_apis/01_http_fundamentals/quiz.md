@@ -80,8 +80,8 @@ D) DELETE
 What does status code **500** indicate?
 
 A) Bad request from client  
-C) Server internal error  
 B) Resource not found  
+C) Server internal error  
 D) Request succeeded  
 
 ---

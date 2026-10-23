@@ -80,8 +80,7 @@ re.findall(r'[a-z]', 'Hello')    # ['e', 'l', 'l', 'o']
 re.findall(r'[^aeiou]', 'hello') # ['h', 'l', 'l']
 
 # Match specific characters
-re.findall(r'[xyz]', 'xylophone') # ['x', 'o'] wait, o is not...
-# Actually returns ['x']
+re.findall(r'[xyz]', 'xylophone') # ['x', 'y']
 ```
 
 ---

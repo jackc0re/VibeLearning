@@ -242,10 +242,13 @@ class Page:
 
     def render_html(self, template, nav_html, site_config):
         """Render page to HTML using template."""
+        # All links are relative, so a page in a sub-folder has to climb back up.
+        prefix = '../' * self.relative_path.count('/')
         context = {
             'title': self.title,
             'content': MarkdownParser.parse(self.content),
             'nav': nav_html,
+            'home_link': f'{prefix}index.html',
             'site_name': site_config.get('site_name', 'My Site'),
             'site_url': site_config.get('site_url', ''),
             'author': self.author,
@@ -311,14 +314,18 @@ class NavigationBuilder:
     """Build navigation HTML from pages."""
 
     @staticmethod
-    def build(pages, current_page=None):
-        """Build navigation menu HTML."""
+    def build(pages, current_page=None, prefix=''):
+        """Build navigation menu HTML.
+
+        `prefix` is the `../` chain that takes the current page back to the
+        output root, so one menu works from any sub-folder.
+        """
         nav_items = []
 
         for page in pages:
             link_class = 'active' if current_page and page.relative_path == current_page.relative_path else ''
             active_class = f' class="{link_class}"' if link_class else ''
-            nav_items.append(f'<a href="{page.relative_path}"{active_class}>{escape(page.title)}</a>')
+            nav_items.append(f'<a href="{prefix}{page.relative_path}"{active_class}>{escape(page.title)}</a>')
 
         return ' | '.join(nav_items)
 
@@ -395,11 +402,13 @@ class StaticSiteGenerator:
 
         print("\nGenerating navigation...")
         sorted_pages = self.content_loader.get_pages_sorted()
-        nav_html = NavigationBuilder.build(sorted_pages)
-        print("  Navigation generated")
+        print(f"  {len(sorted_pages)} pages ready for rendering")
 
         print("\nRendering pages...")
         for page in sorted_pages:
+            # Each page links relative to its own folder.
+            prefix = '../' * page.relative_path.count('/')
+            nav_html = NavigationBuilder.build(sorted_pages, page, prefix)
             page_html = page.render_html(base_template, nav_html, self.config)
             output_path = self.output_dir / page.relative_path
             output_path.parent.mkdir(parents=True, exist_ok=True)

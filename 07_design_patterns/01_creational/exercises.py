@@ -108,7 +108,7 @@ def run_tests():
     second = exercise_1_toggle_debug()
     if first == second:
         all_passed = False
-    status = "✓" if first != second else "✗"
+    status = "PASS" if first != second else "FAIL"
     print(f"  {status} toggled values: {first} -> {second}")
 
     # Exercise 2
@@ -116,28 +116,28 @@ def run_tests():
     try:
         notifier = exercise_2_factory("slack")
         result = notifier.send("Hi")
-        status = "✓" if result == "Slack: Hi" else "✗"
+        status = "PASS" if result == "Slack: Hi" else "FAIL"
         if result != "Slack: Hi":
             all_passed = False
         print(f"  {status} slack factory result: {result}")
     except Exception as exc:
         all_passed = False
-        print(f"  ✗ factory raised: {exc}")
+        print(f"  FAIL factory raised: {exc}")
 
     # Exercise 3
     print("\nExercise 3: Builder")
     profile = exercise_3_build_profile()
     expected = "Profile(name='Ada', email='ada@dev.com', phone='555-0101')"
-    status = "✓" if repr(profile) == expected else "✗"
+    status = "PASS" if repr(profile) == expected else "FAIL"
     if repr(profile) != expected:
         all_passed = False
     print(f"  {status} built profile: {profile}")
 
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 

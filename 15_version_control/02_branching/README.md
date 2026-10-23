@@ -44,8 +44,8 @@ git branch -a
 # List branches with latest commit info
 git branch -v
 
-# Show branches in color and with merge status
-git branch --color
+# List branches already merged into the current branch
+git branch --merged
 ```
 
 ---
@@ -144,7 +144,7 @@ git branch -vv
 ## ✅ Viewing Branch History
 
 ```bash
-# Show commits in current branch only
+# Show commits that are on feature-login but not on main
 git log main..feature-login
 
 # Show commits in both branches

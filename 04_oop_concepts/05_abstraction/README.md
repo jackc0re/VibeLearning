@@ -49,7 +49,7 @@ print(s.area()) # 25
 
 ## 🔌 Interfaces
 
-In many languages (like Java), there is a distinction between `abstract class` and `interface`. In Python, abstract Base Classes with *only* abstract methods act as interfaces. They define a contract that subclasses must follow.
+In many languages (like Java), there is a distinction between `abstract class` and `interface`. In Python, abstract base classes with *only* abstract methods act as interfaces. They define a contract that subclasses must follow.
 
 ## 🔑 Key Takeaways
 

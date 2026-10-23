@@ -79,4 +79,4 @@ if __name__ == "__main__":
     greet("Alice")
     slow_add(2, 3)
     say_hi()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

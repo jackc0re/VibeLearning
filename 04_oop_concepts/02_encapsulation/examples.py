@@ -86,7 +86,7 @@ class Celsius:
             # We preserve the old value or set to a default, or raise error.
             # Here keeping the old value if it exists, else setting to min.
             if not hasattr(self, '_temperature'):
-                 self._temperature = -273.15
+                self._temperature = -273.15
         else:
             self._temperature = value
 

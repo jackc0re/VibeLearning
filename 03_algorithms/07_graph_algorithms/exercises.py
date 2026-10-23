@@ -299,7 +299,7 @@ def test_bfs():
     assert a_idx < b_idx and a_idx < c_idx, "Level 0 before level 1"
     assert b_idx < d_idx and c_idx < d_idx, "Level 1 before level 2"
     
-    print("✓ All bfs tests passed!")
+    print("PASS All bfs tests passed!")
 
 
 def test_dfs():
@@ -317,7 +317,7 @@ def test_dfs():
     assert result[0] == 'A', "DFS should start with start node"
     assert set(result) == set(graph.keys()), "DFS should visit all nodes"
     
-    print("✓ All dfs tests passed!")
+    print("PASS All dfs tests passed!")
 
 
 def test_shortest_path_unweighted():
@@ -335,13 +335,13 @@ def test_shortest_path_unweighted():
     path = shortest_path_unweighted(graph, 'A', 'E')
     assert path is not None, "Path should exist"
     assert path[0] == 'A' and path[-1] == 'E', "Path should start at A and end at E"
-    assert len(path) == 3, f"Shortest path should have 3 nodes, got {len(path)}"
+    assert len(path) == 4, f"Shortest path should have 4 nodes (3 edges), got {len(path)}"
     
     # Test no path
     graph2 = {'A': ['B'], 'B': ['A'], 'C': []}
     assert shortest_path_unweighted(graph2, 'A', 'C') is None, "No path should return None"
     
-    print("✓ All shortest_path_unweighted tests passed!")
+    print("PASS All shortest_path_unweighted tests passed!")
 
 
 def test_dijkstra():
@@ -362,7 +362,7 @@ def test_dijkstra():
     assert distances['B'] == 3, "Distance to B should be 3 (via C)"
     assert distances['D'] == 6, "Distance to D should be 6"
     
-    print("✓ All dijkstra tests passed!")
+    print("PASS All dijkstra tests passed!")
 
 
 def test_has_cycle_undirected():
@@ -385,7 +385,7 @@ def test_has_cycle_undirected():
     }
     assert has_cycle_undirected(triangle) == True, "Triangle should have cycle"
     
-    print("✓ All has_cycle_undirected tests passed!")
+    print("PASS All has_cycle_undirected tests passed!")
 
 
 def test_has_cycle_directed():
@@ -409,7 +409,7 @@ def test_has_cycle_directed():
     }
     assert has_cycle_directed(cyclic) == True, "A->B->C->A should have cycle"
     
-    print("✓ All has_cycle_directed tests passed!")
+    print("PASS All has_cycle_directed tests passed!")
 
 
 def test_topological_sort():
@@ -432,7 +432,7 @@ def test_topological_sort():
         for neighbor in graph[node]:
             assert indices[node] < indices[neighbor], f"{node} should come before {neighbor}"
     
-    print("✓ All topological_sort tests passed!")
+    print("PASS All topological_sort tests passed!")
 
 
 def test_count_connected_components():
@@ -455,7 +455,7 @@ def test_count_connected_components():
     }
     assert count_connected_components(connected) == 1, "Should have 1 component"
     
-    print("✓ All count_connected_components tests passed!")
+    print("PASS All count_connected_components tests passed!")
 
 
 def test_is_bipartite():
@@ -479,7 +479,7 @@ def test_is_bipartite():
     }
     assert is_bipartite(triangle) == False, "Triangle should not be bipartite"
     
-    print("✓ All is_bipartite tests passed!")
+    print("PASS All is_bipartite tests passed!")
 
 
 def test_find_all_paths():
@@ -500,7 +500,7 @@ def test_find_all_paths():
     for path in expected_paths:
         assert path in paths, f"Path {path} should be found"
     
-    print("✓ All find_all_paths tests passed!")
+    print("PASS All find_all_paths tests passed!")
 
 
 # =============================================================================
@@ -747,52 +747,52 @@ if __name__ == "__main__":
         try:
             test_bfs()
         except (AssertionError, TypeError, AttributeError) as e:
-            print(f"✗ bfs: {e}")
+            print(f"FAIL bfs: {e}")
         
         try:
             test_dfs()
         except (AssertionError, TypeError, AttributeError) as e:
-            print(f"✗ dfs: {e}")
+            print(f"FAIL dfs: {e}")
         
         try:
             test_shortest_path_unweighted()
         except (AssertionError, TypeError, AttributeError) as e:
-            print(f"✗ shortest_path_unweighted: {e}")
+            print(f"FAIL shortest_path_unweighted: {e}")
         
         try:
             test_dijkstra()
         except (AssertionError, TypeError, AttributeError) as e:
-            print(f"✗ dijkstra: {e}")
+            print(f"FAIL dijkstra: {e}")
         
         try:
             test_has_cycle_undirected()
         except (AssertionError, TypeError, AttributeError) as e:
-            print(f"✗ has_cycle_undirected: {e}")
+            print(f"FAIL has_cycle_undirected: {e}")
         
         try:
             test_has_cycle_directed()
         except (AssertionError, TypeError, AttributeError) as e:
-            print(f"✗ has_cycle_directed: {e}")
+            print(f"FAIL has_cycle_directed: {e}")
         
         try:
             test_topological_sort()
         except (AssertionError, TypeError, AttributeError) as e:
-            print(f"✗ topological_sort: {e}")
+            print(f"FAIL topological_sort: {e}")
         
         try:
             test_count_connected_components()
         except (AssertionError, TypeError, AttributeError) as e:
-            print(f"✗ count_connected_components: {e}")
+            print(f"FAIL count_connected_components: {e}")
         
         try:
             test_is_bipartite()
         except (AssertionError, TypeError, AttributeError) as e:
-            print(f"✗ is_bipartite: {e}")
+            print(f"FAIL is_bipartite: {e}")
         
         try:
             test_find_all_paths()
         except (AssertionError, TypeError, AttributeError) as e:
-            print(f"✗ find_all_paths: {e}")
+            print(f"FAIL find_all_paths: {e}")
         
         print("\n" + "=" * 60)
         print("Testing complete!")

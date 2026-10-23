@@ -33,5 +33,5 @@ def demo_binary_and_hash() -> None:
 
 if __name__ == "__main__":
     demo_binary_and_hash()
-    print("✓ Examples complete!")
+    print("PASS Examples complete!")
 

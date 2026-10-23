@@ -80,7 +80,7 @@ print(f"SAFE: {safe}")
 print("\nEscape mappings:")
 test_chars = ['<', '>', '&', '"', "'"]
 for char in test_chars:
-    print(f"  {char!r:5} → {escape(char)!r}")
+    print(f"  {char!r:5} -> {escape(char)!r}")
 
 # =============================================================================
 # SECTION 4: Simple Template Engine

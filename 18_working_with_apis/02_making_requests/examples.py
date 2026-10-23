@@ -168,7 +168,7 @@ texts = [
     "hello world",
     "price=$100",
     "q=python & programming!",
-    "café naïve",
+    "caf\u00e9 na\u00efve",  # written with \uXXXX escapes: e-acute, i-diaeresis
 ]
 
 print("URL Encoding Examples:")

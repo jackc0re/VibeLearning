@@ -34,6 +34,26 @@ It ignores constant factors and focuses on long-term growth.
 
 ---
 
+## ⚠️ Common Mistakes
+
+- Treating Big-O as an exact runtime — it ignores constants and startup costs
+- Writing `O(2n)` or `O(n + n)` — simplify to the dominant term: `O(n)`
+- Optimizing a piece of code that runs on tiny inputs where any class is fast enough
+
+---
+
+## 📝 Quick Reference
+
+Growth ladder, slowest to fastest as `n` grows:
+
+```
+O(2^n) > O(n^2) > O(n log n) > O(n) > O(log n) > O(1)
+```
+
+Loops: sequential adds, nesting multiplies. Drop constants and keep the dominant term.
+
+---
+
 [Back: Module 11 README](../README.md)
 
 ---

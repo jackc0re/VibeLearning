@@ -290,8 +290,8 @@ print("\n--- Exercise 7: Simple Bytecode Optimizer ---")
 print("""
 Write a function that takes bytecode instructions and performs
 simple optimizations:
-- Remove redundant loads (LOAD_FAST a; LOAD_FAST a → keep one)
-- Constant folding (LOAD_CONST 2; LOAD_CONST 3; BINARY_ADD → LOAD_CONST 5)
+- Remove redundant loads (LOAD_FAST a; LOAD_FAST a -> keep one)
+- Constant folding (LOAD_CONST 2; LOAD_CONST 3; BINARY_ADD -> LOAD_CONST 5)
 """)
 
 def optimize_bytecode(instructions):
@@ -423,13 +423,14 @@ class SimpleVM:
         return self.stack.pop()
 
     def execute(self, instructions):
+        result = None
         for op, arg in instructions:
             method = getattr(self, op)
             if arg is not None:
-                method(arg)
+                result = method(arg)
             else:
-                method()
-        return None
+                result = method()
+        return result
 '''
 print(solution_2)
 
@@ -479,24 +480,16 @@ solution_4 = '''
 import dis
 
 def is_constant_folded(func):
-    """Check if function has constant folding by looking for BINARY_*
-    instructions preceded only by LOAD_CONST."""
+    """True if no arithmetic instruction survived compilation, which means
+    the constant expression was folded into a single LOAD_CONST."""
     bytecode = list(dis.Bytecode(func))
 
-    for i, instr in enumerate(bytecode):
+    for instr in bytecode:
         if "BINARY" in instr.opname:
-            # Check if previous two instructions were LOAD_CONST
-            if i >= 2:
-                prev1 = bytecode[i-1]
-                prev2 = bytecode[i-2]
-                if (prev1.opname == "LOAD_CONST" and
-                    prev2.opname == "LOAD_CONST"):
-                    # This is likely constant-folded at runtime
-                    # but not at compile time
-                    return False
+            # Arithmetic still runs at runtime, so nothing was folded away
+            return False
 
-    # If no unfolded constants found, it may be optimized
-    # Actually, this is tricky - better to check for LOAD_CONST with computed value
+    # No arithmetic instruction left: constants were folded at compile time
     return True
 '''
 print(solution_4)

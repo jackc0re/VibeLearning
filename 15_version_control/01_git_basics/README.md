@@ -177,7 +177,7 @@ build/
 ## ✅ Removing and Moving Files
 
 ```bash
-# Stage removal of a file (keeps working copy)
+# Stage removal of a file (also deletes it from disk)
 git rm filename.py
 
 # Remove file from Git but keep locally
@@ -205,7 +205,7 @@ git restore filename.py
 # Undo last commit (keep changes)
 git reset --soft HEAD~1
 
-# Undo last commit (discard changes)
+# Undo last commit AND discard the changes (scratch repos only - this is permanent)
 git reset --hard HEAD~1
 
 # Revert a commit (create new commit that undoes it)

@@ -24,7 +24,11 @@ class StockTicker:
 
 
 def exercise_1_capture_updates():
-    """Return a list of prices collected by two subscribers."""
+    """
+    Return a list of prices collected by two subscribers.
+
+    Publish 10, then 12, then 15; both subscribers add to the same list.
+    """
     # YOUR CODE HERE
     pass
 
@@ -49,7 +53,7 @@ def checkout(total, discount_strategy):
 
 
 def exercise_2_strategy():
-    """Return totals for flat and percent strategies for total=50."""
+    """Return a tuple (flat_total, percent_total) for total=50."""
     # YOUR CODE HERE
     pass
 
@@ -112,8 +116,8 @@ def run_tests():
     # Exercise 1
     print("\nExercise 1: Observer")
     prices = exercise_1_capture_updates()
-    expected = [10, 12, 12, 15]
-    status = "✓" if prices == expected else "✗"
+    expected = [10, 10, 12, 12, 15, 15]
+    status = "PASS" if prices == expected else "FAIL"
     if prices != expected:
         all_passed = False
     print(f"  {status} captured updates: {prices}")
@@ -122,7 +126,7 @@ def run_tests():
     print("\nExercise 2: Strategy")
     totals = exercise_2_strategy()
     expected = (45, 45.0)
-    status = "✓" if totals == expected else "✗"
+    status = "PASS" if totals == expected else "FAIL"
     if totals != expected:
         all_passed = False
     print(f"  {status} totals: {totals}")
@@ -131,16 +135,16 @@ def run_tests():
     print("\nExercise 3: Command")
     value = exercise_3_command_sequence()
     expected = 1
-    status = "✓" if value == expected else "✗"
+    status = "PASS" if value == expected else "FAIL"
     if value != expected:
         all_passed = False
     print(f"  {status} final value: {value}")
 
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 

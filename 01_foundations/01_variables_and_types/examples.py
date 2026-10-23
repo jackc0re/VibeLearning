@@ -119,7 +119,7 @@ print(f"Age is {age}, is adult: {is_adult}")
 
 temperature = 35
 is_hot = temperature > 30
-print(f"Temperature is {temperature}°C, is hot: {is_hot}")
+print(f"Temperature is {temperature} degC, is hot: {is_hot}")
 
 # =============================================================================
 # NONE TYPE

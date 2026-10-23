@@ -190,7 +190,8 @@ Sets use hash tables for O(1) average operations:
 | Add | O(1) |
 | Remove | O(1) |
 | Check membership | O(1) |
-| Union/Intersection | O(min(len(a), len(b))) |
+| Union | O(len(a) + len(b)) |
+| Intersection | O(min(len(a), len(b))) |
 
 This makes `in` checks much faster than lists:
 ```python

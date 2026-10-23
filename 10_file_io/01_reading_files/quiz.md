@@ -53,5 +53,58 @@ What does `encoding="utf-8"` affect?
 
 ---
 
-[Back to Reading Files README](README.md)
+## Question 4
+What does `f.readline()` return when the file has no more lines?
 
+- A) `None`
+- B) An empty string `""`
+- C) It raises `EOFError`
+- D) The last line again
+
+<details>
+<summary>Show Answer</summary>
+
+**B)** At end-of-file, `readline()` returns an empty string `""` — this is the
+classic signal used in `while` loops (`if not line: break`).
+
+</details>
+
+---
+
+## Question 5
+What happens if you call `open("missing.txt", "r", encoding="utf-8")` and the file does not exist?
+
+- A) An empty file is created
+- B) The program returns `None`
+- C) It raises `FileNotFoundError`
+- D) It raises `PermissionError`
+
+<details>
+<summary>Show Answer</summary>
+
+**C)** Reading a non-existent path raises `FileNotFoundError`. Only write modes
+like `"w"` or `"a"` create the file.
+
+</details>
+
+---
+
+## Question 6
+After `with open("notes.txt") as f:` block ends, what is true about `f`?
+
+- A) The file content disappears from disk
+- B) The file is closed — further reads raise `ValueError: I/O operation on closed file`
+- C) The file stays open until the program exits
+- D) `f` becomes `None`
+
+<details>
+<summary>Show Answer</summary>
+
+**B)** The `with` block closes the file. Using `f` afterwards (e.g. `f.read()`)
+raises `ValueError` because the file is closed.
+
+</details>
+
+---
+
+[Back to Reading Files README](README.md)

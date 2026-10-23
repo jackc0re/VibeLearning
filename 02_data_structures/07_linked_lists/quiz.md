@@ -94,3 +94,11 @@ D) Simple iteration
 Inserting at start is O(1) vs O(n) for arrays.
 
 </details>
+
+---
+
+## How did you do?
+
+- **5 correct:** Excellent!
+- **3-4 correct:** Good, review the ones you missed.
+- **0-2 correct:** Re-read the README, then try again.

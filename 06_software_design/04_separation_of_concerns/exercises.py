@@ -87,7 +87,7 @@ def run_tests():
     ]
     for text, expected in tests_1:
         result = exercise_1_parse_csv_ints(text)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} parse({text!r}) = {result} (expected {expected})")
@@ -95,7 +95,7 @@ def run_tests():
     print("\nExercise 2: Tip")
     result = exercise_2_total_with_tip(10, 20)
     expected = 12.0
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} total_with_tip(10,20) = {result} (expected {expected})")
@@ -103,7 +103,7 @@ def run_tests():
     print("\nExercise 3: Format")
     result = exercise_3_format_receipt(12)
     expected = "TOTAL: $12.00"
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} format_receipt(12) = {result!r} (expected {expected!r})")
@@ -111,7 +111,7 @@ def run_tests():
     print("\nExercise 4: Pipeline")
     result = exercise_4_compute_receipt("10, 5", 20)
     expected = "TOTAL: $18.00"
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} compute_receipt('10, 5',20) = {result!r} (expected {expected!r})")
@@ -125,16 +125,16 @@ def run_tests():
     ]
     for text, expected in tests_5:
         result = exercise_5_is_positive_int(text)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} is_positive_int({text!r}) = {result} (expected {expected})")
 
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 

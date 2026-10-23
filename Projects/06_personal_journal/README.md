@@ -95,7 +95,7 @@ class Entry:
     
     def _generate_id(self):
         """Generate unique ID using timestamp."""
-        return datetime.now().strftime("%Y%m%d%H%M%S%f")[:16]
+        return datetime.now().strftime("%Y%m%d%H%M%S%f")
     
     def to_dict(self):
         """Convert entry to dictionary for JSON serialization."""

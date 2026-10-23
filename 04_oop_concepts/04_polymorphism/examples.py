@@ -92,7 +92,7 @@ class Vector:
     # Multiplication (*) - Scalar multiplication
     def __mul__(self, other):
         if isinstance(other, (int, float)):
-             return Vector(self.x * other, self.y * other)
+            return Vector(self.x * other, self.y * other)
         return NotImplemented
 
 v1 = Vector(2, 4)

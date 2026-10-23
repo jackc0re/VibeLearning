@@ -177,7 +177,8 @@ cursor.execute('''
         product,
         quantity,
         quantity * unit_price as subtotal,
-        quantity * unit_price + shipping_cost as total_cost
+        quantity * unit_price + shipping_cost as total_cost,
+        (quantity * unit_price + shipping_cost) / quantity as avg_price_per_unit
     FROM orders
 ''')
 

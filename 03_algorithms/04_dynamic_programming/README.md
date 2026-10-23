@@ -207,6 +207,26 @@ def coin_change(coins, amount):
     return dp[amount] if dp[amount] != float('inf') else -1
 ```
 
+#### Tracing the Table by Hand
+
+Coins `[1, 5, 10, 25]`, amount `11`. Each row is `dp` after one more coin is allowed, so you can watch the answers get cheaper. `inf` means "not reachable yet".
+
+| After adding | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| start | 0 | inf | inf | inf | inf | inf | inf | inf | inf | inf | inf | inf |
+| coin 1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+| coin 5 | 0 | 1 | 2 | 3 | 4 | 1 | 2 | 3 | 4 | 5 | 2 | 3 |
+| coin 10 | 0 | 1 | 2 | 3 | 4 | 1 | 2 | 3 | 4 | 5 | 1 | 2 |
+| coin 25 | 0 | 1 | 2 | 3 | 4 | 1 | 2 | 3 | 4 | 5 | 1 | 2 |
+
+1. **start** — only amount 0 is free (`dp[0] = 0`); everything else is still unknown.
+2. **coin 1** — with a 1-coin only, amount `i` needs exactly `i` coins: `dp[i] = i`.
+3. **coin 5** — amount 5 becomes one coin, amounts 6 through 9 become `5 + rest`, and 10 becomes `5 + 5 = 2`.
+4. **coin 10** — amount 10 becomes one coin and 11 becomes `10 + 1 = 2`; the rest are unchanged.
+5. **coin 25** — bigger than every amount here, so the row is unchanged (that's the `coin <= i` check).
+
+Final answer: `dp[11] = 2` (10 + 1). Filling the table coin by coin as above, or amount by amount as the code does, reaches the same numbers.
+
 ### 3. Longest Common Subsequence (LCS)
 
 Find the longest subsequence common to two strings.
@@ -403,7 +423,7 @@ for i in range(1, n + 1):
 for length in range(2, n + 1):
     for i in range(n - length + 1):
         j = i + length - 1
-        dp[i][j] = f(all splits between i and j)
+        dp[i][j] = f(i, j)  # e.g. try every split point k between i and j
 ```
 
 ---

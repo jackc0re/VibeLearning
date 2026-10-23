@@ -174,11 +174,11 @@ for username, password in test_cases:
     print(f"\nTrying: {username} / {password}")
     if username == correct_user:
         if password == correct_pass:
-            print("✅ Login successful! Welcome, admin.")
+            print("PASS Login successful! Welcome, admin.")
         else:
-            print("❌ Incorrect password. Please try again.")
+            print("FAIL Incorrect password. Please try again.")
     else:
-        print("❌ Username not found.")
+        print("FAIL Username not found.")
 
 # SOLUTION 4
 print("\n--- Solution 4 ---")

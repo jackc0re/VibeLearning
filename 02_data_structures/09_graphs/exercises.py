@@ -40,6 +40,38 @@ def path_exists(graph, start, end):
 print(f"Path A to D: {path_exists(graph, 'A', 'D')}")
 print(f"Path A to X: {path_exists(graph, 'A', 'X')}")
 
+# Solution 2: Count connected components
+print()
+print("--- Solution 2: Count connected components ---")
+def count_components(graph):
+    visited = set()
+    components = 0
+    for start in graph:
+        if start in visited:
+            continue
+        components += 1
+        queue = deque([start])
+        while queue:
+            node = queue.popleft()
+            if node in visited:
+                continue
+            visited.add(node)
+            queue.extend(graph.get(node, []))
+    return components
+
+# One component: every node above is reachable from A
+print(f"Components in graph: {count_components(graph)}")
+
+# Three components: {A, B}, {C, D} and the lonely {E}
+split = {
+    'A': ['B'],
+    'B': ['A'],
+    'C': ['D'],
+    'D': ['C'],
+    'E': []
+}
+print(f"Components in split graph: {count_components(split)}")
+
 print("\n" + "=" * 50)
 print("Great job! Move on to 10_hash_tables next.")
 print("=" * 50)

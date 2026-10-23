@@ -139,7 +139,7 @@ direction = "C"  # C = Celsius to Fahrenheit, F = Fahrenheit to Celsius
 # Your code below:
 converted_temp = None  # Convert the temperature
 if converted_temp is not None:
-    print(f"{temp}° {direction} -> {converted_temp:.2f}°")
+    print(f"{temp} deg {direction} -> {converted_temp:.2f} deg")
 
 
 # =============================================================================
@@ -281,7 +281,7 @@ else:
     print("Invalid direction")
 
 if converted_temp is not None:
-    print(f"{temp}° {direction} -> {converted_temp:.2f}°")
+    print(f"{temp} deg {direction} -> {converted_temp:.2f} deg")
 
 # SOLUTION 2.7
 print("\n--- Solution 2.7 ---")

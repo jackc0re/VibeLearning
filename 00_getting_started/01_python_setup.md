@@ -98,7 +98,6 @@ You'll need a place to write your code. Here are great options:
 
 ### Other Options
 - **Sublime Text** — Lightweight and fast
-- **Atom** — Free and customizable
 - **IDLE** — Comes with Python (basic but sufficient to start)
 
 ---
@@ -108,7 +107,7 @@ You'll need a place to write your code. Here are great options:
 Create a file called `hello.py` with this content:
 
 ```python
-print("Hello, VibeLearning! 🚀")
+print("Hello, VibeLearning!")
 print("Python is working correctly!")
 ```
 
@@ -119,7 +118,7 @@ python hello.py
 
 You should see:
 ```
-Hello, VibeLearning! 🚀
+Hello, VibeLearning!
 Python is working correctly!
 ```
 

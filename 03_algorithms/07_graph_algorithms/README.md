@@ -2,6 +2,8 @@
 
 > Traversing and analyzing connected data structures
 
+**BFS, DFS, and Dijkstra are the essentials; the rest are for a second pass.** Every other algorithm on this page reuses the same adjacency-list traversal, so it is much easier once BFS and DFS are automatic.
+
 ---
 
 ## 📋 Table of Contents
@@ -255,6 +257,8 @@ Dijkstra from A:
 
 ### Bellman-Ford Algorithm
 
+> **Optional** — second pass. Only needed when edge weights can be negative; Dijkstra covers the normal case.
+
 Handles **negative edge weights**. Detects negative cycles.
 
 ```python
@@ -291,6 +295,8 @@ def bellman_ford(graph, vertices, start):
 ```
 
 ### Floyd-Warshall Algorithm
+
+> **Optional** — second pass. Only needed for *all-pairs* shortest paths — Dijkstra already handles one source at a time.
 
 Finds shortest paths between **all pairs** of vertices.
 
@@ -382,6 +388,8 @@ def prim(graph, start):
 ```
 
 ### Kruskal's Algorithm
+
+> **Optional** — second pass. Prim's algorithm above solves the same MST problem; Kruskal's adds a Union-Find structure.
 
 Sorts all edges and adds them if they don't create a cycle.
 

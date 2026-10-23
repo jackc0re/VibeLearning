@@ -56,4 +56,4 @@ if __name__ == "__main__":
     demo_validation()
     demo_guard_clauses()
     demo_assertions()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

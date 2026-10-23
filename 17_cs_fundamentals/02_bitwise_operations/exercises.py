@@ -172,9 +172,9 @@ def toggle_bit(value, position):
 # Test your functions
 # value = 0b10101010  # 170
 # print(f"Original: {value:08b}")
-# print(f"Get bit 3: {get_bit(value, 3)}")      # Expected: False
+# print(f"Get bit 2: {get_bit(value, 2)}")      # Expected: False
 # print(f"Get bit 1: {get_bit(value, 1)}")      # Expected: True
-# print(f"Set bit 3: {set_bit(value, 3):08b}")  # Expected: 10101110
+# print(f"Set bit 2: {set_bit(value, 2):08b}")  # Expected: 10101110
 # print(f"Clear bit 1: {clear_bit(value, 1):08b}")  # Expected: 10101000
 # print(f"Toggle bit 0: {toggle_bit(value, 0):08b}")  # Expected: 10101011
 
@@ -185,7 +185,7 @@ print("\n--- Exercise 7: Reverse Bits ---")
 print("""
 Write a function that reverses the bits of an 8-bit number.
 
-Example: 0b10110010 → 0b01001101
+Example: 0b10110010 -> 0b01001101
 """)
 
 def reverse_bits(n):
@@ -214,7 +214,7 @@ print("""
 You have a list of integers where every number appears twice except one.
 Find the number that appears only once using XOR.
 
-Example: [4, 3, 4, 5, 3] → 5
+Example: [4, 3, 4, 5, 3] -> 5
 
 Hint: A ^ A = 0, and A ^ 0 = A
 """)
@@ -260,10 +260,10 @@ print("d) ~5 in 8-bit = 250")
 print("   ~00000101 & 11111111 = 11111010 = 250")
 
 print("\n--- Exercise 2: Shift Operations ---")
-print("a) 8 << 2 = 32  (8 × 4)")
-print("b) 32 >> 3 = 4  (32 ÷ 8)")
-print("c) 1 << 8 = 256  (1 × 256)")
-print("d) 255 >> 4 = 15  (255 ÷ 16 = 15.9375 → 15)")
+print("a) 8 << 2 = 32  (8 x 4)")
+print("b) 32 >> 3 = 4  (32 / 8)")
+print("c) 1 << 8 = 256  (1 x 256)")
+print("d) 255 >> 4 = 15  (255 / 16 = 15.9375 -> 15)")
 
 print("\n--- Exercise 3: Permission System (Solution) ---")
 solution_3 = '''
@@ -325,7 +325,7 @@ print(solution_5)
 print("\n--- Exercise 6: Bit Manipulation Functions (Solution) ---")
 solution_6 = '''
 def get_bit(value, position):
-    return (value >> position) & 1
+    return ((value >> position) & 1) != 0
     # OR: return (value & (1 << position)) != 0
 
 def set_bit(value, position):

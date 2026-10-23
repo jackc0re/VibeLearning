@@ -9,6 +9,10 @@ print("=" * 50)
 print("GRAPHS - Examples")
 print("=" * 50)
 
+# =============================================================================
+# GRAPH REPRESENTATION
+# =============================================================================
+
 # Graph as adjacency list
 graph = {
     'A': ['B', 'C'],
@@ -24,6 +28,9 @@ print("Adjacency List:")
 for node, neighbors in graph.items():
     print(f"  {node}: {neighbors}")
 
+# =============================================================================
+# BFS (BREADTH-FIRST SEARCH)
+# =============================================================================
 print("\n--- BFS ---")
 def bfs(graph, start):
     visited = set()
@@ -39,6 +46,9 @@ def bfs(graph, start):
 
 print(f"BFS from A: {bfs(graph, 'A')}")
 
+# =============================================================================
+# DFS (DEPTH-FIRST SEARCH)
+# =============================================================================
 print("\n--- DFS ---")
 def dfs(graph, start, visited=None):
     if visited is None:
@@ -53,5 +63,5 @@ def dfs(graph, start, visited=None):
 print(f"DFS from A: {dfs(graph, 'A')}")
 
 print("\n" + "=" * 50)
-print("Examples complete!")
+print("Examples complete! Try exercises.py next.")
 print("=" * 50)

@@ -12,7 +12,7 @@
 - [ ] Kind-Of
 - [ ] Parent-Of
 
-## 3. Which approach is generally generally preferred for flexibility and loose coupling?
+## 3. Which approach is generally preferred for flexibility and loose coupling?
 - [ ] Deep Inheritance Hierarchies
 - [ ] Composition
 - [ ] Multiple Inheritance

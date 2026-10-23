@@ -280,7 +280,7 @@ cursor.execute('''
 
 1. **Forgetting GROUP BY** - All non-aggregated columns must be in GROUP BY
 2. **Null handling** - `NULL + anything = NULL`; use `COALESCE`
-3. **Type mismatches** - Can't concatenate numbers and strings directly
+3. **Type mismatches** - SQLite quietly converts mixed types (other databases raise an error); use an explicit `CAST` when it matters
 4. **Losing data** - Inner joins exclude non-matching rows unintentionally
 5. **Over-pivoting** - Creating too many columns makes data unwieldy
 

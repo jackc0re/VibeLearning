@@ -73,13 +73,13 @@ class ChatClient:
             self.input_loop()
             
         except socket.timeout:
-            print("❌ Connection timed out. Is the server running?")
+            print("FAIL Connection timed out. Is the server running?")
         except ConnectionRefusedError:
-            print("❌ Connection refused. Is the server running?")
+            print("FAIL Connection refused. Is the server running?")
         except socket.gaierror:
-            print(f"❌ Invalid host address: {self.host}")
+            print(f"FAIL Invalid host address: {self.host}")
         except Exception as e:
-            print(f"❌ Connection error: {e}")
+            print(f"FAIL Connection error: {e}")
         finally:
             self.disconnect()
     
@@ -109,7 +109,7 @@ class ChatClient:
                 message = self.socket.recv(4096)
                 if not message:
                     # Server closed connection
-                    print("\n❌ Server closed the connection.")
+                    print("\nFAIL Server closed the connection.")
                     self.running = False
                     break
                 
@@ -122,7 +122,7 @@ class ChatClient:
                 self.display_message(message)
                 
             except ConnectionResetError:
-                print("\n❌ Connection lost.")
+                print("\nFAIL Connection lost.")
                 self.running = False
                 break
             except ConnectionAbortedError:
@@ -133,7 +133,7 @@ class ChatClient:
                 break
             except Exception as e:
                 if self.running:
-                    print(f"\n❌ Error receiving message: {e}")
+                    print(f"\nFAIL Error receiving message: {e}")
                 break
     
     def update_state(self, message):
@@ -197,7 +197,7 @@ class ChatClient:
         try:
             self.socket.send(message.encode('utf-8'))
         except Exception as e:
-            print(f"\n❌ Error sending message: {e}")
+            print(f"\nFAIL Error sending message: {e}")
             self.running = False
     
     # =========================================================================
@@ -244,7 +244,7 @@ class ChatClient:
                 break
             except Exception as e:
                 if self.running:
-                    print(f"\n❌ Error: {e}")
+                    print(f"\nFAIL Error: {e}")
                 break
     
     def clear_screen(self):
@@ -299,11 +299,11 @@ class ChatClientNonBlocking:
             self.main_loop()
             
         except socket.timeout:
-            print("❌ Connection timed out.")
+            print("FAIL Connection timed out.")
         except ConnectionRefusedError:
-            print("❌ Connection refused.")
+            print("FAIL Connection refused.")
         except Exception as e:
-            print(f"❌ Connection error: {e}")
+            print(f"FAIL Connection error: {e}")
         finally:
             self.disconnect()
     
@@ -322,7 +322,7 @@ class ChatClientNonBlocking:
                         try:
                             message = self.socket.recv(4096)
                             if not message:
-                                print("\n❌ Server closed connection.")
+                                print("\nFAIL Server closed connection.")
                                 self.running = False
                                 return
                             
@@ -333,7 +333,7 @@ class ChatClientNonBlocking:
                         except BlockingIOError:
                             pass
                         except Exception as e:
-                            print(f"\n❌ Error: {e}")
+                            print(f"\nFAIL Error: {e}")
                             self.running = False
                             return
                 
@@ -358,7 +358,7 @@ class ChatClientNonBlocking:
                 break
             except Exception as e:
                 if self.running:
-                    print(f"\n❌ Error: {e}")
+                    print(f"\nFAIL Error: {e}")
                 break
     
     def get_prompt(self):

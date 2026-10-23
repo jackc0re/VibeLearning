@@ -163,9 +163,9 @@ for url, description in test_urls:
     result = safe_request(url, headers={"User-Agent": "TestApp"})
     
     if result["success"]:
-        print(f"✅ Success! Status: {result['status']}")
+        print(f"PASS Success! Status: {result['status']}")
     else:
-        print(f"❌ {result['error_type']}")
+        print(f"FAIL {result['error_type']}")
         if 'status' in result:
             print(f"   Status: {result['status']}")
         if 'reason' in result:
@@ -305,7 +305,7 @@ types = {"id": int, "name": str, "email": str}
 
 for data, description in test_cases:
     is_valid, errors = validate_api_response(data, required, types)
-    status = "✅ Valid" if is_valid else "❌ Invalid"
+    status = "PASS Valid" if is_valid else "FAIL Invalid"
     print(f"{status}: {description}")
     if errors:
         for error in errors:
@@ -328,7 +328,7 @@ csv_data = """id,name,role,active
 print("Parsing CSV data:")
 reader = csv.DictReader(StringIO(csv_data))
 for row in reader:
-    status = "✅" if row["active"] == "true" else "❌"
+    status = "PASS" if row["active"] == "true" else "FAIL"
     print(f"  {status} {row['name']} ({row['role']})")
 
 # =============================================================================

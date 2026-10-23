@@ -84,7 +84,7 @@ What is the time complexity of the naive recursive Fibonacci vs DP Fibonacci?
 - **DP**: Each Fibonacci number is computed exactly once
 
 For F(40):
-- Naive: ~1 billion operations
+- Naive: ~330 million function calls
 - DP: 40 operations
 
 </details>
@@ -122,7 +122,7 @@ For coin change with coins [1, 3, 4] and amount 6, what is the minimum number of
 - A) 2 (3+3)
 - B) 3 (4+1+1)
 - C) 6 (1+1+1+1+1+1)
-- D) 2 (4+1+1)
+- D) 3 (4+1+1)
 
 <details>
 <summary>Show Answer</summary>

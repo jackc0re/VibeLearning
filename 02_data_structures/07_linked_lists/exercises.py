@@ -63,6 +63,37 @@ def has_cycle(ll):
     return False
 print(f"Has cycle: {has_cycle(ll)}")
 
+# Solution 3: Remove duplicates
+print()
+print("--- Solution 3: Remove duplicates ---")
+def to_list(ll):
+    values = []
+    current = ll.head
+    while current:
+        values.append(current.data)
+        current = current.next
+    return values
+
+def remove_duplicates(ll):
+    seen = set()
+    previous = None
+    current = ll.head
+    while current:
+        if current.data in seen:
+            previous.next = current.next      # skip this node
+        else:
+            seen.add(current.data)
+            previous = current
+        current = current.next
+    return ll
+
+dup = LinkedList()
+for value in [1, 2, 3, 2, 4, 1]:
+    dup.append(value)
+print(f"Before: {to_list(dup)}")
+remove_duplicates(dup)
+print(f"After:  {to_list(dup)}")
+
 print("\n" + "=" * 50)
 print("Great job! Move on to 08_trees next.")
 print("=" * 50)

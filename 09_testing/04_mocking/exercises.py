@@ -44,7 +44,6 @@ def run_tests():
         saturday = datetime(2026, 1, 24, 9, 0, 0, tzinfo=timezone.utc)
         with patch(module_path) as mock_datetime:
             mock_datetime.now.return_value = saturday
-            mock_datetime.side_effect = lambda *args, **kwargs: datetime(*args, **kwargs)
 
             ok = should_send_newsletter() is False
             print("  ", "PASS" if ok else "FAIL", "does not send on weekend")
@@ -54,7 +53,6 @@ def run_tests():
         monday = datetime(2026, 1, 26, 9, 0, 0, tzinfo=timezone.utc)
         with patch(module_path) as mock_datetime:
             mock_datetime.now.return_value = monday
-            mock_datetime.side_effect = lambda *args, **kwargs: datetime(*args, **kwargs)
 
             ok = should_send_newsletter() is True
             print("  ", "PASS" if ok else "FAIL", "sends on weekday")

@@ -71,7 +71,7 @@ echo "Content B" > file.txt
 git add file.txt
 git commit -m "Add content B"
 
-git checkout -c feature-c
+git checkout -b feature-c
 echo "Content C" > file.txt
 git add file.txt
 git commit -m "Add content C"
@@ -370,16 +370,20 @@ git checkout main  # Should work if you haven't changed main
 
 git checkout feature
 echo "more" >> data.txt
-git checkout main
-echo "main change" >> data.txt
+git commit -am "Commit the feature change"   # data.txt now differs on each branch
 
-# Now try to switch (will fail)
+git checkout main
+echo "main change" >> data.txt               # uncommitted
+
+# Now try to switch (fails: local changes would be overwritten)
 git checkout feature  # Error!
 
-# Stash and switch
+# Park your work, switch, then come back and restore it
 git stash
-git checkout feature
-git stash pop
+git checkout feature   # Works now: the working directory is clean
+
+git checkout main
+git stash pop          # Your "main change" is back
 ```
 
 </details>

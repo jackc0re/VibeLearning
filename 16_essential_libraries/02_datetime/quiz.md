@@ -87,7 +87,7 @@ D) 7
 <details>
 <summary>Click for answer</summary>
 
-**B) 0**
+**A) 0**
 
 Monday is 0, Tuesday is 1, ..., Sunday is 6.
 </details>

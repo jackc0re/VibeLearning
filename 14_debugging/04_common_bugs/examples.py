@@ -334,6 +334,10 @@ def demo_equality_vs_identity() -> None:
 
 
 if __name__ == "__main__":
+    print("=" * 50)
+    print("COMMON BUGS - Examples")
+    print("=" * 50)
+
     demo_off_by_one()
     demo_mutable_default()
     demo_modify_while_iterating()
@@ -345,3 +349,7 @@ if __name__ == "__main__":
     demo_late_binding_closure()
     demo_dict_iteration()
     demo_equality_vs_identity()
+
+    print("\n" + "=" * 50)
+    print("Examples complete! Try exercises.py next.")
+    print("=" * 50)

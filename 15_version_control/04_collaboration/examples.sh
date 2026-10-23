@@ -214,7 +214,8 @@ echo ""
 echo "# Update feature branch"
 echo "git checkout feature-xyz"
 echo "git rebase upstream/main"
-echo "git push origin feature-xyz"
+echo "# The rebase rewrote the branch, so a plain push is rejected"
+echo "git push --force-with-lease origin feature-xyz"
 echo ""
 
 # =============================================================================

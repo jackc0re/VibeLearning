@@ -131,7 +131,8 @@ def group_by(items, key):
 print("\n--- Exercise 6: Two Sum ---\n")
 """
 Given a list of numbers and a target sum, find two numbers that add up
-to the target. Return their indices. Use a dictionary for O(n) solution.
+to the target. Return their indices. Use a dictionary so you only need one pass
+through the list.
 
 Example:
   nums = [2, 7, 11, 15], target = 9

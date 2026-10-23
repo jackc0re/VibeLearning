@@ -98,9 +98,9 @@ Understanding Big-O notation is crucial for this module:
                    ├──► 03_recursion ──► 04_dynamic_programming
 02_sorting ────────┤                          │
                    │                          ▼
-                   └──► 06_divide_and_conquer
-                   
-02_sorting ──────────► 07_graph_algorithms (uses DFS/BFS)
+                   ├──► 06_divide_and_conquer
+                   │
+                   └──► 07_graph_algorithms
 ```
 
 **Recommended order:**

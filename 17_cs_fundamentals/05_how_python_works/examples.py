@@ -114,7 +114,7 @@ When you import a module, Python:
 Example structure:
   my_module.py
   __pycache__/
-    └── my_module.cpython-39.pyc
+    +-- my_module.cpython-39.pyc
 """)
 
 # Show where Python looks for modules
@@ -328,7 +328,7 @@ When Python imports a module:
 1. Check sys.modules cache
 2. Find the module file (.py, .pyc, .so, etc.)
 3. Load source or bytecode
-4. Compile if needed (.py → .pyc)
+4. Compile if needed (.py -> .pyc)
 5. Execute module code
 6. Store in sys.modules
 7. Bind names in importing namespace

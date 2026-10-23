@@ -57,7 +57,7 @@ class TodoApp:
     """Main todo application class."""
     
     PRIORITY_ORDER = {'High': 1, 'Medium': 2, 'Low': 3}
-    PRIORITY_COLORS = {'High': '🔴', 'Medium': '🟡', 'Low': '🟢'}
+    PRIORITY_COLORS = {'High': '[!]', 'Medium': '[~]', 'Low': '[-]'}
     
     def __init__(self, filename="tasks.json"):
         self.tasks = []
@@ -206,8 +206,8 @@ class TodoApp:
         print("-" * 80)
         
         for i, task in enumerate(tasks, 1):
-            status = "✓" if task.completed else "○"
-            priority_icon = self.PRIORITY_COLORS.get(task.priority, '⚪')
+            status = "[x]" if task.completed else "[ ]"
+            priority_icon = self.PRIORITY_COLORS.get(task.priority, '[?]')
             
             due_str = ""
             if task.due_date:
@@ -223,7 +223,7 @@ class TodoApp:
         print("=" * 80)
         stats = self.get_statistics()
         print(f"Total: {stats['total']} | Complete: {stats['complete']} | Incomplete: {stats['incomplete']} | Overdue: {stats['overdue']}")
-        print("    " + f"Priority Distribution: Low 🟢 {sum(1 for t in tasks if t.priority == 'Low')} | Medium 🟡 {sum(1 for t in tasks if t.priority == 'Medium')} | High 🔴 {sum(1 for t in tasks if t.priority == 'High')}")
+        print("    " + f"Priority Distribution: Low [-] {sum(1 for t in tasks if t.priority == 'Low')} | Medium [~] {sum(1 for t in tasks if t.priority == 'Medium')} | High [!] {sum(1 for t in tasks if t.priority == 'High')}")
     
     def display_menu(self):
         """Display main menu."""
@@ -269,7 +269,8 @@ def get_due_date():
         if not due_str:
             return None
         try:
-            return datetime.strptime(due_str, "%Y-%m-%d").date()
+            # A datetime (not date) keeps comparisons with datetime.now() valid.
+            return datetime.strptime(due_str, "%Y-%m-%d")
         except ValueError:
             print("Invalid date format. Use YYYY-MM-DD (e.g., 2024-12-25)")
 

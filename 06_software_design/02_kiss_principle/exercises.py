@@ -83,7 +83,7 @@ def run_tests():
     ]
     for value, low, high, expected in tests_1:
         result = exercise_1_clamp(value, low, high)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} clamp({value},{low},{high}) = {result} (expected {expected})")
@@ -95,7 +95,7 @@ def run_tests():
     ]
     for a, b, expected in tests_2:
         result = exercise_2_safe_divide(a, b)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} safe_divide({a},{b}) = {result} (expected {expected})")
@@ -107,7 +107,7 @@ def run_tests():
     ]
     for name, expected in tests_3:
         result = exercise_3_clean_username(name)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} clean_username({name!r}) = {result!r} (expected {expected!r})")
@@ -122,7 +122,7 @@ def run_tests():
     ]
     for user, expected in tests_4:
         result = exercise_4_can_edit(user)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} can_edit({user}) = {result} (expected {expected})")
@@ -130,23 +130,23 @@ def run_tests():
     print("\nExercise 5: Summarize")
     result = exercise_5_summarize([1, 2, 3])
     expected = {"min": 1, "max": 3, "avg": 2.0}
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} summarize([1,2,3]) = {result} (expected {expected})")
 
     result = exercise_5_summarize([])
     expected = None
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} summarize([]) = {result} (expected {expected})")
 
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 

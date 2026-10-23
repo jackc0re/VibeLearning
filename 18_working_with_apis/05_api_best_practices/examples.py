@@ -48,10 +48,10 @@ limiter = RateLimiter(max_requests=3, window_seconds=10)
 for i in range(5):
     if limiter.can_proceed():
         limiter.record_request()
-        print(f"Request {i+1}: Allowed ✅")
+        print(f"Request {i+1}: Allowed PASS")
     else:
         wait = limiter.wait_time()
-        print(f"Request {i+1}: Rate limited ⏳ (wait {wait:.1f}s)")
+        print(f"Request {i+1}: Rate limited (wait {wait:.1f}s)")
     time.sleep(1)
 
 # =============================================================================
@@ -354,7 +354,7 @@ print("Creating robust client...")
 client = RobustAPIClient("https://httpbin.org", rate_limit_delay=0.5)
 
 success, data = client.request("/get")
-print(f"Request result: {'✅ Success' if success else '❌ Failed'}")
+print(f"Request result: {'PASS Success' if success else 'FAIL Failed'}")
 if success:
     print(f"Got response with URL: {data.get('url', 'N/A')}")
 

@@ -43,12 +43,12 @@ def linear_search_with_steps(arr, target):
     for i in range(len(arr)):
         print(f"Step {i + 1}: Checking index {i}, value = {arr[i]}")
         if arr[i] == target:
-            print(f"  ✓ Found {target} at index {i}!")
+            print(f"  PASS Found {target} at index {i}!")
             return i
         else:
-            print(f"  ✗ {arr[i]} ≠ {target}, continue...")
+            print(f"  FAIL {arr[i]} != {target}, continue...")
     
-    print(f"  ✗ {target} not found in array")
+    print(f"  FAIL {target} not found in array")
     return -1
 
 
@@ -116,7 +116,7 @@ def binary_search_with_steps(arr, target):
         print(f"  Checking arr[{mid}] = {arr[mid]}")
         
         if arr[mid] == target:
-            print(f"  ✓ Found {target} at index {mid}!")
+            print(f"  PASS Found {target} at index {mid}!")
             return mid
         elif arr[mid] < target:
             print(f"  {arr[mid]} < {target}, search right half")
@@ -127,7 +127,7 @@ def binary_search_with_steps(arr, target):
         
         step += 1
     
-    print(f"  ✗ {target} not found in array")
+    print(f"  FAIL {target} not found in array")
     return -1
 
 
@@ -548,5 +548,5 @@ if __name__ == "__main__":
     demo_complexity_comparison()
     
     print("\n" + "=" * 60)
-    print("✓ All examples completed!")
+    print("PASS All examples completed!")
     print("=" * 60)

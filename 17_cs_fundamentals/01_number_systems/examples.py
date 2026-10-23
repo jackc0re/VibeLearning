@@ -20,9 +20,9 @@ print(f"Type: {type(decimal_number)}")
 # Breaking down a decimal number
 number = 253
 print(f"\nBreaking down {number}:")
-print(f"  2 × 100 = {2 * 100}")
-print(f"  5 × 10  = {5 * 10}")
-print(f"  3 × 1   = {3 * 1}")
+print(f"  2 x 100 = {2 * 100}")
+print(f"  5 x 10  = {5 * 10}")
+print(f"  3 x 1   = {3 * 1}")
 print(f"  Sum: {2 * 100 + 5 * 10 + 3 * 1}")
 
 # =============================================================================
@@ -76,10 +76,10 @@ for o in octal_values:
     print(f"Octal {o} = Decimal {decimal}")
 
 # Binary to Octal conversion
-print("\n--- Binary ↔ Octal Conversion ---")
+print("\n--- Binary <-> Octal Conversion ---")
 print("Each octal digit = 3 binary digits")
 print("Binary:  001 010 111 100")
-print("Octal:     1   2   7   4  →  0o1274")
+print("Octal:     1   2   7   4  ->  0o1274")
 
 # =============================================================================
 # HEXADECIMAL (BASE-16)
@@ -107,10 +107,10 @@ for h in hex_values:
     print(f"Hex {h} = Decimal {decimal}")
 
 # Binary to Hex conversion
-print("\n--- Binary ↔ Hex Conversion ---")
+print("\n--- Binary <-> Hex Conversion ---")
 print("Each hex digit = 4 binary digits (1 nibble)")
 print("Binary:  1101 1011 1111 0000")
-print("Hex:        D    B    F    0  →  0xDBF0")
+print("Hex:        D    B    F    0  ->  0xDBF0")
 
 # Real-world: Colors in hex
 print("\n--- Real World: Color Codes ---")
@@ -235,7 +235,7 @@ print("\n--- Manual Decimal to Binary ---")
 for num in [5, 10, 42, 255]:
     manual = decimal_to_binary(num)
     builtin = bin(num)[2:]
-    print(f"Decimal {num:3d} → Binary {manual:8s} (builtin: {builtin})")
+    print(f"Decimal {num:3d} -> Binary {manual:8s} (builtin: {builtin})")
 
 # Decimal to hex manually
 def decimal_to_hex(n):
@@ -257,7 +257,7 @@ print("\n--- Manual Decimal to Hex ---")
 for num in [10, 255, 4095, 65535]:
     manual = decimal_to_hex(num)
     builtin = hex(num)[2:].upper()
-    print(f"Decimal {num:5d} → Hex {manual:4s} (builtin: {builtin})")
+    print(f"Decimal {num:5d} -> Hex {manual:4s} (builtin: {builtin})")
 
 print("\n" + "=" * 60)
 print("Examples complete! Try the exercises next.")

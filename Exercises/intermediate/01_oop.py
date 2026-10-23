@@ -174,8 +174,8 @@ class Temperature:
 # Test (uncomment after implementing)
 # temp1 = Temperature.celsius_to_fahrenheit(25)
 # temp2 = Temperature.from_kelvin(300)
-# print(f"25°C = {temp1}°F")
-# print(f"300K = {temp2}°C")
+# print(f"25 degC = {temp1} degF")
+# print(f"300K = {temp2} degC")
 
 
 # =============================================================================
@@ -408,8 +408,8 @@ class Temperature:
 
 temp1 = Temperature.celsius_to_fahrenheit(25)
 temp2 = Temperature.from_kelvin(300)
-print(f"25°C = {temp1}°F")
-print(f"300K = {temp2.celsius}°C")
+print(f"25 degC = {temp1} degF")
+print(f"300K = {temp2.celsius} degC")
 
 # SOLUTION 1.7
 print("\n--- Solution 1.7 ---")

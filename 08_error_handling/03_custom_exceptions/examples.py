@@ -23,6 +23,10 @@ class InsufficientFundsError(PaymentError):
     pass
 
 
+class InvalidAmountError(PaymentError):
+    pass
+
+
 def register(email):
     if "@" not in email:
         raise InvalidEmailError("Email must contain '@'")
@@ -33,7 +37,7 @@ def charge(amount):
     if amount > 100:
         raise CardDeclinedError("Card limit exceeded")
     if amount <= 0:
-        raise InsufficientFundsError("Invalid amount")
+        raise InvalidAmountError("Amount must be greater than 0")
     return "charged"
 
 
@@ -54,8 +58,13 @@ def demo_hierarchy():
     except PaymentError as exc:
         print("  Payment error:", exc)
 
+    try:
+        charge(-5)
+    except InvalidAmountError as exc:
+        print("  Invalid amount:", exc)
+
 
 if __name__ == "__main__":
     demo_custom_exceptions()
     demo_hierarchy()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

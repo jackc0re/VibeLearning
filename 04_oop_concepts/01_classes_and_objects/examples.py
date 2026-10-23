@@ -77,7 +77,7 @@ class Robot:
         if Robot.population == 0:
             print(f"{self.name} was the last one.")
         else:
-            print(f"There are still {Robot.population} robots working.")
+            print(f"Robots still working: {Robot.population}")
 
 droid1 = Robot("R2-D2")
 droid2 = Robot("C-3PO")

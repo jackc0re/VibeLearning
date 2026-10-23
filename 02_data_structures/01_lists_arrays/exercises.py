@@ -34,7 +34,7 @@ Then:
 print("\n--- Exercise 2: List Comprehension ---\n")
 """
 Use list comprehension to create:
-1. A list of cubes from 1 to 10 (1³, 2³, 3³, ... 10³)
+1. A list of cubes from 1 to 10 (1^3, 2^3, 3^3, ... 10^3)
 2. A list of all numbers from 1-50 that are divisible by 3
 3. A list where each word from ['apple', 'banana', 'cherry'] is reversed
 """
@@ -175,12 +175,10 @@ print(f"Second largest: {second}")
 # SOLUTION 4
 print("\n--- Solution 4 ---")
 test_list = [1, 2, 2, 3, 4, 3, 5, 1, 6]
-seen = set()
 unique = []
 for item in test_list:
-    if item not in seen:
+    if item not in unique:   # not seen yet -> keep it
         unique.append(item)
-        seen.add(item)
 print(f"Original: {test_list}")
 print(f"Unique: {unique}")
 

@@ -61,7 +61,7 @@ Return: (is_valid, list_of_errors)
 
 Examples:
 {"id": 1, "name": "Alice", "email": "a@b.com"} -> (True, [])
-{"id": "1", "name": "Bob"} -> (False, ["id should be int", "missing email"])
+{"id": "1", "name": "Bob"} -> (False, ["id should be int, got str", "missing email"])
 """
 
 # Your code here:
@@ -81,7 +81,7 @@ Given this nested structure (like from a weather API):
 }
 
 Write a function get_weather_summary(data) that returns:
-"London, UK: 15°C, Cloudy. Tomorrow's high: 18°C"
+"London, UK: 15 degC, Cloudy. Tomorrow's high: 18 degC"
 
 Handle missing data gracefully by using "Unknown" for missing values.
 """
@@ -271,7 +271,7 @@ def get_weather_summary(data):
     days = forecast.get("days", [])
     tomorrow_high = days[0].get("max_temp", "Unknown") if days else "Unknown"
     
-    return f"{city}, {country}: {temp}°C, {text}. Tomorrow's high: {tomorrow_high}°C"
+    return f"{city}, {country}: {temp} degC, {text}. Tomorrow's high: {tomorrow_high} degC"
 
 # Test
 weather_data = {

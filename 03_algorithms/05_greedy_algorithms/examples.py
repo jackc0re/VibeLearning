@@ -174,7 +174,7 @@ def job_sequencing(jobs):
     Greedy choice: Schedule highest profit jobs first,
     in the latest available slot before deadline.
     
-    Time: O(n² ) - can be improved with disjoint set
+    Time: O(n^2 ) - can be improved with disjoint set
     """
     if not jobs:
         return 0, []
@@ -470,14 +470,14 @@ def demo_coin_change():
     amount = 67
     
     print(f"\nUS Coins: {coins}")
-    print(f"Amount: {amount}¢")
+    print(f"Amount: {amount}c")
     
     result = coin_change_greedy(coins, amount)
     print(f"Greedy solution: {result}")
     print(f"Number of coins: {len(result)}")
     
     # Show where greedy fails
-    print("\n⚠️ Where greedy FAILS:")
+    print("\n Where greedy FAILS:")
     coins = [1, 3, 4]
     amount = 6
     
@@ -683,5 +683,5 @@ if __name__ == "__main__":
     demo_connect_ropes()
     
     print("\n" + "=" * 60)
-    print("✓ All greedy algorithm examples completed!")
+    print("PASS All greedy algorithm examples completed!")
     print("=" * 60)

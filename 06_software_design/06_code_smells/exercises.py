@@ -56,7 +56,7 @@ def exercise_4_total_prices(prices, tax_rate):
 
 
 def exercise_5_build_email(subject, body):
-    """Return an email dict with subject/body and a fixed sender."""
+    """Return an email dict with subject/body and the fixed sender 'noreply@example.com'."""
     # YOUR CODE HERE
     pass
 
@@ -79,7 +79,7 @@ def run_tests():
     ]
     for amount, code, expected in tests_1:
         result = exercise_1_apply_discount(amount, code)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} apply_discount({amount},{code}) = {result} (expected {expected})")
@@ -91,7 +91,7 @@ def run_tests():
     ]
     for first, last, title, expected in tests_2:
         result = exercise_2_full_name(first, last, title)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} full_name({first},{last},{title}) = {result!r} (expected {expected!r})")
@@ -102,7 +102,7 @@ def run_tests():
     tests_3 = [(user_ok, True), (user_no, False), (None, False)]
     for user, expected in tests_3:
         result = exercise_3_can_publish(user)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} can_publish({user}) = {result} (expected {expected})")
@@ -110,7 +110,7 @@ def run_tests():
     print("\nExercise 4: Total Prices")
     result = exercise_4_total_prices([10, 20], 0.10)
     expected = [11.0, 22.0]
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} total_prices([10,20],0.10) = {result} (expected {expected})")
@@ -118,16 +118,16 @@ def run_tests():
     print("\nExercise 5: Build Email")
     result = exercise_5_build_email("Hi", "Hello")
     expected = {"from": "noreply@example.com", "subject": "Hi", "body": "Hello"}
-    status = "✓" if result == expected else "✗"
+    status = "PASS" if result == expected else "FAIL"
     if result != expected:
         all_passed = False
     print(f"  {status} build_email(...) = {result} (expected {expected})")
 
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 

@@ -20,7 +20,7 @@ def bubble_sort(arr):
     """
     Bubble Sort - repeatedly swap adjacent elements if in wrong order.
     
-    Time Complexity: O(n²)
+    Time Complexity: O(n^2)
     Space Complexity: O(1)
     Stable: Yes
     """
@@ -73,7 +73,7 @@ def selection_sort(arr):
     """
     Selection Sort - find minimum and place at beginning, repeat.
     
-    Time Complexity: O(n²)
+    Time Complexity: O(n^2)
     Space Complexity: O(1)
     Stable: No
     """
@@ -122,7 +122,7 @@ def insertion_sort(arr):
     """
     Insertion Sort - build sorted array one element at a time.
     
-    Time Complexity: O(n²), O(n) for nearly sorted
+    Time Complexity: O(n^2), O(n) for nearly sorted
     Space Complexity: O(1)
     Stable: Yes
     """
@@ -210,7 +210,7 @@ def merge_sort_visualized(arr, depth=0):
     print(f"{indent}merge_sort({arr})")
     
     if len(arr) <= 1:
-        print(f"{indent}  → base case, return {arr}")
+        print(f"{indent}  -> base case, return {arr}")
         return arr
     
     mid = len(arr) // 2
@@ -220,7 +220,7 @@ def merge_sort_visualized(arr, depth=0):
     right = merge_sort_visualized(arr[mid:], depth + 1)
     
     result = merge(left, right)
-    print(f"{indent}  Merge {left} + {right} → {result}")
+    print(f"{indent}  Merge {left} + {right} -> {result}")
     
     return result
 
@@ -233,7 +233,7 @@ def quick_sort(arr):
     """
     Quick Sort - pick pivot, partition around it, recursively sort.
     
-    Time Complexity: O(n log n) average, O(n²) worst
+    Time Complexity: O(n log n) average, O(n^2) worst
     Space Complexity: O(log n)
     Stable: No
     """
@@ -368,7 +368,7 @@ def heapify(arr, n, i):
 def demo_simple_sorts():
     """Demonstrate simple sorting algorithms."""
     print("=" * 60)
-    print("SIMPLE SORTING ALGORITHMS (O(n²))")
+    print("SIMPLE SORTING ALGORITHMS (O(n^2))")
     print("=" * 60)
     
     arr = [64, 34, 25, 12, 22, 11, 90]
@@ -608,5 +608,5 @@ if __name__ == "__main__":
     demo_sorting_objects()
     
     print("\n" + "=" * 60)
-    print("✓ All sorting examples completed!")
+    print("PASS All sorting examples completed!")
     print("=" * 60)

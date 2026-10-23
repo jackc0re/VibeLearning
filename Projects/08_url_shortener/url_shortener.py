@@ -382,11 +382,11 @@ class URLShortenerApp:
         success, result = self.shortener.shorten_url(url)
         
         if success:
-            print(f"\n✓ URL shortened successfully!")
+            print(f"\nPASS URL shortened successfully!")
             print(f"Short code: {result}")
             print(f"Short URL: short.url/{result}")
         else:
-            print(f"\n✗ Error: {result}")
+            print(f"\nFAIL Error: {result}")
     
     def resolve_url_menu(self):
         """Handle URL resolution."""
@@ -400,10 +400,10 @@ class URLShortenerApp:
         success, result = self.shortener.resolve_url(code)
         
         if success:
-            print(f"\n✓ Original URL: {result}")
+            print(f"\nPASS Original URL: {result}")
             print(f"Click count updated!")
         else:
-            print(f"\n✗ Error: {result}")
+            print(f"\nFAIL Error: {result}")
     
     def list_urls_menu(self):
         """Display all shortened URLs."""
@@ -446,7 +446,7 @@ class URLShortenerApp:
                 else:
                     print(f"  Last Accessed: Never")
             else:
-                print(f"\n✗ Short code '{code}' not found")
+                print(f"\nFAIL Short code '{code}' not found")
         else:
             # Show overall stats
             urls = self.shortener.get_stats()
@@ -487,13 +487,13 @@ class URLShortenerApp:
             
             if confirm == 'yes':
                 if self.shortener.delete_url(code):
-                    print("\n✓ URL deleted successfully!")
+                    print("\nPASS URL deleted successfully!")
                 else:
-                    print("\n✗ Error deleting URL")
+                    print("\nFAIL Error deleting URL")
             else:
                 print("\nDeletion cancelled.")
         else:
-            print(f"\n✗ Short code '{code}' not found")
+            print(f"\nFAIL Short code '{code}' not found")
     
     def get_choice(self, min_val, max_val):
         """Get valid menu choice from user.

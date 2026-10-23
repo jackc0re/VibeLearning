@@ -1,4 +1,4 @@
-# 🧠 Function Basics Quiz
+# 🧠 Classes and Objects Quiz
 
 ## 1. What is a Class?
 - [ ] A specific instance of data

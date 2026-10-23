@@ -205,7 +205,10 @@ set_time = time.time() - start
 
 print(f"1000 lookups in list of {size:,} items: {list_time:.4f}s")
 print(f"1000 lookups in set of {size:,} items: {set_time:.4f}s")
-print(f"Set is {list_time/set_time:.0f}x faster!")
+if set_time == 0:
+    print("Set lookup was too fast to measure - that's the point!")
+else:
+    print(f"Set is {list_time/set_time:.0f}x faster!")
 
 print("\n" + "=" * 50)
 print("Examples complete! Try exercises.py next.")

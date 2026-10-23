@@ -130,6 +130,42 @@ Or run with: `python -m pdb -c continue script.py`
 
 ---
 
+## ⚠️ Common Mistakes
+
+1. **Mixing up `s` and `n`** - `s` (step) enters the next function call, so you
+   suddenly land inside `print` or library code; `n` (next) runs the whole line
+   and stays at your level. When lost, `w` shows where you are and `q` quits.
+2. **Forgetting `breakpoint()` in shipped code** - a stray `breakpoint()` in a
+   deployed script hangs it waiting for a terminal. Set `PYTHONBREAKPOINT=0`
+   to disable all breakpoints globally, and remove them before committing.
+3. **Repeating `p var` after every step when `display var` exists** -
+   `display var` re-prints the variable automatically each time it changes.
+4. **Typing Python into the pdb prompt** - some words are pdb commands, not
+   Python: `p x` prints, but bare `l` lists code instead of showing a variable
+   named `l`. Prefix real Python with `!` (`!total = 0` reassigns a variable).
+
+---
+
+## 📝 Quick Reference
+
+| Command | Short | Effect |
+|---|---|---|
+| `next` | `n` | run current line, step **over** calls |
+| `step` | `s` | step **into** a call |
+| `return` | `r` | finish current function, stop at its return |
+| `continue` | `c` | run to the next breakpoint |
+| `print expr` | `p expr` | evaluate and print an expression |
+| `where` | `w` | show the call stack |
+| `list` | `l` | show source around the current line |
+| `break 42` | `b 42` | set a breakpoint (optionally conditional: `b 42, x > 10`) |
+| `quit` | `q` | leave the debugger |
+
+```python
+breakpoint()          # pause here (Python 3.7+); PYTHONBREAKPOINT=0 disables it
+```
+
+---
+
 ## 🔍 Key Takeaways
 
 - Use `breakpoint()` to pause execution.

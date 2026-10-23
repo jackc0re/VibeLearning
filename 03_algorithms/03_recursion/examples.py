@@ -19,7 +19,7 @@ def factorial(n):
     """
     Calculate n! (n factorial) recursively.
     
-    n! = n × (n-1) × (n-2) × ... × 2 × 1
+    n! = n x (n-1) x (n-2) x ... x 2 x 1
     0! = 1 (by definition)
     
     Time Complexity: O(n)
@@ -38,11 +38,11 @@ def factorial_visualized(n, depth=0):
     print(f"{indent}factorial({n})")
     
     if n <= 1:
-        print(f"{indent}  → Base case: return 1")
+        print(f"{indent}  -> Base case: return 1")
         return 1
     
     result = n * factorial_visualized(n - 1, depth + 1)
-    print(f"{indent}  → return {n} * {result // n} = {result}")
+    print(f"{indent}  -> return {n} * {result // n} = {result}")
     return result
 
 
@@ -107,7 +107,7 @@ def fibonacci_visualized(n, depth=0, memo=None):
     print(f"{indent}fib({n})")
     
     if n in memo:
-        print(f"{indent}  → cached: {memo[n]}")
+        print(f"{indent}  -> cached: {memo[n]}")
         return memo[n]
     
     if n <= 0:
@@ -118,7 +118,7 @@ def fibonacci_visualized(n, depth=0, memo=None):
     result = (fibonacci_visualized(n - 1, depth + 1, memo) + 
               fibonacci_visualized(n - 2, depth + 1, memo))
     memo[n] = result
-    print(f"{indent}  → return {result}")
+    print(f"{indent}  -> return {result}")
     return result
 
 
@@ -253,11 +253,11 @@ def gcd_visualized(a, b, depth=0):
     print(f"{indent}gcd({a}, {b})")
     
     if b == 0:
-        print(f"{indent}  → Base case: return {a}")
+        print(f"{indent}  -> Base case: return {a}")
         return a
     
     result = gcd_visualized(b, a % b, depth + 1)
-    print(f"{indent}  → return {result}")
+    print(f"{indent}  -> return {result}")
     return result
 
 
@@ -467,7 +467,7 @@ def demo_fibonacci():
     print(f"   Memoized: F(30) = {result}, Time: {memoized_time:.6f}s")
     
     # Note: Naive version would be too slow to run
-    print("   Naive: Skipped (would take ~30 seconds!)")
+    print("   Naive: Skipped (about 2.7 million recursive calls for F(30))")
 
 
 def demo_list_operations():
@@ -500,7 +500,7 @@ def demo_string_operations():
     # Reverse string
     print("\n1. Reverse String:")
     for s in ["hello", "python", "recursion"]:
-        print(f"   '{s}' → '{reverse_string(s)}'")
+        print(f"   '{s}' -> '{reverse_string(s)}'")
     
     # Palindrome check
     print("\n2. Palindrome Check:")
@@ -619,5 +619,5 @@ if __name__ == "__main__":
     demo_nested_structures()
     
     print("\n" + "=" * 60)
-    print("✓ All recursion examples completed!")
+    print("PASS All recursion examples completed!")
     print("=" * 60)

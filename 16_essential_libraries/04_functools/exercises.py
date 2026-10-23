@@ -226,8 +226,8 @@ celsius_to_fahrenheit = partial(convert_temp, from_unit='C', to_unit='F')
 km_to_miles = partial(convert_solution, from_unit='km', to_unit='miles',
                       factors={'km': 1, 'miles': 1.60934})
 
-print(f"0°C = {celsius_to_fahrenheit(0):.1f}°F")
-print(f"100°C = {celsius_to_fahrenheit(100):.1f}°F")
+print(f"0 degC = {celsius_to_fahrenheit(0):.1f} degF")
+print(f"100 degC = {celsius_to_fahrenheit(100):.1f} degF")
 print(f"10 km = {km_to_miles(10):.2f} miles")
 
 # =============================================================================

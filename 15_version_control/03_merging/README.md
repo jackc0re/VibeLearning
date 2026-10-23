@@ -87,7 +87,7 @@ git merge feature-login
 # Custom merge message
 git merge feature-login -m "Merge login feature"
 
-# No merge commit (for fast-forward)
+# Force a merge commit even when a fast-forward is possible
 git merge feature-login --no-ff
 ```
 
@@ -97,7 +97,8 @@ git merge feature-login --no-ff
 
 | Strategy | Description | When to Use |
 |----------|-------------|-------------|
-| `recursive` | Default strategy | Most cases |
+| `ort` | Default strategy in modern Git (2.34+) | Most cases |
+| `recursive` | Older default, still selectable | Legacy scripts |
 | `resolve` | Simpler, older | Simple merges |
 | `octopus` | Merge multiple branches | Release merges |
 | `ours` | Keep current branch's version | Ignoring other changes |
@@ -193,7 +194,7 @@ git mergetool
 
 # Configure merge tool
 git config --global merge.tool vscode
-git config --global mergetool.vscode.cmd "code --wait $MERGED"
+git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 
 # Available tools: vimdiff, kdiff3, opendiff, etc.
 git config --global merge.tool vimdiff
@@ -311,7 +312,7 @@ git merge-base main feature
 # Undo last merge (keep changes)
 git reset --soft HEAD~1
 
-# Undo last merge (discard changes)
+# Undo last merge AND discard the changes (scratch repos only - this is permanent)
 git reset --hard HEAD~1
 
 # Revert a merge commit

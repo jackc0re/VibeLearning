@@ -60,4 +60,4 @@ if __name__ == "__main__":
     demo_builtin_exceptions()
     demo_raise()
     demo_stack_trace()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

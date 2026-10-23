@@ -23,7 +23,7 @@ Deadlocks usually appear when:
 ## ✅ Prevention Strategies
 
 - **Lock ordering:** always acquire multiple locks in a consistent order
-- **Timeouts:** use `lock.acquire(timeout=...)` and back off
+- **Timeouts:** use `lock.acquire(timeout=...)` — on timeout it **returns `False`** instead of blocking forever, so you can back off and retry
 - **Reduce shared state:** fewer locks, fewer problems
 - **Use higher-level designs:** queues, actors, single owner of state
 
@@ -33,6 +33,39 @@ Deadlocks usually appear when:
 
 - Deadlocks are often caused by inconsistent lock ordering.
 - The simplest fix is often a design fix (reduce lock sharing).
+
+---
+
+## ⚠️ Common Mistakes
+
+- Acquiring a second lock while holding the first — with a different order somewhere else in the code
+- Calling `lock.acquire()` with no timeout in code that takes multiple locks (a deadlock then hangs forever)
+- Running callbacks or unknown code while holding a lock — it may grab more locks behind your back
+- Forgetting that `with lock:` blocks too — two `with` blocks nested in crossed orders deadlock just the same
+
+---
+
+## 📝 Quick Reference
+
+```python
+# Back off instead of hanging forever:
+got = lock.acquire(timeout=0.5)
+if got:
+    try:
+        ...
+    finally:
+        lock.release()
+# got is False when the timeout expired - treat that as "try later"
+
+# Consistent global order for multiple locks:
+first, second = sorted((lock_a, lock_b), key=id)
+with first:
+    with second:
+        ...
+```
+
+`examples.py` for this topic shows the crossed-lock pattern rescued by a
+timeout — including why you see `False` in its output.
 
 ---
 

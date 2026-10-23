@@ -170,7 +170,7 @@ def can_rent_car(age, has_license, has_accidents, pays_extra):
 # print(can_rent_car(20, True, False, False))   # Expected: False
 # print(can_rent_car(20, True, False, True))    # Expected: True
 # print(can_rent_car(24, True, True, False))    # Expected: False
-# print(can_rent_car(24, True, True, True))     # Expected: True
+# print(can_rent_car(24, True, True, True))     # Expected: False (under 25 with accidents)
 # print(can_rent_car(30, False, False, False))  # Expected: False
 
 # =============================================================================
@@ -230,7 +230,7 @@ def majority_vote_count(a, b, c):
 # for a, b, c in inputs:
 #     alg = majority_vote_algebra(a, b, c)
 #     cnt = majority_vote_count(a, b, c)
-#     print(f"{a}, {b}, {c} → Algebra: {alg}, Count: {cnt}")
+#     print(f"{a}, {b}, {c} -> Algebra: {alg}, Count: {cnt}")
 
 # =============================================================================
 # EXERCISE 8: DNF and CNF

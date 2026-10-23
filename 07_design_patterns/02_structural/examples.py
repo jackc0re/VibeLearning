@@ -21,7 +21,7 @@ class PaymentAdapter:
         self.legacy_payment = legacy_payment
 
     def pay(self, dollars):
-        self.legacy_payment.pay_cents(int(dollars * 100))
+        self.legacy_payment.pay_cents(round(dollars * 100))
 
 
 def demo_adapter():
@@ -109,4 +109,4 @@ if __name__ == "__main__":
     demo_adapter()
     demo_decorator()
     demo_facade()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

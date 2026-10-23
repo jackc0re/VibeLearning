@@ -66,7 +66,7 @@ def demo_pure_functions():
 
     print("\n2) Conversion function")
     for c in [0, 25, 100]:
-        print(f"{c}°C -> {celsius_to_fahrenheit(c)}°F")
+        print(f"{c} degC -> {celsius_to_fahrenheit(c)} degF")
 
     print("\n3) Avoiding mutation")
     items = ["a", "b", "c"]
@@ -91,4 +91,4 @@ def demo_impure_functions():
 if __name__ == "__main__":
     demo_pure_functions()
     demo_impure_functions()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

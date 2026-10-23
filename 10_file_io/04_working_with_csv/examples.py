@@ -35,5 +35,5 @@ def demo_write_and_read_dicts() -> None:
 
 if __name__ == "__main__":
     demo_write_and_read_dicts()
-    print("✓ Examples complete!")
+    print("PASS Examples complete!")
 

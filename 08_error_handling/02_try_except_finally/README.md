@@ -21,6 +21,7 @@ except ValueError:
 - **`finally`** runs *always* (success or failure), perfect for cleanup.
 
 ```python
+file = None
 try:
     file = open("data.txt")
     data = file.read()
@@ -29,7 +30,8 @@ except FileNotFoundError:
 else:
     print("Read successful")
 finally:
-    file.close()
+    if file is not None:
+        file.close()
 ```
 
 ---

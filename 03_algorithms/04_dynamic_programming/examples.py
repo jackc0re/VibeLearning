@@ -303,7 +303,7 @@ def lis_dp(nums):
     dp[i] = length of LIS ending at index i
     dp[i] = max(dp[j] + 1) for all j < i where nums[j] < nums[i]
     
-    Time: O(n²), Space: O(n)
+    Time: O(n^2), Space: O(n)
     """
     if not nums:
         return 0
@@ -444,7 +444,7 @@ def house_robber(nums):
 
 def unique_paths(m, n):
     """
-    Count unique paths from top-left to bottom-right in m×n grid.
+    Count unique paths from top-left to bottom-right in mxn grid.
     Can only move right or down.
     
     dp[i][j] = number of paths to cell (i, j)
@@ -635,7 +635,7 @@ def demo_edit_distance():
     
     for word1, word2 in pairs:
         dist = edit_distance(word1, word2)
-        print(f"\n  '{word1}' → '{word2}'")
+        print(f"\n  '{word1}' -> '{word2}'")
         print(f"  Edit distance: {dist}")
 
 
@@ -686,7 +686,7 @@ def demo_unique_paths():
     print("\nUnique paths without obstacles:")
     for m, n in grids:
         paths = unique_paths(m, n)
-        print(f"  {m}×{n} grid: {paths} paths")
+        print(f"  {m}x{n} grid: {paths} paths")
     
     print("\nWith obstacles:")
     obstacle_grid = [
@@ -718,5 +718,5 @@ if __name__ == "__main__":
     demo_unique_paths()
     
     print("\n" + "=" * 60)
-    print("✓ All dynamic programming examples completed!")
+    print("PASS All dynamic programming examples completed!")
     print("=" * 60)

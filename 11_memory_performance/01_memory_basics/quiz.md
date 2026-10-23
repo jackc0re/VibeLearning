@@ -36,5 +36,59 @@ Why might you use `memoryview` with bytes?
 
 ---
 
-[Back to Memory Basics README](README.md)
+## Question 3
+What does `id(obj)` tell you?
 
+- A) The object's value
+- B) The object's type
+- C) The object's identity (which specific object it is)
+- D) How many references point to the object
+
+<details>
+<summary>Show Answer</summary>
+
+**C)** `id()` returns an identity that is unique among all living objects.
+Two variables have the same `id` exactly when they refer to the same object.
+
+</details>
+
+---
+
+## Question 4
+Which of these types is **immutable**?
+
+- A) `list`
+- B) `dict`
+- C) `set`
+- D) `tuple`
+
+<details>
+<summary>Show Answer</summary>
+
+**D)** Tuples cannot be changed after creation; lists, dicts, and sets can
+change in place.
+
+</details>
+
+---
+
+## Question 5
+`data` is a bytes object. What is the difference between `data[1:4]` and
+`memoryview(data)[1:4]`?
+
+- A) No difference, both copy the bytes
+- B) The plain slice creates a **copy**; the memoryview slice is a **view** into the same buffer
+- C) The plain slice is a view; the memoryview slice copies
+- D) Both raise `TypeError`
+
+<details>
+<summary>Show Answer</summary>
+
+**B)** Slicing bytes copies; slicing a `memoryview` gives another view, so no
+copy happens until you ask for one (e.g. `.tobytes()`).
+
+</details>
+
+---
+
+[Back to Memory Basics README](README.md)

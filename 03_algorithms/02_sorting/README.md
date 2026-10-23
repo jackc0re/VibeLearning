@@ -245,10 +245,10 @@ def merge(left, right):
 Array: [10, 7, 8, 9, 1, 5]
 Pivot: 5
 
-Partition: [1, 5, 8, 9, 7, 10]  (elements < 5 on left, > 5 on right)
-           ^pivot at correct position
+Partition: [1, 5, 8, 9, 10, 7]  (elements < 5 on left, > 5 on right)
+              ^pivot at index 1 — its final position
 
-Recursively sort [1] and [8, 9, 7, 10]
+Recursively sort [1] and [8, 9, 10, 7]
 ```
 
 #### Implementation

@@ -106,11 +106,11 @@ class FileOrganizer:
         category_dir = self.source_dir / category
         
         if not category_dir.exists():
-            category_dir.mkdir(parents=True, exist_ok=True)
-            if not self.dry_run:
-                self.logger.info(f"Created directory: {category_dir}")
-            else:
+            if self.dry_run:
                 self.logger.info(f"[DRY RUN] Would create directory: {category_dir}")
+            else:
+                category_dir.mkdir(parents=True, exist_ok=True)
+                self.logger.info(f"Created directory: {category_dir}")
         
         destination = category_dir / file_path.name
         
@@ -171,15 +171,19 @@ class FileOrganizer:
         return organized
     
     def undo_last_operation(self):
-        """Undo the last move operation."""
+        """Undo the most recent successful move operation."""
         if not self.operations:
             self.logger.info("No operations to undo.")
             return False
         
-        last_op = self.operations[-1]
+        last_op = None
+        for operation in reversed(self.operations):
+            if operation['status'] == 'success':
+                last_op = operation
+                break
         
-        if last_op['status'] != 'success':
-            self.logger.info("Last operation was not successful, cannot undo.")
+        if last_op is None:
+            self.logger.info("No successful operations to undo.")
             return False
         
         source = last_op['destination']
@@ -265,13 +269,13 @@ class FileOrganizer:
                 category_counts[category] = category_counts.get(category, 0) + 1
             
             for category, count in sorted(category_counts.items()):
-                bar = '█' * int(count * 50 / max(category_counts.values())) if category_counts else ''
+                bar = '#' * int(count * 50 / max(category_counts.values())) if category_counts else ''
                 print(f"  {category:15s}: {count:3d} {bar}")
         
         if self.errors:
             print("\nErrors encountered:")
             for i, error in enumerate(self.errors, 1):
-                print(f"  {i}. ✗ {error}")
+                print(f"  {i}. FAIL {error}")
         
         print("=" * 70)
     
@@ -292,10 +296,10 @@ class FileOrganizer:
                 
                 for i, op in enumerate(self.operations, 1):
                     status_symbol = {
-                        'success': '✓',
-                        'error': '✗',
-                        'dry_run': '○',
-                        'undone': '↶'
+                        'success': 'PASS',
+                        'error': 'FAIL',
+                        'dry_run': 'dry ',
+                        'undone': 'undo'
                     }.get(op['status'], '?')
                     
                     f.write(f"{i:3d}. {status_symbol} {op['source_name']} -> {op['category']}/\n")

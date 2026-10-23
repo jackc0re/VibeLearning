@@ -191,25 +191,25 @@ print("\n--- Solution 6 ---")
 username = "cool_coder_42"
 display_name = "Cool Coder"
 bio = """Python enthusiast.
-Learning to code one day at a time.
-Coffee lover ☕"""
+Learning one day at a time.
+Coffee lover!"""
 age = 25
 account_active = True
 
 print(f"""
-╔══════════════════════════════╗
-║         USER PROFILE         ║
-╠══════════════════════════════╣
-║ Username: @{username:<17}║
-║ Display:  {display_name:<18}║
-║ Age:      {age:<18}║
-║ Active:   {str(account_active):<18}║
-╠══════════════════════════════╣
-║ Bio:                         ║
-║ {bio.split(chr(10))[0]:<27} ║
-║ {bio.split(chr(10))[1]:<27} ║
-║ {bio.split(chr(10))[2]:<27} ║
-╚══════════════════════════════╝
++==============================+
+|         USER PROFILE         |
++==============================+
+| Username: @{username:<18}|
+| Display:  {display_name:<19}|
+| Age:      {age:<19}|
+| Active:   {str(account_active):<19}|
++==============================+
+| Bio:                         |
+| {bio.split(chr(10))[0]:<28} |
+| {bio.split(chr(10))[1]:<28} |
+| {bio.split(chr(10))[2]:<28} |
++==============================+
 """)
 
 print("\n" + "=" * 50)

@@ -45,7 +45,11 @@ class HashTable:
         return False
     
     def contains(self, key):
-        return self.get(key) is not None
+        index = self._hash(key)
+        for k, v in self.table[index]:
+            if k == key:
+                return True
+        return False
 
 ht = HashTable()
 ht.set("a", 1)

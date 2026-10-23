@@ -176,7 +176,8 @@ examples = [
 ]
 
 for text, method in examples:
-    result = eval(f"'{text}'.{method}")
+    # method is a string like "isalpha()"; strip the "()" to get the name
+    result = getattr(text, method[:-2])()
     print(f"'{text}'.{method}: {result}")
 
 # =============================================================================

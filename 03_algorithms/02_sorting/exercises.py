@@ -314,8 +314,8 @@ def exercise_12_one_swap_sort(arr):
     Example:
         >>> exercise_12_one_swap_sort([1, 3, 2])
         True  # Swap 3 and 2
-        >>> exercise_12_one_swap_sort([3, 2, 1])
-        False  # Needs more than one swap
+        >>> exercise_12_one_swap_sort([2, 1, 4, 3])
+        False  # Needs two swaps
         >>> exercise_12_one_swap_sort([1, 2, 3])
         True  # Already sorted
     """
@@ -375,7 +375,7 @@ def run_tests():
     ]
     for arr, expected in tests_1:
         result = exercise_1_bubble_sort(arr)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} bubble_sort({arr}) = {result}")
@@ -390,7 +390,7 @@ def run_tests():
     ]
     for arr, expected in tests_2:
         result = exercise_2_selection_sort(arr)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} selection_sort({arr}) = {result}")
@@ -405,7 +405,7 @@ def run_tests():
     ]
     for arr, expected in tests_3:
         result = exercise_3_insertion_sort(arr)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} insertion_sort({arr}) = {result}")
@@ -420,7 +420,7 @@ def run_tests():
     ]
     for arr, expected in tests_4:
         result = exercise_4_merge_sort(arr)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} merge_sort({arr}) = {result}")
@@ -435,7 +435,7 @@ def run_tests():
     ]
     for arr, expected in tests_5:
         result = exercise_5_quick_sort(arr)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} quick_sort({arr}) = {result}")
@@ -450,7 +450,7 @@ def run_tests():
     ]
     for arr, expected in tests_6:
         result = exercise_6_sort_colors(arr)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} sort_colors({arr}) = {result}")
@@ -465,7 +465,7 @@ def run_tests():
     ]
     for arr1, arr2, expected in tests_7:
         result = exercise_7_merge_sorted_arrays(arr1, arr2)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} merge({arr1}, {arr2}) = {result}")
@@ -479,7 +479,7 @@ def run_tests():
     ]
     for arr, expected in tests_8:
         result = exercise_8_sort_by_frequency(arr)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} sort_by_frequency({arr}) = {result}")
@@ -494,7 +494,7 @@ def run_tests():
     ]
     for arr, k, expected in tests_9:
         result = exercise_9_kth_largest(arr, k)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} kth_largest({arr}, {k}) = {result} (expected {expected})")
@@ -508,7 +508,7 @@ def run_tests():
     ]
     for arr, expected in tests_10:
         result = exercise_10_sort_by_abs(arr)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} sort_by_abs({arr}) = {result}")
@@ -522,7 +522,7 @@ def run_tests():
     ]
     for arr, expected in tests_11:
         result = exercise_11_counting_sort(arr)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} counting_sort({arr}) = {result}")
@@ -531,14 +531,14 @@ def run_tests():
     print("\nExercise 12: One Swap Sort")
     tests_12 = [
         ([1, 3, 2], True),
-        ([3, 2, 1], False),
+        ([2, 1, 4, 3], False),
         ([1, 2, 3], True),
         ([1, 5, 3, 4, 2], True),  # Swap 5 and 2
         ([5, 4, 3, 2, 1], False),
     ]
     for arr, expected in tests_12:
         result = exercise_12_one_swap_sort(arr)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} one_swap_sort({arr}) = {result} (expected {expected})")
@@ -552,7 +552,7 @@ def run_tests():
     ]
     for arr, expected in tests_bonus:
         result = bonus_heap_sort(arr)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} heap_sort({arr}) = {result}")
@@ -560,9 +560,9 @@ def run_tests():
     # Summary
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 
@@ -738,6 +738,7 @@ def exercise_11_counting_sort(arr):
 
 # Exercise 12: One Swap Sort
 def exercise_12_one_swap_sort(arr):
+    arr = arr.copy()
     sorted_arr = sorted(arr)
     diff = []
     for i in range(len(arr)):

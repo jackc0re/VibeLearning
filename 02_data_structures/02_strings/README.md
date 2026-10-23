@@ -254,7 +254,8 @@ s[1:3]     # Slice
 # Methods
 s.upper(), s.lower(), s.title()
 s.strip(), s.lstrip(), s.rstrip()
-s.split(), s.join()
+s.split()          # "a,b".split(",") -> ["a", "b"]
+", ".join(words)    # ["a", "b"] -> "a, b" (called on the separator!)
 s.find(), s.index(), s.count()
 s.replace(), s.startswith(), s.endswith()
 s.isalpha(), s.isdigit(), s.isalnum()

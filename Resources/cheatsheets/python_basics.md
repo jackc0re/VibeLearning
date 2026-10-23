@@ -117,9 +117,9 @@ x += 3      # x = x + 3  → 8
 x -= 2      # x = x - 2  → 6
 x *= 4      # x = x * 4  → 24
 x /= 2      # x = x / 2  → 12.0
-x //= 3     # x = x // 3 → 4
-x %= 3      # x = x % 3  → 1
-x **= 2     # x = x ** 2 → 1
+x //= 3     # x = x // 3 → 4.0
+x %= 3      # x = x % 3  → 1.0
+x **= 2     # x = x ** 2 → 1.0
 ```
 
 ---
@@ -129,11 +129,11 @@ x **= 2     # x = x ** 2 → 1
 ### If-Elif-Else
 ```python
 if condition:
-    # Code to execute if True
+    pass  # Code to execute if True
 elif another_condition:
-    # Code to execute if True
+    pass  # Code to execute if True
 else:
-    # Code to execute if all False
+    pass  # Code to execute if all False
 
 # Ternary operator
 value = "yes" if condition else "no"
@@ -316,10 +316,10 @@ s.endswith("!")     # True
 s.replace("World", "Python")  # 'Hello, Python!'
 
 # Strip whitespace
-s = "  hello  "
-s.strip()           # 'hello'
-s.lstrip()          # 'hello  '
-s.rstrip()          # '  hello'
+text = "  hello  "
+text.strip()        # 'hello'
+text.lstrip()       # 'hello  '
+text.rstrip()       # '  hello'
 
 # Split & Join
 s.split(",")        # ['Hello', ' World!']

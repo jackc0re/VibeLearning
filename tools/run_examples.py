@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-run_examples.py - Execute every lesson's examples.py and report failures
-=======================================================================
+run_examples.py - Execute every lesson's examples.py/exercises.py and report failures
+====================================================================================
 
-This is a *learning* repository: the `examples.py` files are the product. Nothing
-used to run them, so a broken example could ship silently. This script runs each one
-in its own process, with a timeout, and fails loudly if any of them crash.
+This is a *learning* repository: the `examples.py` and `exercises.py` files are the
+product. Nothing used to run them, so a broken file could ship silently. This script
+runs each one in its own process, with a timeout, and fails loudly if any of them crash.
 
 Usage:
     python tools/run_examples.py               # run everything
@@ -39,26 +39,37 @@ SKIP_DIRS = {"docs", "site", ".git", "venv", "node_modules", "__pycache__", "too
 # Examples that cannot run unattended. Each entry needs a reason, and the list
 # should stay short - if something is merely broken, fix it instead of skipping.
 SKIP: dict[str, str] = {
-    "18_working_with_apis/04_building_simple_api/examples.py":
-        "binds a TCP port and serves until interrupted",
-    "20_web_basics/02_http_server/examples.py":
-        "starts an HTTP server and blocks forever",
     "18_working_with_apis/05_api_best_practices/examples.py":
-        "demonstrates retry/backoff against a server and opens sockets",
+        "makes live HTTP requests to httpbin.org; no network in CI",
 }
 
 DEFAULT_TIMEOUT = 15
 
 
 def discover(target: Path | None) -> list[Path]:
-    """Find every examples.py under the repo root (or under `target`)."""
+    """Find every examples.py and exercises.py under the repo root (or under `target`).
+
+    The Exercises/<track>/NN_*.py practice files are also discovered by name,
+    so the practice tracks get the same crash protection as lesson content.
+    """
     base = target or ROOT
     found: list[Path] = []
-    for path in sorted(base.rglob("examples.py")):
-        if any(part in SKIP_DIRS for part in path.parts):
-            continue
-        found.append(path)
-    return found
+    for name in ("examples.py", "exercises.py"):
+        for path in sorted(base.rglob(name)):
+            if any(part in SKIP_DIRS for part in path.parts):
+                continue
+            found.append(path)
+    # Find the Exercises root: `base` itself, an ancestor of it, or base/Exercises.
+    exercises_dir = next(
+        (p for p in [base, *base.parents] if p.name == "Exercises"),
+        base / "Exercises",
+    )
+    if exercises_dir.is_dir():
+        for path in sorted(exercises_dir.glob("*/*.py")):
+            if any(part in SKIP_DIRS for part in path.parts):
+                continue
+            found.append(path)
+    return sorted(set(found))
 
 
 def run_one(path: Path, timeout: int) -> tuple[bool, str, float]:

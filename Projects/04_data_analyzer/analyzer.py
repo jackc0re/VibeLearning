@@ -306,7 +306,7 @@ class DataAnalyzer:
             bin_start = min_val + (i * bin_width)
             bin_end = min_val + ((i + 1) * bin_width)
             
-            if i == bins - 1:
+            if i == bins - 1 and max_val != min_val:
                 bin_end = max_val + 0.001
             
             count = sum(1 for v in values if bin_start <= v < bin_end)
@@ -321,7 +321,7 @@ class DataAnalyzer:
         for i, bin_data in enumerate(bins_data):
             range_str = f"[{bin_data['range'][0]:.2f}, {bin_data['range'][1]:.2f})"
             bar_length = int((bin_data['count'] / max_count) * 40)
-            bar = '█' * bar_length
+            bar = '#' * bar_length
             print(f"{range_str:20s} | {bin_data['count']:5d} {bar} {bin_data['percentage']:5.1f}%")
         
         print("=" * 60)
@@ -349,7 +349,7 @@ class DataAnalyzer:
         for label, count in top_items:
             label_str = str(label)[:30]
             bar_length = int((count / max_count) * 40)
-            bar = '█' * bar_length
+            bar = '#' * bar_length
             print(f"{label_str:30s} | {count:5d} {bar}")
         
         print("=" * 60)

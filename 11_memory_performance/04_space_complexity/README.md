@@ -7,6 +7,10 @@ Important idea: distinguish between:
 - **input space** (the data you already have)
 - **auxiliary space** (extra memory the algorithm allocates)
 
+> **📖 About the `O()` notation on this page:** `O(n)` is a compact way to describe
+> how an algorithm's memory use grows as input grows (`n` = input size). We use it here
+> informally — the full explanation is in [Big-O Notation](../05_big_o_notation/README.md).
+
 ---
 
 ## ✅ Common Space Patterns
@@ -33,6 +37,26 @@ Generators often reduce memory usage because they don’t store all results at o
 - Favor in-place operations when safe.
 - Prefer generators for streaming data.
 - Remember recursion uses stack memory.
+
+---
+
+## ⚠️ Common Mistakes
+
+- Copying a huge list when a **view** or generator would do
+- Forgetting that recursion depth costs **stack** memory (deep recursion can crash)
+- Assuming generators are faster — they save *memory*, not necessarily *time*
+
+---
+
+## 📝 Quick Reference
+
+```python
+[x * x for x in range(n)]  # list:      O(n) extra memory
+(x * x for x in range(n))  # generator: O(1) extra memory
+
+nums.sort()                # in-place:  O(1) extra
+sorted(nums)               # new list:  O(n) extra
+```
 
 ---
 

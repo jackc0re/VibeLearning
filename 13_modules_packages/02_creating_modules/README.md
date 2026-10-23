@@ -86,12 +86,13 @@ Code at the module level runs once during import:
 # config.py
 
 import os
+import sqlite3
 
 # This runs when the module is imported
-DATABASE_URL = os.environ.get("DATABASE_URL", "sqlite:///default.db")
+DATABASE_PATH = os.environ.get("DATABASE_PATH", "default.db")
 
 def get_connection():
-    return connect(DATABASE_URL)
+    return sqlite3.connect(DATABASE_PATH)
 ```
 
 Be careful with module-level code that has side effects!

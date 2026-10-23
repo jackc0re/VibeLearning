@@ -66,7 +66,7 @@ class ChatServer:
             self.running = True
             
             print("=" * 60)
-            print("        💬 CHAT SERVER STARTED 💬")
+            print("         CHAT SERVER STARTED ")
             print("=" * 60)
             print(f"Host: {self.host}")
             print(f"Port: {self.port}")
@@ -174,7 +174,7 @@ class ChatServer:
         self.send_to_client(client_socket, welcome)
         
         # Broadcast join notification
-        self.broadcast_message(f"➡️ {temp_nick} has joined the lobby!", 
+        self.broadcast_message(f"-> {temp_nick} has joined the lobby!", 
                               exclude=client_socket)
         
         # Main client loop
@@ -190,6 +190,8 @@ class ChatServer:
                 
                 if message.startswith('/'):
                     self.handle_command(client_socket, message)
+                    if client_socket not in self.clients:
+                        break  # /quit already removed and closed this client
                 else:
                     # Regular chat message
                     self.handle_chat_message(client_socket, message)
@@ -237,7 +239,7 @@ class ChatServer:
         print(f"[DISCONNECT] {nickname} disconnected")
         
         # Broadcast leave notification
-        self.broadcast_message(f"⬅️ {nickname} has left the chat.")
+        self.broadcast_message(f"<- {nickname} has left the chat.")
         
         # Close socket
         try:
@@ -305,7 +307,7 @@ class ChatServer:
             handler(client_socket, args)
         else:
             self.send_to_client(client_socket, 
-                f"❓ Unknown command: {cmd}. Type /help for available commands.")
+                f"? Unknown command: {cmd}. Type /help for available commands.")
     
     # =========================================================================
     # COMMANDS
@@ -343,7 +345,7 @@ class ChatServer:
             for info in self.clients.values():
                 if info['nickname'].lower() == nickname.lower():
                     self.send_to_client(client_socket, 
-                        f"❌ Nickname '{nickname}' is already taken.")
+                        f"FAIL Nickname '{nickname}' is already taken.")
                     return
             
             # Change nickname
@@ -351,8 +353,8 @@ class ChatServer:
             self.clients[client_socket]['nickname'] = nickname
         
         print(f"[NICK] {old_nick} -> {nickname}")
-        self.send_to_client(client_socket, f"✅ Nickname changed to '{nickname}'.")
-        self.broadcast_message(f"📝 {old_nick} is now known as {nickname}.",
+        self.send_to_client(client_socket, f"PASS Nickname changed to '{nickname}'.")
+        self.broadcast_message(f" {old_nick} is now known as {nickname}.",
                               exclude=client_socket)
     
     def cmd_join(self, client_socket, room_name):
@@ -401,9 +403,9 @@ class ChatServer:
         print(f"[JOIN] {nick} -> {room_name}")
         
         # Notify rooms
-        self.broadcast_to_room(old_room, f"⬅️ {nick} has left the room.")
-        self.send_to_client(client_socket, f"✅ You joined room '{room_name}'.")
-        self.broadcast_to_room(room_name, f"➡️ {nick} has joined the room.",
+        self.broadcast_to_room(old_room, f"<- {nick} has left the room.")
+        self.send_to_client(client_socket, f"PASS You joined room '{room_name}'.")
+        self.broadcast_to_room(room_name, f"-> {nick} has joined the room.",
                               exclude=client_socket)
         
         # Show recent history
@@ -434,8 +436,8 @@ class ChatServer:
             self.clients[client_socket]['room'] = 'lobby'
         
         print(f"[LEAVE] {nick} left {old_room}")
-        self.broadcast_to_room(old_room, f"⬅️ {nick} has left the room.")
-        self.send_to_client(client_socket, "✅ You returned to the lobby.")
+        self.broadcast_to_room(old_room, f"<- {nick} has left the room.")
+        self.send_to_client(client_socket, "PASS You returned to the lobby.")
     
     def cmd_rooms(self, client_socket, args):
         """List all active rooms.
@@ -452,7 +454,7 @@ class ChatServer:
                 count = len(clients)
                 room_list.append(f"  {room_name} ({count} user{'s' if count != 1 else ''})")
         
-        message = "\n📋 Active Rooms:\n" + "\n".join(room_list)
+        message = "\n Active Rooms:\n" + "\n".join(room_list)
         self.send_to_client(client_socket, message)
     
     def cmd_users(self, client_socket, args):
@@ -480,7 +482,7 @@ class ChatServer:
                     marker = " (you)" if sock == client_socket else ""
                     users.append(f"  {info['nickname']}{marker}")
         
-        message = f"\n👥 Users in {room}:\n" + "\n".join(sorted(users))
+        message = f"\n Users in {room}:\n" + "\n".join(sorted(users))
         self.send_to_client(client_socket, message)
     
     def cmd_whisper(self, client_socket, args):
@@ -514,7 +516,7 @@ class ChatServer:
         
         if not target_socket:
             self.send_to_client(client_socket, 
-                f"❌ User '{target_nick}' not found.")
+                f"FAIL User '{target_nick}' not found.")
             return
         
         if target_socket == client_socket:
@@ -525,9 +527,9 @@ class ChatServer:
         # Send whisper
         timestamp = datetime.now().strftime('%H:%M:%S')
         self.send_to_client(target_socket, 
-            f"[{timestamp}] 💬 [Whisper from {sender_nick}]: {message}")
+            f"[{timestamp}]  [Whisper from {sender_nick}]: {message}")
         self.send_to_client(client_socket, 
-            f"[{timestamp}] 💬 [Whisper to {target_nick}]: {message}")
+            f"[{timestamp}]  [Whisper to {target_nick}]: {message}")
         
         print(f"[WHISPER] {sender_nick} -> {target_nick}")
     
@@ -587,12 +589,12 @@ class ChatServer:
         
         if not target_info:
             self.send_to_client(client_socket, 
-                f"❌ User '{nickname}' not found.")
+                f"FAIL User '{nickname}' not found.")
             return
         
         # Show user info
         info_lines = [
-            f"\n📋 User Info: {target_info['nickname']}",
+            f"\n User Info: {target_info['nickname']}",
             f"  Room: {target_info['room']}",
             f"  Address: {target_info['address'][0]}",
             f"  Joined: {target_info['joined_at'].strftime('%H:%M:%S')}",
@@ -605,21 +607,21 @@ class ChatServer:
         Usage: /help
         """
         help_text = """
-╔══════════════════════════════════════════════════════════╗
-║                    AVAILABLE COMMANDS                     ║
-╠══════════════════════════════════════════════════════════╣
-║  /nick <name>      Change your nickname                  ║
-║  /join <room>      Join a chat room                      ║
-║  /leave            Leave current room (return to lobby)  ║
-║  /rooms            List all active rooms                 ║
-║  /users [room]     List users in room                    ║
-║  /whisper <u> <m>  Send private message                  ║
-║  /me <action>      Send an action message                ║
-║  /history [n]      Show last n messages (default: 10)    ║
-║  /whois <user>     Show information about a user         ║
-║  /help             Show this help message                ║
-║  /quit             Disconnect from server                ║
-╚══════════════════════════════════════════════════════════╝
++==========================================================+
+|                    AVAILABLE COMMANDS                     |
++==========================================================+
+|  /nick <name>      Change your nickname                  |
+|  /join <room>      Join a chat room                      |
+|  /leave            Leave current room (return to lobby)  |
+|  /rooms            List all active rooms                 |
+|  /users [room]     List users in room                    |
+|  /whisper <u> <m>  Send private message                  |
+|  /me <action>      Send an action message                |
+|  /history [n]      Show last n messages (default: 10)    |
+|  /whois <user>     Show information about a user         |
+|  /help             Show this help message                |
+|  /quit             Disconnect from server                |
++==========================================================+
 """
         self.send_to_client(client_socket, help_text)
     
@@ -628,7 +630,7 @@ class ChatServer:
         
         Usage: /quit
         """
-        self.send_to_client(client_socket, "👋 Goodbye!")
+        self.send_to_client(client_socket, " Goodbye!")
         self.remove_client(client_socket)
     
     # =========================================================================
@@ -711,7 +713,7 @@ class ChatServer:
             
             history = self.message_history[room][-count:]
         
-        header = f"\n📜 Last {len(history)} messages in {room}:"
+        header = f"\n Last {len(history)} messages in {room}:"
         self.send_to_client(client_socket, header)
         for msg in history:
             self.send_to_client(client_socket, f"  {msg}")

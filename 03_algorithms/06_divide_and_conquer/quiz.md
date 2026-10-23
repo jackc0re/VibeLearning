@@ -179,15 +179,18 @@ The recurrence is T(n) = 2T(n/2) + O(n), which gives O(n log n). Note: Kadane's 
 
 - A) The strip is always empty
 - B) Points in the strip are sorted by x-coordinate
-- C) At most 6 points can be within distance d of any point in the strip
+- C) Only a constant number of points need checking — at most 7 other points
 - D) We use binary search in the strip
 
 <details>
 <summary>Show Answer</summary>
 
-**C) At most 6 points can be within distance d of any point in the strip**
+**C) Only a constant number of points need checking — at most 7 other points**
 
-Due to geometric constraints, at most 6 points can fit in a d×2d rectangle. This keeps the strip checking at O(n) per level, maintaining O(n log n) overall.
+Due to geometric constraints, the d×2d rectangle around a point in the strip can
+hold at most 8 points, so each point only has to be compared with at most 7
+others. That keeps strip checking at O(n) per level, maintaining O(n log n)
+overall.
 
 </details>
 
@@ -338,3 +341,7 @@ If you struggled with certain questions, review these topics:
 - **Questions 8-9**: Classic D&C problems
 - **Questions 10-12**: Advanced D&C applications
 - **Questions 13-15**: Algorithm analysis and recurrences
+
+---
+
+[Back to Divide and Conquer README](README.md) | [Next: Graph Algorithms →](../07_graph_algorithms/README.md)

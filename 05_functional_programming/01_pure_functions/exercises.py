@@ -4,6 +4,8 @@ Pure Functions - Exercises
 Complete the exercises by writing pure functions.
 Run tests with:
     python exercises.py
+
+Reference solutions are at the bottom of this file.
 """
 
 # =============================================================================
@@ -95,7 +97,7 @@ def run_tests():
     ]
     for a, b, expected in tests_1:
         result = exercise_1_add(a, b)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} add({a}, {b}) = {result} (expected {expected})")
@@ -109,7 +111,7 @@ def run_tests():
     ]
     for price, percent, expected in tests_2:
         result = exercise_2_apply_discount(price, percent)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} apply_discount({price}, {percent}) = {result} (expected {expected})")
@@ -118,8 +120,8 @@ def run_tests():
     print("\nExercise 3: Replace Without Mutation")
     original = ["a", "b", "c"]
     result = exercise_3_replace(original, 1, "B")
-    status = "✓" if result == ["a", "B", "c"] and original == ["a", "b", "c"] else "✗"
-    if status == "✗":
+    status = "PASS" if result == ["a", "B", "c"] and original == ["a", "b", "c"] else "FAIL"
+    if status == "FAIL":
         all_passed = False
     print(f"  {status} replace([a,b,c],1,'B') -> {result}, original -> {original}")
 
@@ -131,7 +133,7 @@ def run_tests():
     ]
     for names, expected in tests_4:
         result = exercise_4_normalize_names(names)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} normalize({names}) = {result} (expected {expected})")
@@ -145,18 +147,66 @@ def run_tests():
     ]
     for nums, expected in tests_5:
         result = exercise_5_average(nums)
-        status = "✓" if result == expected else "✗"
+        status = "PASS" if result == expected else "FAIL"
         if result != expected:
             all_passed = False
         print(f"  {status} average({nums}) = {result} (expected {expected})")
 
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 
 if __name__ == "__main__":
+    run_tests()
+
+
+# =============================================================================
+# SOLUTIONS (Don't peek until you've tried!)
+# =============================================================================
+
+# The FAIL lines above are expected: the stubs above are not implemented yet.
+# The reference solutions below re-define the same exercise functions, and the
+# same tests run again at the bottom of this file - this time they PASS.
+
+# Solution 1: Pure Addition
+def exercise_1_add(a, b):
+    """Return the sum of a and b."""
+    return a + b
+
+
+# Solution 2: Pure Discount
+def exercise_2_apply_discount(price, percent):
+    """Return the price reduced by percent (0-100)."""
+    return price * (1 - percent / 100)
+
+
+# Solution 3: Replace Without Mutation
+def exercise_3_replace(items, index, value):
+    """Return a NEW list with items[index] replaced by value."""
+    new_items = list(items)  # copy first, so the input is never mutated
+    new_items[index] = value
+    return new_items
+
+
+# Solution 4: Normalize Names
+def exercise_4_normalize_names(names):
+    """Return a NEW list of names stripped and title-cased."""
+    return [name.strip().title() for name in names]
+
+
+# Solution 5: Compute Average (Pure)
+def exercise_5_average(nums):
+    """Return the average of nums, or None if the list is empty."""
+    if not nums:
+        return None
+    return sum(nums) / len(nums)
+
+
+# Re-run the same checks with the reference solutions in place.
+if __name__ == "__main__":
+    print("\nRe-running the same tests with the reference solutions...")
     run_tests()

@@ -7,6 +7,10 @@ print("=" * 50)
 print("LINKED LISTS - Examples")
 print("=" * 50)
 
+# =============================================================================
+# NODE AND LINKED LIST CLASSES
+# =============================================================================
+
 # Node class
 class Node:
     def __init__(self, data):
@@ -49,6 +53,9 @@ class LinkedList:
             current = current.next
         return count
 
+# =============================================================================
+# BUILD A LIST
+# =============================================================================
 print("\n--- Building Linked List ---\n")
 ll = LinkedList()
 for i in [1, 2, 3, 4, 5]:
@@ -56,10 +63,16 @@ for i in [1, 2, 3, 4, 5]:
 print(f"List: {ll.display()}")
 print(f"Length: {ll.length()}")
 
+# =============================================================================
+# PREPEND
+# =============================================================================
 print("\n--- Prepend ---")
 ll.prepend(0)
 print(f"After prepend(0): {ll.display()}")
 
+# =============================================================================
+# REVERSE
+# =============================================================================
 print("\n--- Reverse ---")
 def reverse(ll):
     prev = None
@@ -75,5 +88,5 @@ reverse(ll)
 print(f"Reversed: {ll.display()}")
 
 print("\n" + "=" * 50)
-print("Examples complete!")
+print("Examples complete! Try exercises.py next.")
 print("=" * 50)

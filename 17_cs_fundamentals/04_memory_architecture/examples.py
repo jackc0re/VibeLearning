@@ -191,31 +191,31 @@ call_depth = 0
 def function_a():
     global call_depth
     call_depth += 1
-    print(f"  {'  ' * call_depth}→ Entering function_a (depth: {call_depth})")
+    print(f"  {'  ' * call_depth}-> Entering function_a (depth: {call_depth})")
     local_var_a = "I'm in A"
     print(f"  {'  ' * call_depth}  Local variable: {local_var_a}")
     function_b()
-    print(f"  {'  ' * call_depth}← Leaving function_a (depth: {call_depth})")
+    print(f"  {'  ' * call_depth}<- Leaving function_a (depth: {call_depth})")
     call_depth -= 1
 
 def function_b():
     global call_depth
     call_depth += 1
-    print(f"  {'  ' * call_depth}→ Entering function_b (depth: {call_depth})")
+    print(f"  {'  ' * call_depth}-> Entering function_b (depth: {call_depth})")
     local_var_b = "I'm in B"
     print(f"  {'  ' * call_depth}  Local variable: {local_var_b}")
     function_c()
-    print(f"  {'  ' * call_depth}← Leaving function_b (depth: {call_depth})")
+    print(f"  {'  ' * call_depth}<- Leaving function_b (depth: {call_depth})")
     call_depth -= 1
 
 def function_c():
     global call_depth
     call_depth += 1
-    print(f"  {'  ' * call_depth}→ Entering function_c (depth: {call_depth})")
+    print(f"  {'  ' * call_depth}-> Entering function_c (depth: {call_depth})")
     local_var_c = "I'm in C"
     print(f"  {'  ' * call_depth}  Local variable: {local_var_c}")
     print(f"  {'  ' * call_depth}  (C does its work)")
-    print(f"  {'  ' * call_depth}← Leaving function_c (depth: {call_depth})")
+    print(f"  {'  ' * call_depth}<- Leaving function_c (depth: {call_depth})")
     call_depth -= 1
 
 print("\nFunction call trace:")
@@ -279,21 +279,21 @@ my_list = [1, 2, 3]
 print(f"Before function: my_list = {my_list}, id = {id(my_list)}")
 demonstrate_mutable(my_list)
 print(f"After function: my_list = {my_list}")
-print("  → Original was modified!")
+print("  -> Original was modified!")
 
 print("\n--- Immutable Object (Integer) ---")
 my_int = 5
 print(f"Before function: my_int = {my_int}, id = {id(my_int)}")
 demonstrate_immutable(my_int)
 print(f"After function: my_int = {my_int}")
-print("  → Original was NOT modified (immutable)")
+print("  -> Original was NOT modified (immutable)")
 
 print("\n--- Rebinding (List) ---")
 my_list2 = [1, 2, 3]
 print(f"Before function: my_list2 = {my_list2}, id = {id(my_list2)}")
 demonstrate_rebinding(my_list2)
 print(f"After function: my_list2 = {my_list2}")
-print("  → Original unchanged (variable was rebound to new object)")
+print("  -> Original unchanged (variable was rebound to new object)")
 
 # =============================================================================
 # SHALLOW VS DEEP COPY

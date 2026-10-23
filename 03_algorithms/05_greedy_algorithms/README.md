@@ -189,22 +189,18 @@ def huffman_encoding(frequencies):
 When items cannot be divided, greedy doesn't guarantee optimality:
 
 ```python
-# Items: weight=[2, 3, 4], value=[3, 4, 5]
-# Capacity: 5
+# Items: weight=[6, 5, 5], value=[30, 20, 20]
+# Capacity: 10
 
 # Greedy by value/weight ratio:
-# Ratios: [3/2=1.5, 4/3=1.33, 5/4=1.25]
-# Take item 0 (weight 2, value 3) → remaining capacity 3
-# Take item 1 (weight 3, value 4) → remaining capacity 0
-# Total value: 7
+# Ratios: [30/6=5.0, 20/5=4.0, 20/5=4.0]
+# Take item 0 (weight 6, value 30) → remaining capacity 4
+# Items 1 and 2 each need 5, so nothing else fits
+# Total value: 30
 
 # Optimal (using DP):
-# Take items 0 and 2 (weight 2+4=6 > 5? No...)
-# Take item 1 and 0 (weight 5, value 7) ✓
-# OR take item 2 alone (weight 4, value 5)
-# Best is actually item 0 + item 1 = 7
-
-# In this case greedy works, but in general it doesn't!
+# Take items 1 and 2 (weight 5 + 5 = 10, value 20 + 20 = 40)
+# Total value: 40  ← better than greedy
 ```
 
 ### ❌ Traveling Salesman Problem (TSP)
@@ -216,7 +212,12 @@ Cities: A, B, C, D arranged in a square
 Distances: AB=1, BC=10, CD=1, DA=10, AC=100, BD=100
 
 Greedy from A: A→B→C→D→A = 1+10+1+10 = 22
-Optimal path: A→B→D→C→A might be different
+
+Nearest neighbour only looks at the next hop — it never compares whole tours.
+On this map 22 happens to be the best tour, but greedy has no way to know that,
+and on other maps the same rule paints itself into a corner: the last unvisited
+city can be far away, and you still have to travel back to A.
+That is why large TSP instances need more than a single greedy pass.
 ```
 
 ---

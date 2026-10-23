@@ -118,6 +118,19 @@ if queue:
 
 ## Stack Class Implementation
 
+> 💡 **First time seeing `class`?** A class is a blueprint for making objects. Read
+> it like this:
+>
+> - `class Stack:` defines a new type; `Stack()` builds one instance of it.
+> - `__init__(self)` is the setup code that runs automatically when an instance is built.
+> - `self` means "this particular instance" - `self._items` is a box that belongs to this
+>   stack, not to every stack.
+> - A leading underscore (`_items`) is a convention: "internal, please use `push`/`pop`".
+>   Nothing enforces it - it is a hint to other programmers.
+>
+> That is all you need to follow the code below. Full treatment in
+> [Module 04](../../04_oop_concepts/01_classes_and_objects/README.md).
+
 ```python
 class Stack:
     def __init__(self):
@@ -205,6 +218,38 @@ def reverse_string(s):
     while stack:
         result += stack.pop()
     return result
+```
+
+---
+
+## Common Mistakes
+
+### 1. Popping an empty stack
+```python
+stack = []
+top = stack.pop()   # ❌ IndexError: pop from empty list
+
+# ✅ Guard first - the same applies to stack[-1]
+if stack:
+    top = stack.pop()
+```
+
+### 2. Using `list.pop(0)` as a queue
+```python
+queue = [1, 2, 3]
+first = queue.pop(0)   # Works, but O(n): every remaining element shifts left
+
+# ✅ deque.popleft() is O(1)
+from collections import deque
+queue = deque([1, 2, 3])
+first = queue.popleft()
+```
+
+### 3. Mixing up stack and queue methods
+```python
+stack.append(4); stack.pop()       # ✅ Last in, first out
+queue.append(4); queue.popleft()   # ✅ First in, first out
+queue.append(4); queue.pop()       # ❌ That removes the newest - a stack, not a queue
 ```
 
 ---

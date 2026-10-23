@@ -40,6 +40,26 @@ def max_value(node):
     return max(node.val, max_value(node.left), max_value(node.right))
 print(f"Max value: {max_value(root)}")
 
+# Solution 3
+print()
+print("--- Solution 3: Check if BST ---")
+def is_bst(node, low=float("-inf"), high=float("inf")):
+    if node is None:
+        return True
+    if not low < node.val < high:
+        return False
+    return (is_bst(node.left, low, node.val)
+            and is_bst(node.right, node.val, high))
+
+print(f"Is BST: {is_bst(root)}")
+
+# A broken tree: 6 sits in the left subtree of 5, so the BST rule fails
+broken = TreeNode(5)
+broken.left = TreeNode(3)
+broken.right = TreeNode(7)
+broken.left.right = TreeNode(6)
+print(f"Broken tree is BST: {is_bst(broken)}")
+
 print("\n" + "=" * 50)
 print("Great job! Move on to 09_graphs next.")
 print("=" * 50)

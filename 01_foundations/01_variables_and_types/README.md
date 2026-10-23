@@ -19,6 +19,32 @@ The `=` sign is the **assignment operator** — it puts the value on the right i
 
 ---
 
+## f-strings: Putting Values Inside Text
+
+The easiest way to build text from variables is an **f-string**: put an `f` before the
+quotes, then drop variables inside `{}` and Python plugs their values in.
+
+```python
+name = "Alice"
+age = 25
+
+print(f"Hello, {name}!")              # Hello, Alice!
+print(f"{name} is {age} years old")   # Alice is 25 years old
+```
+
+Compare that with gluing strings together using `+`:
+
+```python
+print("Hello, " + name + "!")         # Same output, but noisier
+print("age: " + age)                  # TypeError: can't add str and int
+```
+
+With `+` you have to convert numbers to text yourself (`str(age)`) and keep track of every
+space. An f-string does the conversion for you and keeps the sentence readable, which is
+why you'll see them in almost every example from here on.
+
+---
+
 ## Naming Rules
 
 ### ✅ Valid variable names:

@@ -1,15 +1,17 @@
 # 🔐 Project 7: Password Manager
 
-Build a secure CLI-based password manager with encryption and password generation.
+Build a CLI-based password manager with authenticated encryption and password
+generation — and learn first-hand why "don't roll your own crypto" is real advice.
 
 ---
 
 ## 📋 Project Overview
 
 This project helps you practice:
-- **hashlib module** — Cryptographic hashing and key derivation
+- **hashlib module** — Cryptographic hashing, PBKDF2 key derivation, SHAKE-256 keystreams
+- **hmac module** — Tamper detection with encrypt-then-MAC and `compare_digest`
 - **secrets module** — Secure random number generation
-- **Encryption concepts** — XOR encryption with PBKDF2 key derivation
+- **Encryption concepts** — Salt, nonce, keystream, and authentication tags
 - **base64 encoding** — Binary-to-text encoding for storage
 - **JSON file I/O** — Persistent encrypted storage
 - **OOP design** — Multiple classes working together
@@ -34,8 +36,9 @@ This project helps you practice:
 
 4. ✅ Vault Encryption
    - Master password protection
-   - PBKDF2 key derivation (100,000 iterations)
-   - XOR cipher for data encryption
+   - PBKDF2-HMAC-SHA256 key derivation (100,000 iterations), split into separate encryption and MAC keys
+   - SHAKE-256 keystream encryption (key material never repeats within a message)
+   - HMAC-SHA256 tamper check, verified with `hmac.compare_digest` before decrypting
    - Base64 encoding for storage
 
 5. ✅ Vault Management
@@ -66,10 +69,11 @@ Complete these modules before starting:
 
 ### Skills You'll Use
 
-- **hashlib** — PBKDF2 key derivation for encryption
+- **hashlib** — PBKDF2 key derivation and SHAKE-256 keystreams
+- **hmac** — Tamper detection (encrypt-then-MAC, constant-time comparison)
 - **secrets** — Cryptographically secure random numbers
 - **base64** — Encoding binary data as text
-- **Classes** — PasswordEntry, PasswordGenerator, PasswordStrengthChecker, SimpleEncryption, VaultStorage, PasswordManager
+- **Classes** — PasswordEntry, PasswordGenerator, PasswordStrengthChecker, VaultCrypto, VaultStorage, PasswordManager
 - **getpass** — Secure password input (no echo)
 - **JSON** — Serialization/deserialization of vault data
 - **Control Flow** — Menu navigation and validation
@@ -221,61 +225,92 @@ class PasswordStrengthChecker:
             return "Very Weak", suggestions
 ```
 
-### Step 4: SimpleEncryption Class (25 minutes)
+### Step 4: VaultCrypto Class (25 minutes)
 
-Create a class for encryption and decryption:
+Create a class for authenticated encryption and decryption. The stored blob has
+the layout `salt(16) | nonce(16) | ciphertext | tag(32)`:
 
 ```python
 import hashlib
+import hmac
 import secrets
 import base64
 
-class SimpleEncryption:
-    """Simple XOR encryption with PBKDF2 key derivation."""
-    
+class VaultCrypto:
+    """Authenticated encryption for the vault, built from hashlib + hmac.
+
+    TEACHING CODE, not a production cipher (see the Security Notes).
+    """
+
     SALT_SIZE = 16
+    NONCE_SIZE = 16
+    TAG_SIZE = 32
     ITERATIONS = 100000
-    
+
     @classmethod
-    def derive_key(cls, password: str, salt: bytes) -> bytes:
-        """Derive encryption key from password using PBKDF2."""
-        return hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt, cls.ITERATIONS)
-    
+    def derive_keys(cls, password: str, salt: bytes) -> tuple:
+        """Derive (encryption_key, mac_key) from the master password."""
+        block = hashlib.pbkdf2_hmac(
+            'sha256', password.encode('utf-8'), salt, cls.ITERATIONS, dklen=64
+        )
+        return block[:32], block[32:]
+
+    @classmethod
+    def _keystream(cls, key: bytes, nonce: bytes, length: int) -> bytes:
+        """Key material exactly as long as the message (SHAKE-256)."""
+        return hashlib.shake_256(key + nonce).digest(length)
+
     @classmethod
     def encrypt(cls, plaintext: str, password: str) -> str:
-        """Encrypt plaintext using XOR cipher with derived key."""
+        """Encrypt plaintext -> base64(salt | nonce | ciphertext | tag)."""
         salt = secrets.token_bytes(cls.SALT_SIZE)
-        key = cls.derive_key(password, salt)
-        
+        nonce = secrets.token_bytes(cls.NONCE_SIZE)
+        enc_key, mac_key = cls.derive_keys(password, salt)
+
         plaintext_bytes = plaintext.encode('utf-8')
-        encrypted_bytes = bytearray()
-        
-        for i, byte in enumerate(plaintext_bytes):
-            key_byte = key[i % len(key)]
-            encrypted_bytes.append(byte ^ key_byte)
-        
-        combined = salt + bytes(encrypted_bytes)
-        return base64.b64encode(combined).decode('utf-8')
-    
+        stream = cls._keystream(enc_key, nonce, len(plaintext_bytes))
+        ciphertext = bytes(a ^ b for a, b in zip(plaintext_bytes, stream))
+
+        tag = hmac.new(mac_key, nonce + ciphertext, 'sha256').digest()
+        blob = salt + nonce + ciphertext + tag
+        return base64.b64encode(blob).decode('ascii')
+
     @classmethod
     def decrypt(cls, ciphertext: str, password: str) -> str:
-        """Decrypt ciphertext using XOR cipher with derived key."""
+        """Verify the tag first, then decrypt. Raises ValueError on failure."""
         try:
-            combined = base64.b64decode(ciphertext.encode('utf-8'))
-            salt = combined[:cls.SALT_SIZE]
-            encrypted_bytes = combined[cls.SALT_SIZE:]
-            
-            key = cls.derive_key(password, salt)
-            
-            decrypted_bytes = bytearray()
-            for i, byte in enumerate(encrypted_bytes):
-                key_byte = key[i % len(key)]
-                decrypted_bytes.append(byte ^ key_byte)
-            
-            return decrypted_bytes.decode('utf-8')
-        except Exception:
-            raise ValueError("Decryption failed")
+            blob = base64.b64decode(ciphertext.encode('ascii'))
+            split = cls.SALT_SIZE + cls.NONCE_SIZE
+            if len(blob) < split + cls.TAG_SIZE:
+                raise ValueError("truncated blob")
+
+            salt = blob[:cls.SALT_SIZE]
+            nonce = blob[cls.SALT_SIZE:split]
+            body = blob[split:-cls.TAG_SIZE]
+            tag = blob[-cls.TAG_SIZE:]
+
+            enc_key, mac_key = cls.derive_keys(password, salt)
+            expected = hmac.new(mac_key, nonce + body, 'sha256').digest()
+            if not hmac.compare_digest(tag, expected):
+                raise ValueError("authentication failed")
+
+            stream = cls._keystream(enc_key, nonce, len(body))
+            return bytes(a ^ b for a, b in zip(body, stream)).decode('utf-8')
+        except ValueError as e:
+            raise ValueError(
+                "Decryption failed - incorrect password or corrupted data"
+            ) from e
 ```
+
+**Why it is built this way** — each piece fixes a real weakness of the naive
+"XOR with a repeating key" approach:
+
+| Piece | Weakness it prevents |
+|-------|----------------------|
+| Fresh random `salt` per save | Same password always producing identical key material |
+| Separate MAC key | One key doing two jobs (a classic crypto mistake) |
+| SHAKE-256 keystream, message-length | The key **repeating** every 32 bytes — the breakable part of repeating-key XOR |
+| HMAC tag checked with `compare_digest` | Tampered files and wrong passwords decrypting to silent garbage |
 
 ### Step 5: VaultStorage Class (20 minutes)
 
@@ -406,8 +441,9 @@ Test your password manager with these scenarios:
 
 ### Encryption
 1. **Vault Persistence** — Close and reopen application
-2. **Wrong Password** — Try to unlock with wrong password
-3. **Vault Corruption** — Test handling of corrupted vault file
+2. **Wrong Password** — Try to unlock with wrong password (fails the HMAC tag check)
+3. **Vault Corruption** — Flip a byte in the vault file, then unlock (tag check must reject it)
+4. **No Silent Garbage** — A wrong password raises `ValueError`, it never "decrypts" to junk
 
 ### Edge Cases
 1. **Empty Vault** — Test with no entries
@@ -421,15 +457,17 @@ Test your password manager with these scenarios:
 
 After completing this project, you should understand:
 
-- ✅ How to use hashlib for key derivation (PBKDF2)
+- ✅ How to use hashlib for key derivation (PBKDF2) and keystreams (SHAKE-256)
 - ✅ How to use secrets for cryptographically secure random generation
-- ✅ How XOR encryption works at a basic level
+- ✅ Why keys must never repeat and why encryption needs a separate MAC key
+- ✅ How encrypt-then-MAC detects tampering with `hmac.compare_digest`
 - ✅ How base64 encoding converts binary data to text
 - ✅ How to implement password strength checking
 - ✅ How to use getpass for secure password input
 - ✅ How to design multiple cooperating classes
 - ✅ How to create a menu-driven CLI application
 - ✅ How to handle encrypted file persistence
+- ✅ Why real applications use vetted crypto libraries instead of hand-rolled ciphers
 
 ---
 
@@ -527,16 +565,26 @@ Strength: Very Strong
 ## 🔒 Security Notes
 
 This password manager uses:
-- **PBKDF2-HMAC-SHA256** for key derivation (100,000 iterations)
-- **XOR cipher** for data encryption (educational purposes)
-- **Cryptographically secure** random generation via secrets module
+- **PBKDF2-HMAC-SHA256** for key derivation (100,000 iterations, 64-byte output
+  split into separate encryption and MAC keys)
+- **SHAKE-256 keystream** encryption whose key material never repeats within a message
+- **HMAC-SHA256 tag** verified with `hmac.compare_digest` before decrypting
+  (encrypt-then-MAC), so wrong passwords and tampered files are rejected
+- **Cryptographically secure** random values via the secrets module
 
-**⚠️ Important:** This implementation is for **educational purposes only**. 
-For production use, consider:
-- AES-256-GCM instead of XOR cipher
-- Argon2id for key derivation (if available)
-- Proper memory handling and secure key storage
-- Regular security audits
+**⚠️ Important:** This implementation is for **educational purposes only**.
+It is a hand-rolled construction assembled to *teach* how the pieces fit
+together — which is exactly why it must never guard real passwords. Real
+systems are broken by subtle details (side channels, nonce reuse under
+failure conditions, key storage) that no tutorial-sized code can get right.
+
+For production use:
+- Use a vetted library and its high-level recipes (e.g. the `cryptography`
+  package's `Fernet`, which is AES-128-CBC + HMAC-SHA256), not primitives you wired up yourself
+- Use a memory-hard KDF (Argon2id, scrypt) instead of PBKDF2 for password *storage*
+- Prefer an established password manager over any self-built vault
+- The honest takeaway from this project: you now know enough crypto to be
+  dangerous — which is precisely when to reach for vetted tools
 
 ---
 
@@ -544,7 +592,7 @@ For production use, consider:
 
 | Topic | Location |
 |-------|----------|
-| hashlib | [11_memory_performance/02_hash_functions](../../16_essential_libraries/08_hashlib_secrets/README.md) |
+| Hashlib & Secrets | [16_essential_libraries/08_hashlib_secrets](../../16_essential_libraries/08_hashlib_secrets/README.md) |
 | File I/O | [10_file_io](../../10_file_io/README.md) |
 | Classes | [04_oop_concepts](../../04_oop_concepts/README.md) |
 | Error Handling | [08_error_handling](../../08_error_handling/README.md) |

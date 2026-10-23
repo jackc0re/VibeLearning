@@ -4,6 +4,8 @@ Immutability - Exercises
 Practice writing functions that avoid mutation.
 Run tests with:
     python exercises.py
+
+Reference solutions are at the bottom of this file.
 """
 
 # =============================================================================
@@ -84,8 +86,8 @@ def run_tests():
     print("\nExercise 1: Append Without Mutation")
     base = [1, 2]
     result = exercise_1_append(base, 3)
-    status = "✓" if result == [1, 2, 3] and base == [1, 2] else "✗"
-    if status == "✗":
+    status = "PASS" if result == [1, 2, 3] and base == [1, 2] else "FAIL"
+    if status == "FAIL":
         all_passed = False
     print(f"  {status} append({base}, 3) = {result} (base unchanged)")
 
@@ -93,8 +95,8 @@ def run_tests():
     print("\nExercise 2: Update Dict Immutably")
     data = {"a": 1}
     result = exercise_2_update_dict(data, "b", 2)
-    status = "✓" if result == {"a": 1, "b": 2} and data == {"a": 1} else "✗"
-    if status == "✗":
+    status = "PASS" if result == {"a": 1, "b": 2} and data == {"a": 1} else "FAIL"
+    if status == "FAIL":
         all_passed = False
     print(f"  {status} update_dict({data}, 'b', 2) = {result} (data unchanged)")
 
@@ -102,8 +104,8 @@ def run_tests():
     print("\nExercise 3: Remove Without Mutation")
     items = [1, 2, 2, 3]
     result = exercise_3_remove(items, 2)
-    status = "✓" if result == [1, 3] and items == [1, 2, 2, 3] else "✗"
-    if status == "✗":
+    status = "PASS" if result == [1, 3] and items == [1, 2, 2, 3] else "FAIL"
+    if status == "FAIL":
         all_passed = False
     print(f"  {status} remove({items}, 2) = {result} (items unchanged)")
 
@@ -111,8 +113,8 @@ def run_tests():
     print("\nExercise 4: Toggle Tuple")
     flags = (True, False, True)
     result = exercise_4_toggle(flags, 1)
-    status = "✓" if result == (True, True, True) and flags == (True, False, True) else "✗"
-    if status == "✗":
+    status = "PASS" if result == (True, True, True) and flags == (True, False, True) else "FAIL"
+    if status == "FAIL":
         all_passed = False
     print(f"  {status} toggle({flags}, 1) = {result} (flags unchanged)")
 
@@ -121,18 +123,62 @@ def run_tests():
     a = [1]
     b = [2, 3]
     result = exercise_5_merge(a, b)
-    status = "✓" if result == [1, 2, 3] and a == [1] and b == [2, 3] else "✗"
-    if status == "✗":
+    status = "PASS" if result == [1, 2, 3] and a == [1] and b == [2, 3] else "FAIL"
+    if status == "FAIL":
         all_passed = False
     print(f"  {status} merge({a}, {b}) = {result} (inputs unchanged)")
 
     print("\n" + "=" * 50)
     if all_passed:
-        print("🎉 All tests passed! Great job!")
+        print(" All tests passed! Great job!")
     else:
-        print("❌ Some tests failed. Keep practicing!")
+        print("FAIL Some tests failed. Keep practicing!")
     print("=" * 50)
 
 
 if __name__ == "__main__":
+    run_tests()
+
+
+# =============================================================================
+# SOLUTIONS (Don't peek until you've tried!)
+# =============================================================================
+
+# The FAIL lines above are expected: the stubs above are not implemented yet.
+# The reference solutions below re-define the same exercise functions, and the
+# same tests run again at the bottom of this file - this time they PASS.
+
+# Solution 1: Append Without Mutation
+def exercise_1_append(items, value):
+    """Return a new list with value appended."""
+    return items + [value]  # + builds a new list; append() would mutate
+
+
+# Solution 2: Update Dict Immutably
+def exercise_2_update_dict(data, key, value):
+    """Return a new dict with key set to value."""
+    return {**data, key: value}
+
+
+# Solution 3: Remove Item Without Mutation
+def exercise_3_remove(items, value):
+    """Return a new list with ALL occurrences of value removed."""
+    return [item for item in items if item != value]
+
+
+# Solution 4: Toggle Boolean (Tuple)
+def exercise_4_toggle(flags, index):
+    """Return a NEW tuple with flags[index] toggled."""
+    return flags[:index] + (not flags[index],) + flags[index + 1:]
+
+
+# Solution 5: Merge Lists (No Mutation)
+def exercise_5_merge(a, b):
+    """Return a new list with a's elements followed by b's."""
+    return list(a) + list(b)
+
+
+# Re-run the same checks with the reference solutions in place.
+if __name__ == "__main__":
+    print("\nRe-running the same tests with the reference solutions...")
     run_tests()

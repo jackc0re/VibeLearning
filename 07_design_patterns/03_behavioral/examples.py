@@ -1,7 +1,7 @@
 """
 Behavioral Design Patterns - Examples
 
-Demonstrates Observer, Strategy, and Command patterns.
+Demonstrates Observer, Strategy, and Command (with undo) patterns.
 Run with:
     python examples.py
 """
@@ -86,6 +86,9 @@ class LightOn(Command):
     def execute(self):
         return self.light.on()
 
+    def undo(self):
+        return self.light.off()
+
 
 class LightOff(Command):
     def __init__(self, light):
@@ -93,6 +96,26 @@ class LightOff(Command):
 
     def execute(self):
         return self.light.off()
+
+    def undo(self):
+        return self.light.on()
+
+
+class CommandHistory:
+    """Remembers executed commands so the last one can be undone."""
+
+    def __init__(self):
+        self._done = []
+
+    def execute(self, command):
+        result = command.execute()
+        self._done.append(command)
+        return result
+
+    def undo_last(self):
+        if not self._done:
+            return "nothing to undo"
+        return self._done.pop().undo()
 
 
 def demo_command():
@@ -103,9 +126,17 @@ def demo_command():
     print(on.execute())
     print(off.execute())
 
+    print("Command with history (undo) demo")
+    history = CommandHistory()
+    print(history.execute(LightOn(light)))
+    print(history.execute(LightOff(light)))
+    print(history.undo_last())  # undoes the "off" -> light back on
+    print(history.undo_last())  # undoes the "on" -> light off again
+    print(history.undo_last())  # empty history
+
 
 if __name__ == "__main__":
     demo_observer()
     demo_strategy()
     demo_command()
-    print("\n✓ Examples complete!")
+    print("\nPASS Examples complete!")

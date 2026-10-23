@@ -48,7 +48,7 @@ print(user.check_password("newpass"))
 # Exercise 2: Product Price
 # -----------------------------------------------------------------------------
 # 1. Create a class `Product`.
-# 2. It should have a private attribute `_price`.
+# 2. It should keep the price in `_price` (single underscore = protected by convention).
 # 3. Use the `@property` decorator to create a getter for `price`.
 # 4. Use the `@price.setter` decorator to create a setter that:
 #    - Prevents setting a negative price (print an error or raise ValueError).

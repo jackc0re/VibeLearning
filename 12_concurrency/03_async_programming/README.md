@@ -45,6 +45,34 @@ Even in async code you sometimes need to limit parallel work (e.g. 1000 requests
 
 ---
 
+## ⚠️ Common Mistakes
+
+- Calling **blocking** code inside a coroutine (`time.sleep`, `requests.get`) — it freezes the whole event loop; use `asyncio.sleep` and async libraries
+- Forgetting `await` — you create a coroutine object that never runs (and Python warns you)
+- Starting unbounded tasks (10,000 requests at once) — limit concurrency with `asyncio.Semaphore`
+
+---
+
+## 📝 Quick Reference
+
+```python
+import asyncio
+
+async def work(delay: float) -> str:
+    await asyncio.sleep(delay)     # await = other tasks may run here
+    return "done"
+
+asyncio.run(work(0.1))                          # entry point
+results = await asyncio.gather(work(0.1), work(0.2))
+task = asyncio.create_task(work(0.1))           # schedule now
+
+sem = asyncio.Semaphore(10)
+async with sem:                                 # limit parallel work
+    ...
+```
+
+---
+
 [Back: Module 12 README](../README.md)
 
 ---

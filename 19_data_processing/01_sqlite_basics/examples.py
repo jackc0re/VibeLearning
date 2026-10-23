@@ -222,13 +222,63 @@ with sqlite3.connect(DB_NAME) as conn2:
         VALUES (?, ?, ?, ?, ?)
     ''', ("The Hobbit", "J.R.R. Tolkien", 1937, "Fantasy", 4.8))
     print("Inserted 'The Hobbit' using context manager")
-    # Automatically commits when exiting the 'with' block
+    # Committed automatically when this block exits without an error
+
+# 'with' does not close the connection - close it so the file is not left locked
+conn2.close()
+
+# =============================================================================
+# SECTION 9: SQL INJECTION - WHY PARAMETERIZED QUERIES MATTER
+# =============================================================================
+print("\n--- 9. SQL Injection: Why ? Parameters Matter ---\n")
+
+# A separate in-memory database, so this demo leaves no files behind
+safe_conn = sqlite3.connect(":memory:")
+safe_cursor = safe_conn.cursor()
+safe_cursor.execute("CREATE TABLE users (name TEXT, role TEXT)")
+safe_cursor.executemany(
+    "INSERT INTO users (name, role) VALUES (?, ?)",
+    [("alice", "member"), ("bob", "member"), ("admin", "superuser")],
+)
+safe_conn.commit()
+
+# Pretend this was typed into a login or search box by a malicious user
+user_input = "bob' OR '1'='1"
+
+# --- VULNERABLE: building SQL with string formatting ---
+vulnerable_sql = f"SELECT * FROM users WHERE name = '{user_input}'"
+print(f"User input: {user_input}")
+print(f"Query the f-string actually built:\n  {vulnerable_sql}")
+safe_cursor.execute(vulnerable_sql)
+leaked = safe_cursor.fetchall()
+print(f"Rows returned: {len(leaked)} (the attacker sees the WHOLE table!)")
+for row in leaked:
+    print(f"  {row}")
+print()
+
+# --- SAFE: the same input through a parameterized query ---
+safe_cursor.execute("SELECT * FROM users WHERE name = ?", (user_input,))
+matched = safe_cursor.fetchall()
+print("Same input, but with a ? parameter:")
+print(f"Rows returned: {len(matched)} (the input is treated as plain text)")
+for row in matched:
+    print(f"  {row}")
+print()
+
+print("Teaching point: the f-string version let the input break out of the")
+print("quotes and add OR '1'='1', which is true for every row. The ? version")
+print("sends the value separately, so it can only ever match a literal value.")
+ok = len(leaked) == 3 and len(matched) == 0
+print("PASS" if ok else "FAIL")
+safe_conn.close()
 
 # =============================================================================
 # CLEANUP
 # =============================================================================
 conn.close()
+if os.path.exists(DB_NAME):
+    os.remove(DB_NAME)
 print("\n" + "=" * 60)
 print("Examples complete!")
-print(f"Database saved to: {DB_NAME}")
+print(f"Database removed again: {DB_NAME}")
 print("=" * 60)

@@ -94,8 +94,8 @@ def object_hook(obj):
         obj['timestamp'] = datetime.fromisoformat(obj['timestamp'])
     return obj
 
-# Usage
-data = json.loads(json_string, object_hook=object_hook)
+# Usage (json_str comes from the encoder example above)
+data = json.loads(json_str, object_hook=object_hook)
 ```
 
 ---

@@ -25,7 +25,7 @@ Print the result.
 # =============================================================================
 print("\n--- Exercise 2: Factorial ---\n")
 """
-Calculate the factorial of 5 (5! = 5 × 4 × 3 × 2 × 1 = 120)
+Calculate the factorial of 5 (5! = 5 x 4 x 3 x 2 x 1 = 120)
 Use a for loop.
 """
 
@@ -147,7 +147,7 @@ count = 10
 while count > 0:
     print(count, end=" ")
     count -= 1
-print("\nBlast off! 🚀")
+print("\nBlast off! ")
 
 # SOLUTION 4
 print("\n--- Solution 4 ---")
@@ -172,7 +172,7 @@ print(f"Sum of positives: {positive_sum}")  # 1+3+5+7+9 = 25
 
 # SOLUTION 6
 print("\n--- Solution 6 ---")
-print("    ", end="")
+print("   ", end="")
 for i in range(1, 6):
     print(f"{i:4}", end="")
 print()
@@ -192,12 +192,12 @@ max_attempts = 3
 
 for i, attempt in enumerate(attempts):
     if attempt == correct_password:
-        print("Welcome! ✓")
+        print("Welcome! PASS")
         break
     else:
         print(f"Attempt {i+1}: Wrong password")
 else:
-    print("Account locked! 🔒")
+    print("Account locked! ")
 
 # SOLUTION 8
 print("\n--- Solution 8 ---")
