@@ -88,7 +88,7 @@ Before changing anything, make sure we can always roll back and can prove what "
       - BUT `docs/overrides/` currently leaks into the built site as a stray published file (`site/overrides/main.html` is live today). Fix: add `overrides/` to `exclude_docs` in mkdocs.yml so a mirrored overrides dir never publishes.
       Files: `mkdocs.yml` (exclude_docs), `tools/sync_docs.py`
       Done when: root `overrides/main.html` is the only template copy, and `site/overrides/` no longer exists in build output.
-- [ ] 4. Deploy and compare: after merge to main, the live site serves the 985-line CSS (verify with `curl https://jackc0re.github.io/VibeLearning/stylesheets/extra.css | wc -l` → 985).
+- [x] 4. Deploy and compare: merged to main (PR #1); all three CI jobs green. Live CSS is now **1108 lines** (985 + the Latte palette/token blocks added in step 2), with Catppuccin + Latte variables present. Live checks: body `#1e1e2e` dark / `#eff1f5` light, JetBrains Mono loaded, `/overrides/main.html` now 404.
       Files: none
       Done when: live site serves the full Catppuccin stylesheet.
 
@@ -190,16 +190,16 @@ Before changing anything, make sure we can always roll back and can prove what "
 
 **Why:** stale meta-docs actively mislead a future contributor (or the user's future self). AGENTS.md claims "no dependencies, no build system," stops at module 15, and has wrong file counts — reality is 21 modules, 11 projects, MkDocs + CI.
 
-- [ ] 1. Rewrite `AGENTS.md` to match reality: correct structure (00–20 modules, Projects ×11, Exercises, Resources), the sync-script workflow, CI layout (deploy + validation + examples jobs), and where to edit things (root = source of truth, never edit `docs/`).
+- [x] 1. Rewrite `AGENTS.md` to match reality: correct structure (00–20 modules, Projects ×11, Exercises, Resources), the sync-script workflow, CI layout (deploy + validation + examples jobs), and where to edit things (root = source of truth, never edit `docs/`).
       Files: `AGENTS.md`
       Done when: every claim in AGENTS.md is verifiably true against the repo.
-- [ ] 2. Remove `claude_code_zai_env.sh` (a 7 KB personal tooling script that shouldn't be in a public learning repo).
+- [x] 2. Remove `claude_code_zai_env.sh` (a 7 KB personal tooling script that shouldn't be in a public learning repo).
       Files: `claude_code_zai_env.sh`
       Done when: file gone from the repo.
-- [ ] 3. Consolidate scaffolding: `PROGRESS.md` + `PROGRESS_02.md` + `plans/` + `issues/` are internal notes. They're already excluded from the site. Merge the two PROGRESS files into one (or archive both under `plans/`), so the repo root is clean for learners.
+- [x] 3. Consolidate scaffolding: `PROGRESS.md` + `PROGRESS_02.md` + `plans/` + `issues/` are internal notes. They're already excluded from the site. Merge the two PROGRESS files into one (or archive both under `plans/`), so the repo root is clean for learners.
       Files: `PROGRESS.md`, `PROGRESS_02.md`, `plans/`, `issues/`
       Done when: at most one progress-tracking file at root; nothing user-facing changed.
-- [ ] 4. Final sweep: `mkdocs build --strict` green, all three CI jobs green, live site verified (CSS 985 lines, nav complete, no broken links), and a short "what changed" summary added to README or a CHANGELOG entry.
+- [x] 4. Final sweep: `mkdocs build --strict` green, all three CI jobs green, live site verified (CSS 985 lines, nav complete, no broken links), and a short "what changed" summary added to README or a CHANGELOG entry.
       Files: `README.md` or new `CHANGELOG.md`
       Done when: every phase acceptance box above re-verified on the live site.
 
