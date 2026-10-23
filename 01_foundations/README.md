@@ -14,6 +14,8 @@ The building blocks of every program. Master these, and you'll have a solid base
 | [04_loops](04_loops/README.md) | Repeating actions |
 | [05_functions_basics](05_functions_basics/README.md) | Creating reusable code blocks |
 | [06_input_output](06_input_output/README.md) | Getting and displaying data |
+| [07_type_hints](07_type_hints/README.md) | Annotating types for clarity and tooling |
+| [08_pattern_matching](08_pattern_matching/README.md) | Structural pattern matching (match/case) |
 
 ---
 
@@ -32,7 +34,7 @@ By the end of this module, you will:
 
 ## Time Estimate
 
-⏱️ **8-10 hours** total for this module
+⏱️ **10-12 hours** total for this module
 
 | Topic | Time |
 |-------|------|
@@ -42,6 +44,8 @@ By the end of this module, you will:
 | Loops | 1-2 hours |
 | Functions | 2-3 hours |
 | Input/Output | 1 hour |
+| Type Hints | 1 hour |
+| Pattern Matching | 1 hour |
 
 ---
 

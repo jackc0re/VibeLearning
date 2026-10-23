@@ -133,6 +133,8 @@ nav:
       - Loops: 01_foundations/04_loops/README.md
       - Functions: 01_foundations/05_functions_basics/README.md
       - Input/Output: 01_foundations/06_input_output/README.md
+      - Type Hints: 01_foundations/07_type_hints/README.md
+      - Pattern Matching: 01_foundations/08_pattern_matching/README.md
     - Data Structures:
       - Data Structures: 02_data_structures/README.md
       - Lists & Arrays: 02_data_structures/01_lists_arrays/README.md
@@ -163,6 +165,8 @@ nav:
       - Abstraction: 04_oop_concepts/05_abstraction/README.md
       - Composition vs Inheritance: 04_oop_concepts/06_composition_vs_inheritance/README.md
       - SOLID Principles: 04_oop_concepts/07_solid_principles/README.md
+      - Dunder Methods: 04_oop_concepts/08_dunder_methods/README.md
+      - Dataclasses: 04_oop_concepts/09_dataclasses/README.md
     - Functional Programming:
       - Functional Programming: 05_functional_programming/README.md
       - Pure Functions: 05_functional_programming/01_pure_functions/README.md
@@ -172,6 +176,7 @@ nav:
       - Map, Filter, Reduce: 05_functional_programming/05_map_filter_reduce/README.md
       - Closures: 05_functional_programming/06_closures/README.md
       - Decorators: 05_functional_programming/07_decorators/README.md
+      - Generators & Iterators: 05_functional_programming/08_generators_and_iterators/README.md
 
   - Advanced:
     - Software Design:
@@ -195,6 +200,7 @@ nav:
       - Custom Exceptions: 08_error_handling/03_custom_exceptions/README.md
       - Defensive Programming: 08_error_handling/04_defensive_programming/README.md
       - Logging: 08_error_handling/05_logging/README.md
+      - Context Managers: 08_error_handling/06_context_managers/README.md
     - Testing:
       - Testing: 09_testing/README.md
       - Why Testing: 09_testing/01_why_testing/README.md

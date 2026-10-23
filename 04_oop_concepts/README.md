@@ -37,6 +37,14 @@ Object-Oriented Programming (OOP) is a programming paradigm that organizes code 
    - Interface Segregation Principle (ISP)
    - Dependency Inversion Principle (DIP)
 
+8. **[Dunder Methods](08_dunder_methods/README.md)**
+   - The data model: `__repr__`, `__eq__`, `__len__`, `__getitem__`, `__iter__`...
+   - Making your own classes behave like built-ins.
+
+9. **[Dataclasses](09_dataclasses/README.md)**
+   - Classes for data, without the boilerplate.
+   - `@dataclass`, `field(default_factory=...)`, `frozen=True`, `__post_init__`.
+
 ## 🧠 Prerequisites
 
 - Module 01 (Foundations)
@@ -50,3 +58,4 @@ By the end of this module, you should be able to:
 - Reuse code effectively using inheritance and composition.
 - Write flexible code using polymorphism and abstraction.
 - Apply industry-standard design principles (SOLID).
+- Customize how your classes behave with dunder methods and dataclasses.

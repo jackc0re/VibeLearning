@@ -4,6 +4,7 @@ opencode
 openspec
 .vscode/
 .idea/
+.zcode/
 
 # Python
 *__pycache__/

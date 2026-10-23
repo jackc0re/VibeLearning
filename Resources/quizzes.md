@@ -3,7 +3,7 @@
 Every topic ends with a short knowledge check. Work through them after you have run
 the examples and tried the exercises — they are the quickest way to find the gaps.
 
-**114 quizzes across 20 modules.**
+**120 quizzes across 20 modules.**
 
 ---
 
@@ -15,6 +15,8 @@ the examples and tried the exercises — they are the quickest way to find the g
 - [Loops](../01_foundations/04_loops/quiz.md)
 - [Functions Basics](../01_foundations/05_functions_basics/quiz.md)
 - [Input and Output](../01_foundations/06_input_output/quiz.md)
+- [Type Hints](../01_foundations/07_type_hints/quiz.md)
+- [Pattern Matching](../01_foundations/08_pattern_matching/quiz.md)
 
 ## Data Structures
 
@@ -48,6 +50,8 @@ the examples and tried the exercises — they are the quickest way to find the g
 - [Abstraction](../04_oop_concepts/05_abstraction/quiz.md)
 - [Composition vs Inheritance](../04_oop_concepts/06_composition_vs_inheritance/quiz.md)
 - [SOLID Principles](../04_oop_concepts/07_solid_principles/quiz.md)
+- [Dunder Methods](../04_oop_concepts/08_dunder_methods/quiz.md)
+- [Dataclasses](../04_oop_concepts/09_dataclasses/quiz.md)
 
 ## Functional Programming
 
@@ -58,6 +62,7 @@ the examples and tried the exercises — they are the quickest way to find the g
 - [Map, Filter, Reduce](../05_functional_programming/05_map_filter_reduce/quiz.md)
 - [Closures](../05_functional_programming/06_closures/quiz.md)
 - [Decorators](../05_functional_programming/07_decorators/quiz.md)
+- [Generators and Iterators](../05_functional_programming/08_generators_and_iterators/quiz.md)
 
 ## Software Design
 
@@ -82,6 +87,7 @@ the examples and tried the exercises — they are the quickest way to find the g
 - [Custom Exceptions](../08_error_handling/03_custom_exceptions/quiz.md)
 - [Defensive Programming](../08_error_handling/04_defensive_programming/quiz.md)
 - [Logging](../08_error_handling/05_logging/quiz.md)
+- [Context Managers](../08_error_handling/06_context_managers/quiz.md)
 
 ## Testing
 

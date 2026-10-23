@@ -2,7 +2,7 @@
 
 Functional Programming (FP) is a paradigm that treats computation as the evaluation of **pure functions** and avoids **shared state** and **mutable data**. This module focuses on building predictable, testable code using FP ideas in Python.
 
-> **Estimated Time:** 8-10 hours  
+> **Estimated Time:** 9-11 hours  
 > **Prerequisites:** Module 01 (Foundations)  
 > **Level:** ⭐⭐ Intermediate
 
@@ -19,6 +19,7 @@ Functional Programming (FP) is a paradigm that treats computation as the evaluat
 | 05 | [Map, Filter, Reduce](05_map_filter_reduce/README.md) | Transform and reduce collections | map, filter, reduce |
 | 06 | [Closures](06_closures/README.md) | Functions that remember outer variables | enclosing scope, nonlocal |
 | 07 | [Decorators](07_decorators/README.md) | Functions that wrap other functions | @syntax, wrappers |
+| 08 | [Generators & Iterators](08_generators_and_iterators/README.md) | Lazy sequences with `yield` | iterator protocol, lazy pipelines |
 
 ---
 
@@ -33,6 +34,7 @@ By the end of this module, you should be able to:
 - Leverage **map/filter/reduce** for collection processing.
 - Build and use **closures** for stateful functions.
 - Apply **decorators** to extend functionality cleanly.
+- Build **generators** and custom iterators for lazy data pipelines.
 
 ---
 
@@ -71,7 +73,12 @@ By the end of this module, you should be able to:
 │   ├── examples.py
 │   ├── exercises.py
 │   └── quiz.md
-└── 07_decorators/
+├── 07_decorators/
+│   ├── README.md
+│   ├── examples.py
+│   ├── exercises.py
+│   └── quiz.md
+└── 08_generators_and_iterators/
     ├── README.md
     ├── examples.py
     ├── exercises.py
