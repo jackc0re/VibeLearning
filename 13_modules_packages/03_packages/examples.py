@@ -58,7 +58,8 @@ def demo_package_vs_module() -> None:
     import json  # Package (directory)
 
     print("math (module):")
-    print(f"  __file__: {math.__file__}")
+    # Built-in modules are compiled into the interpreter, so they have no __file__
+    print(f"  __file__: {getattr(math, '__file__', '(built-in, no file)')}")
     print(f"  has __path__: {hasattr(math, '__path__')}")
 
     print("\njson (package):")

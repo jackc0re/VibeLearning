@@ -324,11 +324,25 @@ template_content = """<!DOCTYPE html>
 </body>
 </html>"""
 
+def normalise_placeholders(source):
+    """Convert `{{ name }}` style placeholders into string.Template `$name`.
+
+    A plain str.replace cannot do this: `{{ name }}` contains spaces, and
+    string.Template rejects `$ name`. The inner whitespace has to be dropped.
+    """
+    def convert(match):
+        return "$" + match.group(1)
+
+    return re.sub(r"\{\{\s*(\w+)\s*\}\}", convert, source)
+
+
 class FileTemplate:
     """Simple file-based template loader."""
     
     def __init__(self, source):
-        self.template = Template(source.replace('{{', '$').replace('}}', ''))
+        # string.Template needs `$name` with no space inside, so `{{ name }}`
+        # cannot be converted with a plain str.replace - normalise it first.
+        self.template = Template(normalise_placeholders(source))
     
     def render(self, **context):
         """Render with context."""

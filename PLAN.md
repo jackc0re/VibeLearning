@@ -155,10 +155,10 @@ Before changing anything, make sure we can always roll back and can prove what "
       - extend **Resources** with `Resources/further_reading.md` and the cheatsheets (list every file under `Resources/cheatsheets/`).
       Files: `mkdocs.yml`
       Done when: every entry in nav resolves (strict build catches typos), and Projects + Exercises are clickable in the site header/sidebar.
-- [ ] 2. Decide and implement quiz discoverability — see **Open Question 2**. Default recommendation if no answer: keep quiz.md files OUT of the main nav (114 entries would bury everything) and instead add a prominent link from each topic's README to its quiz page (e.g. a "Test yourself 🧠" link at the bottom of every topic page), plus one "Quizzes" index under Resources listing all quizzes grouped by module.
+- [x] 2. Decide and implement quiz discoverability — see **Open Question 2**. Default recommendation if no answer: keep quiz.md files OUT of the main nav (114 entries would bury everything) and instead add a prominent link from each topic's README to its quiz page (e.g. a "Test yourself 🧠" link at the bottom of every topic page), plus one "Quizzes" index under Resources listing all quizzes grouped by module.
       Files: `mkdocs.yml`, topic READMEs (root copies)
       Done when: every quiz.md is reachable from at least one linked page (no orphans), and strict build still passes.
-- [ ] 3. Add a nice 404 fallback? (Optional — MkDocs serves GitHub Pages 404 automatically from `404.md` if present. Only if cheap.)
+- [x] 3. Add a nice 404 fallback? (Optional — MkDocs serves GitHub Pages 404 automatically from `404.md` if present. Only if cheap.)
       Files: `docs/404.md` (via sync)
       Done when: optional; skip without penalty.
 

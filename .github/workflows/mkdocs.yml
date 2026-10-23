@@ -83,3 +83,20 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # ---------------------------------------------------------------------------
+  # Learning content: the examples.py files are the product - run them all.
+  # ---------------------------------------------------------------------------
+  examples:
+    name: Run lesson examples
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run every examples.py with a per-file timeout
+        run: python tools/run_examples.py

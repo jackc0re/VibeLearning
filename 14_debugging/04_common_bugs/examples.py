@@ -110,6 +110,11 @@ def demo_modify_while_iterating() -> None:
     print()
 
 
+# Module-level name used by the `global` demonstration below. It has to exist at
+# module level, otherwise `global counter` only declares intent and the += fails.
+counter = 0
+
+
 def demo_scope_issues() -> None:
     """Demonstrate variable scope bugs."""
     print("=== Variable Scope Issues ===\n")
@@ -130,7 +135,6 @@ def demo_scope_issues() -> None:
     print("Python sees 'counter =' and assumes it's local,")
     print("but it doesn't exist locally yet.")
 
-    # Fix with global (not recommended)
     def increment_global() -> int:
         global counter
         counter += 1
